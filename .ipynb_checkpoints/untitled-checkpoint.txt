@@ -1,0 +1,141 @@
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 10 \
+  --num-rounds 5 \
+  --local-epochs 1 \
+  --batch-size 64 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0 \
+  --client-device cuda \
+  --eval-device cuda \
+  --client-gpus 0.5 \
+  --run-name cifar10_resnet18_debug
+  
+  
+
+  
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 50 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,5 \
+  --dp-sigma 0.0 \
+  --client-gpus 0.1 \
+  --unlearn-alpha 0.9 \
+  --run-name cifar10_resnet18_20c_50r
+  
+
+
+
+
+
+
+
+
+
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 50 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,1 \
+  --unlearner all \
+  --pga-steps 100 \
+  --pga-lr 1e-4 \
+  --pga-layers last \
+  --unlearn-alpha 0.8 \
+  --retrain-epochs 10 \
+  --dp-sigma 0.5 \
+  --run-name cifar_all_20c_50r_dp05
+
+
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 50 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,1 \
+  --unlearner all \
+  --pga-steps 100 \
+  --pga-lr 3e-4 \
+  --pga-layers last \
+  --unlearn-alpha 0.8 \
+  --retrain-epochs 10 \
+  --dp-sigma 0.5 \
+  --run-name cifar_all_20c_50r_dp05
+python scripts/analyze_single_run_overhead.py \
+  --run-dir runs/20260927-040058_cifar_all_20c_50r_dp05
+  
+  python scripts/diagnose_feature_drift.py \
+  --run-dir runs/20260927-040058_cifar_all_20c_50r_dp05 \
+  --per-class 80 \
+  --batch-size 128 \
+  --device cuda
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 40 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,1 \
+  --unlearner history_subtract \
+  --dp-sigma 0.0 \
+  --unlearn-alpha 0.8 \
+  --run-name cifar_history_subtract_20c_50r
+  
+  
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 40 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,1 \
+  --unlearner pga \
+  --pga-steps 100 \
+  --pga-lr 1e-4 \
+  --pga-layers all \
+  --dp-sigma 0.5 \
+  --unlearn-alpha 0.8 \
+  --run-name cifar_pga_20c_50r
+  
+  
+python scripts/run_pipeline.py \
+  --dataset cifar10 \
+  --num-clients 20 \
+  --num-rounds 40 \
+  --local-epochs 1 \
+  --partition dirichlet \
+  --alpha 0.5 \
+  --forget-clients 0,1 \
+  --unlearner federaser_lite \
+  --dp-sigma 0.0 \
+  --unlearn-alpha 0.8 \
+  --run-name cifar_federaser_lite_20c_50r

@@ -1,0 +1,11 @@
+# Python 3.10, Ubuntu 22.04
+# 如果你要使用 CUDA 11.8，建议先按 README 中的命令安装 torch/torchvision 的 cu118 版本，
+# 再 pip install -r requirements.txt 安装其余依赖。
+flwr[simulation]==1.8.0
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+tqdm>=4.66
+matplotlib>=3.7
+setuptools==69.5.1
+wheel
