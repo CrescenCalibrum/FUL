@@ -1,0 +1,63 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e9]:
+        - text: 知枢
+        - generic [ref=f2e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e11]:
+      - generic [ref=f2e12]: 研
+      - generic [ref=f2e13]:
+        - strong [ref=f2e14]: 设备智能运维研究
+        - generic [ref=f2e15]: 系统演示项目
+      - generic [ref=f2e16]: DEV
+    - navigation "主导航" [ref=f2e17]:
+      - generic [ref=f2e18]:
+        - paragraph [ref=f2e19]: 项目空间
+        - link "工作台" [ref=f2e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e24]:
+        - paragraph [ref=f2e25]: 数据中心
+        - link "数据集管理" [ref=f2e26] [cursor=pointer]:
+          - /url: "#/datasets"
+        - link "站点与客户端" [ref=f2e30] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f2e34]:
+        - paragraph [ref=f2e35]: 研究工作区
+        - link "联邦实验" [ref=f2e36] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=f2e40] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=f2e44] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e48] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f2e52] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f2e56] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e60] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e64]:
+      - generic [ref=f2e68]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e69]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e70]:
+        - generic [ref=f2e71]: 研
+        - generic [ref=f2e72]:
+          - strong [ref=f2e73]: 研究管理员
+          - generic [ref=f2e74]: ADMIN
+        - button "退出" [ref=f2e75] [cursor=pointer]
+  - generic [ref=f2e76]:
+    - banner [ref=f2e77]:
+      - generic [ref=f2e78]:
+        - generic [ref=f2e79]: 研究工作区
+        - strong [ref=f2e82]: 独立审计报告
+      - generic [ref=f2e83]:
+        - generic "设备预览来源时间：" [ref=f2e84]: 后端数据模式
+        - generic [ref=f2e87]: 研究内容三 / 系统演示
+    - main [ref=f2e88]:
+      - paragraph [ref=f2e100]: 正在读取已核查的数据版本…
+    - contentinfo [ref=f2e101]:
+      - generic [ref=f2e102]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f2e103]: 设备预览来源 · v0.1.0

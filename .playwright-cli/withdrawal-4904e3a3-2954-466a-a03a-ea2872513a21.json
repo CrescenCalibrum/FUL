@@ -1,0 +1,170 @@
+{
+  "id": "4904e3a3-2954-466a-a03a-ea2872513a21",
+  "station_id": "a54a441f-ac16-4d99-aebb-b6edf7134603",
+  "device_id": "76c07f48-a300-46f4-b9cd-0448d8fc5b22",
+  "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+  "full_model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+  "status": "CANDIDATE_READY",
+  "requested_by": "c5_site0_69a57d03",
+  "binding_sha256": "be98209e299df151c9c16abdfef7769e8e3e3f76aa39c5e3e29577652cffdc1c",
+  "client_id": 0,
+  "execution_supported": true,
+  "restriction_effective": true,
+  "formal_audit_status": "INSUFFICIENT",
+  "normalizer_contains_withdrawn_contribution": true,
+  "candidate_model_id": "8826581b-2fcb-4a86-b177-e797ca35a530",
+  "binding": {
+    "schema_version": "ful-contribution-withdrawal-v1",
+    "device_id": "76c07f48-a300-46f4-b9cd-0448d8fc5b22",
+    "mapping_sha256": "31862f111960970fead8e0c755d3b30828ccf80f38a54529e4fed3fdcff88aeb",
+    "full_model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+    "full_checkpoint_sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+    "context_signature_sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+    "reason": "C5 工程验收：申请单次撤回客户端 0 对指定 Full 的模型贡献；确认允许所列数据访问，保留标准化器贡献与审计不足说明。",
+    "normalizer_contains_withdrawn_contribution": true,
+    "normalizer_sha256": "83284c0f6fcb84a1811157a1915e3f8eb6dd4d72fcc08938fdab017b01edcb80",
+    "collection_stage": "post_training_retained_data_reaccess",
+    "formal_dp_accounting": false,
+    "formal_audit_status": "INSUFFICIENT",
+    "target_clients": [
+      0
+    ],
+    "allowed_access": {
+      "target_training_for_pga": true,
+      "retained_training_for_prototype": true,
+      "fixed_test_all_clients": true,
+      "raw_mat_access": false,
+      "purpose": "public_equipment_isolated_demo_not_private_station_data_authorization"
+    }
+  },
+  "execution_metrics": [
+    {
+      "stage": "full_after_fl",
+      "unlearner": "none",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9426388586721113,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9520993232727051,
+      "forget_loss": 0.9102027756827218,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_pre_recovery",
+      "unlearner": "pga",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9623916226048623,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9701069593429565,
+      "forget_loss": 0.935939107622419,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_proto_lda_recovery",
+      "unlearner": "pga",
+      "recovery": "prototype_lda",
+      "all_acc": 1,
+      "all_loss": 0,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0,
+      "forget_loss": 0,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": 0.00021190010011196136
+    }
+  ],
+  "candidate_checkpoint_sha256": "d6ee8488abfe6a989e4128e710febe37545bcad7ee367b283be94cda0547b491",
+  "model_exclusion_declared": [
+    0
+  ],
+  "events": [
+    {
+      "sequence_no": 1,
+      "actor": "c5_site0_69a57d03",
+      "action": "REQUESTED",
+      "occurred_at": "2026-11-04T17:11:17Z"
+    },
+    {
+      "sequence_no": 2,
+      "actor": "admin",
+      "action": "APPROVE",
+      "occurred_at": "2026-11-04T17:12:44Z",
+      "command_key_sha256": "64b5e8a6283fbaa99d9665a5f480b86a514c62e9ccaf2e0646166387d63d96c4",
+      "command_sha256": "5de89b56fa98b65cb05cead5f8283bd977a1a6af37ff2db40206c38eea3bb935",
+      "notes": "C5 工程验收：批准指定 Full 的客户端 0 单次贡献撤回；立即限制旧模型，仅登记本申请实际恢复出的隔离候选，预处理贡献与正式审计不足继续保留。"
+    },
+    {
+      "sequence_no": 3,
+      "actor": "admin",
+      "action": "SUBMIT_UNLEARN",
+      "occurred_at": "2026-11-04T17:12:45Z",
+      "command_key_sha256": "dffe44660e969ac0dfa30fd104e7a8996bfa91e1d3644bf8567aee79c6d792a4",
+      "command_sha256": "2d7a4c8e7304421beb70cd43d04b03a0f9f5fe26ecc0026781392ad29db35d59",
+      "notes": "ecd5bc8f-ef01-4b37-9f3e-be16b7c6677e"
+    },
+    {
+      "sequence_no": 4,
+      "actor": "admin",
+      "action": "SUBMIT_BUILD_PROTOTYPE",
+      "occurred_at": "2026-11-04T17:20:52Z",
+      "command_key_sha256": "2f77bda6d2f4119e837b7aaaa19bee8f6aef371fc7ef6a510863c28c7b0d32bb",
+      "command_sha256": "7f472cb38499232bdc9a705504fd262d96611f4b20e08f8e7842ae96e6c01252",
+      "notes": "1f31d23d-3cf5-49bc-bf0a-27349aeeb8df"
+    },
+    {
+      "sequence_no": 5,
+      "actor": "admin",
+      "action": "SUBMIT_RECOVER",
+      "occurred_at": "2026-11-04T17:21:07Z",
+      "command_key_sha256": "47ba67dfae2090579ac5617f2e94b961101c77eca349b870412841b7c589e4b8",
+      "command_sha256": "2fb06f93556e3f33c9a8c2897519b842566b888b9a501b1e0fed48f8b4f08ced",
+      "notes": "5d7425ec-b6e4-4cd4-992e-13b62e029285"
+    },
+    {
+      "sequence_no": 6,
+      "actor": "admin",
+      "action": "REGISTER_CANDIDATE",
+      "occurred_at": "2026-11-04T17:21:38Z",
+      "command_key_sha256": "65f475bb08d42d3b9cc347a9a5dfc6fdec2bc6da196781d545eebef4fbf45bd4",
+      "command_sha256": "9ed5b25fe00e4bd58b08bd7f489264a7ad27ecd0793475eadfd0a8c33edb7ce8",
+      "notes": "8826581b-2fcb-4a86-b177-e797ca35a530"
+    }
+  ],
+  "steps": [
+    {
+      "operation": "BUILD_PROTOTYPE",
+      "sequence_no": 1,
+      "task_id": "1f31d23d-3cf5-49bc-bf0a-27349aeeb8df",
+      "status": "SUCCEEDED",
+      "error_code": null
+    },
+    {
+      "operation": "RECOVER",
+      "sequence_no": 1,
+      "task_id": "5d7425ec-b6e4-4cd4-992e-13b62e029285",
+      "status": "SUCCEEDED",
+      "error_code": null
+    },
+    {
+      "operation": "UNLEARN",
+      "sequence_no": 1,
+      "task_id": "ecd5bc8f-ef01-4b37-9f3e-be16b7c6677e",
+      "status": "SUCCEEDED",
+      "error_code": null
+    }
+  ]
+}

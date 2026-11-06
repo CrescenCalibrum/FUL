@@ -1,0 +1,90 @@
+- generic [ref=e3]:
+  - complementary:
+    - link:
+      - /url: "#/dashboard"
+      - generic:
+        - text: 知枢
+        - generic: FEDERATED INTELLIGENCE
+    - generic:
+      - generic: 研
+      - generic:
+        - strong: 设备智能运维研究
+        - generic: 系统演示项目
+      - generic: DEV
+    - navigation:
+      - generic:
+        - paragraph: 项目空间
+        - link:
+          - /url: "#/dashboard"
+          - generic: 工作台
+      - generic:
+        - paragraph: 数据中心
+        - link:
+          - /url: "#/datasets"
+          - generic: 数据集管理
+        - link:
+          - /url: "#/stations"
+          - generic: 站点与客户端
+        - link:
+          - /url: "#/devices"
+          - generic: 模拟设备档案
+        - link:
+          - /url: "#/withdrawals"
+          - generic: 站点与贡献撤回
+      - generic:
+        - paragraph: 研究工作区
+        - link:
+          - /url: "#/experiments"
+          - generic: 联邦实验
+        - link:
+          - /url: "#/operations/training"
+          - generic: 独立操作工作台
+        - link:
+          - /url: "#/precomputed-recovery"
+          - generic: 训练时原型与恢复
+        - link:
+          - /url: "#/equipment-contexts"
+          - generic: 设备上下文与模型
+        - link:
+          - /url: "#/equipment-operations"
+          - generic: 设备遗忘与恢复
+        - link:
+          - /url: "#/equipment-audits"
+          - generic: 设备开发审计
+        - link:
+          - /url: "#/operations/compare"
+          - generic: 三阶段比较
+        - link:
+          - /url: "#/tasks"
+          - generic: 任务中心
+        - link:
+          - /url: "#/forget-requests"
+          - generic: 遗忘与恢复
+        - link:
+          - /url: "#/recovery"
+          - generic: 原型与独立恢复
+        - link:
+          - /url: "#/audits"
+          - generic: 审计中心
+        - link:
+          - /url: "#/diagnosis"
+          - generic: 设备诊断
+    - generic:
+      - generic:
+        - generic:
+          - text: 可追溯的研究演示
+          - generic: 数据版本 · 模型阶段 · 审计证据
+      - generic:
+        - generic: 研
+        - generic:
+          - strong: 研究工作台
+        - button: 退出
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - button "展开菜单" [ref=e7] [cursor=pointer]
+        - strong
+      - generic "设备预览来源时间：" [ref=e13]: 后端数据模式
+    - main [ref=e15]
+    - contentinfo [ref=e16]:
+      - generic [ref=e17]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台

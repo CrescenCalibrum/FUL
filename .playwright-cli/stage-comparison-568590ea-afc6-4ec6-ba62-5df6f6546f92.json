@@ -1,0 +1,2934 @@
+{
+  "schema_version": "ful-stage-comparison-v1",
+  "full_model_id": "568590ea-afc6-4ec6-ba62-5df6f6546f92",
+  "context_id": "b20752f9-36da-47b7-9394-05557fc7fd3e",
+  "context_signature_sha256": "6204097e33a9b63ceaf4664fdc320d7ccf9f71fe570b855345f71d4909ca1fdb",
+  "data_origin": "synthetic_smoke_only",
+  "formal_audit": false,
+  "forget_clients": [
+    0
+  ],
+  "prototype_id": "8964ee5a-5b13-4454-a605-ae83b6ceb0df",
+  "stages": [
+    {
+      "stage": "FULL",
+      "model_id": "568590ea-afc6-4ec6-ba62-5df6f6546f92",
+      "task_id": "3149a482-28ec-465f-8ad6-9e9d5d7dba78",
+      "experiment_id": "task-3149a482-28ec-465f-8ad6-9e9d5d7dba78",
+      "checkpoint_sha256": "7e9cf2d8a6bf62f29a59d07638d9bfa39b74a5f4b95fab5780aab64e3aae7915",
+      "parameters_sha256": "2eb242a67a1b34dd92c39b3bc766a05f0f9b7729fd60dd459b86910c5d6df53d",
+      "metrics_sha256": "324863c6a37bf08f1fa24cf8bec3ceb0a52a6a0b3e97d1dc43d443a2be4db04e",
+      "metrics": {
+        "stage": "full_after_fl",
+        "unlearner": "none",
+        "recovery": "none",
+        "all_acc": 0.16666666666666666,
+        "all_loss": 2.29789555867513,
+        "retain_acc": 0.2,
+        "forget_acc": 0.1,
+        "retain_loss": 2.2977466583251953,
+        "forget_loss": 2.298193359375,
+        "retain_num_examples": 20,
+        "forget_num_examples": 10,
+        "full_training_time_sec": 3.409938400029205,
+        "unlearning_time_sec": null,
+        "recovery_time_sec": null
+      },
+      "checkpoint_bytes": 67179501,
+      "published_task_bytes": 395623542,
+      "storage_scope": "该任务已发布工件总字节；包括其阶段 checkpoint 与元数据，不含复用来源副本和私有 attempt 文件"
+    },
+    {
+      "stage": "PRE",
+      "model_id": "b01d9bfe-96ee-4e94-8c66-5fe65796a32f",
+      "task_id": "ff7c9f2e-4bf0-43ec-85ab-8a3c7b74d3ef",
+      "experiment_id": "task-ff7c9f2e-4bf0-43ec-85ab-8a3c7b74d3ef",
+      "checkpoint_sha256": "43ad3f159b7a1946a7dd9fe1d4b3b063873b01b9ead01bc85c6d7c2c0ca071fb",
+      "parameters_sha256": "68bae3f6b1c057830314e6706c6e03d062209ea91e32bd11693ed71231a663e7",
+      "metrics_sha256": "10622e22f6ff04b080feb06ebe753c22fd1d99fc4c4687624462f28326a9f281",
+      "metrics": {
+        "stage": "pga_pre_recovery",
+        "unlearner": "pga",
+        "recovery": "none",
+        "all_acc": 0.16666666666666666,
+        "all_loss": 2.297903124491374,
+        "retain_acc": 0.2,
+        "forget_acc": 0.1,
+        "retain_loss": 2.2977543830871583,
+        "forget_loss": 2.2982006072998047,
+        "retain_num_examples": 20,
+        "forget_num_examples": 10,
+        "full_training_time_sec": null,
+        "unlearning_time_sec": 0.28476980002596974,
+        "recovery_time_sec": null
+      },
+      "checkpoint_bytes": 67179949,
+      "published_task_bytes": 67244753,
+      "storage_scope": "该任务已发布工件总字节；包括其阶段 checkpoint 与元数据，不含复用来源副本和私有 attempt 文件",
+      "state_change": {
+        "schema_version": "ful-pga-state-change-v1",
+        "trainable_names": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "states": [
+          {
+            "name": "backbone.conv1.weight",
+            "shape": [
+              64,
+              1,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.conv1.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.conv2.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.conv1.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.conv2.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.conv1.weight",
+            "shape": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.conv2.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.0.weight",
+            "shape": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.conv1.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.conv2.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.conv1.weight",
+            "shape": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.conv2.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.0.weight",
+            "shape": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.conv1.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.conv2.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.conv1.weight",
+            "shape": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.conv2.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.0.weight",
+            "shape": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.conv1.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.conv2.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "is_buffer": true,
+            "selected": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "classifier.weight",
+            "shape": [
+              10,
+              512
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": true,
+            "changed": true,
+            "l2_change": 0.00016671068986625213
+          },
+          {
+            "name": "classifier.bias",
+            "shape": [
+              10
+            ],
+            "dtype": "float32",
+            "is_buffer": false,
+            "selected": true,
+            "changed": true,
+            "l2_change": 0.00003809326913023104
+          }
+        ],
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "bn_policy": "frozen_running_state",
+        "state_l2_change": 0.00017100745968731866,
+        "max_delta_norm": 0.018349319846879316,
+        "backbone_unchanged": true,
+        "buffers_unchanged": true,
+        "projection_satisfied": true
+      },
+      "method_evidence": {
+        "operation": "UNLEARN",
+        "method": "pga",
+        "parent_model_id": "568590ea-afc6-4ec6-ba62-5df6f6546f92",
+        "pre_parameters_sha256": "68bae3f6b1c057830314e6706c6e03d062209ea91e32bd11693ed71231a663e7",
+        "unlearning_time_sec": 0.28476980002596974,
+        "data_access": {
+          "training_clients": [
+            0
+          ],
+          "training_examples": 20,
+          "marker_clients": [
+            0
+          ],
+          "marker_role": "train",
+          "evaluation_clients": [
+            0,
+            1,
+            2
+          ],
+          "original_data_regenerated": false,
+          "audit_data_accessed": false
+        },
+        "logs": {
+          "steps": 2,
+          "lr": 0.0001,
+          "project_ratio": 0.01,
+          "max_delta_norm": 0.018349319846879316,
+          "layers": "head",
+          "trainable_names": [
+            "classifier.weight",
+            "classifier.bias"
+          ],
+          "bn_policy": "frozen_running_state",
+          "data_scope": "real_and_markers",
+          "projected_times": 0,
+          "first_loss": 2.299053430557251,
+          "last_loss": 2.309427499771118,
+          "changed_parameters": [
+            "classifier.weight",
+            "classifier.bias"
+          ],
+          "changed_buffers": [],
+          "state_l2_change": 0.00017100745968731866
+        }
+      }
+    },
+    {
+      "stage": "RECOVERED",
+      "model_id": "63536057-bb8a-42f7-9620-b933d275274f",
+      "task_id": "0d8d34db-21f4-414f-aa29-1036d33813a8",
+      "experiment_id": "task-0d8d34db-21f4-414f-aa29-1036d33813a8",
+      "checkpoint_sha256": "96f998ae4e22f3ff6a0c523144229b322f6dd2b9569ee616b4626ea9dfe140f6",
+      "parameters_sha256": "2cb47321411e00726d895f77f03e60ac1f8cac5c251ee5ebf60be5369dcedaea",
+      "metrics_sha256": "aca83c021a71e563a886eb180ca859240941a81efe24f9c05d22549ac7096b74",
+      "metrics": {
+        "stage": "pga_proto_lda_recovery",
+        "unlearner": "pga",
+        "recovery": "prototype_lda",
+        "all_acc": 1,
+        "all_loss": 0.0000016728922976957014,
+        "retain_acc": 1,
+        "forget_acc": 1,
+        "retain_loss": 9.298291843151674e-7,
+        "forget_loss": 0.0000031590185244567693,
+        "retain_num_examples": 20,
+        "forget_num_examples": 10,
+        "full_training_time_sec": null,
+        "unlearning_time_sec": null,
+        "recovery_time_sec": 0.10390580003149807
+      },
+      "checkpoint_bytes": 67177517,
+      "published_task_bytes": 67256668,
+      "storage_scope": "该任务已发布工件总字节；包括其阶段 checkpoint 与元数据，不含复用来源副本和私有 attempt 文件",
+      "state_change": {
+        "schema_version": "ful-recovery-state-change-v1",
+        "states": [
+          {
+            "name": "backbone.conv1.weight",
+            "shape": [
+              64,
+              1,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.conv1.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.conv2.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.conv1.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.conv2.weight",
+            "shape": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.weight",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.bias",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.running_mean",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.running_var",
+            "shape": [
+              64
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer1.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.conv1.weight",
+            "shape": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.conv2.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.0.weight",
+            "shape": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.conv1.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.conv2.weight",
+            "shape": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.weight",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.bias",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.running_mean",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.running_var",
+            "shape": [
+              128
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer2.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.conv1.weight",
+            "shape": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.conv2.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.0.weight",
+            "shape": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.conv1.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.conv2.weight",
+            "shape": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.weight",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.bias",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.running_mean",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.running_var",
+            "shape": [
+              256
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer3.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.conv1.weight",
+            "shape": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.conv2.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.0.weight",
+            "shape": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.conv1.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn1.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.conv2.weight",
+            "shape": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.weight",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.bias",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": false,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.running_mean",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.running_var",
+            "shape": [
+              512
+            ],
+            "dtype": "float32",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "backbone.layer4.1.bn2.num_batches_tracked",
+            "shape": [],
+            "dtype": "int64",
+            "selected": false,
+            "is_buffer": true,
+            "changed": false,
+            "l2_change": 0
+          },
+          {
+            "name": "classifier.weight",
+            "shape": [
+              10,
+              512
+            ],
+            "dtype": "float32",
+            "selected": true,
+            "is_buffer": false,
+            "changed": true,
+            "l2_change": 1400.9966096828057
+          },
+          {
+            "name": "classifier.bias",
+            "shape": [
+              10
+            ],
+            "dtype": "float32",
+            "selected": true,
+            "is_buffer": false,
+            "changed": true,
+            "l2_change": 3111.027573888869
+          }
+        ],
+        "trainable_names": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "backbone_unchanged": true,
+        "buffers_unchanged": true,
+        "bn_policy": "frozen_running_state",
+        "state_l2_change": 3411.9325998383347,
+        "reference_features_unchanged": true,
+        "reference_examples": 30,
+        "feature_relative_l2_change": 0,
+        "reference_features_sha256": "64d815ac015e04383e9f991a40a8aa5eaca8227146430bbb92c8cba333d410ec",
+        "backbone_parameters_sha256": "f676cc821cbcd6ed947cfad44634b185378af93dbe0187a1474f20554fe556ab"
+      }
+    }
+  ],
+  "missing": [],
+  "retain_gain_pp": 80,
+  "audit_reports": [
+    {
+      "id": "98923a54-db02-4f50-b9f3-e2023b412552",
+      "audit_id": "455198a2-7d4c-40fd-827d-6b4a86229c1f",
+      "model_stage": "RECOVERED",
+      "status": "insufficient",
+      "exploratory_status": "insufficient",
+      "report_sha256": "418e54fd117b928e7583b6a87c9c42413213d52949d7d6f50557dbfe9104c867"
+    },
+    {
+      "id": "a9f0bb80-4013-4c45-a751-5154fe229b61",
+      "audit_id": "455198a2-7d4c-40fd-827d-6b4a86229c1f",
+      "model_stage": "PRE",
+      "status": "insufficient",
+      "exploratory_status": "insufficient",
+      "report_sha256": "5f6b40b8c4c31e9dd4c14913b6e9f9e8e8a51bb04ad98b7aa5da6bf97df09264"
+    }
+  ],
+  "interpretation": "Full/Pre/Recovered 指标来自各自来源任务的不可变 metrics.csv；只显示本次阶段实际耗时，缺失保留 null。精度上升不等于遗忘有效；开发审计状态单独显示。存储按任务分别计量，不叠加共享历史。"
+}

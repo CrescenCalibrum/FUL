@@ -1,0 +1,3768 @@
+{
+  "execution_operation": "RECOVER",
+  "execution_source": "WORKER_TASK",
+  "data_origin": "public_equipment_demo",
+  "formal_audit": false,
+  "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+  "context_signature_sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+  "full_model_id": "746d9207-6b21-4f09-b5ce-4fa2678edf6f",
+  "config": {
+    "schema_version": "ful-equipment-operations-profile-v1",
+    "forget_clients": [
+      0
+    ],
+    "retained_clients": [
+      1,
+      2,
+      3
+    ],
+    "pga_steps": 20,
+    "pga_lr": 0.001,
+    "pga_project_ratio": 0.05,
+    "pga_layers": "head",
+    "batch_size": 32,
+    "clip_norm": 10,
+    "dp_sigma": 0,
+    "variance_floor": 0.0001,
+    "ridge": 0.01,
+    "collection_stage": "training_end_prewithdrawal",
+    "precomputed_before_withdrawal": true,
+    "formal_dp_accounting": false,
+    "cryptographic_secure_aggregation": false,
+    "evaluation_split": "test",
+    "selection_uses_test": false
+  },
+  "operation_result": {
+    "schema_version": "ful-equipment-precomputed-operation-result-v1",
+    "operation": "RECOVER",
+    "full_model_id": "746d9207-6b21-4f09-b5ce-4fa2678edf6f",
+    "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+    "context_signature_sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+    "profile": {
+      "schema_version": "ful-equipment-operations-profile-v1",
+      "forget_clients": [
+        0
+      ],
+      "retained_clients": [
+        1,
+        2,
+        3
+      ],
+      "pga_steps": 20,
+      "pga_lr": 0.001,
+      "pga_project_ratio": 0.05,
+      "pga_layers": "head",
+      "batch_size": 32,
+      "clip_norm": 10,
+      "dp_sigma": 0,
+      "variance_floor": 0.0001,
+      "ridge": 0.01,
+      "collection_stage": "training_end_prewithdrawal",
+      "precomputed_before_withdrawal": true,
+      "formal_dp_accounting": false,
+      "cryptographic_secure_aggregation": false,
+      "evaluation_split": "test",
+      "selection_uses_test": false
+    },
+    "full_parameters_sha256": "ff75d8ec5e2ee14977379ce1bad3572088c2b66b4fecd1671fc4f075c9c94eef",
+    "formal_audit": false,
+    "pre_model_id": "071b207d-0d02-4f89-860e-20239c1fcdd9",
+    "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+    "data_access": {
+      "training_tensors_decoded": false,
+      "prototype_rebuilt": false,
+      "evaluation_split": "test",
+      "evaluation_examples": 124,
+      "test_only_snapshot_used": true,
+      "raw_mat_accessed": false,
+      "training_file_hash_read": false,
+      "retained_training_read": false,
+      "network_data_fetch": false
+    },
+    "operation_time_sec": 0.0001862999051809311,
+    "output_parameters_sha256": "bc21a825206db7f50d86f6a3317438d561237724a39fe32e01111b464bf33057",
+    "source_parameters_sha256": "c4fb24d367ce232b4170724e10a91e62d0bef6d2d9d986b1af09ca7ea0981857",
+    "feature_proof": {
+      "sample_count": 124,
+      "feature_dim": 512,
+      "feature_sha256": [
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad"
+      ],
+      "exactly_equal": true,
+      "scope": "fixed_test_windows",
+      "backbone_sha256": "8d501b050d6df472611f299b0577ec1aa5dcb70b8a3a8426212c69e2209c8418"
+    },
+    "full_unchanged": true,
+    "withdrawal_id": "481365d1-7749-4d5d-a4b8-117b1220a028",
+    "collection_stage": "training_end_prewithdrawal",
+    "prototype_rebuilt": false,
+    "selection": {
+      "schema_version": "ful-equipment-precompute-selection-v1",
+      "id": "15c5fedc-9cdc-46f2-b6a8-1a41365c3f06",
+      "withdrawal_id": "481365d1-7749-4d5d-a4b8-117b1220a028",
+      "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+      "bundle_id": "43048e73-d7a8-431f-b8c2-2902299633e7",
+      "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+      "ready_sequence": 4,
+      "first_request_sequence": 5,
+      "selection_sequence": 6,
+      "selected_by": "admin",
+      "selected_at": "2026-11-05T06:15:06Z",
+      "prototype_rebuilt": false
+    },
+    "prototype_sha256": "b8aa6c2736d0ca21bf38e032c8c4f78d8a3ac594f5bc5cd245534d9af83446f2"
+  },
+  "parent_reference": {
+    "schema_version": "ful-equipment-precomputed-operation-reference-v1",
+    "inputs": {
+      "withdrawal_id": "481365d1-7749-4d5d-a4b8-117b1220a028",
+      "parent": {
+        "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+        "task_id": "f504901c-3117-426c-8444-ca7164ab6ba0",
+        "attempt_id": "f4117466-51ba-43d3-be5f-401c60bad9ac",
+        "publication_root_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8",
+        "stage": "FULL",
+        "checkpoint_sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+        "parameters_sha256": "ff75d8ec5e2ee14977379ce1bad3572088c2b66b4fecd1671fc4f075c9c94eef",
+        "signature_sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+        "model_id": "746d9207-6b21-4f09-b5ce-4fa2678edf6f",
+        "artifacts": [
+          {
+            "name": "models/model_full.pt",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/models/model_full.pt",
+            "sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+            "size_bytes": 67157101
+          },
+          {
+            "name": "execution_context.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/execution_context.json",
+            "sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+            "size_bytes": 25783
+          },
+          {
+            "name": "metrics.csv",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/metrics.csv",
+            "sha256": "ef65f3e22e2e2b2522c403758b763f84606b6984436bf2d04d38b46b6979bfe6",
+            "size_bytes": 270
+          },
+          {
+            "name": "dataset-manifest.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/dataset-manifest.json",
+            "sha256": "5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6",
+            "size_bytes": 6181
+          },
+          {
+            "name": "precomputed_prototypes.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/precomputed_prototypes.json",
+            "sha256": "b8aa6c2736d0ca21bf38e032c8c4f78d8a3ac594f5bc5cd245534d9af83446f2",
+            "size_bytes": 117000
+          },
+          {
+            "name": "precompute_signature.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/precompute_signature.json",
+            "sha256": "c338510a537187015fda2486c79fb85e96e3b68546d4f3eff7adec75cb8169ff",
+            "size_bytes": 2261
+          },
+          {
+            "name": "state_schema.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/state_schema.json",
+            "sha256": "5511661bb364b3ebf5241332d43796164d7091a7610fbb797ee3e3bfb7d7ea33",
+            "size_bytes": 15558
+          },
+          {
+            "name": "eval_snapshot.npz",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/eval_snapshot.npz",
+            "sha256": "6dae5f56aa8cf6581f2d8074c5dd57eb7367bb83005349493ec640efe191c663",
+            "size_bytes": 471080
+          },
+          {
+            "name": "evaluation_manifest.json",
+            "storage_ref": "published/task-runs/f504901c-3117-426c-8444-ca7164ab6ba0/f4117466-51ba-43d3-be5f-401c60bad9ac/89dbfc84b3074885b091b984ca4731a8/run/evaluation_manifest.json",
+            "sha256": "1c7bae0f4e49cba145acb603238d4b12499d0337b9f8db612538267426f32cdd",
+            "size_bytes": 8423
+          }
+        ],
+        "signature": {
+          "schema_version": "ful-equipment-execution-signature-v1",
+          "execution_ready": true,
+          "data_domain": "equipment",
+          "data_origin": "public_equipment_demo",
+          "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+          "project_id": "8cbcee48-3433-4a9d-a4c8-55c96a1abb75",
+          "registration_config_sha256": "674863bc70121841f252ae0e88f4bc8fd25f701b74579863398ed27ee4a207f9",
+          "registration_spec_sha256": "d49d1410bc58699cc0f895fdf329cd180c1a9cf3e4aaf545453eef6b6363281d",
+          "registration_model_descriptor_sha256": "ea80707a01e0309a8b0871f333baaa60d656f0a4b5a0c408d7fd7cf4b3fc285c",
+          "partition_sha256": "33d4128a9b11236ca2dcdd13d4e364c7489fd1aaf8150446b543c64f994b422e",
+          "snapshot_sha256": "7c7778b3867ae19363559e20732bb7db49b2070331ddbe7d57517a49d1b0edc1",
+          "model_key": "bearing_resnet18_v1",
+          "model_class": "ResNet18ForSmallImage",
+          "state_schema": [
+            {
+              "name": "backbone.conv1.weight",
+              "shape": [
+                64,
+                1,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.0.conv1.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.0.conv2.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.1.conv1.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.1.conv2.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.conv1.weight",
+              "shape": [
+                128,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.conv2.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.0.weight",
+              "shape": [
+                128,
+                64,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.1.conv1.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.1.conv2.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.conv1.weight",
+              "shape": [
+                256,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.conv2.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.0.weight",
+              "shape": [
+                256,
+                128,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.1.conv1.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.1.conv2.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.conv1.weight",
+              "shape": [
+                512,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.conv2.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.0.weight",
+              "shape": [
+                512,
+                256,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.1.conv1.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.1.conv2.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "classifier.weight",
+              "shape": [
+                4,
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "classifier.bias",
+              "shape": [
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          ],
+          "input_shape": [
+            1,
+            32,
+            32
+          ],
+          "num_classes": 4,
+          "feature_dim": 512,
+          "feature_layer": "features",
+          "class_order": [
+            "normal",
+            "inner_race_fault",
+            "ball_fault",
+            "outer_race_fault"
+          ],
+          "profile": {
+            "schema_version": "ful-equipment-profile-v1",
+            "profile_key": "cwru_cpu_smoke_v1",
+            "template_key": "cwru_train_full_v1",
+            "implementation_status": "contract_only",
+            "data_domain": "equipment",
+            "data_origin": "public_equipment_demo",
+            "execution_mode": "equipment_federated_development",
+            "dataset_key": "cwru_demo_v1",
+            "model": {
+              "model_key": "bearing_resnet18_v1",
+              "architecture_version": "resnet18-small-image-v1",
+              "reference_constructor": "fulbase.models.ResNet18ForSmallImage",
+              "in_channels": 1,
+              "num_classes": 4,
+              "input_shape": [
+                1,
+                32,
+                32
+              ],
+              "input_dtype": "float32",
+              "feature_layer": "features",
+              "feature_dim": 512,
+              "head_parameter_names": [
+                "classifier.weight",
+                "classifier.bias"
+              ],
+              "pretrained_weights": false
+            },
+            "training": {
+              "backend": "serial",
+              "training_client_ids": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "num_rounds": 1,
+              "local_epochs": 1,
+              "batch_size": 32,
+              "lr": 0.01,
+              "optimizer": "SGD",
+              "momentum": 0.9,
+              "weight_decay": 0,
+              "fraction_fit": 1,
+              "client_order": "ascending_logical_client_id",
+              "aggregation": "weighted_average_arrays_float64_then_original_dtype",
+              "aggregation_weight": "client_real_training_window_count",
+              "local_seed_rule": "sha256-first8-big-endian-mod-2^31:cwru-train-v1|seed|round|cid",
+              "shuffle": true,
+              "drop_last": false,
+              "num_workers": 0,
+              "device": "cpu",
+              "cpu_threads": 2,
+              "marker_enabled": false
+            },
+            "evaluation": {
+              "validation": "after_each_aggregate_all_clients",
+              "test": "final_full_only_all_clients",
+              "checkpoint_selection": "last_completed_round",
+              "test_used_for_selection": false,
+              "class_order": [
+                "normal",
+                "inner_race_fault",
+                "ball_fault",
+                "outer_race_fault"
+              ],
+              "macro_f1_zero_division": 0,
+              "confusion_matrix_rows": "ground_truth",
+              "confusion_matrix_columns": "prediction",
+              "planned_forget_client_ids": [
+                0
+              ],
+              "comparison_retained_client_ids": [
+                1,
+                2,
+                3
+              ]
+            },
+            "history": {
+              "representation": "compact_aggregate_updates",
+              "bound_forget_client_ids": [
+                0
+              ],
+              "supports_arbitrary_forget_set": false,
+              "store_float16": false,
+              "nonfloating_policy": "do_not_subtract_or_replay_buffers"
+            },
+            "access": {
+              "storage_mode": "single_host_shared_prepared_snapshot",
+              "snapshot_contains_all_clients_and_splits": true,
+              "training_consumes": "train_only",
+              "validation_consumes": "validation_only",
+              "final_evaluation_consumes": "test_only",
+              "raw_mat_access_required": false,
+              "preprocessing_fit_scope": "all_four_clients_training_only",
+              "preprocessing_withdrawal_handled": false,
+              "original_data_deletion_performed": false,
+              "model_input_normalization": "already_applied_in_prepared_x_do_not_apply_again"
+            },
+            "claims": {
+              "formal_dp_accounting": false,
+              "cryptographic_secure_aggregation": false,
+              "marker_audit_available": false,
+              "unseen_device_generalization_established": false,
+              "health_prediction_available": false
+            },
+            "resource_request": {
+              "slot_key": "cpu-compute",
+              "cpu_threads": 2,
+              "gpu_slots": 0
+            },
+            "limits": {
+              "timeout_sec": 1800,
+              "lease_sec": 30
+            },
+            "baseline_source_files": [
+              "fulbase/models.py",
+              "fulbase/datasets/cwru_demo.py",
+              "fulbase/train.py",
+              "fulbase/utils.py",
+              "fulbase/flower/strategy.py",
+              "fulbase/equipment_contract.py"
+            ],
+            "required_execution_source_roles": [
+              "equipment_model_adapter",
+              "equipment_training_adapter",
+              "equipment_train_bridge"
+            ],
+            "required_run_files": [
+              "config.json",
+              "execution_context.json",
+              "data_snapshot.npz",
+              "data_partition.json",
+              "dataset-manifest.json",
+              "normalizer.json",
+              "recipe.json",
+              "windows.csv",
+              "record-partitions.json",
+              "models/model_initial.pt",
+              "models/model_full.pt",
+              "history.pt",
+              "metrics.csv",
+              "metrics/round_validation.csv",
+              "metrics/client_metrics.csv",
+              "metrics/class_metrics.csv",
+              "metrics/confusion_matrix.csv",
+              "verification/training_result.json",
+              "verification/checkpoint_manifest.json",
+              "run_status.json"
+            ]
+          },
+          "seed": 42,
+          "source_files": {
+            "fulbase/models.py": "88a4e6d67a16c2be105c74676c60a427ec579c978b4412883d92e90968d41834",
+            "fulbase/datasets/cwru_demo.py": "19c8f260220e53994c3304028e929d2ad265b19db5fbc239c82abb8bd7cb4abc",
+            "fulbase/train.py": "4c371c07ea01e02c55467741a94240dc3e8e88d54e8354687bfd87181de7d66a",
+            "fulbase/utils.py": "5fe8c7fc43bacb1dfc8edb46eea477b7d107c2e1a1386d79330bc9df70484ab6",
+            "fulbase/flower/strategy.py": "3042975f77b8ce90398c076562b28654caff6304181e903a114c1a3f1bddf1ac",
+            "fulbase/equipment_contract.py": "3a1f4d34338e624f10e4d3365ac060f196b1b0c7a5be9ac35968a2293f3ee128",
+            "fulbase/equipment_models.py": "689bbdf4d53363bcc457fb639781b9aa8fc04f97b73c43a9ba01be69e827bd86",
+            "scripts/inspect_equipment_context.py": "c872a14f5899ed579faef64a9927167f81650cd32d6a5e9fcce39eb52cfa0da2",
+            "fulbase/equipment_training.py": "2b0225b76be83719e99a319b56b6cd69f0ef8bffc2edd25beaf18f4210e6963b",
+            "apps/worker/ful_worker/equipment_train_bridge.py": "1a0199d34dcd99eec4dbac656daf3daf47e8d58dc8ed99c6acdea2b8397612a1",
+            "apps/worker/ful_worker/equipment_contracts.py": "eccbd0039cf7b7e0211197b2f7b2ff43fd5d5ff86611fcc796453b288ae38a57",
+            "fulbase/equipment_operations.py": "9c518ea89cc159314bc510b7de35280af85829e4751534f77718dd8971544657",
+            "fulbase/dp/prototype.py": "8002c94b4d8ea04ac5e403a5cf651e4da78dad4766db1a83923eb7926fcd1816",
+            "apps/worker/ful_worker/precompute_contracts.py": "2bf51ad72fddb1e51ce0e9db967d7134e963a088ba98bb35a0d52a442219ca4d",
+            "apps/worker/ful_worker/precompute_bridge.py": "b207ca2e1ab3259baa6a7a422d6820d2a89f4ced5e0e9e35767039beaa5307f1",
+            "configs/equipment/cwru-precompute-protocol-v1.json": "1883658ceaa8abdc76fa59a6b4552e545c75fff282a7d32ec6f17f655082d640",
+            "apps/worker/ful_worker/contracts.py": "d7e3ec734728421434d8059d67c58f1e936d022a044bc5f48ff2a41e26ff654e",
+            "apps/worker/ful_worker/runner.py": "a4c8bdb704f2b6edaea2b158724823418e244e335dc157b1e4e946236467c5fe",
+            "apps/worker/ful_worker/bridge.py": "78a85c32989cef1b7eaba8e30dd28ae2f2ed83e888b8ee5683e4dd5884186b61",
+            "apps/worker/ful_worker/processes.py": "b53d41667a9635843ddb95871e955b56cf83b6b1df3248b977e3be3511799b4a",
+            "scripts/run_task.py": "00bd1bf9b87365c80113f39ba28b7b9663ff44effff37df0b6457861da840c65"
+          },
+          "runtime_packages": {
+            "torch": "2.14.1+cpu",
+            "numpy": "1.26.4",
+            "flwr": "1.8.0"
+          },
+          "precompute_protocol_sha256": "1883658ceaa8abdc76fa59a6b4552e545c75fff282a7d32ec6f17f655082d640",
+          "execution_template": "cwru_train_full_precompute_v1",
+          "prototype_collection_stage": "training_end_prewithdrawal"
+        }
+      },
+      "full_model_id": "746d9207-6b21-4f09-b5ce-4fa2678edf6f",
+      "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+      "selection": {
+        "schema_version": "ful-equipment-precompute-selection-v1",
+        "id": "15c5fedc-9cdc-46f2-b6a8-1a41365c3f06",
+        "withdrawal_id": "481365d1-7749-4d5d-a4b8-117b1220a028",
+        "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+        "bundle_id": "43048e73-d7a8-431f-b8c2-2902299633e7",
+        "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+        "ready_sequence": 4,
+        "first_request_sequence": 5,
+        "selection_sequence": 6,
+        "selected_by": "admin",
+        "selected_at": "2026-11-05T06:15:06Z",
+        "prototype_rebuilt": false
+      },
+      "pre_model_id": "071b207d-0d02-4f89-860e-20239c1fcdd9",
+      "pre": {
+        "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+        "task_id": "3f76f6a0-b738-4dca-8d4a-424fd88edbda",
+        "attempt_id": "b52d2b34-3426-4f2e-8a1d-9ac69fe137f4",
+        "publication_root_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d",
+        "stage": "PRE",
+        "checkpoint_sha256": "f343476e2a9680747305c6f7822d3ef8486c3820b2dadc2da29d8d7c1ebf0bea",
+        "parameters_sha256": "c4fb24d367ce232b4170724e10a91e62d0bef6d2d9d986b1af09ca7ea0981857",
+        "signature_sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+        "model_id": "071b207d-0d02-4f89-860e-20239c1fcdd9",
+        "artifacts": [
+          {
+            "name": "models/model_pga_pre_recovery.pt",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/models/model_pga_pre_recovery.pt",
+            "sha256": "f343476e2a9680747305c6f7822d3ef8486c3820b2dadc2da29d8d7c1ebf0bea",
+            "size_bytes": 67157037
+          },
+          {
+            "name": "execution_context.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/execution_context.json",
+            "sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+            "size_bytes": 25783
+          },
+          {
+            "name": "parent_reference.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/parent_reference.json",
+            "sha256": "679d21864fc3b77eb729bf9b5f469ca62c869cd787826b5c4641519899b7c0f7",
+            "size_bytes": 39946
+          },
+          {
+            "name": "operation_result.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/operation_result.json",
+            "sha256": "c9b2c80699e7e626d90d2757014df4a7d4feff90ed945294ae84b8132eec9060",
+            "size_bytes": 3029
+          },
+          {
+            "name": "metrics.csv",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/metrics.csv",
+            "sha256": "92e88303ee7d4ba5fbd41ae18465addfbd7aa69cd7980f8a5419ef3b7f833dad",
+            "size_bytes": 369
+          },
+          {
+            "name": "stage_evaluation.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/stage_evaluation.json",
+            "sha256": "088d33ee915896811cbd779554468c4ded68f682eab056cdc5d2ce8601ea8395",
+            "size_bytes": 11052
+          },
+          {
+            "name": "eval_snapshot.npz",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/eval_snapshot.npz",
+            "sha256": "6dae5f56aa8cf6581f2d8074c5dd57eb7367bb83005349493ec640efe191c663",
+            "size_bytes": 471080
+          },
+          {
+            "name": "evaluation_manifest.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/evaluation_manifest.json",
+            "sha256": "1c7bae0f4e49cba145acb603238d4b12499d0337b9f8db612538267426f32cdd",
+            "size_bytes": 8423
+          },
+          {
+            "name": "pga_state_change.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/pga_state_change.json",
+            "sha256": "8ad25053450a467530367940c0acef6d085aa777d12d3909e697354f1b9c7115",
+            "size_bytes": 22164
+          },
+          {
+            "name": "verification/checkpoint_manifest.json",
+            "storage_ref": "published/task-runs/3f76f6a0-b738-4dca-8d4a-424fd88edbda/b52d2b34-3426-4f2e-8a1d-9ac69fe137f4/b356acd4415b4552a7b0c893a5fbfb6d/run/verification/checkpoint_manifest.json",
+            "sha256": "70a4988b08f2ab4301797d2fd1ddef80cb39c9f548b3896eb23ab432f2992158",
+            "size_bytes": 1148
+          }
+        ]
+      },
+      "execution_sources": {
+        "apps/worker/ful_worker/precomputed_operation_contracts.py": "a215347537b03960aaa4f6b9149dca9f370d87eba79439b430cf603f1266541b",
+        "apps/worker/ful_worker/precomputed_operation_bridge.py": "05d9ea3e30dfdcd75f1894fa79a19acc537adba9cddf21ae8a42fbc41e7b86d6",
+        "apps/worker/ful_worker/precomputed_isolation.py": "d9d26df46e8e44caa5cb3cad2fba36b32ddea3b9e1859c25d46348c1c0f6fe2c",
+        "apps/worker/ful_worker/windows_appcontainer.py": "61bed78e249decc85c0b5d47570647ba11107e801eefd0d892bf103b4a45ddef",
+        "scripts/run_precomputed_task.py": "62e5d6d72bfb67e238d6c56cb884ae378ba9e8121b25f122c52e262afce57304",
+        "fulbase/equipment_operations.py": "9c518ea89cc159314bc510b7de35280af85829e4751534f77718dd8971544657",
+        "fulbase/equipment_models.py": "689bbdf4d53363bcc457fb639781b9aa8fc04f97b73c43a9ba01be69e827bd86",
+        "fulbase/models.py": "88a4e6d67a16c2be105c74676c60a427ec579c978b4412883d92e90968d41834",
+        "fulbase/equipment_training.py": "2b0225b76be83719e99a319b56b6cd69f0ef8bffc2edd25beaf18f4210e6963b",
+        "fulbase/train.py": "4c371c07ea01e02c55467741a94240dc3e8e88d54e8354687bfd87181de7d66a",
+        "fulbase/utils.py": "5fe8c7fc43bacb1dfc8edb46eea477b7d107c2e1a1386d79330bc9df70484ab6",
+        "fulbase/verification/audit.py": "20955247681c969a646be159b15219c0a1925db9f723dc95928b79a81c0c8923",
+        "fulbase/verification/markers.py": "9209bbe036c095d12376dc1e2ce2419ae6106369b5548c60ad26985e09db3566",
+        "fulbase/verification/statistics.py": "ac66f89e77f867e3fde6809fcc9b7ba10542920742ea83005137d8f2b9b29023",
+        "configs/equipment/cwru-unlearning-v1.json": "ae92f42a077483be3fba3d2a034183f837b8e9db9007e03937588bb60c996f42",
+        "configs/equipment/cwru-precompute-protocol-v1.json": "1883658ceaa8abdc76fa59a6b4552e545c75fff282a7d32ec6f17f655082d640"
+      }
+    },
+    "source_models_unchanged": true
+  },
+  "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+  "metrics": [
+    {
+      "stage": "full_after_fl",
+      "unlearner": "none",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9426388586721113,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9520993232727051,
+      "forget_loss": 0.9102027756827218,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_pre_recovery",
+      "unlearner": "pga",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9623916226048623,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9701069593429565,
+      "forget_loss": 0.935939107622419,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_proto_lda_recovery",
+      "unlearner": "pga",
+      "recovery": "prototype_lda",
+      "all_acc": 1,
+      "all_loss": 0,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0,
+      "forget_loss": 0,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": 0.0001862999051809311
+    }
+  ],
+  "stage_evaluation": {
+    "full_after_fl": {
+      "all": {
+        "acc": 1,
+        "loss": 0.9426388586721113,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0.9520993232727051,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0.9102027756827218,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0.9102027756827218,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0.9539706110954285,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0.9614230990409851,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0.9409042596817017,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    "pga_pre_recovery": {
+      "all": {
+        "acc": 1,
+        "loss": 0.9623916226048623,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0.9701069593429565,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0.935939107622419,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0.935939107622419,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0.9721638560295105,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0.9791244864463806,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0.9590325355529785,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    "pga_proto_lda_recovery": {
+      "all": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "recovery_state_change": {
+    "states": [
+      {
+        "name": "backbone.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "classifier.weight",
+        "is_buffer": false,
+        "selected": true,
+        "l2_change": 1532.9205787892602,
+        "changed": true
+      },
+      {
+        "name": "classifier.bias",
+        "is_buffer": false,
+        "selected": true,
+        "l2_change": 6292.541473431334,
+        "changed": true
+      }
+    ],
+    "trainable_names": [
+      "classifier.weight",
+      "classifier.bias"
+    ],
+    "changed_parameters": [
+      "classifier.weight",
+      "classifier.bias"
+    ],
+    "changed_buffers": [],
+    "backbone_unchanged": true,
+    "buffers_unchanged": true,
+    "state_l2_change": 6476.567277171525,
+    "max_delta_norm": null,
+    "projection_satisfied": false,
+    "feature_proof": {
+      "sample_count": 124,
+      "feature_dim": 512,
+      "feature_sha256": [
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad"
+      ],
+      "exactly_equal": true,
+      "scope": "fixed_test_windows",
+      "backbone_sha256": "8d501b050d6df472611f299b0577ec1aa5dcb70b8a3a8426212c69e2209c8418"
+    }
+  },
+  "recovered_model_manifest": {
+    "stage": "pga_proto_lda_recovery",
+    "checkpoint": "models/model_pga_proto_lda_recovery.pt",
+    "checkpoint_sha256": "d6ee8488abfe6a989e4128e710febe37545bcad7ee367b283be94cda0547b491",
+    "parameters_sha256": "bc21a825206db7f50d86f6a3317438d561237724a39fe32e01111b464bf33057",
+    "data_domain": "equipment",
+    "data_origin": "public_equipment_demo",
+    "model_key": "bearing_resnet18_v1",
+    "task_metrics": {
+      "stage": "pga_proto_lda_recovery",
+      "unlearner": "pga",
+      "recovery": "prototype_lda",
+      "all_acc": 1,
+      "all_loss": 0,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0,
+      "forget_loss": 0,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "recovery_time_sec": 0.0001862999051809311
+    }
+  },
+  "parent_model_id": "071b207d-0d02-4f89-860e-20239c1fcdd9",
+  "isolation": {
+    "exit_code": 0,
+    "pid": 59736,
+    "appcontainer_sid": "S-1-15-2-3181024461-2468983186-1784339490-858612254-1833699629-4052967070-1124730386",
+    "capability_count": 0,
+    "inherited_handles": false,
+    "host_observed_appcontainer": true,
+    "mechanism": "windows_appcontainer_v1",
+    "schema_version": "ful-c6-isolation-v1",
+    "task_id": "eed437b4-6151-424b-9d55-73f03e915fb6",
+    "attempt_id": "f1535ff9-2934-4e9c-90d7-25e90b7ae2a3",
+    "operation": "RECOVER",
+    "admitted_files": [
+      {
+        "name": "full/models/model_full.pt",
+        "sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+        "size_bytes": 67157101
+      },
+      {
+        "name": "full/execution_context.json",
+        "sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+        "size_bytes": 25783
+      },
+      {
+        "name": "full/metrics.csv",
+        "sha256": "ef65f3e22e2e2b2522c403758b763f84606b6984436bf2d04d38b46b6979bfe6",
+        "size_bytes": 270
+      },
+      {
+        "name": "full/dataset-manifest.json",
+        "sha256": "5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6",
+        "size_bytes": 6181
+      },
+      {
+        "name": "full/precomputed_prototypes.json",
+        "sha256": "b8aa6c2736d0ca21bf38e032c8c4f78d8a3ac594f5bc5cd245534d9af83446f2",
+        "size_bytes": 117000
+      },
+      {
+        "name": "full/precompute_signature.json",
+        "sha256": "c338510a537187015fda2486c79fb85e96e3b68546d4f3eff7adec75cb8169ff",
+        "size_bytes": 2261
+      },
+      {
+        "name": "full/state_schema.json",
+        "sha256": "5511661bb364b3ebf5241332d43796164d7091a7610fbb797ee3e3bfb7d7ea33",
+        "size_bytes": 15558
+      },
+      {
+        "name": "full/eval_snapshot.npz",
+        "sha256": "6dae5f56aa8cf6581f2d8074c5dd57eb7367bb83005349493ec640efe191c663",
+        "size_bytes": 471080
+      },
+      {
+        "name": "full/evaluation_manifest.json",
+        "sha256": "1c7bae0f4e49cba145acb603238d4b12499d0337b9f8db612538267426f32cdd",
+        "size_bytes": 8423
+      },
+      {
+        "name": "pre/models/model_pga_pre_recovery.pt",
+        "sha256": "f343476e2a9680747305c6f7822d3ef8486c3820b2dadc2da29d8d7c1ebf0bea",
+        "size_bytes": 67157037
+      },
+      {
+        "name": "pre/execution_context.json",
+        "sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+        "size_bytes": 25783
+      },
+      {
+        "name": "pre/parent_reference.json",
+        "sha256": "679d21864fc3b77eb729bf9b5f469ca62c869cd787826b5c4641519899b7c0f7",
+        "size_bytes": 39946
+      },
+      {
+        "name": "pre/operation_result.json",
+        "sha256": "c9b2c80699e7e626d90d2757014df4a7d4feff90ed945294ae84b8132eec9060",
+        "size_bytes": 3029
+      },
+      {
+        "name": "pre/metrics.csv",
+        "sha256": "92e88303ee7d4ba5fbd41ae18465addfbd7aa69cd7980f8a5419ef3b7f833dad",
+        "size_bytes": 369
+      },
+      {
+        "name": "pre/stage_evaluation.json",
+        "sha256": "088d33ee915896811cbd779554468c4ded68f682eab056cdc5d2ce8601ea8395",
+        "size_bytes": 11052
+      },
+      {
+        "name": "pre/eval_snapshot.npz",
+        "sha256": "6dae5f56aa8cf6581f2d8074c5dd57eb7367bb83005349493ec640efe191c663",
+        "size_bytes": 471080
+      },
+      {
+        "name": "pre/evaluation_manifest.json",
+        "sha256": "1c7bae0f4e49cba145acb603238d4b12499d0337b9f8db612538267426f32cdd",
+        "size_bytes": 8423
+      },
+      {
+        "name": "pre/pga_state_change.json",
+        "sha256": "8ad25053450a467530367940c0acef6d085aa777d12d3909e697354f1b9c7115",
+        "size_bytes": 22164
+      },
+      {
+        "name": "pre/verification/checkpoint_manifest.json",
+        "sha256": "70a4988b08f2ab4301797d2fd1ddef80cb39c9f548b3896eb23ab432f2992158",
+        "size_bytes": 1148
+      }
+    ],
+    "read_scope": [
+      "trusted_python_runtime",
+      "frozen_code",
+      "minimal_input"
+    ],
+    "write_scope": [
+      "attempt_run",
+      "attempt_temp"
+    ],
+    "training_container_admitted": false,
+    "target_training_admitted": false,
+    "prototype_rebuilt": false
+  },
+  "access_probe": {
+    "schema_version": "ful-c6-access-probe-v1",
+    "pid": 59736,
+    "probes": [
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\data\\cwru_demo_v1\\dataset-manifest.json",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\data\\cwru_demo_v1\\dataset.npz",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\data\\cwru_admission_20261026\\raw\\normal\\97.mat",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\apps\\backend\\var\\published\\task-runs\\f504901c-3117-426c-8444-ca7164ab6ba0\\f4117466-51ba-43d3-be5f-401c60bad9ac\\89dbfc84b3074885b091b984ca4731a8\\run\\data_snapshot.npz",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\apps\\backend\\var\\published\\task-runs\\f504901c-3117-426c-8444-ca7164ab6ba0\\f4117466-51ba-43d3-be5f-401c60bad9ac\\89dbfc84b3074885b091b984ca4731a8\\run\\history.pt",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\apps\\backend\\var\\published\\task-runs\\f504901c-3117-426c-8444-ca7164ab6ba0\\f4117466-51ba-43d3-be5f-401c60bad9ac\\89dbfc84b3074885b091b984ca4731a8\\run\\target_train_snapshot.npz",
+        "result": "DENIED"
+      },
+      {
+        "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\apps\\backend\\var\\published\\task-runs\\f504901c-3117-426c-8444-ca7164ab6ba0\\f4117466-51ba-43d3-be5f-401c60bad9ac\\89dbfc84b3074885b091b984ca4731a8\\run\\models\\..\\data_snapshot.npz",
+        "result": "DENIED"
+      }
+    ],
+    "all_denied": true
+  },
+  "prototype_selection": {
+    "schema_version": "ful-equipment-precompute-selection-v1",
+    "id": "15c5fedc-9cdc-46f2-b6a8-1a41365c3f06",
+    "withdrawal_id": "481365d1-7749-4d5d-a4b8-117b1220a028",
+    "context_id": "52c6b36b-5654-43d3-989c-113d2972e421",
+    "bundle_id": "43048e73-d7a8-431f-b8c2-2902299633e7",
+    "prototype_id": "df33ecd3-6689-4a8d-8fb5-fa7c2af1a66a",
+    "ready_sequence": 4,
+    "first_request_sequence": 5,
+    "selection_sequence": 6,
+    "selected_by": "admin",
+    "selected_at": "2026-11-05T06:15:06Z",
+    "prototype_rebuilt": false
+  },
+  "collection_mode": "training_end_prewithdrawal",
+  "integrity": {
+    "status": "VALIDATED",
+    "validator_version": "c6-isolated-operations-artifacts-v1",
+    "binary_checkpoints_deserialized": false
+  },
+  "id": "task-eed437b4-6151-424b-9d55-73f03e915fb6",
+  "task_id": "eed437b4-6151-424b-9d55-73f03e915fb6",
+  "attempt_id": "f1535ff9-2934-4e9c-90d7-25e90b7ae2a3",
+  "validated_at": "2026-11-05T06:27:13Z",
+  "publication": {
+    "output_sha256": "a467387431c968fd4c51b02b8185de07bc077c7bfea1b3ea4e66f808cc0bfe40",
+    "validator_version": "synthetic-artifacts-v1",
+    "artifact_count": 15
+  },
+  "artifacts": [
+    {
+      "id": "a33efaaf-0a69-42f4-b831-acbb5191c0b2",
+      "name": "run/config.json",
+      "artifact_type": "CONFIG",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/config.json",
+      "sha256": "999ef646e5af3bb59813385525ce043bcb00364d0691a54d7b5d2ba7b868e53c",
+      "size_bytes": 597,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "fb2226de-51d7-44e5-898b-5c493b24dcc8",
+      "name": "run/execution_context.json",
+      "artifact_type": "EXECUTION_CONTEXT",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/execution_context.json",
+      "sha256": "240f85a8670beb0f0ee59e29746126344391a960e096839ce1f3c9e34dee2b8b",
+      "size_bytes": 25783,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "65432313-656d-4d32-a171-5e45abdad5da",
+      "name": "run/parent_reference.json",
+      "artifact_type": "PARENT_REFERENCE",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/parent_reference.json",
+      "sha256": "e6ff57a19307552bf78d2a47207be900cf6579b0827c22d2a6c01145672ee43a",
+      "size_bytes": 43736,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "4a49ca92-25f4-4793-9cf2-1b24ff9c1ebc",
+      "name": "run/operation_result.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/operation_result.json",
+      "sha256": "9c9225427411ac34fb0ddc383c3be214701efd3f19b71f3f9c2091ef9aba5340",
+      "size_bytes": 3138,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "089605bd-8d23-48fb-850e-90d5df278417",
+      "name": "run/run_status.json",
+      "artifact_type": "RUN_STATUS",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/run_status.json",
+      "sha256": "8a3cdc26186034a6bc41b06bc2455f40103e09c1de18e9090da0aa3045888d15",
+      "size_bytes": 170,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "23470dc6-22d2-40e2-a576-37d012edc59d",
+      "name": "run/metrics.csv",
+      "artifact_type": "METRICS",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/metrics.csv",
+      "sha256": "d4dc20e773e5a6df6f1ea2deee9371cf0b53ae97dd910187be420800be10906d",
+      "size_bytes": 444,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "810b088c-0556-4689-80a6-35f110c36ad3",
+      "name": "run/stage_evaluation.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/stage_evaluation.json",
+      "sha256": "42d289b45ef37cb03c2ded3f84889daf5a6a3ea5fa0d1a81304a27afebcab368",
+      "size_bytes": 16480,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "ec98770b-253b-478e-9f42-0b82f46866a9",
+      "name": "run/verification/checkpoint_manifest.json",
+      "artifact_type": "CHECKPOINT_MANIFEST",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/verification/checkpoint_manifest.json",
+      "sha256": "dd34ae9ddcac236daa15131bc8d88ada50c9c96a54c069250c2010845bdf3fa3",
+      "size_bytes": 1139,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "e76b08d2-e92a-415c-9a40-8b9455a91f30",
+      "name": "run/models/model_pga_proto_lda_recovery.pt",
+      "artifact_type": "STAGE_CHECKPOINT",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/models/model_pga_proto_lda_recovery.pt",
+      "sha256": "d6ee8488abfe6a989e4128e710febe37545bcad7ee367b283be94cda0547b491",
+      "size_bytes": 67156141,
+      "available": true,
+      "state": "AVAILABLE",
+      "stage": "pga_proto_lda_recovery"
+    },
+    {
+      "id": "c70b2320-7f72-4bcc-ac1e-cbc1e93fde0b",
+      "name": "run/recovery_state_change.json",
+      "artifact_type": "STATE_CHANGE",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/recovery_state_change.json",
+      "sha256": "bcdfe4a3e13b945780b72ef302a64406a0f9181526c23e38e5e95bcba377207f",
+      "size_bytes": 21395,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "90bf75b4-9a6e-466b-b849-9833a8bed34a",
+      "name": "run/isolation.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/isolation.json",
+      "sha256": "d3fb16fdf0f0047bb8a8651aec603aa2e9922215d649797edc931f8d56f7038f",
+      "size_bytes": 4041,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "2adc2d9b-dfed-4b71-8ec3-d7b362756c0a",
+      "name": "run/access_probe.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/run/access_probe.json",
+      "sha256": "d425cb38aabb15485d176630ba0da18aa21d4e4aeb9a30c925eefe13e2ea8f59",
+      "size_bytes": 1606,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "5f2af163-f0b1-4f4f-a46f-3cfaeb1a3ea7",
+      "name": "output.json",
+      "artifact_type": "OUTPUT_MANIFEST",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/output.json",
+      "sha256": "a467387431c968fd4c51b02b8185de07bc077c7bfea1b3ea4e66f808cc0bfe40",
+      "size_bytes": 3976,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "3fd31d03-7d1c-4190-af5e-9bb40b47f6d9",
+      "name": "input.json",
+      "artifact_type": "TASK_INPUT",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/input.json",
+      "sha256": "987b89f6b1515ffe52218403eb5ba3af08ed88a61ce2c780d4899e5dc3fc2caf",
+      "size_bytes": 27425,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "fbf935c2-6919-4af8-bd00-80d916bebb74",
+      "name": "validation-report.json",
+      "artifact_type": "VALIDATION_REPORT",
+      "storage_ref": "published/task-runs/eed437b4-6151-424b-9d55-73f03e915fb6/f1535ff9-2934-4e9c-90d7-25e90b7ae2a3/28c077d31ad7430a84cf084c4a00246a/validation-report.json",
+      "sha256": "d2621288b28adbc8e31b399fc3d058e98a95afa8a338ca6a6e7958e962a0f29a",
+      "size_bytes": 329,
+      "available": true,
+      "state": "AVAILABLE"
+    }
+  ],
+  "model_versions": {
+    "FULL": "746d9207-6b21-4f09-b5ce-4fa2678edf6f",
+    "PRE": "071b207d-0d02-4f89-860e-20239c1fcdd9",
+    "RECOVERED": "6db0119d-c485-4684-bcc6-b3120c1b1a2f"
+  }
+}

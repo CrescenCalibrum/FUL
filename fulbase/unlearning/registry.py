@@ -5,6 +5,7 @@ from fulbase.unlearning.federaser_lite import FedEraserLiteUnlearner
 from fulbase.unlearning.history_subtract import HistorySubtractUnlearner
 from fulbase.unlearning.pga import PGAUnlearner
 from fulbase.unlearning.retrain_oracle import RetrainOracleUnlearner
+from fulbase.unlearning.retrain_fl import RetrainFLUnlearner
 
 
 _UNLEARNERS: dict[str, type[BaseUnlearner]] = {
@@ -12,6 +13,7 @@ _UNLEARNERS: dict[str, type[BaseUnlearner]] = {
     FedEraserLiteUnlearner.name: FedEraserLiteUnlearner,
     PGAUnlearner.name: PGAUnlearner,
     RetrainOracleUnlearner.name: RetrainOracleUnlearner,
+    RetrainFLUnlearner.name: RetrainFLUnlearner,
 }
 
 

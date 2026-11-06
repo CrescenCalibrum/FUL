@@ -49,6 +49,7 @@ from __future__ import annotations
 import numpy as np
 
 from fulbase.utils import add_arrays
+from fulbase.unlearning.history_validation import validate_history_request
 
 
 def _to_float32(arrays):
@@ -67,6 +68,7 @@ def recover_with_federaser_replay(
     """
     if not history:
         raise ValueError("Empty history; cannot run FedEraser replay.")
+    validate_history_request(history, forget_client_ids)
 
     params = _to_float32(history[0]["global_before"])
 

@@ -1,0 +1,259 @@
+- generic [ref=e31]:
+  - complementary [ref=e32]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e33] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e37]:
+        - text: 知枢
+        - generic [ref=e38]: FEDERATED INTELLIGENCE
+    - generic [ref=e39]:
+      - generic [ref=e40]: 研
+      - generic [ref=e41]:
+        - strong [ref=e42]: 设备智能运维研究
+        - generic [ref=e43]: 系统演示项目
+      - generic [ref=e44]: DEV
+    - navigation "主导航" [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: 项目空间
+        - link "工作台" [ref=e48] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e52]:
+        - paragraph [ref=e53]: 数据中心
+        - link "数据集管理 1" [ref=e54] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e57]: 数据集管理
+          - generic [ref=e58]: "1"
+        - link "站点与客户端" [ref=e59] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e63]:
+        - paragraph [ref=e64]: 研究工作区
+        - link "联邦实验" [ref=e65] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=e69] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=e73] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e77] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e81] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e85] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e89] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e93]:
+      - generic [ref=e97]:
+        - text: 可追溯的研究演示
+        - generic [ref=e98]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e99]:
+        - generic [ref=e100]: 研
+        - generic [ref=e101]:
+          - strong [ref=e102]: 研究管理员
+          - generic [ref=e103]: ADMIN
+        - button "退出" [ref=e104] [cursor=pointer]
+  - generic [ref=e105]:
+    - banner [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: 研究工作区
+        - strong [ref=e111]: 实验结果
+      - generic [ref=e112]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e113]: 后端数据模式
+        - generic [ref=e116]: 研究内容三 / 系统演示
+    - main [ref=e117]:
+      - link "← 返回实验列表" [ref=e828] [cursor=pointer]:
+        - /url: "#/experiments"
+      - generic [ref=e829]:
+        - generic [ref=e830]:
+          - paragraph [ref=e831]: SYNTHETIC EXECUTION
+          - heading "独立原型恢复 · 三阶段评估" [level=1] [ref=e832]
+          - paragraph [ref=e833]: 已保存 Pre 与原型 · CPU 独立恢复
+        - generic [ref=e834]:
+          - button "查看配置" [ref=e835] [cursor=pointer]
+          - button "导出当前指标" [ref=e837] [cursor=pointer]
+      - paragraph [ref=e841]: task-294aba13-3646-4f1e-9eda-96ffb9c6fd67
+      - generic [ref=e842]:
+        - generic [ref=e843]:
+          - text: 模型适配
+          - strong [ref=e844]: FASHIONMNIST
+        - generic [ref=e845]:
+          - text: 客户端
+          - strong [ref=e846]: "3"
+        - generic [ref=e847]:
+          - text: 来源 Full 轮次
+          - strong [ref=e848]: "1"
+        - generic [ref=e849]:
+          - text: 随机种子
+          - strong [ref=e850]: "42"
+        - generic [ref=e851]:
+          - text: 原型噪声 σ
+          - strong [ref=e852]: "0"
+        - generic [ref=e853]:
+          - text: 遗忘客户端
+          - strong [ref=e854]: "0"
+      - generic [ref=e855]:
+        - heading "Pre → Recovered · 独立原型恢复" [level=3] [ref=e856]
+        - paragraph [ref=e857]: Full、Pre 为已有版本的参考评估；本任务只使用已保存原型重建分类头，未训练、遗忘、重新构建原型或执行审计。
+        - paragraph [ref=e858]:
+          - link "来源 Full" [ref=e859] [cursor=pointer]:
+            - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - text: →
+          - link "来源 Pre" [ref=e860] [cursor=pointer]:
+            - /url: "#/models/50119790-8019-44af-b2f8-bca9a692fd17"
+          - text: →
+          - link "本次 Recovered 血缘" [ref=e861] [cursor=pointer]:
+            - /url: "#/models/17559c5f-5a89-4c2d-b0c7-a50f8559eb0b"
+          - text: ·
+          - link "使用的原型版本" [ref=e862] [cursor=pointer]:
+            - /url: "#/prototypes/a662c662-3ab3-4064-8358-1fa92cc7507e"
+        - paragraph [ref=e863]: 更新参数 classifier.weight, classifier.bias
+        - paragraph [ref=e864]: backbone 保持不变 · BN / buffer 保持不变 · 参考特征 保持不变
+        - paragraph [ref=e865]: 参考样本 30 个 · 特征相对 L2 变化 0
+        - button "导出恢复不变量证据" [ref=e866] [cursor=pointer]
+      - generic [ref=e868]:
+        - generic [ref=e869]:
+          - text: 实际来源
+          - strong [ref=e870]: 来源合成数据快照
+        - generic [ref=e871]:
+          - text: 类别
+          - strong [ref=e872]: "10"
+        - generic [ref=e873]:
+          - text: 训练样本
+          - strong [ref=e874]: "60"
+        - generic [ref=e875]:
+          - text: 测试样本
+          - strong [ref=e876]: "30"
+        - link "查看来源任务" [ref=e877] [cursor=pointer]:
+          - /url: "#/tasks/294aba13-3646-4f1e-9eda-96ffb9c6fd67"
+      - paragraph [ref=e881]: 这是合成数据上的功能验证。执行完成和工件校验不等同于遗忘有效或正式审计通过。 原型统计尚无完整隐私会计，不能据此给出隐私预算。
+      - generic [ref=e882]:
+        - generic [ref=e883]:
+          - generic [ref=e884]:
+            - heading "三个模型阶段" [level=3] [ref=e885]
+            - paragraph [ref=e886]: 同一上下文的三个模型版本；Full 和 Pre 引用原记录，Recovered 来自本次独立恢复。
+          - generic [ref=e888] [cursor=pointer]:
+            - generic:
+              - combobox "遗忘算子" [ref=e890]
+              - generic [ref=e891]: pga
+        - generic [ref=e896]:
+          - article [ref=e897]:
+            - paragraph [ref=e898]:
+              - text: 完整模型
+              - code [ref=e899]: M_full
+            - strong [ref=e900]: 20.00%
+            - generic [ref=e901]: 保留集准确率 · 20 样本
+            - generic [ref=e902]: 遗忘集 10.00%
+          - article [ref=e903]:
+            - paragraph [ref=e904]:
+              - text: 遗忘后 · 恢复前
+              - code [ref=e905]: M_unlearned
+            - strong [ref=e906]: 20.00%
+            - generic [ref=e907]: 保留集准确率 · 20 样本
+            - generic [ref=e908]: 遗忘集 10.00%
+          - article [ref=e909]:
+            - paragraph [ref=e910]:
+              - text: 原型恢复后
+              - code [ref=e911]: M_recovered
+            - strong [ref=e912]: 100.00%
+            - generic [ref=e913]: 保留集准确率 · 20 样本
+            - generic [ref=e914]: 遗忘集 100.00%
+        - generic [ref=e915]:
+          - generic [ref=e916]: 原型恢复增益 Recovered − Pre
+          - strong [ref=e917]: +80.00 个百分点
+          - generic [ref=e918]: 按保留集准确率计算
+        - img "完整模型、遗忘后恢复前和原型恢复后的保留集与遗忘集准确率，纵轴0到100百分比" [ref=e919]
+        - generic [ref=e922]: 遗忘集准确率不能单独证明遗忘有效；恢复增益为负时按原值显示。
+      - generic [ref=e925]:
+        - generic [ref=e927]:
+          - heading "全部阶段指标" [level=3] [ref=e928]
+          - paragraph [ref=e929]: 准确率按百分比展示，CSV 导出保留 0–1 原值；耗时来自实际日志。
+        - generic [ref=e931]:
+          - table [ref=e933]:
+            - rowgroup [ref=e940]:
+              - row [ref=e941]:
+                - columnheader "模型阶段" [ref=e942]
+                - columnheader "保留集准确率" [ref=e944]
+                - columnheader "遗忘集准确率" [ref=e946]
+                - columnheader "全体准确率" [ref=e948]
+                - columnheader "恢复耗时 / s" [ref=e950]
+          - table [ref=e956]:
+            - rowgroup [ref=e963]:
+              - row [ref=e964]:
+                - cell [ref=e965]:
+                  - generic [ref=e966]:
+                    - strong [ref=e967]: Full · 来源模型参考
+                    - paragraph [ref=e968]: none / none
+                - cell "20.00%" [ref=e969]
+                - cell "10.00%" [ref=e971]
+                - cell "16.67%" [ref=e973]
+                - cell "未记录" [ref=e975]
+              - row [ref=e977]:
+                - cell [ref=e978]:
+                  - generic [ref=e979]:
+                    - strong [ref=e980]: Pre · 遗忘后恢复前
+                    - paragraph [ref=e981]: pga / none
+                - cell "20.00%" [ref=e982]
+                - cell "10.00%" [ref=e984]
+                - cell "16.67%" [ref=e986]
+                - cell "未记录" [ref=e988]
+              - row [ref=e990]:
+                - cell [ref=e991]:
+                  - generic [ref=e992]:
+                    - strong [ref=e993]: Recovered · 原型恢复
+                    - paragraph [ref=e994]: pga / prototype_lda
+                - cell "100.00%" [ref=e995]
+                - cell "100.00%" [ref=e997]
+                - cell "100.00%" [ref=e999]
+                - cell "0.100" [ref=e1001]
+      - generic [ref=e1003]:
+        - generic [ref=e1004]:
+          - generic [ref=e1005]:
+            - heading "工件完整性" [level=3] [ref=e1006]
+            - paragraph [ref=e1007]: 后端独立校验后保存的发布副本，状态对应发布时的记录。
+          - generic [ref=e1008]: 已校验 · 13 项
+        - generic [ref=e1010]:
+          - generic [ref=e1011]:
+            - code [ref=e1014]: run/config.json
+            - generic [ref=e1015]: 发布时已校验
+          - generic [ref=e1016]:
+            - code [ref=e1019]: run/execution_context.json
+            - generic [ref=e1020]: 发布时已校验
+          - generic [ref=e1021]:
+            - code [ref=e1024]: run/metrics.csv
+            - generic [ref=e1025]: 发布时已校验
+          - generic [ref=e1026]:
+            - code [ref=e1029]: run/models/model_pga_proto_lda_recovery.pt
+            - generic [ref=e1030]: 发布时已校验
+          - generic [ref=e1031]:
+            - code [ref=e1034]: run/parent_reference.json
+            - generic [ref=e1035]: 发布时已校验
+          - generic [ref=e1036]:
+            - code [ref=e1039]: run/prototype_signature.json
+            - generic [ref=e1040]: 发布时已校验
+          - generic [ref=e1041]:
+            - code [ref=e1044]: run/recovery_result.json
+            - generic [ref=e1045]: 发布时已校验
+          - generic [ref=e1046]:
+            - code [ref=e1049]: run/recovery_state_change.json
+            - generic [ref=e1050]: 发布时已校验
+          - generic [ref=e1051]:
+            - code [ref=e1054]: run/run_status.json
+            - generic [ref=e1055]: 发布时已校验
+          - generic [ref=e1056]:
+            - code [ref=e1059]: run/verification/checkpoint_manifest.json
+            - generic [ref=e1060]: 发布时已校验
+          - generic [ref=e1061]:
+            - code [ref=e1064]: output.json
+            - generic [ref=e1065]: 发布时已校验
+          - generic [ref=e1066]:
+            - code [ref=e1069]: input.json
+            - generic [ref=e1070]: 发布时已校验
+          - generic [ref=e1071]:
+            - code [ref=e1074]: validation-report.json
+            - generic [ref=e1075]: 发布时已校验
+        - generic [ref=e1076]:
+          - generic [ref=e1077]: config.json · SHA-256
+          - code [ref=e1078]: a50cf425710c999e95847e6a00dbb05e4184c308b11f5d9675ef58f8fa4b038a
+          - generic [ref=e1079]: metrics.csv · SHA-256
+          - code [ref=e1080]: 3f9add9f74a3dcb5686a6427fe142862a06bb42fe43c90e962918b5564bb2f85
+    - contentinfo [ref=e233]:
+      - generic [ref=e234]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e235]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

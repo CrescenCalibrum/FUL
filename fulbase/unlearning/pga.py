@@ -1,133 +1,97 @@
 from __future__ import annotations
-
-from itertools import cycle
-
-import numpy as np
 import torch
 from torch import nn
-
+from torch.utils.data import ConcatDataset, DataLoader
 from fulbase.data import make_merged_loader
 from fulbase.models import build_model
-from fulbase.unlearning.base import BaseUnlearner, UnlearningContext, UnlearningResult
-from fulbase.utils import arrays_l2_norm, diff_arrays, get_model_parameters, set_model_parameters
+from fulbase.unlearning.base import BaseUnlearner, UnlearningResult
+from fulbase.utils import get_model_parameters, set_model_parameters, state_change_report, set_seed
+from fulbase.verification.markers import MarkerDataset, derived_seed
 
-
-def _set_trainable_layers(model: nn.Module, mode: str) -> list[str]:
-    """控制 PGA 更新哪些层。SmallCNN 推荐 head；ResNet18 后续可用 last。"""
-    mode = mode.lower()
-    trainable_names: list[str] = []
+def _set_trainable_layers(model, mode):
+    if mode not in {"head", "last", "all"}:
+        raise ValueError("layers must be head, last or all")
+    names = []
     for name, p in model.named_parameters():
-        if mode == "all":
-            p.requires_grad = True
-        elif mode == "head":
-            p.requires_grad = ("classifier" in name or name.startswith("fc."))
-        elif mode == "last":
-            p.requires_grad = (
-                "classifier" in name
-                or name.startswith("fc.")
-                or name.startswith("layer4")
-            )
-        else:
-            raise ValueError(f"Unsupported pga_layers={mode}; choose from head/last/all")
+        head = name.startswith(("classifier.", "fc."))
+        last = name.startswith(("layer4.", "backbone.layer4."))
+        p.requires_grad = mode == "all" or head or (mode == "last" and last)
         if p.requires_grad:
-            trainable_names.append(name)
-    if not trainable_names:
-        raise ValueError(f"No trainable parameters selected for pga_layers={mode}")
-    return trainable_names
+            names.append(name)
+    if not names:
+        raise ValueError("No trainable parameters selected")
+    return names
 
-
-def _project_to_l2_ball(
-    model: nn.Module,
-    center_parameters: list[np.ndarray],
-    max_delta_norm: float,
-) -> bool:
-    """把当前模型参数投影回 final_parameters 附近的 L2 球，避免梯度上升把模型打崩。"""
-    if max_delta_norm <= 0:
-        return False
-    current = get_model_parameters(model)
-    diff = diff_arrays(current, center_parameters)
-    norm = arrays_l2_norm(diff)
-    if norm <= max_delta_norm or norm <= 1e-12:
-        return False
-    scale = max_delta_norm / norm
-    projected = [(c + d * scale).astype(c.dtype) for c, d in zip(center_parameters, diff)]
-    set_model_parameters(model, projected)
+def _project_to_l2_ball(model, center_parameters, max_delta_norm):
+    """Only selected floating parameters; buffers including BN counters stay fixed."""
+    if max_delta_norm < 0:
+        raise ValueError("Projection radius must be nonnegative")
+    centers = dict(zip(model.state_dict(), center_parameters))
+    with torch.no_grad():
+        selected = [(p, torch.as_tensor(centers[name], device=p.device, dtype=p.dtype))
+                    for name, p in model.named_parameters() if p.requires_grad]
+        norm = sum(float((p-c).double().square().sum()) for p, c in selected) ** 0.5
+        if norm <= max_delta_norm:
+            return False
+        for p, c in selected:
+            p.copy_(c + (p-c) * (max_delta_norm / max(norm, 1e-30)))
     return True
 
-
-def pga_unlearn(
-    ctx: UnlearningContext,
-    steps: int = 100,
-    lr: float = 1e-4,
-    project_ratio: float = 0.01,
-    layers: str = "head",
-) -> UnlearningResult:
-    """Projected Gradient Ascent 联邦遗忘近似实现。
-
-    该实现用于实验 baseline：在被遗忘客户端数据上做梯度上升，使 forget loss 增大。
-    注意：它需要访问被遗忘客户端数据，因此论文中应说明它是“目标客户端参与/可访问遗忘集”的 baseline。
-    """
+def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data_scope="real"):
+    """Approximate ascent baseline with target training access. Never audit inputs."""
+    if steps < 0 or lr <= 0 or project_ratio < 0:
+        raise ValueError("Invalid PGA budget")
+    if data_scope not in {"real", "real_and_markers", "markers_only"}:
+        raise ValueError("Unknown PGA data scope")
+    set_seed(derived_seed(ctx.cfg.seed, "pga", data_scope))
     model = build_model(dataset=ctx.dataset, num_classes=ctx.num_classes)
     set_model_parameters(model, ctx.final_parameters)
-    model.to(ctx.device)
-    model.train()
-
-    trainable_names = _set_trainable_layers(model, layers)
-    params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.SGD(params, lr=lr, momentum=0.0)
-    criterion = nn.CrossEntropyLoss()
-
-    forget_loader = make_merged_loader(
-        ctx.fd.trainset,
-        ctx.fd.train_indices,
-        ctx.forget_client_ids,
-        batch_size=ctx.batch_size,
-        shuffle=True,
-    )
-    loader_iter = cycle(forget_loader)
-
-    center_norm = arrays_l2_norm(ctx.final_parameters)
-    max_delta_norm = float(project_ratio) * max(center_norm, 1e-12)
-    projected_times = 0
-    losses: list[float] = []
-
+    model.to(ctx.device).eval()  # freeze all BN running state, including all-layer PGA
+    names = _set_trainable_layers(model, layers)
+    optimizer = torch.optim.SGD([p for p in model.parameters() if p.requires_grad], lr=lr)
+    datasets = []
+    if data_scope != "markers_only":
+        datasets.append(make_merged_loader(ctx.fd.trainset, ctx.fd.train_indices,
+                        ctx.forget_client_ids, ctx.batch_size).dataset)
+    if data_scope != "real":
+        if ctx.marker_config is None or not ctx.marker_config.enabled:
+            raise ValueError("Marker ascent requires enabled training markers")
+        datasets.extend(MarkerDataset(ctx.marker_config, cid, ctx.dataset, "train",
+                        derived_seed(ctx.cfg.seed, "train-markers"), ctx.num_classes)
+                        for cid in ctx.forget_client_ids)
+    source = ConcatDataset(datasets)
+    if not len(source):
+        raise ValueError("Empty PGA source")
+    loader = DataLoader(source, batch_size=ctx.batch_size, shuffle=True,
+                        generator=torch.Generator().manual_seed(derived_seed(ctx.cfg.seed, "pga-batches")))
+    batches = iter(loader)
+    norm = sum(float(p.detach().double().square().sum())
+               for p in model.parameters() if p.requires_grad) ** 0.5
+    radius = project_ratio * max(norm, 1e-12)
+    projected, losses = 0, []
     for _ in range(int(steps)):
-        x, y = next(loader_iter)
-        x, y = x.to(ctx.device), y.to(ctx.device)
+        try:
+            x, y = next(batches)
+        except StopIteration:
+            batches = iter(loader)
+            x, y = next(batches)
         optimizer.zero_grad(set_to_none=True)
-        loss = criterion(model(x), y)
-        # 最小化 -loss 等价于最大化 forget loss。
+        loss = nn.functional.cross_entropy(model(x.to(ctx.device)), y.to(ctx.device))
         (-loss).backward()
         optimizer.step()
-        if _project_to_l2_ball(model, ctx.final_parameters, max_delta_norm):
-            projected_times += 1
-        losses.append(float(loss.detach().cpu().item()))
-
-    return UnlearningResult(
-        name="pga",
-        parameters=get_model_parameters(model),
-        logs={
-            "steps": int(steps),
-            "lr": float(lr),
-            "project_ratio": float(project_ratio),
-            "max_delta_norm": float(max_delta_norm),
-            "layers": layers,
-            "trainable_names": trainable_names,
-            "projected_times": int(projected_times),
-            "first_loss": losses[0] if losses else None,
-            "last_loss": losses[-1] if losses else None,
-        },
-    )
-
+        projected += int(_project_to_l2_ball(model, ctx.final_parameters, radius))
+        losses.append(float(loss.detach()))
+    return UnlearningResult("pga", get_model_parameters(model), {
+        "steps": steps, "lr": lr, "project_ratio": project_ratio,
+        "max_delta_norm": radius, "layers": layers, "trainable_names": names,
+        "bn_policy": "frozen_running_state", "data_scope": data_scope,
+        "projected_times": projected, "first_loss": losses[0] if losses else None,
+        "last_loss": losses[-1] if losses else None,
+        **state_change_report(model, ctx.final_parameters)})
 
 class PGAUnlearner(BaseUnlearner):
     name = "pga"
-
-    def unlearn(self, ctx: UnlearningContext) -> UnlearningResult:
-        return pga_unlearn(
-            ctx=ctx,
-            steps=int(getattr(ctx.cfg, "pga_steps", 100)),
-            lr=float(getattr(ctx.cfg, "pga_lr", 1e-4)),
-            project_ratio=float(getattr(ctx.cfg, "pga_project_ratio", 0.01)),
-            layers=str(getattr(ctx.cfg, "pga_layers", "head")),
-        )
+    def unlearn(self, ctx):
+        return pga_unlearn(ctx, steps=ctx.cfg.pga_steps, lr=ctx.cfg.pga_lr,
+                           project_ratio=ctx.cfg.pga_project_ratio, layers=ctx.cfg.pga_layers,
+                           data_scope=getattr(ctx.cfg, "pga_data_scope", "real"))

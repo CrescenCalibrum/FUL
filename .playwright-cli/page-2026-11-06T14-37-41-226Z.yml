@@ -1,0 +1,229 @@
+- generic [ref=f2e117]:
+  - complementary [ref=f2e118]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e119] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e123]:
+        - text: 知枢
+        - generic [ref=f2e124]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e125]:
+      - generic [ref=f2e126]: 研
+      - generic [ref=f2e127]:
+        - strong [ref=f2e128]: 设备智能运维研究
+        - generic [ref=f2e129]: 系统演示项目
+      - generic [ref=f2e130]: DEV
+    - navigation "主导航" [ref=f2e131]:
+      - generic [ref=f2e132]:
+        - paragraph [ref=f2e133]: 项目空间
+        - link "工作台" [ref=f2e134] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e138]:
+        - paragraph [ref=f2e139]: 数据中心
+        - link "数据集管理 1" [ref=f2e140] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f2e143]: 数据集管理
+          - generic [ref=f2e144]: "1"
+        - link "站点与客户端" [ref=f2e145] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=f2e149] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=f2e153] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=f2e157]:
+        - paragraph [ref=f2e158]: 研究工作区
+        - link "联邦实验" [ref=f2e159] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f2e163] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "训练时原型与恢复" [ref=f2e167] [cursor=pointer]:
+          - /url: "#/precomputed-recovery"
+        - link "设备上下文与模型" [ref=f2e171] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=f2e175] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "设备开发审计" [ref=f2e179] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+        - link "三阶段比较" [ref=f2e183] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f2e187] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e191] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f2e195] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f2e199] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e203] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e207]:
+      - generic [ref=f2e211]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e212]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e213]:
+        - generic [ref=f2e214]: 研
+        - generic [ref=f2e215]:
+          - strong [ref=f2e216]: 研究管理员
+          - generic [ref=f2e217]: ADMIN
+        - button "退出" [ref=f2e218] [cursor=pointer]
+  - generic [ref=f2e219]:
+    - banner [ref=f2e220]:
+      - generic [ref=f2e221]:
+        - generic [ref=f2e222]: 数据中心
+        - strong [ref=f2e225]: 当前状态与运维复核
+      - generic [ref=f2e226]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f2e227]: 后端数据模式
+        - generic [ref=f2e230]: 研究内容三 / 系统演示
+    - main [ref=f2e231]:
+      - generic [ref=f2e233]:
+        - paragraph [ref=f2e234]: CURRENT STATE & REVIEW
+        - heading "当前状态与运维复核" [level=1] [ref=f2e235]
+        - paragraph [ref=f2e236]: 最近离线诊断的规则解释、人工意见及可追溯业务报告。
+      - generic [ref=f2e237]:
+        - link "返回设备详情与诊断" [ref=f2e238] [cursor=pointer]:
+          - /url: "#/devices/4ae24483-6a92-4576-b0b6-31f9102c295d"
+        - button "刷新状态" [ref=f2e239] [cursor=pointer]
+      - alert [ref=f2e241]:
+        - generic [ref=f2e242]: 撤回约束已生效：旧模型不可用于新诊断，仅可选用已登记候选；标准化器仍含目标统计贡献，正式设备审计不足。
+      - generic [ref=f2e244]:
+        - heading "预计算模拟负载 0 HP · 模拟负载 0 HP" [level=3] [ref=f2e245]
+        - paragraph [ref=f2e246]: 数据版本：cwru_demo_v1；客户端 0。多个隔离演示模型可并存，以下逐模型展示最近请求，失败或执行中不回退到旧成功结果。
+        - paragraph [ref=f2e247]: 规则：cwru-current-state-v2 · 未设分数门槛。这里的“当前”不表示实时物理状态；无采样时间时不构造退化趋势。
+        - article [ref=f2e249]:
+          - generic [ref=f2e458]: 正常
+          - paragraph [ref=f2e250]:
+            - link "RECOVERED · 6db0119d-c485-4684-bcc6-b3120c1b1a2f" [ref=f2e251] [cursor=pointer]:
+              - /url: "#/models/6db0119d-c485-4684-bcc6-b3120c1b1a2f"
+          - link "诊断 3dbf0077-aba6-4c1c-bea4-5d390f7985e0" [ref=f2e252] [cursor=pointer]:
+            - /url: "#/diagnoses/3dbf0077-aba6-4c1c-bea4-5d390f7985e0"
+          - paragraph [ref=f2e253]: 本窗口预测为正常；核对采样条件并按既定流程复查。
+          - paragraph [ref=f2e254]: 采样：未记录请求：2026/11/5 14:29:39推理：2026/11/5 14:29:51
+          - paragraph [ref=f2e255]: 复核：未复核
+      - generic [ref=f2e256]:
+        - heading "诊断与状态记录 · 3" [level=3] [ref=f2e257]
+        - generic [ref=f2e259]:
+          - table [ref=f2e261]:
+            - rowgroup [ref=f2e269]:
+              - row [ref=f2e270]:
+                - columnheader "诊断 / 模型" [ref=f2e271]
+                - columnheader "窗口" [ref=f2e273]
+                - columnheader "状态" [ref=f2e275]
+                - columnheader "预测 / 真值" [ref=f2e277]
+                - columnheader "判定依据" [ref=f2e279]
+                - columnheader "复核" [ref=f2e281]
+          - table [ref=f2e287]:
+            - rowgroup [ref=f2e295]:
+              - row [ref=f2e296]:
+                - cell [ref=f2e297]:
+                  - generic [ref=f2e298]:
+                    - link "3dbf0077-aba6-4c1c-bea4-5d390f7985e0" [ref=f2e299] [cursor=pointer]:
+                      - /url: "#/diagnoses/3dbf0077-aba6-4c1c-bea4-5d390f7985e0"
+                    - paragraph [ref=f2e300]: RECOVERED · 6db0119d-c485-4684-bcc6-b3120c1b1a2f
+                - cell "cwru_normal_Normal_0:test:0" [ref=f2e301]
+                - cell "正常 SUCCEEDED" [ref=f2e303]:
+                  - generic [ref=f2e304]:
+                    - generic [ref=f2e460]: 正常
+                    - paragraph [ref=f2e305]: SUCCEEDED
+                - cell "正常 / 正常" [ref=f2e306]
+                - cell "VALID_CLASS_MAPPING" [ref=f2e308]
+                - cell [ref=f2e310]:
+                  - button "查看与复核" [ref=f2e312] [cursor=pointer]
+              - row [ref=f2e314]:
+                - cell [ref=f2e315]:
+                  - generic [ref=f2e316]:
+                    - link "c3856b62-f44f-45c5-ba4b-3dac3387aafe" [ref=f2e317] [cursor=pointer]:
+                      - /url: "#/diagnoses/c3856b62-f44f-45c5-ba4b-3dac3387aafe"
+                    - paragraph [ref=f2e318]: RECOVERED · 6db0119d-c485-4684-bcc6-b3120c1b1a2f
+                - cell "cwru_normal_Normal_0:test:0" [ref=f2e319]
+                - cell "无法判定 FAILED" [ref=f2e321]:
+                  - generic [ref=f2e322]:
+                    - generic [ref=f2e462]: 无法判定
+                    - paragraph [ref=f2e323]: FAILED
+                - cell "缺失 / 缺失" [ref=f2e324]
+                - cell "NO_VALID_RESULT" [ref=f2e326]
+                - cell [ref=f2e328]:
+                  - button "查看与复核" [ref=f2e330] [cursor=pointer]
+              - row [ref=f2e332]:
+                - cell [ref=f2e333]:
+                  - generic [ref=f2e334]:
+                    - link "8a360762-f530-4d9b-a456-df6d3bcfc9ac" [ref=f2e335] [cursor=pointer]:
+                      - /url: "#/diagnoses/8a360762-f530-4d9b-a456-df6d3bcfc9ac"
+                    - paragraph [ref=f2e336]: RECOVERED · 6db0119d-c485-4684-bcc6-b3120c1b1a2f
+                - cell "cwru_normal_Normal_0:test:0" [ref=f2e337]
+                - cell "无法判定 FAILED" [ref=f2e339]:
+                  - generic [ref=f2e340]:
+                    - generic [ref=f2e464]: 无法判定
+                    - paragraph [ref=f2e341]: FAILED
+                - cell "缺失 / 缺失" [ref=f2e342]
+                - cell "NO_VALID_RESULT" [ref=f2e344]
+                - cell [ref=f2e346]:
+                  - button "查看与复核" [ref=f2e348] [cursor=pointer]
+      - generic [ref=f2e350]:
+        - heading "人工复核（追加记录）" [level=3] [ref=f2e351]
+        - generic [ref=f2e353] [cursor=pointer]:
+          - generic:
+            - combobox "复核诊断" [ref=f2e355]
+            - generic [ref=f2e356]: RECOVERED · 3dbf0077-aba6-4c1c-bea4-5d390f7985e0
+        - paragraph [ref=f2e361]: 原预测：正常；数据集真值：正常；状态：正常。人工意见不会修改以上结果。
+        - paragraph [ref=f2e362]: 状态摘要：67d9552f4b7369d45fd786c9042095665c62a6757452cb93009a30855e2a15a3
+        - generic [ref=f2e363]:
+          - generic [ref=f2e364]:
+            - text: 复核意见
+            - generic [ref=f2e366] [cursor=pointer]:
+              - generic:
+                - combobox "复核意见" [ref=f2e368]
+                - generic [ref=f2e369]: 需要更多数据
+          - generic [ref=f2e374]:
+            - text: 复核备注
+            - generic [ref=f2e375]:
+              - textbox "复核备注" [ref=f2e376]
+              - status "0 / 2000 characters" [ref=f2e377]: 0 / 2000
+          - button "追加复核记录" [disabled] [ref=f2e378]
+        - generic [ref=f2e381]:
+          - table [ref=f2e383]:
+            - rowgroup [ref=f2e389]:
+              - row [ref=f2e390]:
+                - columnheader "意见" [ref=f2e391]
+                - columnheader "备注" [ref=f2e393]
+                - columnheader "执行人" [ref=f2e395]
+                - columnheader "时间 / 证据" [ref=f2e397]
+          - generic [ref=f2e402]:
+            - table:
+              - rowgroup
+            - generic [ref=f2e403]: 尚未人工复核
+      - generic [ref=f2e405]:
+        - generic [ref=f2e406]:
+          - heading "业务报告" [level=3] [ref=f2e407]
+          - button "生成业务报告" [ref=f2e408] [cursor=pointer]
+        - paragraph [ref=f2e410]: 报告冻结生成时的状态、原诊断、人工复核与来源摘要。按模型分别计数，不混算准确率；历史报告不随后续复核变化。
+        - generic [ref=f2e412]:
+          - table [ref=f2e414]:
+            - rowgroup [ref=f2e419]:
+              - row [ref=f2e420]:
+                - columnheader "报告" [ref=f2e421]
+                - columnheader "生成时间" [ref=f2e423]
+                - columnheader "操作" [ref=f2e425]
+          - table [ref=f2e431]:
+            - rowgroup [ref=f2e436]:
+              - row [ref=f2e437]:
+                - cell "3e713406-dd84-49b2-a456-ca007fcc6628" [ref=f2e438]
+                - cell "2026/11/5 14:29:59" [ref=f2e440]
+                - cell [ref=f2e442]:
+                  - button "查看" [active] [ref=f2e444] [cursor=pointer]
+        - generic [ref=f2e466]:
+          - paragraph [ref=f2e467]: 报告 3e713406-dd84-49b2-a456-ca007fcc6628JSON 内容 SHA-256：c86b85b99c86259502ba8f9ed4b8494e570de8875fbc36f8b84e89e12a06ba1d
+          - generic [ref=f2e468]:
+            - button "下载业务报告 JSON" [ref=f2e469] [cursor=pointer]
+            - button "下载诊断 CSV" [ref=f2e471] [cursor=pointer]
+            - button "下载指标 CSV" [ref=f2e473] [cursor=pointer]
+          - paragraph [ref=f2e475]: 记录 3 条，模型分组 1 组。CSV 下载前核对字节摘要；来源可用性以报告生成时为准。
+      - generic [ref=f2e446]:
+        - heading "适用范围与限制" [level=3] [ref=f2e447]
+        - paragraph [ref=f2e448]: 模拟负载映射，不代表真实电力站点或独立物理设备。
+        - paragraph [ref=f2e449]: 最近离线窗口解释，不表示实时设备状态或未来趋势。
+        - paragraph [ref=f2e450]: 输出分数未经概率校准；本规则不设分数门槛。
+        - paragraph [ref=f2e451]: 无真实采样时间、退化序列和寿命标签，不预测健康指数、故障提前量或 RUL。
+        - paragraph [ref=f2e452]: 人工复核是人工意见，不覆盖原预测或数据集真值。
+        - paragraph [ref=f2e453]: 站点授权与贡献撤回为模拟业务约束；标准化器仍含撤回贡献，设备正式审计尚未完成。
+        - paragraph [ref=f2e454]: 规则文件 SHA-256：c2f9804e412ae9124343945702d9f535c7354338c017ec08eddbc797e4984dd1
+    - contentinfo [ref=f2e455]:
+      - generic [ref=f2e456]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f2e457]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

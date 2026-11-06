@@ -1,0 +1,2 @@
+[     238ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4173/api/v1/auth/me:0
+[  355859ms] [ERROR] Failed to load resource: the server responded with a status of 409 (Conflict) @ http://127.0.0.1:4173/api/v1/experiments/task-b19194ee-2fcb-468b-9fe0-55952d87d1f4/equipment-evaluation:0

@@ -1,0 +1,139 @@
+- generic [ref=e125]:
+  - complementary [ref=e126]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e127] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e131]:
+        - text: 知枢
+        - generic [ref=e132]: FEDERATED INTELLIGENCE
+    - generic [ref=e133]:
+      - generic [ref=e134]: 研
+      - generic [ref=e135]:
+        - strong [ref=e136]: 设备智能运维研究
+        - generic [ref=e137]: 系统演示项目
+      - generic [ref=e138]: DEV
+    - navigation "主导航" [ref=e139]:
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: 项目空间
+        - link "工作台" [ref=e142] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e146]:
+        - paragraph [ref=e147]: 数据中心
+        - link "数据集管理 1" [ref=e148] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e151]: 数据集管理
+          - generic [ref=e152]: "1"
+        - link "站点与客户端" [ref=e153] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e157]:
+        - paragraph [ref=e158]: 研究工作区
+        - link "联邦实验" [ref=e159] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e163] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=e167] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "三阶段比较" [ref=e171] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e175] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e179] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e183] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e187] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e191] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e195]:
+      - generic [ref=e199]:
+        - text: 可追溯的研究演示
+        - generic [ref=e200]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e201]:
+        - generic [ref=e202]: 研
+        - generic [ref=e203]:
+          - strong [ref=e204]: 研究管理员
+          - generic [ref=e205]: ADMIN
+        - button "退出" [ref=e206] [cursor=pointer]
+  - generic [ref=e207]:
+    - banner [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]: 研究工作区
+        - strong [ref=e213]: 设备上下文与模型
+      - generic [ref=e214]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e215]: 后端数据模式
+        - generic [ref=e218]: 研究内容三 / 系统演示
+    - main [ref=e219]:
+      - generic [ref=e367]:
+        - generic [ref=e368]:
+          - paragraph [ref=e369]: EQUIPMENT CONTEXT
+          - heading "设备上下文与模型" [level=1] [ref=e370]
+          - paragraph [ref=e371]: 绑定已登记设备数据、预处理和显式模型架构，为设备联邦训练准备可追溯输入。
+        - link "合成训练工作台" [ref=e373] [cursor=pointer]:
+          - /url: "#/operations/training"
+      - paragraph [ref=e374]: 当前可登记设备上下文和模型架构。独立设备训练仍待接入，登记不会产生模型 checkpoint 或诊断结果。
+      - generic [ref=e375]:
+        - generic [ref=e376]:
+          - generic [ref=e377]:
+            - heading "设备版本与模型架构" [level=3] [ref=e378]
+            - paragraph [ref=e379]: 可登记设备上下文与模型架构；独立设备训练仍待接入。
+          - button "刷新" [ref=e380] [cursor=pointer]
+        - generic [ref=e382]:
+          - generic [ref=e383]:
+            - generic [ref=e384]: 数据版本
+            - strong [ref=e385]: cwru_demo_v1
+          - generic [ref=e386]:
+            - generic [ref=e387]: 客户端 / 类别 / 窗口
+            - strong [ref=e388]: 4 / 4 / 861
+          - generic [ref=e389]:
+            - generic [ref=e390]: 训练 / 验证 / 测试
+            - strong [ref=e391]: 613 / 124 / 124
+          - generic [ref=e392]:
+            - generic [ref=e393]: 固定 profile
+            - strong [ref=e394]: cwru_cpu_smoke_v1
+        - paragraph [ref=e395]: Manifest SHA-256 5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6
+        - paragraph [ref=e396]: bearing_resnet18_v1 · 输入 1 × 32 × 32 · 4 类 · 512 维特征
+        - paragraph [ref=e397]: 公开轴承数据按负载工况模拟客户端；已标准化输入不重复标准化。固定预处理含四客户端训练贡献，当前没有正式 DP 会计、设备 marker 审计或健康预测。
+        - generic [ref=e398]:
+          - generic [ref=e399]: 训练种子
+          - generic [ref=e400]:
+            - button "decrease number" [ref=e401] [cursor=pointer]
+            - button "increase number" [ref=e405] [cursor=pointer]
+            - spinbutton "训练种子" [ref=e411]: "42"
+          - button "登记设备上下文" [ref=e412] [cursor=pointer]
+        - status [ref=e474]: 已复用相同数据、配置与代码版本的上下文
+      - generic [ref=e414]:
+        - heading "设备上下文 · 1" [level=3] [ref=e445]
+        - generic [ref=e418]:
+          - table [ref=e420]:
+            - rowgroup [ref=e425]:
+              - row [ref=e426]:
+                - columnheader "上下文编号" [ref=e427]
+                - columnheader "登记状态" [ref=e429]
+                - columnheader "登记时间" [ref=e431]
+          - table [ref=e446]:
+            - rowgroup [ref=e451]:
+              - row [ref=e452]:
+                - cell "7bd4be33-5819-4056-acaf-c242dd3584d8" [ref=e453]
+                - cell "REGISTERED" [ref=e455]
+                - cell "2026-11-03T23:11:56Z" [ref=e457]
+        - generic [ref=e439]:
+          - button "Go to previous page" [disabled] [ref=e440]
+          - list [ref=e441]:
+            - listitem "page 1" [ref=e442]: "1"
+          - button "Go to next page" [disabled] [ref=e443]
+      - generic [ref=e459]:
+        - heading "已选设备上下文" [level=3] [ref=e460]
+        - paragraph [ref=e461]: 7bd4be33-5819-4056-acaf-c242dd3584d8
+        - paragraph [ref=e462]: 种子 42 · bearing_resnet18_v1 · REGISTERED
+        - generic [ref=e463]: 当前来源一致
+        - paragraph [ref=e465]: 登记数据版本 075b74d2-cfe2-35a1-8d9d-6b219b3315b1
+        - paragraph [ref=e466]: 4 客户端 · 4 类 · 861 窗口；62 个参数项、60 个 buffer，登记检查未更新模型状态。
+        - paragraph [ref=e467]: 配置 SHA-256 378c5eea4607ab73e846f8579fff2c99970b16d41b945caa59a057e7febf26e9
+        - paragraph [ref=e468]: 规格 SHA-256 d49d1410bc58699cc0f895fdf329cd180c1a9cf3e4aaf545453eef6b6363281d
+        - paragraph [ref=e469]: 划分 SHA-256 33d4128a9b11236ca2dcdd13d4e364c7489fd1aaf8150446b543c64f994b422e
+        - paragraph [ref=e470]: 模型描述 SHA-256 ea80707a01e0309a8b0871f333baaa60d656f0a4b5a0c408d7fd7cf4b3fc285c
+        - button "设备训练待接入" [disabled] [ref=e471]
+        - paragraph [ref=e473]: 这里登记的是数据与模型架构，实际 Full 模型需在后续训练任务完成后生成。
+    - contentinfo [ref=e364]:
+      - generic [ref=e365]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e366]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

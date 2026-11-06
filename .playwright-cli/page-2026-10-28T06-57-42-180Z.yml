@@ -1,0 +1,85 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e9]:
+        - text: 知枢
+        - generic [ref=f2e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e11]:
+      - generic [ref=f2e12]: 研
+      - generic [ref=f2e13]:
+        - strong [ref=f2e14]: 设备智能运维研究
+        - generic [ref=f2e15]: 系统演示项目
+      - generic [ref=f2e16]: DEV
+    - navigation "主导航" [ref=f2e17]:
+      - generic [ref=f2e18]:
+        - paragraph [ref=f2e19]: 项目空间
+        - link "工作台" [ref=f2e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e24]:
+        - paragraph [ref=f2e25]: 数据中心
+        - link "数据集管理 1" [ref=f2e98] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f2e29]: 数据集管理
+          - generic [ref=f2e99]: "1"
+        - link "站点与客户端" [ref=f2e30] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f2e34]:
+        - paragraph [ref=f2e35]: 研究工作区
+        - link "联邦实验" [ref=f2e36] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=f2e40] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=f2e44] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e48] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "审计中心" [ref=f2e52] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e56] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e60]:
+      - generic [ref=f2e64]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e65]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e66]:
+        - generic [ref=f2e67]: 研
+        - generic [ref=f2e68]:
+          - strong [ref=f2e69]: 研究管理员
+          - generic [ref=f2e70]: ADMIN
+        - button "退出" [ref=f2e71] [cursor=pointer]
+  - generic [ref=f2e72]:
+    - banner [ref=f2e73]:
+      - generic [ref=f2e74]:
+        - button "展开菜单" [ref=f2e335] [cursor=pointer]
+        - generic [ref=f2e100]: 研究工作区
+        - strong [ref=f2e101]: 模型版本
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f2e102]: 后端数据模式
+    - main [ref=f2e82]:
+      - link "← 返回独立训练与模型" [ref=f2e315] [cursor=pointer]:
+        - /url: "#/training"
+      - generic [ref=f2e317]:
+        - paragraph [ref=f2e318]: MODEL LINEAGE
+        - heading "模型版本与血缘" [level=1] [ref=f2e319]
+        - paragraph [ref=f2e320]: 模型文件哈希与参数哈希分别记录；版本绑定固定执行上下文。
+      - generic [ref=f2e321]:
+        - heading "PRE · 已发布模型" [level=3] [ref=f2e322]
+        - paragraph [ref=f2e323]: 50119790-8019-44af-b2f8-bca9a692fd17
+        - paragraph [ref=f2e324]:
+          - link "查看执行上下文" [ref=f2e325] [cursor=pointer]:
+            - /url: "#/training?context=b20752f9-36da-47b7-9394-05557fc7fd3e"
+          - text: ·
+          - link "查看来源任务" [ref=f2e326] [cursor=pointer]:
+            - /url: "#/tasks/021e23e6-825d-4d32-bae7-e703d4746165"
+        - paragraph [ref=f2e327]: 文件 SHA-256 43ad3f159b7a1946a7dd9fe1d4b3b063873b01b9ead01bc85c6d7c2c0ca071fb
+        - paragraph [ref=f2e328]: 参数 SHA-256 68bae3f6b1c057830314e6706c6e03d062209ea91e32bd11693ed71231a663e7
+        - paragraph [ref=f2e329]: 上下文签名 6204097e33a9b63ceaf4664fdc320d7ccf9f71fe570b855345f71d4909ca1fdb
+        - heading "父模型" [level=3] [ref=f2e330]
+        - paragraph [ref=f2e331]:
+          - link "b8e257f4-0230-4e0f-85ba-a0a360274d14" [ref=f2e332] [cursor=pointer]:
+            - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - text: · UNLEARN
+        - heading "派生模型" [level=3] [ref=f2e333]
+        - paragraph [ref=f2e334]: 尚无派生版本。
+    - contentinfo [ref=f2e95]:
+      - generic [ref=f2e96]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台

@@ -4,6 +4,7 @@ import numpy as np
 
 from fulbase.unlearning.base import BaseUnlearner, UnlearningContext, UnlearningResult
 from fulbase.utils import add_arrays, arrays_l2_norm, diff_arrays, weighted_average_arrays
+from fulbase.unlearning.history_validation import validate_history_request
 
 
 def _to_float32(arrays: list[np.ndarray]) -> list[np.ndarray]:
@@ -141,6 +142,7 @@ def federaser_lite_unlearn(
     2. 旧版完整客户端历史格式。
     """
     if _is_compact_history(history):
+        validate_history_request(history, forget_client_ids)
         return _federaser_lite_from_compact_history(
             history=history,
             damping=damping,

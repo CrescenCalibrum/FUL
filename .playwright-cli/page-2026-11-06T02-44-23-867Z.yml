@@ -1,0 +1,1258 @@
+- generic [ref=e31]:
+  - complementary [ref=e32]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e33] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e37]:
+        - text: 知枢
+        - generic [ref=e38]: FEDERATED INTELLIGENCE
+    - generic [ref=e39]:
+      - generic [ref=e40]: 研
+      - generic [ref=e41]:
+        - strong [ref=e42]: 设备智能运维研究
+        - generic [ref=e43]: 系统演示项目
+      - generic [ref=e44]: DEV
+    - navigation "主导航" [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: 项目空间
+        - link "工作台" [ref=e48] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e52]:
+        - paragraph [ref=e53]: 数据中心
+        - link "数据集管理 1" [ref=e54] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e57]: 数据集管理
+          - generic [ref=e58]: "1"
+        - link "站点与客户端" [ref=e59] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=e63] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=e67] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=e71]:
+        - paragraph [ref=e72]: 研究工作区
+        - link "联邦实验" [ref=e73] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e77] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "训练时原型与恢复" [ref=e81] [cursor=pointer]:
+          - /url: "#/precomputed-recovery"
+        - link "设备上下文与模型" [ref=e85] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=e89] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "设备开发审计" [ref=e93] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+        - link "三阶段比较" [ref=e97] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e101] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e105] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e109] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e113] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e117] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e121]:
+      - generic [ref=e125]:
+        - text: 可追溯的研究演示
+        - generic [ref=e126]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e127]:
+        - generic [ref=e128]: 研
+        - generic [ref=e129]:
+          - strong [ref=e130]: 研究管理员
+          - generic [ref=e131]: ADMIN
+        - button "退出" [ref=e132] [cursor=pointer]
+  - generic [ref=e133]:
+    - banner [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]: 研究工作区
+        - strong [ref=e139]: 设备标记训练与校准
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e141]: 后端数据模式
+    - main [ref=e143]:
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - paragraph [ref=e146]: EQUIPMENT MARKER CALIBRATION
+          - heading "设备标记训练与校准" [level=1] [ref=e147]
+          - paragraph [ref=e148]: 查看新版本训练、冻结门槛和独立留出样本的实测结果，保留每项未满足条件。
+        - button "刷新" [ref=e150] [cursor=pointer]
+      - paragraph [ref=e152]: 当前属于开发验证。单个训练种子、人工探针和条件置信区间不能构成正式遗忘证明；正式审计计算模板保持关闭。
+      - generic [ref=e153]:
+        - heading "登记已有校准运行" [level=3] [ref=e154]
+        - paragraph [ref=e155]: 系统核验已完成运行的来源、模型文件、观测及统计结果后保存不可变报告。这里只登记已有结果；训练过程由受控校准脚本执行。
+        - generic [ref=e156]:
+          - textbox "校准来源运行编号" [ref=e159]:
+            - /placeholder: 来源运行 UUID
+          - button "核验并登记" [disabled] [ref=e160]
+        - link "旧设备版本的协议条件核查" [ref=e162] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+      - generic [ref=e163]:
+        - heading "不可变校准运行 · 8" [level=3] [ref=e164]
+        - generic [ref=e166]:
+          - table [ref=e168]:
+            - rowgroup [ref=e175]:
+              - row [ref=e176]:
+                - columnheader "来源运行 / 登记时间" [ref=e177]
+                - columnheader "校准门槛" [ref=e179]
+                - columnheader "留出样本开发结论" [ref=e181]
+                - columnheader "正式证明" [ref=e183]
+                - columnheader [ref=e185]
+          - table [ref=e190]:
+            - rowgroup [ref=e197]:
+              - row [ref=e198]:
+                - cell [ref=e199]:
+                  - generic [ref=e200]:
+                    - button "b57bf8dc-7319-4934-ad41-fabda1450974" [ref=e201] [cursor=pointer]
+                    - paragraph [ref=e203]: 2026/11/6 09:52:23
+                - cell "校准门槛满足" [ref=e204]
+                - cell "证据不足" [ref=e206]
+                - cell "证据不足" [ref=e208]
+                - cell [ref=e212]:
+                  - button "查看" [ref=e214] [cursor=pointer]
+              - row [ref=e216]:
+                - cell [ref=e217]:
+                  - generic [ref=e218]:
+                    - button "3520f4c5-1673-4045-ad17-ae81edfd7c10" [ref=e219] [cursor=pointer]
+                    - paragraph [ref=e221]: 2026/11/6 07:24:03
+                - cell "校准门槛满足" [ref=e222]
+                - cell "证据不足" [ref=e224]
+                - cell "证据不足" [ref=e226]
+                - cell [ref=e230]:
+                  - button "查看" [ref=e232] [cursor=pointer]
+              - row [ref=e234]:
+                - cell [ref=e235]:
+                  - generic [ref=e236]:
+                    - button "f56af911-4c8a-4bd4-9c07-1e51a78129ac" [ref=e237] [cursor=pointer]
+                    - paragraph [ref=e239]: 2026/11/6 02:25:24
+                - cell "校准门槛满足" [ref=e240]
+                - cell "条件不满足" [ref=e242]
+                - cell "证据不足" [ref=e244]
+                - cell [ref=e248]:
+                  - button "查看" [ref=e250] [cursor=pointer]
+              - row [ref=e252]:
+                - cell [ref=e253]:
+                  - generic [ref=e254]:
+                    - button "e03c440d-be7f-4fac-b14a-f2eb3fa0ea70" [ref=e255] [cursor=pointer]
+                    - paragraph [ref=e257]: 2026/11/6 01:33:34
+                - cell "校准门槛满足" [ref=e258]
+                - cell "条件不满足" [ref=e260]
+                - cell "证据不足" [ref=e262]
+                - cell [ref=e266]:
+                  - button "查看" [ref=e268] [cursor=pointer]
+              - row [ref=e270]:
+                - cell [ref=e271]:
+                  - generic [ref=e272]:
+                    - button "e961fb43-9e3d-4d23-a7b2-4907ee56c38a" [ref=e273] [cursor=pointer]
+                    - paragraph [ref=e275]: 2026/11/6 00:58:46
+                - cell "校准门槛满足" [ref=e276]
+                - cell "条件不满足" [ref=e278]
+                - cell "证据不足" [ref=e280]
+                - cell [ref=e284]:
+                  - button "查看" [ref=e286] [cursor=pointer]
+              - row [ref=e288]:
+                - cell [ref=e289]:
+                  - generic [ref=e290]:
+                    - button "065f248c-b65e-4764-ab6b-273d9d7f2655" [ref=e291] [cursor=pointer]
+                    - paragraph [ref=e293]: 2026/11/6 00:14:16
+                - cell "校准门槛满足" [ref=e294]
+                - cell "条件不满足" [ref=e296]
+                - cell "证据不足" [ref=e298]
+                - cell [ref=e302]:
+                  - button "查看" [ref=e304] [cursor=pointer]
+              - row [ref=e306]:
+                - cell [ref=e307]:
+                  - generic [ref=e308]:
+                    - button "25c2b856-3ddb-4e3e-a9aa-cf4656e6fb5e" [ref=e309] [cursor=pointer]
+                    - paragraph [ref=e311]: 2026/11/5 22:17:44
+                - cell "校准门槛满足" [ref=e312]
+                - cell "条件不满足" [ref=e314]
+                - cell "证据不足" [ref=e316]
+                - cell [ref=e320]:
+                  - button "查看" [ref=e322] [cursor=pointer]
+              - row [ref=e324]:
+                - cell [ref=e325]:
+                  - generic [ref=e326]:
+                    - button "7eeefcb7-26b8-4c8b-b85f-20a266eb01eb" [ref=e327] [cursor=pointer]
+                    - paragraph [ref=e329]: 2026/11/5 18:53:41
+                - cell "校准门槛满足" [ref=e330]
+                - cell "条件不满足" [ref=e332]
+                - cell "证据不足" [ref=e334]
+                - cell [ref=e338]:
+                  - button "查看" [ref=e340] [cursor=pointer]
+      - generic [ref=e342]:
+        - generic [ref=e343]:
+          - heading "校准：校准门槛满足" [level=3] [ref=e344]
+          - button "导出冻结报告 JSON" [ref=e345] [cursor=pointer]
+        - paragraph [ref=e347]: 留出样本开发结论：证据不足；数值诊断：证据不足。正式遗忘证明：证据不足。
+        - paragraph [ref=e348]: 来源 b57bf8dc-7319-4934-ad41-fabda1450974上下文 2882adbb-eff0-40ec-82e6-484dc47af4f3协议 cwru_marker_stopping_v10内容 SHA-256 84e0d8b22d89662ca52f4c4e1b6a02cf8ba10ba92e0cde888f96289f3d034dbd
+        - alert [ref=e349]:
+          - generic [ref=e350]: 本次为新的遗忘与恢复候选，复用已冻结的 Full、初始模型与保留客户端重训参照；没有重新训练 Full。校准与留出样本均为新生成。
+        - paragraph [ref=e352]: 父运行 7eeefcb7-26b8-4c8b-b85f-20a266eb01eb
+        - list
+        - generic [ref=e354]:
+          - table [ref=e356]:
+            - rowgroup [ref=e360]:
+              - row [ref=e361]:
+                - columnheader "预声明门槛" [ref=e362]
+                - columnheader "结果" [ref=e364]
+          - table [ref=e370]:
+            - rowgroup [ref=e374]:
+              - row [ref=e375]:
+                - cell "Full 标记可学习性" [ref=e376]
+                - cell "门槛满足" [ref=e378]
+              - row [ref=e382]:
+                - cell "保留客户端重训的目标区分能力" [ref=e383]
+                - cell "门槛满足" [ref=e385]
+              - row [ref=e389]:
+                - cell "保留客户端重训的保留侧等效性" [ref=e390]
+                - cell "门槛满足" [ref=e392]
+              - row [ref=e396]:
+                - cell "假遗忘对照不能冒充有效遗忘" [ref=e397]
+                - cell "门槛满足" [ref=e399]
+              - row [ref=e403]:
+                - cell "过度破坏对照检出" [ref=e404]
+                - cell "门槛满足" [ref=e406]
+              - row [ref=e410]:
+                - cell "模型、初始化、划分及训练策略绑定" [ref=e411]
+                - cell "门槛满足" [ref=e413]
+        - paragraph [ref=e417]: 假遗忘与过度破坏对照只在校准样本上验证；本轮没有测量它们在独立留出样本上的检出率。
+        - group [ref=e418]:
+          - generic "对照绑定、固定验证集破坏检查及科研限制" [ref=e419] [cursor=pointer]
+      - generic [ref=e420]:
+        - heading "校准样本 · 16 个预声明检验" [level=3] [ref=e421]
+        - paragraph [ref=e422]: 每客户端 64 个独立样本族，每族 2 个变体先汇总；区间按预声明比较次数进行 Bonferroni 校正。数值均由原始 logits 复算。
+        - generic [ref=e424]:
+          - table [ref=e426]:
+            - rowgroup [ref=e432]:
+              - row [ref=e433]:
+                - columnheader "检验 / 方向" [ref=e434]
+                - columnheader "均值 / 阈值" [ref=e436]
+                - columnheader "置信区间" [ref=e438]
+                - columnheader "局部诊断" [ref=e440]
+          - table [ref=e446]:
+            - rowgroup [ref=e452]:
+              - row [ref=e453]:
+                - cell [ref=e454]:
+                  - generic [ref=e455]:
+                    - text: full_accuracy_c0
+                    - paragraph [ref=e456]: lower_bound · family_all_variants_correct
+                - cell [ref=e457]:
+                  - generic [ref=e458]:
+                    - text: "1.000000"
+                    - paragraph [ref=e459]: 阈值 0.500000
+                - cell [ref=e460]:
+                  - generic [ref=e461]:
+                    - text: "[0.879931, 1.000000]"
+                    - paragraph [ref=e462]: wilson · n=64
+                - cell "开发条件满足" [ref=e463]
+              - row [ref=e467]:
+                - cell [ref=e468]:
+                  - generic [ref=e469]:
+                    - text: full_margin_c0
+                    - paragraph [ref=e470]: lower_bound · normalized_margin
+                - cell [ref=e471]:
+                  - generic [ref=e472]:
+                    - text: "0.976447"
+                    - paragraph [ref=e473]: 阈值 0.050000
+                - cell [ref=e474]:
+                  - generic [ref=e475]:
+                    - text: "[0.946092, 1.006802]"
+                    - paragraph [ref=e476]: student_t · n=64
+                - cell "开发条件满足" [ref=e477]
+              - row [ref=e481]:
+                - cell [ref=e482]:
+                  - generic [ref=e483]:
+                    - text: full_accuracy_c1
+                    - paragraph [ref=e484]: lower_bound · family_all_variants_correct
+                - cell [ref=e485]:
+                  - generic [ref=e486]:
+                    - text: "1.000000"
+                    - paragraph [ref=e487]: 阈值 0.500000
+                - cell [ref=e488]:
+                  - generic [ref=e489]:
+                    - text: "[0.879931, 1.000000]"
+                    - paragraph [ref=e490]: wilson · n=64
+                - cell "开发条件满足" [ref=e491]
+              - row [ref=e495]:
+                - cell [ref=e496]:
+                  - generic [ref=e497]:
+                    - text: full_margin_c1
+                    - paragraph [ref=e498]: lower_bound · normalized_margin
+                - cell [ref=e499]:
+                  - generic [ref=e500]:
+                    - text: "0.999278"
+                    - paragraph [ref=e501]: 阈值 0.050000
+                - cell [ref=e502]:
+                  - generic [ref=e503]:
+                    - text: "[0.944629, 1.053926]"
+                    - paragraph [ref=e504]: student_t · n=64
+                - cell "开发条件满足" [ref=e505]
+              - row [ref=e509]:
+                - cell [ref=e510]:
+                  - generic [ref=e511]:
+                    - text: full_accuracy_c2
+                    - paragraph [ref=e512]: lower_bound · family_all_variants_correct
+                - cell [ref=e513]:
+                  - generic [ref=e514]:
+                    - text: "0.984375"
+                    - paragraph [ref=e515]: 阈值 0.500000
+                - cell [ref=e516]:
+                  - generic [ref=e517]:
+                    - text: "[0.853903, 0.998530]"
+                    - paragraph [ref=e518]: wilson · n=64
+                - cell "开发条件满足" [ref=e519]
+              - row [ref=e523]:
+                - cell [ref=e524]:
+                  - generic [ref=e525]:
+                    - text: full_margin_c2
+                    - paragraph [ref=e526]: lower_bound · normalized_margin
+                - cell [ref=e527]:
+                  - generic [ref=e528]:
+                    - text: "0.895874"
+                    - paragraph [ref=e529]: 阈值 0.050000
+                - cell [ref=e530]:
+                  - generic [ref=e531]:
+                    - text: "[0.820849, 0.970898]"
+                    - paragraph [ref=e532]: student_t · n=64
+                - cell "开发条件满足" [ref=e533]
+              - row [ref=e537]:
+                - cell [ref=e538]:
+                  - generic [ref=e539]:
+                    - text: full_accuracy_c3
+                    - paragraph [ref=e540]: lower_bound · family_all_variants_correct
+                - cell [ref=e541]:
+                  - generic [ref=e542]:
+                    - text: "1.000000"
+                    - paragraph [ref=e543]: 阈值 0.500000
+                - cell [ref=e544]:
+                  - generic [ref=e545]:
+                    - text: "[0.879931, 1.000000]"
+                    - paragraph [ref=e546]: wilson · n=64
+                - cell "开发条件满足" [ref=e547]
+              - row [ref=e551]:
+                - cell [ref=e552]:
+                  - generic [ref=e553]:
+                    - text: full_margin_c3
+                    - paragraph [ref=e554]: lower_bound · normalized_margin
+                - cell [ref=e555]:
+                  - generic [ref=e556]:
+                    - text: "0.737649"
+                    - paragraph [ref=e557]: 阈值 0.050000
+                - cell [ref=e558]:
+                  - generic [ref=e559]:
+                    - text: "[0.648977, 0.826322]"
+                    - paragraph [ref=e560]: student_t · n=64
+                - cell "开发条件满足" [ref=e561]
+              - row [ref=e565]:
+                - cell [ref=e566]:
+                  - generic [ref=e567]:
+                    - text: retrain_target_drop_c0
+                    - paragraph [ref=e568]: lower_bound · normalized_margin
+                - cell [ref=e569]:
+                  - generic [ref=e570]:
+                    - text: "1.849487"
+                    - paragraph [ref=e571]: 阈值 0.100000
+                - cell [ref=e572]:
+                  - generic [ref=e573]:
+                    - text: "[1.706489, 1.992484]"
+                    - paragraph [ref=e574]: student_t · n=64
+                - cell "开发条件满足" [ref=e575]
+              - row [ref=e579]:
+                - cell [ref=e580]:
+                  - generic [ref=e581]:
+                    - text: retrain_retain_equivalence_c1
+                    - paragraph [ref=e582]: equivalence · normalized_margin
+                - cell [ref=e583]:
+                  - generic [ref=e584]:
+                    - text: "-0.030905"
+                    - paragraph [ref=e585]: 阈值 0.250000
+                - cell [ref=e586]:
+                  - generic [ref=e587]:
+                    - text: "[-0.091822, 0.030012]"
+                    - paragraph [ref=e588]: student_t · n=64
+                - cell "开发条件满足" [ref=e589]
+              - row [ref=e593]:
+                - cell [ref=e594]:
+                  - generic [ref=e595]:
+                    - text: retrain_retain_equivalence_c2
+                    - paragraph [ref=e596]: equivalence · normalized_margin
+                - cell [ref=e597]:
+                  - generic [ref=e598]:
+                    - text: "0.025617"
+                    - paragraph [ref=e599]: 阈值 0.250000
+                - cell [ref=e600]:
+                  - generic [ref=e601]:
+                    - text: "[-0.018714, 0.069948]"
+                    - paragraph [ref=e602]: student_t · n=64
+                - cell "开发条件满足" [ref=e603]
+              - row [ref=e607]:
+                - cell [ref=e608]:
+                  - generic [ref=e609]:
+                    - text: retrain_retain_equivalence_c3
+                    - paragraph [ref=e610]: equivalence · normalized_margin
+                - cell [ref=e611]:
+                  - generic [ref=e612]:
+                    - text: "0.059797"
+                    - paragraph [ref=e613]: 阈值 0.250000
+                - cell [ref=e614]:
+                  - generic [ref=e615]:
+                    - text: "[0.001974, 0.117619]"
+                    - paragraph [ref=e616]: student_t · n=64
+                - cell "开发条件满足" [ref=e617]
+              - row [ref=e621]:
+                - cell [ref=e622]:
+                  - generic [ref=e623]:
+                    - text: fake_target_no_drop_c0
+                    - paragraph [ref=e624]: upper_bound · normalized_margin
+                - cell [ref=e625]:
+                  - generic [ref=e626]:
+                    - text: "0.000000"
+                    - paragraph [ref=e627]: 阈值 0.100000
+                - cell [ref=e628]:
+                  - generic [ref=e629]:
+                    - text: "[0.000000, 0.000000]"
+                    - paragraph [ref=e630]: student_t · n=64
+                - cell "开发条件满足" [ref=e631]
+              - row [ref=e635]:
+                - cell [ref=e636]:
+                  - generic [ref=e637]:
+                    - text: over_retain_drop_c1
+                    - paragraph [ref=e638]: lower_bound · normalized_margin
+                - cell [ref=e639]:
+                  - generic [ref=e640]:
+                    - text: "2.160327"
+                    - paragraph [ref=e641]: 阈值 0.100000
+                - cell [ref=e642]:
+                  - generic [ref=e643]:
+                    - text: "[2.095269, 2.225385]"
+                    - paragraph [ref=e644]: student_t · n=64
+                - cell "开发条件满足" [ref=e645]
+              - row [ref=e649]:
+                - cell [ref=e650]:
+                  - generic [ref=e651]:
+                    - text: over_retain_drop_c2
+                    - paragraph [ref=e652]: lower_bound · normalized_margin
+                - cell [ref=e653]:
+                  - generic [ref=e654]:
+                    - text: "1.918770"
+                    - paragraph [ref=e655]: 阈值 0.100000
+                - cell [ref=e656]:
+                  - generic [ref=e657]:
+                    - text: "[1.773801, 2.063739]"
+                    - paragraph [ref=e658]: student_t · n=64
+                - cell "开发条件满足" [ref=e659]
+              - row [ref=e663]:
+                - cell [ref=e664]:
+                  - generic [ref=e665]:
+                    - text: over_retain_drop_c3
+                    - paragraph [ref=e666]: lower_bound · normalized_margin
+                - cell [ref=e667]:
+                  - generic [ref=e668]:
+                    - text: "1.862985"
+                    - paragraph [ref=e669]: 阈值 0.100000
+                - cell [ref=e670]:
+                  - generic [ref=e671]:
+                    - text: "[1.778154, 1.947816]"
+                    - paragraph [ref=e672]: student_t · n=64
+                - cell "开发条件满足" [ref=e673]
+        - group [ref=e677]:
+          - generic "标准误、方差、临界值及检验原记录" [ref=e678] [cursor=pointer]
+      - generic [ref=e679]:
+        - heading "独立留出样本 · 10 个配对检验" [level=3] [ref=e680]
+        - paragraph [ref=e681]: 每客户端 64 个独立样本族，每族 2 个变体先汇总；区间按预声明比较次数进行 Bonferroni 校正。数值均由原始 logits 复算。
+        - generic [ref=e683]:
+          - table [ref=e685]:
+            - rowgroup [ref=e691]:
+              - row [ref=e692]:
+                - columnheader "检验 / 方向" [ref=e693]
+                - columnheader "均值 / 阈值" [ref=e695]
+                - columnheader "置信区间" [ref=e697]
+                - columnheader "局部诊断" [ref=e699]
+          - table [ref=e705]:
+            - rowgroup [ref=e711]:
+              - row [ref=e712]:
+                - cell [ref=e713]:
+                  - generic [ref=e714]:
+                    - text: PRE_target_drop_c0
+                    - paragraph [ref=e715]: lower_bound · normalized_margin
+                - cell [ref=e716]:
+                  - generic [ref=e717]:
+                    - text: "1.525924"
+                    - paragraph [ref=e718]: 阈值 0.100000
+                - cell [ref=e719]:
+                  - generic [ref=e720]:
+                    - text: "[1.427940, 1.623909]"
+                    - paragraph [ref=e721]: student_t · n=64
+                - cell "开发条件满足" [ref=e722]
+              - row [ref=e726]:
+                - cell [ref=e727]:
+                  - generic [ref=e728]:
+                    - text: PRE_target_reference_c0
+                    - paragraph [ref=e729]: equivalence · normalized_margin
+                - cell [ref=e730]:
+                  - generic [ref=e731]:
+                    - text: "0.314939"
+                    - paragraph [ref=e732]: 阈值 0.250000
+                - cell [ref=e733]:
+                  - generic [ref=e734]:
+                    - text: "[0.208720, 0.421158]"
+                    - paragraph [ref=e735]: student_t · n=64
+                - cell "证据不足" [ref=e736]
+              - row [ref=e740]:
+                - cell [ref=e741]:
+                  - generic [ref=e742]:
+                    - text: PRE_retain_equivalence_c1
+                    - paragraph [ref=e743]: equivalence · normalized_margin
+                - cell [ref=e744]:
+                  - generic [ref=e745]:
+                    - text: "-0.000213"
+                    - paragraph [ref=e746]: 阈值 0.250000
+                - cell [ref=e747]:
+                  - generic [ref=e748]:
+                    - text: "[-0.020133, 0.019706]"
+                    - paragraph [ref=e749]: student_t · n=64
+                - cell "开发条件满足" [ref=e750]
+              - row [ref=e754]:
+                - cell [ref=e755]:
+                  - generic [ref=e756]:
+                    - text: PRE_retain_equivalence_c2
+                    - paragraph [ref=e757]: equivalence · normalized_margin
+                - cell [ref=e758]:
+                  - generic [ref=e759]:
+                    - text: "0.003581"
+                    - paragraph [ref=e760]: 阈值 0.250000
+                - cell [ref=e761]:
+                  - generic [ref=e762]:
+                    - text: "[-0.032264, 0.039426]"
+                    - paragraph [ref=e763]: student_t · n=64
+                - cell "开发条件满足" [ref=e764]
+              - row [ref=e768]:
+                - cell [ref=e769]:
+                  - generic [ref=e770]:
+                    - text: PRE_retain_equivalence_c3
+                    - paragraph [ref=e771]: equivalence · normalized_margin
+                - cell [ref=e772]:
+                  - generic [ref=e773]:
+                    - text: "0.002021"
+                    - paragraph [ref=e774]: 阈值 0.250000
+                - cell [ref=e775]:
+                  - generic [ref=e776]:
+                    - text: "[-0.017072, 0.021115]"
+                    - paragraph [ref=e777]: student_t · n=64
+                - cell "开发条件满足" [ref=e778]
+              - row [ref=e782]:
+                - cell [ref=e783]:
+                  - generic [ref=e784]:
+                    - text: RECOVERED_target_drop_c0
+                    - paragraph [ref=e785]: lower_bound · normalized_margin
+                - cell [ref=e786]:
+                  - generic [ref=e787]:
+                    - text: "1.525752"
+                    - paragraph [ref=e788]: 阈值 0.100000
+                - cell [ref=e789]:
+                  - generic [ref=e790]:
+                    - text: "[1.427795, 1.623708]"
+                    - paragraph [ref=e791]: student_t · n=64
+                - cell "开发条件满足" [ref=e792]
+              - row [ref=e796]:
+                - cell [ref=e797]:
+                  - generic [ref=e798]:
+                    - text: RECOVERED_target_reference_c0
+                    - paragraph [ref=e799]: equivalence · normalized_margin
+                - cell [ref=e800]:
+                  - generic [ref=e801]:
+                    - text: "0.315112"
+                    - paragraph [ref=e802]: 阈值 0.250000
+                - cell [ref=e803]:
+                  - generic [ref=e804]:
+                    - text: "[0.209120, 0.421104]"
+                    - paragraph [ref=e805]: student_t · n=64
+                - cell "证据不足" [ref=e806]
+              - row [ref=e810]:
+                - cell [ref=e811]:
+                  - generic [ref=e812]:
+                    - text: RECOVERED_retain_equivalence_c1
+                    - paragraph [ref=e813]: equivalence · normalized_margin
+                - cell [ref=e814]:
+                  - generic [ref=e815]:
+                    - text: "-0.000186"
+                    - paragraph [ref=e816]: 阈值 0.250000
+                - cell [ref=e817]:
+                  - generic [ref=e818]:
+                    - text: "[-0.020105, 0.019732]"
+                    - paragraph [ref=e819]: student_t · n=64
+                - cell "开发条件满足" [ref=e820]
+              - row [ref=e824]:
+                - cell [ref=e825]:
+                  - generic [ref=e826]:
+                    - text: RECOVERED_retain_equivalence_c2
+                    - paragraph [ref=e827]: equivalence · normalized_margin
+                - cell [ref=e828]:
+                  - generic [ref=e829]:
+                    - text: "0.003598"
+                    - paragraph [ref=e830]: 阈值 0.250000
+                - cell [ref=e831]:
+                  - generic [ref=e832]:
+                    - text: "[-0.032158, 0.039354]"
+                    - paragraph [ref=e833]: student_t · n=64
+                - cell "开发条件满足" [ref=e834]
+              - row [ref=e838]:
+                - cell [ref=e839]:
+                  - generic [ref=e840]:
+                    - text: RECOVERED_retain_equivalence_c3
+                    - paragraph [ref=e841]: equivalence · normalized_margin
+                - cell [ref=e842]:
+                  - generic [ref=e843]:
+                    - text: "0.002250"
+                    - paragraph [ref=e844]: 阈值 0.250000
+                - cell [ref=e845]:
+                  - generic [ref=e846]:
+                    - text: "[-0.016868, 0.021367]"
+                    - paragraph [ref=e847]: student_t · n=64
+                - cell "开发条件满足" [ref=e848]
+        - group [ref=e852]:
+          - generic "标准误、方差、临界值及检验原记录" [ref=e853] [cursor=pointer]
+      - generic [ref=e854]:
+        - heading "固定数值执行契约与检查点停止验证" [level=3] [ref=e855]
+        - paragraph [ref=e856]: 模型冻结前，在独立进程中重新执行同一 PGA 与恢复操作，核对完整轨迹、停止结果及模型参数。新校准与留出使用新的样本，并排除全部历史运行已见样本。
+        - generic [ref=e857]:
+          - generic [ref=e858]: 独立进程重复：精确一致
+          - generic [ref=e860]: 固定环境内验证
+          - generic [ref=e862]: 正式遗忘结论仍不足
+        - generic [ref=e864]:
+          - term [ref=e865]: 数值环境
+          - definition [ref=e866]: Windows / AMD64 / cpu · Python 3.11.17 · NumPy 1.26.4 · PyTorch 2.14.1+cpu
+          - term [ref=e867]: 线程与精度
+          - definition [ref=e868]: 2 / 8 线程；优化 float64，发布 float32
+          - term [ref=e869]: 预声明停止规则
+          - definition [ref=e870]: 每 100 步检查原 20 步窗口，上限 1000 步；失败立即停止
+          - term [ref=e871]: 本次实际停止
+          - definition [ref=e872]: 400 步 · 满足操作性平台期规则
+          - term [ref=e873]: 原数值诊断参照
+          - definition [ref=e874]: 停止一致，分类头一致；67e1c639-274a-4336-b007-4f5ab63a4874
+        - img "固定执行契约下对照与候选的实际训练目标" [ref=e875]
+        - generic [ref=e879]:
+          - table [ref=e881]:
+            - rowgroup [ref=e887]:
+              - row [ref=e888]:
+                - columnheader "训练侧操作" [ref=e889]
+                - columnheader "完成 / 上限" [ref=e891]
+                - columnheader "停止原因" [ref=e893]
+                - columnheader "发布模型目标 J" [ref=e895]
+          - table [ref=e901]:
+            - rowgroup [ref=e907]:
+              - row [ref=e908]:
+                - cell "逐步停止的径向对照" [ref=e909]
+                - cell "618 / 1000" [ref=e911]
+                - cell "满足操作性平台期规则" [ref=e913]
+                - cell "-0.189068" [ref=e915]
+              - row [ref=e917]:
+                - cell "检查点停止候选" [ref=e918]
+                - cell "400 / 1000" [ref=e920]
+                - cell "满足操作性平台期规则" [ref=e922]
+                - cell "-0.274244" [ref=e924]
+        - heading "新留出样本：目标与保留客户端重训参照的差距" [level=4] [ref=e926]
+        - generic [ref=e928]:
+          - table [ref=e930]:
+            - rowgroup [ref=e936]:
+              - row [ref=e937]:
+                - columnheader "阶段" [ref=e938]
+                - columnheader "平均差距" [ref=e940]
+                - columnheader "同时置信区间" [ref=e942]
+                - columnheader "原等效门槛 / 结果" [ref=e944]
+          - table [ref=e950]:
+            - rowgroup [ref=e956]:
+              - row [ref=e957]:
+                - cell "PRE" [ref=e958]
+                - cell "0.314939" [ref=e960]
+                - cell "[0.208720, 0.421158]" [ref=e962]
+                - cell "±0.25 / 条件不满足" [ref=e964]
+              - row [ref=e966]:
+                - cell "RECOVERED" [ref=e967]
+                - cell "0.315112" [ref=e969]
+                - cell "[0.209120, 0.421104]" [ref=e971]
+                - cell "±0.25 / 条件不满足" [ref=e973]
+        - heading "冻结后逐类描述" [level=4] [ref=e975]
+        - generic [ref=e977]:
+          - table [ref=e979]:
+            - rowgroup [ref=e985]:
+              - row [ref=e986]:
+                - columnheader "样本角色" [ref=e987]
+                - columnheader "类别" [ref=e989]
+                - columnheader "Pre / 恢复后参照差距" [ref=e991]
+                - columnheader "样本数" [ref=e993]
+          - table [ref=e999]:
+            - rowgroup [ref=e1005]:
+              - row [ref=e1006]:
+                - cell "训练标记" [ref=e1007]
+                - cell "0" [ref=e1009]
+                - cell "0.151381 / 0.151380" [ref=e1011]
+                - cell "16" [ref=e1013]
+              - row [ref=e1015]:
+                - cell "训练标记" [ref=e1016]
+                - cell "1" [ref=e1018]
+                - cell "0.516660 / 0.516660" [ref=e1020]
+                - cell "16" [ref=e1022]
+              - row [ref=e1024]:
+                - cell "训练标记" [ref=e1025]
+                - cell "2" [ref=e1027]
+                - cell "0.598278 / 0.598278" [ref=e1029]
+                - cell "16" [ref=e1031]
+              - row [ref=e1033]:
+                - cell "训练标记" [ref=e1034]
+                - cell "3" [ref=e1036]
+                - cell "-0.102362 / -0.102362" [ref=e1038]
+                - cell "16" [ref=e1040]
+              - row [ref=e1042]:
+                - cell "新校准" [ref=e1043]
+                - cell "0" [ref=e1045]
+                - cell "0.056996 / 0.057626" [ref=e1047]
+                - cell "32" [ref=e1049]
+              - row [ref=e1051]:
+                - cell "新校准" [ref=e1052]
+                - cell "1" [ref=e1054]
+                - cell "0.387403 / 0.386965" [ref=e1056]
+                - cell "32" [ref=e1058]
+              - row [ref=e1060]:
+                - cell "新校准" [ref=e1061]
+                - cell "2" [ref=e1063]
+                - cell "0.540544 / 0.540438" [ref=e1065]
+                - cell "32" [ref=e1067]
+              - row [ref=e1069]:
+                - cell "新校准" [ref=e1070]
+                - cell "3" [ref=e1072]
+                - cell "0.218987 / 0.219893" [ref=e1074]
+                - cell "32" [ref=e1076]
+              - row [ref=e1078]:
+                - cell "新留出" [ref=e1079]
+                - cell "0" [ref=e1081]
+                - cell "0.131770 / 0.131533" [ref=e1083]
+                - cell "32" [ref=e1085]
+              - row [ref=e1087]:
+                - cell "新留出" [ref=e1088]
+                - cell "1" [ref=e1090]
+                - cell "0.458856 / 0.458361" [ref=e1092]
+                - cell "32" [ref=e1094]
+              - row [ref=e1096]:
+                - cell "新留出" [ref=e1097]
+                - cell "2" [ref=e1099]
+                - cell "0.551147 / 0.551209" [ref=e1101]
+                - cell "32" [ref=e1103]
+              - row [ref=e1105]:
+                - cell "新留出" [ref=e1106]
+                - cell "3" [ref=e1108]
+                - cell "0.117985 / 0.119345" [ref=e1110]
+                - cell "32" [ref=e1112]
+        - paragraph [ref=e1114]: 这些逐类数值只用于描述。留出结果未参与本次候选选择、停止或阈值调整；精确重复只适用于已冻结环境，跨平台逐位复现和正式遗忘证明仍未建立。
+        - group [ref=e1115]:
+          - generic "执行契约与检查点停止原记录" [ref=e1116]
+      - generic [ref=e1117]:
+        - heading "目标参照差距与训练可达性" [level=3] [ref=e1118]
+        - paragraph [ref=e1119]: 使用冻结参照模型辅助分析64个目标训练标记。这里的拟合和保护条件消融属于研究诊断，没有发布新模型，也没有产生新的校准或留出结论。
+        - generic [ref=e1120]:
+          - textbox "训练可达性运行编号" [ref=e1123]:
+            - /placeholder: 输入已生成的训练诊断运行 UUID
+            - text: 7b4d456d-9f42-4639-9801-9be9372f2fe8
+          - button "登记训练可达性诊断" [ref=e1124] [cursor=pointer]
+        - generic [ref=e1536]:
+          - generic: 独立重复：完全一致
+          - generic: 原约束见证 0 个
+          - button "导出训练诊断 JSON" [ref=e1537] [cursor=pointer]
+        - paragraph [ref=e1539]: 诊断来源：7b4d456d-9f42-4639-9801-9be9372f2fe8父运行：b57bf8dc-7319-4934-ad41-fabda1450974冻结摘要：04315593b34ef438e75640af61a6cc2cf1fff322c82b52a2f27c5209ca6824f6
+        - heading "逐类差距的代数分解" [level=4] [ref=e1540]
+        - generic "差距分解阶段" [ref=e1541]: 遗忘后、恢复前恢复后
+        - img "逐类分类头项、特征表示项与总差距" [ref=e1542]
+        - generic [ref=e1546]:
+          - table [ref=e1548]:
+            - rowgroup [ref=e1555]:
+              - row [ref=e1556]:
+                - columnheader "类别" [ref=e1557]
+                - columnheader "训练标记" [ref=e1559]
+                - columnheader "总差距" [ref=e1561]
+                - columnheader "分类头项" [ref=e1563]
+                - columnheader "特征表示项" [ref=e1565]
+          - table [ref=e1571]:
+            - rowgroup [ref=e1578]:
+              - row [ref=e1579]:
+                - cell "0" [ref=e1580]
+                - cell "16" [ref=e1582]
+                - cell "0.151380" [ref=e1584]
+                - cell "-1.079724" [ref=e1586]
+                - cell "1.231104" [ref=e1588]
+              - row [ref=e1590]:
+                - cell "1" [ref=e1591]
+                - cell "16" [ref=e1593]
+                - cell "0.516660" [ref=e1595]
+                - cell "-0.893118" [ref=e1597]
+                - cell "1.409778" [ref=e1599]
+              - row [ref=e1601]:
+                - cell "2" [ref=e1602]
+                - cell "16" [ref=e1604]
+                - cell "0.598278" [ref=e1606]
+                - cell "-0.833372" [ref=e1608]
+                - cell "1.431650" [ref=e1610]
+              - row [ref=e1612]:
+                - cell "3" [ref=e1613]
+                - cell "16" [ref=e1615]
+                - cell "-0.102362" [ref=e1617]
+                - cell "-1.231208" [ref=e1619]
+                - cell "1.128846" [ref=e1621]
+        - paragraph [ref=e1623]: 分类头项与特征表示项之和等于总差距。跨模型特征与分类头的搭配只用于代数分析，不代表因果归因或可部署模型。数值口径为float64特征乘头矩阵。
+        - heading "全部保护条件下的有限拟合" [level=4] [ref=e1624]
+        - generic [ref=e1626]:
+          - table [ref=e1628]:
+            - rowgroup [ref=e1636]:
+              - row [ref=e1637]:
+                - columnheader "参照正比例" [ref=e1638]
+                - columnheader "最大匹配残差" [ref=e1640]
+                - columnheader "所需头变化 L2" [ref=e1642]
+                - columnheader "最大原型 RMS / 预算" [ref=e1644]
+                - columnheader "原约束见证" [ref=e1646]
+                - columnheader "Pre起点可行射线比例" [ref=e1648]
+          - table [ref=e1654]:
+            - rowgroup [ref=e1662]:
+              - row [ref=e1663]:
+                - cell "0.25" [ref=e1664]
+                - cell "6.2450e-15" [ref=e1666]
+                - cell "4.479149" [ref=e1668]
+                - cell "0.152213 / 0.100000" [ref=e1670]
+                - cell "未找到" [ref=e1672]
+                - cell "3.3322e-6" [ref=e1674]
+              - row [ref=e1676]:
+                - cell "0.5" [ref=e1677]
+                - cell "6.9805e-15" [ref=e1679]
+                - cell "4.546525" [ref=e1681]
+                - cell "0.153806 / 0.100000" [ref=e1683]
+                - cell "未找到" [ref=e1685]
+                - cell "1.2065e-6" [ref=e1687]
+              - row [ref=e1689]:
+                - cell "1" [ref=e1690]
+                - cell "6.6613e-15" [ref=e1692]
+                - cell "4.966281" [ref=e1694]
+                - cell "0.167050 / 0.100000" [ref=e1696]
+                - cell "未找到" [ref=e1698]
+                - cell "5.3012e-7" [ref=e1700]
+              - row [ref=e1702]:
+                - cell "2" [ref=e1703]
+                - cell "1.0658e-14" [ref=e1705]
+                - cell "6.614932" [ref=e1707]
+                - cell "0.223408 / 0.100000" [ref=e1709]
+                - cell "未找到" [ref=e1711]
+                - cell "2.4991e-7" [ref=e1713]
+        - paragraph [ref=e1715]: 匹配中心化logits是匹配归一化间隔的充分条件，并非必要条件。未找到见证不代表所有遗忘方法或间隔目标不可达。射线结果还受当前Pre起点影响，不能代表其他可行路径。
+        - heading "保护条件的8种组合" [level=4] [ref=e1716]
+        - generic [ref=e1717]:
+          - generic [ref=e1718]: 参照正比例
+          - generic [ref=e1720] [cursor=pointer]:
+            - generic:
+              - combobox "保护条件参照比例" [ref=e1722]
+              - generic [ref=e1723]: "1"
+        - generic [ref=e1729]:
+          - table [ref=e1731]:
+            - rowgroup [ref=e1738]:
+              - row [ref=e1739]:
+                - columnheader "活动保护条件" [ref=e1740]
+                - columnheader "锚点秩 / 可用维数" [ref=e1742]
+                - columnheader "最大原型 RMS" [ref=e1744]
+                - columnheader "全部锚点漂移" [ref=e1746]
+                - columnheader "射线后逐类差距" [ref=e1748]
+          - table [ref=e1754]:
+            - rowgroup [ref=e1761]:
+              - row [ref=e1762]:
+                - cell "无保护锚点（仅诊断）" [ref=e1763]
+                - cell "0 / 513" [ref=e1765]
+                - cell "1.238143" [ref=e1767]
+                - cell "3.837939" [ref=e1769]
+                - cell "0.149874 / 0.508040 / 0.587733 / -0.083813" [ref=e1771]
+              - row [ref=e1773]:
+                - cell "目标自然训练" [ref=e1774]
+                - cell "138 / 375" [ref=e1776]
+                - cell "0.096890" [ref=e1778]
+                - cell "1.877640" [ref=e1780]
+                - cell "3.3506e-7 / 2.1953e-7 / 5.7478e-7 / 6.2104e-7" [ref=e1782]
+              - row [ref=e1784]:
+                - cell "保留训练标记" [ref=e1785]
+                - cell "192 / 321" [ref=e1787]
+                - cell "0.789749" [ref=e1789]
+                - cell "2.525547" [ref=e1791]
+                - cell "0.146346 / 0.488182 / 0.562939 / -0.019823" [ref=e1793]
+              - row [ref=e1795]:
+                - cell "目标自然训练 + 保留训练标记" [ref=e1796]
+                - cell "330 / 183" [ref=e1798]
+                - cell "0.182125" [ref=e1800]
+                - cell "0.112114" [ref=e1802]
+                - cell "0.151380 / 0.516659 / 0.598278 / -0.102362" [ref=e1804]
+              - row [ref=e1806]:
+                - cell "原型均值" [ref=e1807]
+                - cell "4 / 509" [ref=e1809]
+                - cell "0.068279" [ref=e1811]
+                - cell "1.805311" [ref=e1813]
+                - cell "4.0410e-7 / 2.0648e-7 / 5.7811e-7 / 5.5405e-7" [ref=e1815]
+              - row [ref=e1817]:
+                - cell "目标自然训练 + 原型均值" [ref=e1818]
+                - cell "142 / 371" [ref=e1820]
+                - cell "0.087304" [ref=e1822]
+                - cell "1.886274" [ref=e1824]
+                - cell "3.2441e-7 / 2.2191e-7 / 5.8071e-7 / 5.9305e-7" [ref=e1826]
+              - row [ref=e1828]:
+                - cell "保留训练标记 + 原型均值" [ref=e1829]
+                - cell "196 / 317" [ref=e1831]
+                - cell "0.111124" [ref=e1833]
+                - cell "0.738415" [ref=e1835]
+                - cell "0.035532 / 0.065213 / 0.103007 / 0.099309" [ref=e1837]
+              - row [ref=e1839]:
+                - cell "目标自然训练 + 保留训练标记 + 原型均值" [ref=e1840]
+                - cell "334 / 179" [ref=e1842]
+                - cell "0.167050" [ref=e1844]
+                - cell "9.2732e-8" [ref=e1846]
+                - cell "0.151380 / 0.516659 / 0.598278 / -0.102362" [ref=e1848]
+        - paragraph [ref=e1850]: 取消的保护条件可能被破坏。表中放松条件后的拟合不能作为原约束下的成功结果，也不会登记为设备模型。
+        - heading "原型预算诊断" [level=4] [ref=e1851]
+        - generic [ref=e1853]:
+          - table [ref=e1855]:
+            - rowgroup [ref=e1862]:
+              - row [ref=e1863]:
+                - columnheader "原型类别" [ref=e1864]
+                - columnheader "参照正比例" [ref=e1866]
+                - columnheader "匹配代价下界 / 平方预算" [ref=e1868]
+                - columnheader "等式求解残差" [ref=e1870]
+                - columnheader "有限匹配预算障碍" [ref=e1872]
+          - table [ref=e1878]:
+            - rowgroup [ref=e1885]:
+              - row [ref=e1886]:
+                - cell "0" [ref=e1887]
+                - cell "0.25" [ref=e1889]
+                - cell "0.020153 / 0.010000" [ref=e1891]
+                - cell "3.0864e-14" [ref=e1893]
+                - cell "超过预算" [ref=e1895]
+              - row [ref=e1897]:
+                - cell "0" [ref=e1898]
+                - cell "0.5" [ref=e1900]
+                - cell "0.020897 / 0.010000" [ref=e1902]
+                - cell "3.4417e-14" [ref=e1904]
+                - cell "超过预算" [ref=e1906]
+              - row [ref=e1908]:
+                - cell "0" [ref=e1909]
+                - cell "1" [ref=e1911]
+                - cell "0.025235 / 0.010000" [ref=e1913]
+                - cell "5.1403e-14" [ref=e1915]
+                - cell "超过预算" [ref=e1917]
+              - row [ref=e1919]:
+                - cell "0" [ref=e1920]
+                - cell "2" [ref=e1922]
+                - cell "0.045308 / 0.010000" [ref=e1924]
+                - cell "9.1260e-14" [ref=e1926]
+                - cell "超过预算" [ref=e1928]
+              - row [ref=e1930]:
+                - cell "1" [ref=e1931]
+                - cell "0.25" [ref=e1933]
+                - cell "0.021766 / 0.010000" [ref=e1935]
+                - cell "2.4980e-14" [ref=e1937]
+                - cell "超过预算" [ref=e1939]
+              - row [ref=e1941]:
+                - cell "1" [ref=e1942]
+                - cell "0.5" [ref=e1944]
+                - cell "0.022198 / 0.010000" [ref=e1946]
+                - cell "3.0642e-14" [ref=e1948]
+                - cell "超过预算" [ref=e1950]
+              - row [ref=e1952]:
+                - cell "1" [ref=e1953]
+                - cell "1" [ref=e1955]
+                - cell "0.026130 / 0.010000" [ref=e1957]
+                - cell "3.1974e-14" [ref=e1959]
+                - cell "超过预算" [ref=e1961]
+              - row [ref=e1963]:
+                - cell "1" [ref=e1964]
+                - cell "2" [ref=e1966]
+                - cell "0.046276 / 0.010000" [ref=e1968]
+                - cell "4.3299e-14" [ref=e1970]
+                - cell "超过预算" [ref=e1972]
+              - row [ref=e1974]:
+                - cell "2" [ref=e1975]
+                - cell "0.25" [ref=e1977]
+                - cell "0.019547 / 0.010000" [ref=e1979]
+                - cell "4.2077e-14" [ref=e1981]
+                - cell "超过预算" [ref=e1983]
+              - row [ref=e1985]:
+                - cell "2" [ref=e1986]
+                - cell "0.5" [ref=e1988]
+                - cell "0.020071 / 0.010000" [ref=e1990]
+                - cell "4.4631e-14" [ref=e1992]
+                - cell "超过预算" [ref=e1994]
+              - row [ref=e1996]:
+                - cell "2" [ref=e1997]
+                - cell "1" [ref=e1999]
+                - cell "0.023806 / 0.010000" [ref=e2001]
+                - cell "3.7303e-14" [ref=e2003]
+                - cell "超过预算" [ref=e2005]
+              - row [ref=e2007]:
+                - cell "2" [ref=e2008]
+                - cell "2" [ref=e2010]
+                - cell "0.042022 / 0.010000" [ref=e2012]
+                - cell "5.3291e-14" [ref=e2014]
+                - cell "超过预算" [ref=e2016]
+              - row [ref=e2018]:
+                - cell "3" [ref=e2019]
+                - cell "0.25" [ref=e2021]
+                - cell "0.020105 / 0.010000" [ref=e2023]
+                - cell "3.6637e-14" [ref=e2025]
+                - cell "超过预算" [ref=e2027]
+              - row [ref=e2029]:
+                - cell "3" [ref=e2030]
+                - cell "0.5" [ref=e2032]
+                - cell "0.020769 / 0.010000" [ref=e2034]
+                - cell "3.7526e-14" [ref=e2036]
+                - cell "超过预算" [ref=e2038]
+              - row [ref=e2040]:
+                - cell "3" [ref=e2041]
+                - cell "1" [ref=e2043]
+                - cell "0.024954 / 0.010000" [ref=e2045]
+                - cell "3.4861e-14" [ref=e2047]
+                - cell "超过预算" [ref=e2049]
+              - row [ref=e2051]:
+                - cell "3" [ref=e2052]
+                - cell "2" [ref=e2054]
+                - cell "0.044749 / 0.010000" [ref=e2056]
+                - cell "6.7724e-14" [ref=e2058]
+                - cell "超过预算" [ref=e2060]
+        - paragraph [ref=e2062]: 仅适用于全部保护锚点的数值零空间、固定Full特征和这4个全局正比例的logits匹配问题。浮点下界不能证明全局归一化间隔不可行。
+        - heading "当前优化目标与参照差距方向" [level=4] [ref=e2063]
+        - paragraph [ref=e2064]: 两种目标的投影梯度余弦：0.565875。
+        - generic [ref=e2066]:
+          - table [ref=e2068]:
+            - rowgroup [ref=e2074]:
+              - row [ref=e2075]:
+                - columnheader "类别" [ref=e2076]
+                - columnheader "原始 / 保护投影梯度范数" [ref=e2078]
+                - columnheader "与当前目标方向余弦" [ref=e2080]
+                - columnheader "训练参照差距" [ref=e2082]
+          - table [ref=e2088]:
+            - rowgroup [ref=e2094]:
+              - row [ref=e2095]:
+                - cell "0" [ref=e2096]
+                - cell "14.519377 / 1.767605" [ref=e2098]
+                - cell "0.500415" [ref=e2100]
+                - cell "0.151380" [ref=e2102]
+              - row [ref=e2104]:
+                - cell "1" [ref=e2105]
+                - cell "10.429334 / 1.432850" [ref=e2107]
+                - cell "0.532185" [ref=e2109]
+                - cell "0.516660" [ref=e2111]
+              - row [ref=e2113]:
+                - cell "2" [ref=e2114]
+                - cell "13.187198 / 1.798716" [ref=e2116]
+                - cell "0.408101" [ref=e2118]
+                - cell "0.598278" [ref=e2120]
+              - row [ref=e2122]:
+                - cell "3" [ref=e2123]
+                - cell "21.525096 / 2.779529" [ref=e2125]
+                - cell "0.548679" [ref=e2127]
+                - cell "-0.102362" [ref=e2129]
+        - paragraph [ref=e2131]: 这里只投影保护等式，未计入头半径和原型不等式的可行方向；非零梯度不等于存在合法下降步。科学结论仍以父报告为准。
+        - group [ref=e2132]:
+          - generic "冻结诊断记录" [ref=e2133]
+      - generic [ref=e1146]:
+        - heading "冻结顺序与隔离证据" [level=3] [ref=e1147]
+        - paragraph [ref=e1148]: 审计采样发生在校准报告与阈值锁定之后。后端核验主机隔离回执与文件摘要，未重新执行操作系统隔离验证或模型推理。
+        - generic [ref=e1150]:
+          - table [ref=e1152]:
+            - rowgroup [ref=e1157]:
+              - row [ref=e1158]:
+                - columnheader "顺序" [ref=e1159]
+                - columnheader "事件" [ref=e1161]
+                - columnheader "时间" [ref=e1163]
+          - table [ref=e1169]:
+            - rowgroup [ref=e1174]:
+              - row [ref=e1175]:
+                - cell "1" [ref=e1176]
+                - cell "CANDIDATE_FROZEN" [ref=e1178]
+                - cell "2026-11-06T01:24:33.481836+00:00" [ref=e1180]
+              - row [ref=e1182]:
+                - cell "2" [ref=e1183]
+                - cell "PARENT_MODELS_BOUND" [ref=e1185]
+                - cell "2026-11-06T01:24:34.935738+00:00" [ref=e1187]
+              - row [ref=e1189]:
+                - cell "3" [ref=e1190]
+                - cell "STOPPING_SELECTION_FROZEN" [ref=e1192]
+                - cell "2026-11-06T01:25:19.098424+00:00" [ref=e1194]
+              - row [ref=e1196]:
+                - cell "4" [ref=e1197]
+                - cell "MODELS_FROZEN" [ref=e1199]
+                - cell "2026-11-06T01:25:22.251820+00:00" [ref=e1201]
+              - row [ref=e1203]:
+                - cell "5" [ref=e1204]
+                - cell "CALIBRATION_COMPLETED" [ref=e1206]
+                - cell "2026-11-06T01:26:47.954839+00:00" [ref=e1208]
+              - row [ref=e1210]:
+                - cell "6" [ref=e1211]
+                - cell "CALIBRATION_LOCKED" [ref=e1213]
+                - cell "2026-11-06T01:26:47.965096+00:00" [ref=e1215]
+              - row [ref=e1217]:
+                - cell "7" [ref=e1218]
+                - cell "AUDIT_SAMPLED" [ref=e1220]
+                - cell "2026-11-06T01:27:24.306197+00:00" [ref=e1222]
+              - row [ref=e1224]:
+                - cell "8" [ref=e1225]
+                - cell "AUDIT_COMPLETED" [ref=e1227]
+                - cell "2026-11-06T01:28:16.740808+00:00" [ref=e1229]
+        - paragraph [ref=e1231]: 隔离机制 windows_appcontainer_v1；主机观测到隔离令牌：是。
+        - generic [ref=e1233]:
+          - table [ref=e1235]:
+            - rowgroup [ref=e1240]:
+              - row [ref=e1241]:
+                - columnheader "访问探针" [ref=e1242]
+                - columnheader "范围" [ref=e1244]
+                - columnheader "结果" [ref=e1246]
+          - table [ref=e1252]:
+            - rowgroup [ref=e1257]:
+              - row [ref=e1258]:
+                - cell "real_prepared_training_container" [ref=e1259]
+                - cell "D:\\hl\\2研\\毕设\\代码\\FUL\\data\\cwru_demo_v1\\dataset.npz" [ref=e1261]
+                - cell "DENIED" [ref=e1263]
+              - row [ref=e1265]:
+                - cell "training_markers" [ref=e1266]
+                - cell "D:\\hl\\2研\\毕设\\代码\\FUL\\.test-artifacts\\c7-2-private\\b57bf8dc-7319-4934-ad41-fabda1450974\\training_markers.npz" [ref=e1268]
+                - cell "DENIED" [ref=e1270]
+              - row [ref=e1272]:
+                - cell "calibration_markers" [ref=e1273]
+                - cell "D:\\hl\\2研\\毕设\\代码\\FUL\\.test-artifacts\\c7-2-private\\b57bf8dc-7319-4934-ad41-fabda1450974\\calibration_markers.npz" [ref=e1275]
+                - cell "DENIED" [ref=e1277]
+              - row [ref=e1279]:
+                - cell "retained_prototype" [ref=e1280]
+                - cell "D:\\hl\\2研\\毕设\\代码\\FUL\\.test-artifacts\\c7-2-private\\b57bf8dc-7319-4934-ad41-fabda1450974\\retained_prototypes.json" [ref=e1282]
+                - cell "DENIED" [ref=e1284]
+              - row [ref=e1286]:
+                - cell "raw_mat" [ref=e1287]
+                - cell "D:\\hl\\2研\\毕设\\代码\\FUL\\data\\cwru_admission_20261026\\raw\\normal\\97.mat" [ref=e1289]
+                - cell "DENIED" [ref=e1291]
+        - group [ref=e1293]:
+          - generic "锁定内容、隔离回执及后端核验边界" [ref=e1294] [cursor=pointer]
+      - generic [ref=e1295]:
+        - heading "七阶段主任务指标" [level=3] [ref=e1296]
+        - paragraph [ref=e1297]: 验证集与测试集保持固定；故障分类准确率仅为业务性能参照，不能单独证明客户端贡献已被遗忘。
+        - generic [ref=e1299]:
+          - table [ref=e1301]:
+            - rowgroup [ref=e1307]:
+              - row [ref=e1308]:
+                - columnheader "阶段" [ref=e1309]
+                - columnheader "划分" [ref=e1311]
+                - columnheader "整体 / 保留 / 目标 ACC" [ref=e1313]
+                - columnheader "整体 / 保留 / 目标数量" [ref=e1315]
+          - table [ref=e1321]:
+            - rowgroup [ref=e1327]:
+              - row [ref=e1328]:
+                - cell "INITIAL" [ref=e1329]
+                - cell "validation" [ref=e1331]
+                - cell "0.225806 / 0.250000 / 0.142857" [ref=e1333]
+                - cell "124 / 96 / 28" [ref=e1335]
+              - row [ref=e1337]:
+                - cell "FULL" [ref=e1338]
+                - cell "validation" [ref=e1340]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1342]
+                - cell "124 / 96 / 28" [ref=e1344]
+              - row [ref=e1346]:
+                - cell "PRE" [ref=e1347]
+                - cell "validation" [ref=e1349]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1351]
+                - cell "124 / 96 / 28" [ref=e1353]
+              - row [ref=e1355]:
+                - cell "RECOVERED" [ref=e1356]
+                - cell "validation" [ref=e1358]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1360]
+                - cell "124 / 96 / 28" [ref=e1362]
+              - row [ref=e1364]:
+                - cell "RETAINED_FL_RETRAIN" [ref=e1365]
+                - cell "validation" [ref=e1367]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1369]
+                - cell "124 / 96 / 28" [ref=e1371]
+              - row [ref=e1373]:
+                - cell "FAKE_NOOP" [ref=e1374]
+                - cell "validation" [ref=e1376]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1378]
+                - cell "124 / 96 / 28" [ref=e1380]
+              - row [ref=e1382]:
+                - cell "OVERDESTRUCTION" [ref=e1383]
+                - cell "validation" [ref=e1385]
+                - cell "0.000000 / 0.000000 / 0.000000" [ref=e1387]
+                - cell "124 / 96 / 28" [ref=e1389]
+              - row [ref=e1391]:
+                - cell "INITIAL" [ref=e1392]
+                - cell "test" [ref=e1394]
+                - cell "0.225806 / 0.250000 / 0.142857" [ref=e1396]
+                - cell "124 / 96 / 28" [ref=e1398]
+              - row [ref=e1400]:
+                - cell "FULL" [ref=e1401]
+                - cell "test" [ref=e1403]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1405]
+                - cell "124 / 96 / 28" [ref=e1407]
+              - row [ref=e1409]:
+                - cell "PRE" [ref=e1410]
+                - cell "test" [ref=e1412]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1414]
+                - cell "124 / 96 / 28" [ref=e1416]
+              - row [ref=e1418]:
+                - cell "RECOVERED" [ref=e1419]
+                - cell "test" [ref=e1421]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1423]
+                - cell "124 / 96 / 28" [ref=e1425]
+              - row [ref=e1427]:
+                - cell "RETAINED_FL_RETRAIN" [ref=e1428]
+                - cell "test" [ref=e1430]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1432]
+                - cell "124 / 96 / 28" [ref=e1434]
+              - row [ref=e1436]:
+                - cell "FAKE_NOOP" [ref=e1437]
+                - cell "test" [ref=e1439]
+                - cell "1.000000 / 1.000000 / 1.000000" [ref=e1441]
+                - cell "124 / 96 / 28" [ref=e1443]
+              - row [ref=e1445]:
+                - cell "OVERDESTRUCTION" [ref=e1446]
+                - cell "test" [ref=e1448]
+                - cell "0.000000 / 0.000000 / 0.000000" [ref=e1450]
+                - cell "124 / 96 / 28" [ref=e1452]
+      - generic [ref=e1454]:
+        - heading "模型来源与工件" [level=3] [ref=e1455]
+        - paragraph [ref=e1456]: 本次新上下文和七阶段模型用于校准研究，尚未登记为设备诊断可用模型。
+        - generic [ref=e1458]:
+          - table [ref=e1460]:
+            - rowgroup [ref=e1465]:
+              - row [ref=e1466]:
+                - columnheader "阶段" [ref=e1467]
+                - columnheader "来源阶段" [ref=e1469]
+                - columnheader "文件 SHA-256" [ref=e1471]
+          - table [ref=e1477]:
+            - rowgroup [ref=e1482]:
+              - row [ref=e1483]:
+                - cell "INITIAL" [ref=e1484]
+                - cell [ref=e1486]
+                - cell "ede2157daa8c4006104682909cb8dd8099ed0702dfe86ab8b736247c4572731c" [ref=e1487]
+              - row [ref=e1489]:
+                - cell "FULL" [ref=e1490]
+                - cell "INITIAL" [ref=e1492]
+                - cell "66cf9db81b8f55adff46f1b984fec4ab2a08e0f8b82c36d41f1ccf9dc1494191" [ref=e1494]
+              - row [ref=e1496]:
+                - cell "PRE" [ref=e1497]
+                - cell "FULL" [ref=e1499]
+                - cell "223666e58182ae2cbf55792906a34fe65501d17a2fc9c6b374bb65b433fafade" [ref=e1501]
+              - row [ref=e1503]:
+                - cell "RECOVERED" [ref=e1504]
+                - cell "PRE" [ref=e1506]
+                - cell "98c415f17b4b44d6a05caad35c254ac15f0333b3ede8b760d15fa2c3346d0551" [ref=e1508]
+              - row [ref=e1510]:
+                - cell "RETAINED_FL_RETRAIN" [ref=e1511]
+                - cell "INITIAL" [ref=e1513]
+                - cell "9bca494815e1fb4153c9a416c1aced3fe2a89e0442587cccea03638856434e83" [ref=e1515]
+              - row [ref=e1517]:
+                - cell "FAKE_NOOP" [ref=e1518]
+                - cell "FULL" [ref=e1520]
+                - cell "66cf9db81b8f55adff46f1b984fec4ab2a08e0f8b82c36d41f1ccf9dc1494191" [ref=e1522]
+              - row [ref=e1524]:
+                - cell "OVERDESTRUCTION" [ref=e1525]
+                - cell "FULL" [ref=e1527]
+                - cell "de5096c14a424c6aed0fd097389335be7999e838d3a2d4f53fe0efe19eeb36ad" [ref=e1529]
+        - group [ref=e1531]:
+          - generic "原始工件清单、训练记录与完整协议" [ref=e1532] [cursor=pointer]
+    - contentinfo [ref=e1533]:
+      - generic [ref=e1534]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e1535]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

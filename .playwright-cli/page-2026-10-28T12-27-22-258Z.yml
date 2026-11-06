@@ -1,0 +1,131 @@
+- generic [ref=e121]:
+  - complementary [ref=e122]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e123] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e127]:
+        - text: 知枢
+        - generic [ref=e128]: FEDERATED INTELLIGENCE
+    - generic [ref=e129]:
+      - generic [ref=e130]: 研
+      - generic [ref=e131]:
+        - strong [ref=e132]: 设备智能运维研究
+        - generic [ref=e133]: 系统演示项目
+      - generic [ref=e134]: DEV
+    - navigation "主导航" [ref=e135]:
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: 项目空间
+        - link "工作台" [ref=e138] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e142]:
+        - paragraph [ref=e143]: 数据中心
+        - link "数据集管理 1" [ref=e144] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e147]: 数据集管理
+          - generic [ref=e148]: "1"
+        - link "站点与客户端" [ref=e149] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e153]:
+        - paragraph [ref=e154]: 研究工作区
+        - link "联邦实验" [ref=e155] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e159] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "三阶段比较" [ref=e163] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e167] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e171] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e175] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e179] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e183] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e187]:
+      - generic [ref=e191]:
+        - text: 可追溯的研究演示
+        - generic [ref=e192]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e193]:
+        - generic [ref=e194]: 研
+        - generic [ref=e195]:
+          - strong [ref=e196]: 研究管理员
+          - generic [ref=e197]: ADMIN
+        - button "退出" [ref=e198] [cursor=pointer]
+  - generic [ref=e199]:
+    - banner [ref=e200]:
+      - generic [ref=e201]:
+        - generic [ref=e202]: 研究工作区
+        - strong [ref=e205]: 任务详情
+      - generic [ref=e206]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e207]: 后端数据模式
+        - generic [ref=e210]: 研究内容三 / 系统演示
+    - main [ref=e211]:
+      - link "← 返回任务中心" [ref=e618] [cursor=pointer]:
+        - /url: "#/tasks"
+      - generic [ref=e619]:
+        - generic [ref=e620]:
+          - paragraph [ref=e621]: TASK EXECUTION
+          - heading "独立 PGA 遗忘" [level=1] [ref=e622]
+          - paragraph [ref=e623]: 执行状态与实验校验状态分别记录。
+        - generic [ref=e624]:
+          - button "刷新状态" [ref=e625] [cursor=pointer]
+          - button "导出任务证据" [ref=e627] [cursor=pointer]
+          - button "取消任务" [ref=e629] [cursor=pointer]
+      - paragraph [ref=e631]: ff7c9f2e-4bf0-43ec-85ab-8a3c7b74d3ef
+      - paragraph [ref=e632]:
+        - text: 来源 Full
+        - link "568590ea-afc6-4ec6-ba62-5df6f6546f92" [ref=e633] [cursor=pointer]:
+          - /url: "#/models/568590ea-afc6-4ec6-ba62-5df6f6546f92"
+      - region "执行器状态" [ref=e634]:
+        - strong [ref=e636]: Worker 在线
+        - generic [ref=e637]: 合成 smoke 可执行 · CPU 串行
+      - region "任务状态" [ref=e638]:
+        - generic [ref=e639]:
+          - generic [ref=e640]: 排队中
+          - heading "等待可用执行器" [level=2] [ref=e642]
+          - status [ref=e643]: 每 2 秒读取后端状态 · 最近读取 2026/10/28 20:27:21
+      - generic [ref=e644]:
+        - generic [ref=e645]:
+          - text: 提交者
+          - strong [ref=e646]: admin
+        - generic [ref=e647]:
+          - text: 提交时间
+          - strong [ref=e648]: 2026/10/28 20:27:21
+        - generic [ref=e649]:
+          - text: 完成时间
+          - strong [ref=e650]: 未记录
+      - paragraph [ref=e652]: 来源：已登记 Full 与原数据快照。本任务只执行 PGA-head 并保存 Pre，不重新训练 Full、不恢复或审计。
+      - generic [ref=e653]:
+        - generic [ref=e654]:
+          - generic [ref=e655]:
+            - heading "阶段与事件" [level=3] [ref=e656]
+            - paragraph [ref=e657]: 来自实际算法回调和后端校验，不推算进度百分比。
+          - generic [ref=e658]: 1 条
+        - list "任务阶段事件" [ref=e659]:
+          - listitem [ref=e660]:
+            - generic [ref=e661]: "1"
+            - generic [ref=e662]:
+              - strong [ref=e663]: 任务已排队
+              - paragraph [ref=e664]: 2026/10/28 20:27:21
+      - generic [ref=e665]:
+        - generic [ref=e667]:
+          - heading "尝试记录" [level=3] [ref=e668]
+          - paragraph [ref=e669]: 只展示服务端保存的进程、心跳与停止确认。
+        - generic [ref=e671]:
+          - table [ref=e673]:
+            - rowgroup [ref=e681]:
+              - row [ref=e682]:
+                - columnheader "尝试" [ref=e683]
+                - columnheader "进程 PID" [ref=e685]
+                - columnheader "停止原因" [ref=e687]
+                - columnheader "最后心跳" [ref=e689]
+                - columnheader "停止确认" [ref=e691]
+                - columnheader "退出码" [ref=e693]
+          - generic [ref=e698]:
+            - table:
+              - rowgroup
+            - generic [ref=e699]: 任务尚未被领取
+    - contentinfo [ref=e381]:
+      - generic [ref=e382]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e383]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

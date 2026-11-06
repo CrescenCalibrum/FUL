@@ -27,6 +27,7 @@ class UnlearningContext:
     batch_size: int
     device: torch.device
     cfg: Any
+    marker_config: Any = None
 
 
 @dataclass

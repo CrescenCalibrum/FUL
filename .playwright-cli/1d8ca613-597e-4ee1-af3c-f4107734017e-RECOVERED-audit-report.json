@@ -1,0 +1,178 @@
+{
+  "schema_version": "marker-audit-v1",
+  "protocol": {
+    "alpha": 0.05,
+    "margin_drop": 0.1,
+    "retain_margin_tolerance": 0.1,
+    "geometry_drop": 0.02,
+    "retain_geometry_tolerance": 0.05,
+    "min_families": 8,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "max_retain_accuracy_drop": 0.03,
+    "bootstrap_samples": 200,
+    "bootstrap_seed": 2718,
+    "geometry_forget_rule": "unvalidated",
+    "protocol_locked": false
+  },
+  "status": "insufficient",
+  "exploratory_status": "insufficient",
+  "protocol_locked": false,
+  "reason": "Development bounds; calibration is not locked",
+  "forget_client_ids": [
+    0
+  ],
+  "conditions": [
+    {
+      "cid": 0,
+      "condition": "full_marker_precheck",
+      "status": "insufficient",
+      "full_marker_accuracy": 0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 1,
+      "condition": "full_marker_precheck",
+      "status": "insufficient",
+      "full_marker_accuracy": 0.1,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 2,
+      "condition": "full_marker_precheck",
+      "status": "insufficient",
+      "full_marker_accuracy": 0.1,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "kind": "decrease",
+      "bound": 0.1,
+      "n_families": 20,
+      "mean": -0.08651075959205627,
+      "ci_low": -0.2248498308465975,
+      "ci_high": 0.05182831166248493,
+      "p_support": 0.5925108147060034,
+      "p_violation": 0.4074891852939966,
+      "status": "insufficient",
+      "cid": 0,
+      "condition": "forget_margin",
+      "p_support_holm": 1,
+      "p_violation_holm": 1
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 20,
+      "mean": 0.023759482061723246,
+      "ci_low": -0.11847055515443895,
+      "ci_high": 0.16598951927788544,
+      "p_support": 0.10383668793818752,
+      "p_violation": 1,
+      "status": "insufficient",
+      "cid": 1,
+      "condition": "retain_margin",
+      "p_support_holm": 0.6230201276291252,
+      "p_violation_holm": 1
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 20,
+      "mean": -0.04451973456889391,
+      "ci_low": -0.2868142367085611,
+      "ci_high": 0.19777476757077325,
+      "p_support": 0.2919460039195061,
+      "p_violation": 1,
+      "status": "insufficient",
+      "cid": 2,
+      "condition": "retain_margin",
+      "p_support_holm": 1,
+      "p_violation_holm": 1
+    },
+    {
+      "cid": 0,
+      "condition": "forget_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0,
+      "ci_low": 0,
+      "ci_high": 0,
+      "bound": 0.02,
+      "interval_tail_probability": 0.004166666666666667,
+      "n_families": 20,
+      "status": "insufficient",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 1,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0,
+      "ci_low": 0,
+      "ci_high": 0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.004166666666666667,
+      "n_families": 20,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 2,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0,
+      "ci_low": 0,
+      "ci_high": 0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.004166666666666667,
+      "n_families": 20,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "condition": "retain_task",
+      "status": "insufficient",
+      "reason": "No independent task evaluation supplied"
+    }
+  ],
+  "exploratory_decision_variants": {
+    "margin_only": "insufficient",
+    "geometry_only": "insufficient",
+    "joint_structure": "insufficient",
+    "complete": "insufficient",
+    "fixed_margin_threshold": "insufficient"
+  },
+  "inference_scope": "conditional_on_this_checkpoint_and_marker_generator",
+  "limitations": [
+    "Marker evidence is not proof of removal of all real-data influence",
+    "Checkpoint binding does not authenticate deployed behavior",
+    "Bootstrap percentile coverage is approximate"
+  ],
+  "metadata": {
+    "role": "audit",
+    "stage": "pga_proto_lda_recovery",
+    "model_id": "17559c5f-5a89-4c2d-b0c7-a50f8559eb0b",
+    "full_model_id": "b8e257f4-0230-4e0f-85ba-a0a360274d14",
+    "checkpoint_sha256": "96f998ae4e22f3ff6a0c523144229b322f6dd2b9569ee616b4626ea9dfe140f6",
+    "parameters_sha256": "2cb47321411e00726d895f77f03e60ac1f8cac5c251ee5ebf60be5369dcedaea",
+    "full_checkpoint_sha256": "7e9cf2d8a6bf62f29a59d07638d9bfa39b74a5f4b95fab5780aab64e3aae7915",
+    "full_parameters_sha256": "2eb242a67a1b34dd92c39b3bc766a05f0f9b7729fd60dd459b86910c5d6df53d",
+    "marker_fingerprint": "807e25de70b1d892084081d4fd50972d47095578ce5d348c8157c582640f5dd1",
+    "sample_manifest_sha256": "0279da0572224ed675b99ef4f709ab5ccda7ad9df4284d8f06f21cc4dd16eef6",
+    "protocol_sha256": "dca79bdd2ebfeaa8a3690d1523e4098df045cb3d68d6a86cce8fd7c45ca9686b",
+    "task_source": "unavailable_independent_task_evaluation",
+    "recorded_task_metrics": "reference_only_not_used_in_decision"
+  },
+  "statistical_and_output_time_sec": 0.2099512000568211,
+  "formal_audit": false,
+  "evidence_gaps": [
+    "PROTOCOL_NOT_LOCKED",
+    "GEOMETRY_RULE_UNVALIDATED",
+    "NO_INDEPENDENT_TASK_EVALUATION",
+    "FULL_MARKER_PRECHECK_INSUFFICIENT",
+    "MARGIN_TEST_INSUFFICIENT",
+    "BOOTSTRAP_TAIL_RESOLUTION_LIMITED"
+  ],
+  "observation_and_report_time_sec": 0.5847090999595821,
+  "report_id": "d005d605-73ff-4a7a-ba1b-535966dbc6a4",
+  "report_sha256": "88d2899b0d3e83d162ff4073a824d7c98236308ff126f0cde770a5b2abf1adfb"
+}

@@ -1,0 +1,140 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e9]:
+        - text: 知枢
+        - generic [ref=f2e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e11]:
+      - generic [ref=f2e12]: 研
+      - generic [ref=f2e13]:
+        - strong [ref=f2e14]: 设备智能运维研究
+        - generic [ref=f2e15]: 系统演示项目
+      - generic [ref=f2e16]: DEV
+    - navigation "主导航" [ref=f2e17]:
+      - generic [ref=f2e18]:
+        - paragraph [ref=f2e19]: 项目空间
+        - link "工作台" [ref=f2e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e24]:
+        - paragraph [ref=f2e25]: 数据中心
+        - link "数据集管理 1" [ref=f2e112] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f2e29]: 数据集管理
+          - generic [ref=f2e113]: "1"
+        - link "站点与客户端" [ref=f2e30] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=f2e34] [cursor=pointer]:
+          - /url: "#/devices"
+      - generic [ref=f2e38]:
+        - paragraph [ref=f2e39]: 研究工作区
+        - link "联邦实验" [ref=f2e40] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f2e44] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=f2e48] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "三阶段比较" [ref=f2e52] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f2e56] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e60] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f2e64] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f2e68] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e72] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e76]:
+      - generic [ref=f2e80]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e81]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e82]:
+        - generic [ref=f2e83]: 研
+        - generic [ref=f2e84]:
+          - strong [ref=f2e85]: 研究管理员
+          - generic [ref=f2e86]: ADMIN
+        - button "退出" [ref=f2e87] [cursor=pointer]
+  - generic [ref=f2e88]:
+    - banner [ref=f2e89]:
+      - generic [ref=f2e90]:
+        - generic [ref=f2e114]: 数据中心
+        - strong [ref=f2e115]: 模拟设备档案
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f2e116]: 后端数据模式
+    - main [ref=f2e96]:
+      - generic [ref=f2e239]:
+        - paragraph [ref=f2e240]: SIMULATED DEVICES
+        - heading "模拟设备档案" [level=1] [ref=f2e241]
+        - paragraph [ref=f2e242]: 将已登记负载客户端映射为开发代理设备；保留实验客户端编号与真实来源。
+      - paragraph [ref=f2e243]: 这里的设备与站点均为负载工况模拟映射，不表示四台真实物理设备或真实电力站点。
+      - generic [ref=f2e244]:
+        - heading "登记模拟设备" [level=3] [ref=f2e245]
+        - generic [ref=f2e246]:
+          - generic [ref=f2e247]:
+            - text: 设备上下文
+            - generic [ref=f2e249] [cursor=pointer]:
+              - generic:
+                - combobox "设备上下文" [ref=f2e251]
+                - generic [ref=f2e252]: 7bd4be33-5819-4056-acaf-c242dd3584d8
+          - generic [ref=f2e257]:
+            - text: 负载客户端
+            - generic [ref=f2e259] [cursor=pointer]:
+              - generic:
+                - combobox "负载客户端" [ref=f2e261]
+                - generic [ref=f2e262]: 客户端 0 · 0 HP
+          - generic [ref=f2e267]:
+            - text: 设备名称
+            - textbox "设备名称" [ref=f2e270]:
+              - /placeholder: 例如：模拟轴承 · 0 HP
+              - text: 模拟轴承 · 0 HP
+          - button "登记设备" [ref=f2e271] [cursor=pointer]
+        - paragraph [ref=f2e273]:
+          - text: 同一上下文与客户端只登记一次；重复登记复用原档案。
+          - link "查看或登记设备上下文" [ref=f2e274] [cursor=pointer]:
+            - /url: "#/equipment-contexts"
+      - generic [ref=f2e275]:
+        - generic [ref=f2e276]:
+          - heading "已登记设备 · 4" [level=3] [ref=f2e277]
+          - button "刷新" [ref=f2e278] [cursor=pointer]
+        - generic [ref=f2e281]:
+          - table [ref=f2e283]:
+            - rowgroup [ref=f2e289]:
+              - row [ref=f2e290]:
+                - columnheader "设备" [ref=f2e291]
+                - columnheader "负载 / 客户端" [ref=f2e293]
+                - columnheader "数据版本" [ref=f2e295]
+                - columnheader "操作" [ref=f2e297]
+          - table [ref=f2e303]:
+            - rowgroup [ref=f2e309]:
+              - row [ref=f2e350]:
+                - cell "模拟轴承 · 0 HP" [ref=f2e351]
+                - cell "0 HP / 0" [ref=f2e353]
+                - cell "cwru_demo_v1" [ref=f2e355]
+                - cell [ref=f2e357]:
+                  - link "设备详情与诊断" [ref=f2e359] [cursor=pointer]:
+                    - /url: "#/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22"
+              - row [ref=f2e360]:
+                - cell "模拟轴承 · 2 HP" [ref=f2e361]
+                - cell "2 HP / 2" [ref=f2e363]
+                - cell "cwru_demo_v1" [ref=f2e365]
+                - cell [ref=f2e367]:
+                  - link "设备详情与诊断" [ref=f2e369] [cursor=pointer]:
+                    - /url: "#/devices/d94c2d16-a64d-49d7-8d7c-38f4bdf69af5"
+              - row [ref=f2e370]:
+                - cell "模拟轴承 · 1 HP" [ref=f2e371]
+                - cell "1 HP / 1" [ref=f2e373]
+                - cell "cwru_demo_v1" [ref=f2e375]
+                - cell [ref=f2e377]:
+                  - link "设备详情与诊断" [ref=f2e379] [cursor=pointer]:
+                    - /url: "#/devices/f39612e9-f1c2-4993-9464-b8c4e0e8a645"
+              - row [ref=f2e380]:
+                - cell "模拟轴承 · 3 HP" [ref=f2e381]
+                - cell "3 HP / 3" [ref=f2e383]
+                - cell "cwru_demo_v1" [ref=f2e385]
+                - cell [ref=f2e387]:
+                  - link "设备详情与诊断" [ref=f2e389] [cursor=pointer]:
+                    - /url: "#/devices/2356cac1-32ea-49a4-b691-75e7a69d54bf"
+    - contentinfo [ref=f2e109]:
+      - generic [ref=f2e110]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f2e111]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

@@ -1,0 +1,166 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e9]:
+        - text: 知枢
+        - generic [ref=f2e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e11]:
+      - generic [ref=f2e12]: 研
+      - generic [ref=f2e13]:
+        - strong [ref=f2e14]: 设备智能运维研究
+        - generic [ref=f2e15]: 系统演示项目
+      - generic [ref=f2e16]: DEV
+    - navigation "主导航" [ref=f2e17]:
+      - generic [ref=f2e18]:
+        - paragraph [ref=f2e19]: 项目空间
+        - link "工作台" [ref=f2e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e24]:
+        - paragraph [ref=f2e25]: 数据中心
+        - link "数据集管理 1" [ref=f2e26] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f2e29]: 数据集管理
+          - generic [ref=f2e30]: "1"
+        - link "站点与客户端" [ref=f2e31] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f2e35]:
+        - paragraph [ref=f2e36]: 研究工作区
+        - link "联邦实验" [ref=f2e37] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f2e41] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "三阶段比较" [ref=f2e45] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f2e49] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e53] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f2e57] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f2e61] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e65] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e69]:
+      - generic [ref=f2e73]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e74]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e75]:
+        - generic [ref=f2e76]: 研
+        - generic [ref=f2e77]:
+          - strong [ref=f2e78]: 研究管理员
+          - generic [ref=f2e79]: ADMIN
+        - button "退出" [ref=f2e80] [cursor=pointer]
+  - generic [ref=f2e81]:
+    - banner [ref=f2e82]:
+      - generic [ref=f2e83]:
+        - generic [ref=f2e84]: 项目总览
+        - strong [ref=f2e87]: 工作台
+      - generic [ref=f2e88]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f2e89]: 后端数据模式
+        - generic [ref=f2e92]: 研究内容三 / 系统演示
+    - main [ref=f2e93]:
+      - generic [ref=f2e94]:
+        - generic [ref=f2e95]:
+          - paragraph [ref=f2e96]: RESEARCH WORKSPACE
+          - heading "工作台" [level=1] [ref=f2e97]
+          - paragraph [ref=f2e98]: 从可信数据出发，连接设备诊断与联邦遗忘研究。
+        - generic [ref=f2e99]: 数据准备已完成
+      - generic [ref=f2e102]:
+        - generic [ref=f2e103]:
+          - generic [ref=f2e104]: 设备数据 · 首版已就绪
+          - heading "让每一次遗忘，都有迹可循。" [level=2] [ref=f2e107]
+          - paragraph [ref=f2e108]: CWRU 轴承振动数据已完成预处理与质量核查。现在可以查看客户端分布、追溯数据来源，并预览真实信号。
+          - link "查看数据版本" [ref=f2e109] [cursor=pointer]:
+            - /url: "#/datasets/cwru_demo_v1"
+        - generic [aria-hidden] [ref=f2e112]:
+          - generic [ref=f2e119]: 客户端 0
+          - generic [ref=f2e122]: 客户端 1
+          - generic [ref=f2e125]: 客户端 2
+          - generic [ref=f2e128]: 客户端 3
+          - generic [ref=f2e131]: 公开实验数据 / 模拟联邦客户端
+      - generic [ref=f2e132]:
+        - article [ref=f2e133]:
+          - paragraph [ref=f2e137]:
+            - text: 故障类别
+            - generic [ref=f2e138]: 已核查
+          - strong [ref=f2e139]: 4类
+          - generic [ref=f2e140]: cwru_demo_v1 · 标签字典
+        - article [ref=f2e141]:
+          - paragraph [ref=f2e145]: 模拟客户端
+          - strong [ref=f2e146]: 4个
+          - generic [ref=f2e147]: 按电机负载映射模拟客户端
+        - article [ref=f2e148]:
+          - paragraph [ref=f2e152]: 有效信号窗口
+          - strong [ref=f2e153]: 861个
+          - generic [ref=f2e154]: 613 训练 / 124 验证 / 124 测试
+        - article [ref=f2e155]:
+          - paragraph [ref=f2e159]: 已收录实验
+          - strong [ref=f2e160]: 17次
+          - generic [ref=f2e161]: 历史登记与实际执行结果
+      - region "数据来源与版本校验" [ref=f2e162]:
+        - generic [ref=f2e163]:
+          - generic [ref=f2e164]: 后端接口数据
+          - strong [ref=f2e165]: 登记清单 → 后端接口 → 页面统计
+        - paragraph [ref=f2e166]:
+          - text: 来源：
+          - code [ref=f2e167]: data/cwru_demo_v1/dataset-manifest.json
+        - paragraph [ref=f2e168]:
+          - text: Manifest SHA-256：
+          - code [ref=f2e169]: 5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6
+      - generic [ref=f2e170]:
+        - article [ref=f2e171]:
+          - generic [ref=f2e172]:
+            - generic [ref=f2e173]:
+              - heading "客户端样本分布" [level=3] [ref=f2e174]
+              - paragraph [ref=f2e175]: 全部数据划分 · 单位：窗口
+            - link "客户端详情" [ref=f2e176] [cursor=pointer]:
+              - /url: "#/stations"
+          - img "4 个模拟客户端中 4 类标签的真实窗口数量堆叠柱状图" [ref=f2e179]
+        - generic [ref=f2e182]:
+          - generic [ref=f2e183]:
+            - generic [ref=f2e184]:
+              - heading "设备业务能力" [level=3] [ref=f2e185]
+              - paragraph [ref=f2e186]: 已登记数据与可执行业务分别核查
+            - button "刷新" [ref=f2e187] [cursor=pointer]
+          - paragraph [ref=f2e189]: cwru_demo_v1 · 4 个模拟客户端 · 4 类 · 861 个窗口
+          - generic [ref=f2e190]:
+            - generic [ref=f2e191]:
+              - strong [ref=f2e192]: 设备训练
+              - generic [ref=f2e193]: 待接入
+              - paragraph [ref=f2e195]: 设备执行上下文与模型训练模板尚未接入。
+            - generic [ref=f2e196]:
+              - strong [ref=f2e197]: 设备审计
+              - generic [ref=f2e198]: 待接入
+              - paragraph [ref=f2e200]: 设备 marker 与校准协议尚未建立。
+            - generic [ref=f2e201]:
+              - strong [ref=f2e202]: 设备诊断
+              - generic [ref=f2e203]: 待接入
+              - paragraph [ref=f2e205]: 设备模型训练和诊断适配尚未完成，当前可查看已登记数据与真实信号预览。
+            - generic [ref=f2e206]:
+              - strong [ref=f2e207]: 健康状态与运维复核
+              - generic [ref=f2e208]: 待接入
+              - paragraph [ref=f2e210]: 尚无真实诊断记录、状态规则和人工复核业务。
+      - generic [ref=f2e211]:
+        - generic [ref=f2e212]:
+          - generic [ref=f2e213]:
+            - heading "已收录实验" [level=3] [ref=f2e214]
+            - paragraph [ref=f2e215]: 与设备演示数据分开查看，保留原始结果
+          - link "查看实验" [ref=f2e216] [cursor=pointer]:
+            - /url: "#/experiments"
+        - generic [ref=f2e219]:
+          - generic [ref=f2e223]:
+            - link "CIFAR-10 联邦遗忘对比实验" [ref=f2e224] [cursor=pointer]:
+              - /url: "#/experiments/20261019-134521_cifar_all_20c_50r_dp05"
+            - paragraph [ref=f2e225]: 20261019-134521_cifar_all_20c_50r_dp05
+          - generic [ref=f2e226]:
+            - strong [ref=f2e227]: 20 客户端 · 35 轮
+            - generic [ref=f2e228]: seed 42 / σ 0.5
+          - generic [ref=f2e229]: 缺失 3 项
+          - link "查看实验详情" [ref=f2e231] [cursor=pointer]:
+            - /url: "#/experiments/20261019-134521_cifar_all_20c_50r_dp05"
+        - generic [ref=f2e234]: 当前设备数据已通过读入与前后向检查，尚未执行设备故障准确率实验。
+    - contentinfo [ref=f2e238]:
+      - generic [ref=f2e239]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f2e240]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

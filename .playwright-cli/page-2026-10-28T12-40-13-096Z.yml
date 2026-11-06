@@ -1,0 +1,117 @@
+- generic [ref=e1860]:
+  - complementary [ref=e1861]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e1862] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e1866]:
+        - text: 知枢
+        - generic [ref=e1867]: FEDERATED INTELLIGENCE
+    - generic [ref=e1868]:
+      - generic [ref=e1869]: 研
+      - generic [ref=e1870]:
+        - strong [ref=e1871]: 设备智能运维研究
+        - generic [ref=e1872]: 系统演示项目
+      - generic [ref=e1873]: DEV
+    - navigation "主导航" [ref=e1874]:
+      - generic [ref=e1875]:
+        - paragraph [ref=e1876]: 项目空间
+        - link "工作台" [ref=e1877] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e1881]:
+        - paragraph [ref=e1882]: 数据中心
+        - link "数据集管理 1" [ref=e1883] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e1886]: 数据集管理
+          - generic [ref=e1887]: "1"
+        - link "站点与客户端" [ref=e1888] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e1892]:
+        - paragraph [ref=e1893]: 研究工作区
+        - link "联邦实验" [ref=e1894] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e1898] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "三阶段比较" [ref=e1902] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e1906] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e1910] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e1914] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e1918] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e1922] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e1926]:
+      - generic [ref=e1930]:
+        - text: 可追溯的研究演示
+        - generic [ref=e1931]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e1932]:
+        - generic [ref=e1933]: 研
+        - generic [ref=e1934]:
+          - strong [ref=e1935]: 演示运维员
+          - generic [ref=e1936]: OPERATOR
+        - button "退出" [ref=e1937] [cursor=pointer]
+  - generic [ref=e1938]:
+    - banner [ref=e1939]:
+      - generic [ref=e1940]:
+        - generic [ref=e1941]: 研究工作区
+        - strong [ref=e1944]: 独立操作工作台
+      - generic [ref=e1945]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e1946]: 后端数据模式
+        - generic [ref=e1949]: 研究内容三 / 系统演示
+    - main [ref=e1950]:
+      - generic [ref=e1951]:
+        - heading "独立操作工作台" [level=2] [ref=e1952]
+        - paragraph [ref=e1953]: 合成开发上下文 · 每次提交只执行选中的操作。已有版本可以复用；阶段顺序由血缘校验，执行成功与审计结论分别显示。
+        - navigation "独立操作步骤" [ref=e1954]:
+          - link "1 · 训练 Full" [ref=e1955] [cursor=pointer]:
+            - /url: "#/operations/training?model=568590ea-afc6-4ec6-ba62-5df6f6546f92"
+          - link "2 · 遗忘 / 对照" [ref=e1956] [cursor=pointer]:
+            - /url: "#/operations/unlearn?model=568590ea-afc6-4ec6-ba62-5df6f6546f92"
+          - link "3 · 原型与恢复" [ref=e1957] [cursor=pointer]:
+            - /url: "#/operations/recovery?model=568590ea-afc6-4ec6-ba62-5df6f6546f92&full=568590ea-afc6-4ec6-ba62-5df6f6546f92"
+          - link "4 · 开发审计" [ref=e1958] [cursor=pointer]:
+            - /url: "#/operations/audit?model=568590ea-afc6-4ec6-ba62-5df6f6546f92"
+          - link "5 · 三阶段比较" [ref=e1959] [cursor=pointer]:
+            - /url: "#/operations/compare?model=568590ea-afc6-4ec6-ba62-5df6f6546f92&full=568590ea-afc6-4ec6-ba62-5df6f6546f92"
+        - paragraph [ref=e1960]: 设备数据的 4 客户端、4 类、861 窗口保留在数据中心；本入口运行 3 客户端、10 类合成数据。原型当前在训练后读取保留数据；没有 DP 会计或密码学安全聚合。
+      - generic [ref=e1961]:
+        - generic [ref=e1962]:
+          - paragraph [ref=e1963]: INDEPENDENT UNLEARNING
+          - heading "独立遗忘与方法对照" [level=1] [ref=e1964]
+          - paragraph [ref=e1965]: 显式选择 Full，复用其上下文与数据快照，生成恢复前 Pre。
+        - generic [ref=e1966]:
+          - button "刷新" [disabled]
+      - generic [ref=e1967]:
+        - heading "选择来源 Full" [level=3] [ref=e1968]
+        - paragraph [ref=e1969]: 支持已登记的合成 Full，固定遗忘集合 [0]。不会重新训练，也不会自动执行原型、恢复或审计。
+        - generic [ref=e1971] [cursor=pointer]:
+          - generic:
+            - combobox "来源 Full 模型" [ref=e1973]
+            - generic [ref=e1974]: 568590ea-afc6-4ec6-ba62-5df6f6546f92
+        - link "先创建独立 Full 模型" [ref=e1979] [cursor=pointer]:
+          - /url: "#/training"
+      - generic [ref=e1980]:
+        - heading "遗忘请求 · 0" [level=3] [ref=e1982]
+        - generic [ref=e1984]:
+          - table [ref=e1986]:
+            - rowgroup [ref=e1993]:
+              - row [ref=e1994]:
+                - columnheader "任务" [ref=e1995]
+                - columnheader "状态" [ref=e1997]
+                - columnheader "Pre 模型" [ref=e1999]
+                - columnheader "方法" [ref=e2001]
+                - columnheader "错误码" [ref=e2003]
+          - generic [ref=e2008]:
+            - table:
+              - rowgroup
+            - generic [ref=e2009]: 尚无独立遗忘请求
+        - generic [ref=e2011]:
+          - button "Go to previous page" [disabled] [ref=e2012]
+          - list [ref=e2013]:
+            - listitem "page 1" [ref=e2014]: "1"
+          - button "Go to next page" [disabled] [ref=e2015]
+    - contentinfo [ref=e2016]:
+      - generic [ref=e2017]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e2018]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

@@ -1,0 +1,43 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f3e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f3e9]:
+        - text: 知枢
+        - generic [ref=f3e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f3e11]:
+      - generic [ref=f3e12]: 研
+      - generic [ref=f3e13]:
+        - strong [ref=f3e14]: 设备智能运维研究
+        - generic [ref=f3e15]: 系统演示项目
+      - generic [ref=f3e16]: DEV
+    - navigation "主导航" [ref=f3e17]:
+      - generic [ref=f3e18]:
+        - paragraph [ref=f3e19]: 数据中心
+        - link "模拟设备档案" [ref=f3e20] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=f3e24] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=f3e28]:
+        - paragraph [ref=f3e29]: 研究工作区
+        - link "设备诊断" [ref=f3e30] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f3e34]:
+      - generic [ref=f3e38]:
+        - text: 可追溯的研究演示
+        - generic [ref=f3e39]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f3e40]:
+        - generic [ref=f3e41]: 研
+        - generic [ref=f3e42]:
+          - strong [ref=f3e43]: C5 验收 · site0
+          - generic [ref=f3e44]: OPERATOR
+        - button "退出" [ref=f3e45] [cursor=pointer]
+  - generic [ref=f3e46]:
+    - banner [ref=f3e47]:
+      - generic [ref=f3e48]:
+        - strong
+      - generic "设备预览来源时间：" [ref=f3e52]: 后端数据模式
+    - main [ref=f3e54]
+    - contentinfo [ref=f3e55]:
+      - generic [ref=f3e56]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f3e57]: 设备预览来源 · v0.1.0

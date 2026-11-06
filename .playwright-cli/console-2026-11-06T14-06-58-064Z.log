@@ -1,0 +1,10 @@
+[     390ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4187/api/v1/auth/me:0
+[  741603ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4187/api/v1/auth/me:0
+[  787125ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4187/assets/HealthView-BgPkq3Rd.js:0
+[  787127ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4187/assets/HealthView-DAs_XbmZ.css:0
+[  787128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4187/assets/diagnosis-BzzwlW0R.js:0
+[  787129ms] [ERROR] Error: Unable to preload CSS for /assets/HealthView-DAs_XbmZ.css
+    at HTMLLinkElement.<anonymous> (http://127.0.0.1:4187/assets/index-NV8T6thz.js:9:281982) @ http://127.0.0.1:4187/assets/index-NV8T6thz.js:8
+[  787134ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4187/favicon.svg:0
+[ 1779814ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4187/api/v1/auth/me:0
+[ 2231460ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4187/api/v1/auth/me:0

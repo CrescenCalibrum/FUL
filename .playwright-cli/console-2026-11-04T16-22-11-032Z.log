@@ -1,0 +1,2 @@
+[     112ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4173/api/v1/auth/me:0
+[   67150ms] [ERROR] Failed to load resource: the server responded with a status of 409 (Conflict) @ http://127.0.0.1:4173/api/v1/devices/2356cac1-32ea-49a4-b691-75e7a69d54bf/health:0

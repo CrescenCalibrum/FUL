@@ -1,0 +1,14 @@
+[      69ms] [ERROR] TypeError: Cannot read properties of undefined (reading 'registration')
+    at p0.fn (http://127.0.0.1:4173/assets/DevicesView-qBVRM_3v.js:1:892)
+    at Hp (http://127.0.0.1:4173/assets/index-CqKfiVzb.js:2:8350)
+    at Li (http://127.0.0.1:4173/assets/index-CqKfiVzb.js:2:8050)
+    at Lp.runIfDirty (http://127.0.0.1:4173/assets/index-CqKfiVzb.js:2:7232)
+    at da (http://127.0.0.1:4173/assets/index-CqKfiVzb.js:2:22651)
+    at ih (http://127.0.0.1:4173/assets/index-CqKfiVzb.js:2:24773) @ http://127.0.0.1:4173/assets/index-CqKfiVzb.js:1
+[   55553ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4173/api/v1/auth/me:0
+[  134340ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/DevicesView-qBVRM_3v.js:0
+[  134341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/diagnosis-BVJTi-G8.js:0
+[  134341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/usePolling-RlOfX-HD.js:0
+[  134342ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/PageHeading.vue_vue_type_script_setup_true_lang-iMiNgZ66.js:0
+[  134348ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/DevicesView-qBVRM_3v.js:0
+[  134349ms] [ERROR] TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4173/assets/DevicesView-qBVRM_3v.js @ http://127.0.0.1:4173/assets/index-CqKfiVzb.js:8

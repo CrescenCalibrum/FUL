@@ -1,0 +1,249 @@
+- generic [ref=e46]:
+  - complementary [ref=e47]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e48] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e52]:
+        - text: 知枢
+        - generic [ref=e53]: FEDERATED INTELLIGENCE
+    - generic [ref=e54]:
+      - generic [ref=e55]: 研
+      - generic [ref=e56]:
+        - strong [ref=e57]: 设备智能运维研究
+        - generic [ref=e58]: 系统演示项目
+      - generic [ref=e59]: DEV
+    - navigation "主导航" [ref=e60]:
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: 项目空间
+        - link "工作台" [ref=e63] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e67]:
+        - paragraph [ref=e68]: 数据中心
+        - link "数据集管理 1" [ref=e69] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e72]: 数据集管理
+          - generic [ref=e73]: "1"
+        - link "站点与客户端" [ref=e74] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=e78] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=e82] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=e86]:
+        - paragraph [ref=e87]: 研究工作区
+        - link "联邦实验" [ref=e88] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e92] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "训练时原型与恢复" [ref=e96] [cursor=pointer]:
+          - /url: "#/precomputed-recovery"
+        - link "设备上下文与模型" [ref=e100] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=e104] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "设备开发审计" [ref=e108] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+        - link "三阶段比较" [ref=e112] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e116] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e120] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e124] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e128] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e132] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e136]:
+      - generic [ref=e140]:
+        - text: 可追溯的研究演示
+        - generic [ref=e141]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e142]:
+        - generic [ref=e143]: 研
+        - generic [ref=e144]:
+          - strong [ref=e145]: 研究管理员
+          - generic [ref=e146]: ADMIN
+        - button "退出" [ref=e147] [cursor=pointer]
+  - generic [ref=e148]:
+    - banner [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]: 研究工作区
+        - strong [ref=e154]: 任务中心
+      - generic [ref=e155]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e156]: 后端数据模式
+        - generic [ref=e284]: 研究内容三 / 系统演示
+    - main [ref=e158]:
+      - generic [ref=e285]:
+        - generic [ref=e286]:
+          - paragraph [ref=e287]: EXECUTION TASKS
+          - heading "任务中心" [level=1] [ref=e288]
+          - paragraph [ref=e289]: 追踪实际执行、工件校验与实验登记。
+        - generic [ref=e290]:
+          - button "刷新" [ref=e291] [cursor=pointer]
+          - button "运行合成 smoke" [ref=e293] [cursor=pointer]
+      - region "执行器状态" [ref=e295]:
+        - strong [ref=e297]: Worker 离线
+        - generic [ref=e298]: 可提交任务排队，启动 Worker 后执行
+      - generic [ref=e299]:
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - heading "任务记录" [level=3] [ref=e302]
+            - generic [ref=e303]: "68"
+          - generic [ref=e305] [cursor=pointer]:
+            - generic:
+              - combobox "任务状态筛选" [ref=e307]
+              - generic [ref=e308]: 全部状态
+        - generic [ref=e314]:
+          - table [ref=e316]:
+            - rowgroup [ref=e323]:
+              - row [ref=e324]:
+                - columnheader "任务" [ref=e325]
+                - columnheader "状态" [ref=e327]
+                - columnheader "提交时间" [ref=e329]
+                - columnheader "提交者" [ref=e331]
+                - columnheader "操作" [ref=e333]
+          - table [ref=e339]:
+            - rowgroup [ref=e346]:
+              - row [ref=e347] [cursor=pointer]:
+                - cell [ref=e348]:
+                  - generic [ref=e349]:
+                    - strong [ref=e350]: 设备真实诊断
+                    - paragraph [ref=e351]: 3dbf0077-aba6-4c1c-bea4-5d390f7985e0
+                - cell "已完成" [ref=e352]
+                - cell "2026/11/5 14:29:39" [ref=e356]
+                - cell "admin" [ref=e358]
+                - cell [ref=e360]:
+                  - link "查看任务" [ref=e362]:
+                    - /url: "#/tasks/3dbf0077-aba6-4c1c-bea4-5d390f7985e0"
+              - row [ref=e363] [cursor=pointer]:
+                - cell [ref=e364]:
+                  - generic [ref=e365]:
+                    - strong [ref=e366]: 设备真实诊断
+                    - paragraph [ref=e367]: c3856b62-f44f-45c5-ba4b-3dac3387aafe
+                - cell "失败" [ref=e368]
+                - cell "2026/11/5 14:28:41" [ref=e372]
+                - cell "admin" [ref=e374]
+                - cell [ref=e376]:
+                  - link "查看任务" [ref=e378]:
+                    - /url: "#/tasks/c3856b62-f44f-45c5-ba4b-3dac3387aafe"
+              - row [ref=e379] [cursor=pointer]:
+                - cell [ref=e380]:
+                  - generic [ref=e381]:
+                    - strong [ref=e382]: 设备真实诊断
+                    - paragraph [ref=e383]: 8a360762-f530-4d9b-a456-df6d3bcfc9ac
+                - cell "失败" [ref=e384]
+                - cell "2026/11/5 14:27:14" [ref=e388]
+                - cell "admin" [ref=e390]
+                - cell [ref=e392]:
+                  - link "查看任务" [ref=e394]:
+                    - /url: "#/tasks/8a360762-f530-4d9b-a456-df6d3bcfc9ac"
+              - row [ref=e395] [cursor=pointer]:
+                - cell [ref=e396]:
+                  - generic [ref=e397]:
+                    - strong [ref=e398]: 独立原型恢复
+                    - paragraph [ref=e399]: eed437b4-6151-424b-9d55-73f03e915fb6
+                - cell "已完成" [ref=e400]
+                - cell "2026/11/5 14:23:16" [ref=e404]
+                - cell "admin" [ref=e406]
+                - cell [ref=e408]:
+                  - link "查看任务" [ref=e410]:
+                    - /url: "#/tasks/eed437b4-6151-424b-9d55-73f03e915fb6"
+              - row [ref=e411] [cursor=pointer]:
+                - cell [ref=e412]:
+                  - generic [ref=e413]:
+                    - strong [ref=e414]: 独立遗忘 / 方法对照
+                    - paragraph [ref=e415]: 3f76f6a0-b738-4dca-8d4a-424fd88edbda
+                - cell "已完成" [ref=e416]
+                - cell "2026/11/5 14:22:17" [ref=e420]
+                - cell "admin" [ref=e422]
+                - cell [ref=e424]:
+                  - link "查看任务" [ref=e426]:
+                    - /url: "#/tasks/3f76f6a0-b738-4dca-8d4a-424fd88edbda"
+              - row [ref=e427] [cursor=pointer]:
+                - cell [ref=e428]:
+                  - generic [ref=e429]:
+                    - strong [ref=e430]: 独立遗忘 / 方法对照
+                    - paragraph [ref=e431]: 39ced8a2-3f15-44da-9f13-2fc7322a2823
+                - cell "失败" [ref=e432]
+                - cell "2026/11/5 14:20:25" [ref=e436]
+                - cell "admin" [ref=e438]
+                - cell [ref=e440]:
+                  - link "查看任务" [ref=e442]:
+                    - /url: "#/tasks/39ced8a2-3f15-44da-9f13-2fc7322a2823"
+              - row [ref=e443] [cursor=pointer]:
+                - cell [ref=e444]:
+                  - generic [ref=e445]:
+                    - strong [ref=e446]: 独立遗忘 / 方法对照
+                    - paragraph [ref=e447]: 3371aa58-ff0b-40d1-b9e8-584665e39bd0
+                - cell "失败" [ref=e448]
+                - cell "2026/11/5 14:16:13" [ref=e452]
+                - cell "admin" [ref=e454]
+                - cell [ref=e456]:
+                  - link "查看任务" [ref=e458]:
+                    - /url: "#/tasks/3371aa58-ff0b-40d1-b9e8-584665e39bd0"
+              - row [ref=e459] [cursor=pointer]:
+                - cell [ref=e460]:
+                  - generic [ref=e461]:
+                    - strong [ref=e462]: 独立遗忘 / 方法对照
+                    - paragraph [ref=e463]: ba1d128e-acec-4b6c-8751-bd6cb7595b8c
+                - cell "失败" [ref=e464]
+                - cell "2026/11/5 14:15:15" [ref=e468]
+                - cell "admin" [ref=e470]
+                - cell [ref=e472]:
+                  - link "查看任务" [ref=e474]:
+                    - /url: "#/tasks/ba1d128e-acec-4b6c-8751-bd6cb7595b8c"
+              - row [ref=e475] [cursor=pointer]:
+                - cell [ref=e476]:
+                  - generic [ref=e477]:
+                    - strong [ref=e478]: 独立训练 Full
+                    - paragraph [ref=e479]: f504901c-3117-426c-8444-ca7164ab6ba0
+                - cell "已完成" [ref=e480]
+                - cell "2026/11/5 08:47:51" [ref=e484]
+                - cell "admin" [ref=e486]
+                - cell [ref=e488]:
+                  - link "查看任务" [ref=e490]:
+                    - /url: "#/tasks/f504901c-3117-426c-8444-ca7164ab6ba0"
+              - row [ref=e491] [cursor=pointer]:
+                - cell [ref=e492]:
+                  - generic [ref=e493]:
+                    - strong [ref=e494]: 设备真实诊断
+                    - paragraph [ref=e495]: 694d4f95-0bba-496a-95f2-1aab6586126f
+                - cell "已完成" [ref=e496]
+                - cell "2026/11/5 01:26:34" [ref=e500]
+                - cell "c5_site0_69a57d03" [ref=e502]
+                - cell [ref=e504]:
+                  - link "查看任务" [ref=e506]:
+                    - /url: "#/tasks/694d4f95-0bba-496a-95f2-1aab6586126f"
+        - generic [ref=e507]:
+          - generic [ref=e508]: 每 5 秒刷新任务队列
+          - generic [ref=e509]:
+            - button "Go to previous page" [disabled] [ref=e510]
+            - list [ref=e511]:
+              - listitem "page 1" [ref=e512]: "1"
+              - listitem "page 2" [ref=e513] [cursor=pointer]: "2"
+              - listitem "page 3" [ref=e514] [cursor=pointer]: "3"
+              - listitem "page 4" [ref=e515] [cursor=pointer]: "4"
+              - listitem "page 5" [ref=e516] [cursor=pointer]: "5"
+              - listitem "page 6" [ref=e517] [cursor=pointer]: "6"
+              - listitem "page 7" [ref=e518] [cursor=pointer]: "7"
+            - button "Go to next page" [ref=e519] [cursor=pointer]
+      - paragraph [ref=e520]: 合成 smoke 验证系统执行链路。进程协议探针只检查进程管理，不产生实验结果。
+      - dialog "运行合成 smoke" [ref=e522]:
+        - generic [active] [ref=e523]:
+          - generic [ref=e524]:
+            - heading "运行合成 smoke" [level=2] [ref=e525]
+            - button "Close this dialog" [ref=e526] [cursor=pointer]
+          - generic [ref=e530]:
+            - paragraph [ref=e532]: 使用内存合成输入验证训练、遗忘、恢复和开发审计。结果会标注合成来源，不作为设备诊断或正式遗忘证明。
+            - paragraph [ref=e533]: 固定 CPU 串行模板：synthetic_marker_smoke_v1。执行后由后端校验工件并登记实验。
+            - generic [ref=e534]: 随机种子
+            - generic [ref=e535]:
+              - button "decrease number" [ref=e536] [cursor=pointer]
+              - button "increase number" [ref=e540] [cursor=pointer]
+              - spinbutton "随机种子" [ref=e546]: "42"
+          - generic [ref=e547]:
+            - button "关闭" [ref=e548] [cursor=pointer]
+            - button "提交合成任务" [ref=e550] [cursor=pointer]
+    - contentinfo [ref=e280]:
+      - generic [ref=e281]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e282]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

@@ -1,0 +1,197 @@
+- generic [ref=e144]:
+  - complementary [ref=e145]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e146] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e150]:
+        - text: 知枢
+        - generic [ref=e151]: FEDERATED INTELLIGENCE
+    - generic [ref=e152]:
+      - generic [ref=e153]: 研
+      - generic [ref=e154]:
+        - strong [ref=e155]: 设备智能运维研究
+        - generic [ref=e156]: 系统演示项目
+      - generic [ref=e157]: DEV
+    - navigation "主导航" [ref=e158]:
+      - generic [ref=e159]:
+        - paragraph [ref=e160]: 项目空间
+        - link "工作台" [ref=e161] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e165]:
+        - paragraph [ref=e166]: 数据中心
+        - link "数据集管理 1" [ref=e167] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e170]: 数据集管理
+          - generic [ref=e171]: "1"
+        - link "站点与客户端" [ref=e172] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=e176] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=e180] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=e184]:
+        - paragraph [ref=e185]: 研究工作区
+        - link "联邦实验" [ref=e186] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e190] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "训练时原型与恢复" [ref=e194] [cursor=pointer]:
+          - /url: "#/precomputed-recovery"
+        - link "设备上下文与模型" [ref=e198] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=e202] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "设备开发审计" [ref=e206] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+        - link "三阶段比较" [ref=e210] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e214] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e218] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e222] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e226] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e230] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e234]:
+      - generic [ref=e238]:
+        - text: 可追溯的研究演示
+        - generic [ref=e239]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e240]:
+        - generic [ref=e241]: 研
+        - generic [ref=e242]:
+          - strong [ref=e243]: 研究管理员
+          - generic [ref=e244]: ADMIN
+        - button "退出" [ref=e245] [cursor=pointer]
+  - generic [ref=e246]:
+    - banner [ref=e247]:
+      - generic [ref=e248]:
+        - generic [ref=e249]: 研究工作区
+        - strong [ref=e252]: 设备标记训练与校准
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e254]: 后端数据模式
+    - main [ref=e256]:
+      - generic [ref=e257]:
+        - generic [ref=e258]:
+          - paragraph [ref=e259]: EQUIPMENT MARKER CALIBRATION
+          - heading "设备标记训练与校准" [level=1] [ref=e260]
+          - paragraph [ref=e261]: 查看新版本训练、冻结门槛和独立留出样本的实测结果，保留每项未满足条件。
+        - generic [ref=e262]:
+          - button "刷新" [disabled]
+      - paragraph [ref=e263]: 当前属于开发验证。固定数据划分下的训练重复、人工探针和条件置信区间不能构成正式遗忘证明；正式审计计算模板保持关闭。
+      - generic [ref=e264]:
+        - heading "登记已有校准运行" [level=3] [ref=e265]
+        - paragraph [ref=e266]: 系统核验已完成运行的来源、模型文件、观测及统计结果后保存不可变报告。这里只登记已有结果；训练过程由受控校准脚本执行。
+        - generic [ref=e267]:
+          - textbox "校准来源运行编号" [ref=e270]:
+            - /placeholder: 来源运行 UUID
+          - button "核验并登记" [disabled] [ref=e271]
+        - link "旧设备版本的协议条件核查" [ref=e273] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+      - generic [ref=e274]:
+        - heading "不可变校准运行 · 9" [level=3] [ref=e275]
+        - generic [ref=e277]:
+          - table [ref=e279]:
+            - rowgroup [ref=e286]:
+              - row [ref=e287]:
+                - columnheader "来源运行 / 登记时间" [ref=e288]
+                - columnheader "校准门槛" [ref=e290]
+                - columnheader "留出样本开发结论" [ref=e292]
+                - columnheader "正式证明" [ref=e294]
+                - columnheader [ref=e296]
+          - table [ref=e301]:
+            - rowgroup [ref=e308]:
+              - row [ref=e309]:
+                - cell [ref=e310]:
+                  - generic [ref=e311]:
+                    - button "7912670e-9080-48d5-8fcb-28643fe1d789" [ref=e312] [cursor=pointer]
+                    - paragraph [ref=e314]: 2026/11/6 11:41:03
+                - cell "校准门槛满足" [ref=e315]
+                - cell "开发条件满足" [ref=e317]
+                - cell "证据不足" [ref=e319]
+                - cell [ref=e323]:
+                  - button "查看" [ref=e325] [cursor=pointer]
+              - row [ref=e327]:
+                - cell [ref=e328]:
+                  - generic [ref=e329]:
+                    - button "b57bf8dc-7319-4934-ad41-fabda1450974" [ref=e330] [cursor=pointer]
+                    - paragraph [ref=e332]: 2026/11/6 09:52:23
+                - cell "校准门槛满足" [ref=e333]
+                - cell "证据不足" [ref=e335]
+                - cell "证据不足" [ref=e337]
+                - cell [ref=e341]:
+                  - button "查看" [ref=e343] [cursor=pointer]
+              - row [ref=e345]:
+                - cell [ref=e346]:
+                  - generic [ref=e347]:
+                    - button "3520f4c5-1673-4045-ad17-ae81edfd7c10" [ref=e348] [cursor=pointer]
+                    - paragraph [ref=e350]: 2026/11/6 07:24:03
+                - cell "校准门槛满足" [ref=e351]
+                - cell "证据不足" [ref=e353]
+                - cell "证据不足" [ref=e355]
+                - cell [ref=e359]:
+                  - button "查看" [ref=e361] [cursor=pointer]
+              - row [ref=e363]:
+                - cell [ref=e364]:
+                  - generic [ref=e365]:
+                    - button "f56af911-4c8a-4bd4-9c07-1e51a78129ac" [ref=e366] [cursor=pointer]
+                    - paragraph [ref=e368]: 2026/11/6 02:25:24
+                - cell "校准门槛满足" [ref=e369]
+                - cell "条件不满足" [ref=e371]
+                - cell "证据不足" [ref=e373]
+                - cell [ref=e377]:
+                  - button "查看" [ref=e379] [cursor=pointer]
+              - row [ref=e381]:
+                - cell [ref=e382]:
+                  - generic [ref=e383]:
+                    - button "e03c440d-be7f-4fac-b14a-f2eb3fa0ea70" [ref=e384] [cursor=pointer]
+                    - paragraph [ref=e386]: 2026/11/6 01:33:34
+                - cell "校准门槛满足" [ref=e387]
+                - cell "条件不满足" [ref=e389]
+                - cell "证据不足" [ref=e391]
+                - cell [ref=e395]:
+                  - button "查看" [ref=e397] [cursor=pointer]
+              - row [ref=e399]:
+                - cell [ref=e400]:
+                  - generic [ref=e401]:
+                    - button "e961fb43-9e3d-4d23-a7b2-4907ee56c38a" [ref=e402] [cursor=pointer]
+                    - paragraph [ref=e404]: 2026/11/6 00:58:46
+                - cell "校准门槛满足" [ref=e405]
+                - cell "条件不满足" [ref=e407]
+                - cell "证据不足" [ref=e409]
+                - cell [ref=e413]:
+                  - button "查看" [ref=e415] [cursor=pointer]
+              - row [ref=e417]:
+                - cell [ref=e418]:
+                  - generic [ref=e419]:
+                    - button "065f248c-b65e-4764-ab6b-273d9d7f2655" [ref=e420] [cursor=pointer]
+                    - paragraph [ref=e422]: 2026/11/6 00:14:16
+                - cell "校准门槛满足" [ref=e423]
+                - cell "条件不满足" [ref=e425]
+                - cell "证据不足" [ref=e427]
+                - cell [ref=e431]:
+                  - button "查看" [ref=e433] [cursor=pointer]
+              - row [ref=e435]:
+                - cell [ref=e436]:
+                  - generic [ref=e437]:
+                    - button "25c2b856-3ddb-4e3e-a9aa-cf4656e6fb5e" [ref=e438] [cursor=pointer]
+                    - paragraph [ref=e440]: 2026/11/5 22:17:44
+                - cell "校准门槛满足" [ref=e441]
+                - cell "条件不满足" [ref=e443]
+                - cell "证据不足" [ref=e445]
+                - cell [ref=e449]:
+                  - button "查看" [ref=e451] [cursor=pointer]
+              - row [ref=e453]:
+                - cell [ref=e454]:
+                  - generic [ref=e455]:
+                    - button "7eeefcb7-26b8-4c8b-b85f-20a266eb01eb" [ref=e456] [cursor=pointer]
+                    - paragraph [ref=e458]: 2026/11/5 18:53:41
+                - cell "校准门槛满足" [ref=e459]
+                - cell "条件不满足" [ref=e461]
+                - cell "证据不足" [ref=e463]
+                - cell [ref=e467]:
+                  - button "查看" [ref=e469] [cursor=pointer]
+      - paragraph [ref=e471]: 正在读取冻结的实测证据…
+    - contentinfo [ref=e472]:
+      - generic [ref=e473]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e474]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

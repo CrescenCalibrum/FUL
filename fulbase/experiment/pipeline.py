@@ -177,8 +177,11 @@ def run_full_pipeline(cfg: ExperimentConfig) -> Path:
         client_device=cfg.client_device,
         client_cpus=cfg.client_cpus,
         client_gpus=cfg.client_gpus,
+        forget_client_ids=forget_ids,
+        training_seed=cfg.seed,
     )
     logger.save_model_params("model_full", fl_res.final_parameters)
+    logger.save_model_params("model_initial", fl_res.initial_parameters)
     logger.save_obj("history.pt", fl_res.history)
     logger.add_metrics(
         "full_after_fl",
@@ -204,7 +207,7 @@ def run_full_pipeline(cfg: ExperimentConfig) -> Path:
     logger.save_obj("retained_dp_prototypes.pt", proto)
 
     print("[4/6] Build unlearning context")
-    initial_parameters = [x.copy() for x in fl_res.history[0]["global_before"]]
+    initial_parameters = [x.copy() for x in fl_res.initial_parameters]
     ctx = UnlearningContext(
         fd=fd,
         dataset=cfg.dataset,
@@ -237,7 +240,7 @@ def run_full_pipeline(cfg: ExperimentConfig) -> Path:
         )
 
         # Retrain oracle 本身就是参考上界，一般不再接恢复模块。
-        if result.name == "retrain_oracle":
+        if result.name in {"retrain_oracle", "retrain_fl"}:
             continue
 
         # Recovery baseline: FedEraser-style historical replay。

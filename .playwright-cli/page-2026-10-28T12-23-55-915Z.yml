@@ -1,0 +1,176 @@
+- generic [ref=e121]:
+  - complementary [ref=e122]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e123] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e127]:
+        - text: 知枢
+        - generic [ref=e128]: FEDERATED INTELLIGENCE
+    - generic [ref=e129]:
+      - generic [ref=e130]: 研
+      - generic [ref=e131]:
+        - strong [ref=e132]: 设备智能运维研究
+        - generic [ref=e133]: 系统演示项目
+      - generic [ref=e134]: DEV
+    - navigation "主导航" [ref=e135]:
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: 项目空间
+        - link "工作台" [ref=e138] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e142]:
+        - paragraph [ref=e143]: 数据中心
+        - link "数据集管理 1" [ref=e144] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e147]: 数据集管理
+          - generic [ref=e148]: "1"
+        - link "站点与客户端" [ref=e149] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e153]:
+        - paragraph [ref=e154]: 研究工作区
+        - link "联邦实验" [ref=e155] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e159] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "三阶段比较" [ref=e163] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e167] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e171] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e175] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e179] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e183] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e187]:
+      - generic [ref=e191]:
+        - text: 可追溯的研究演示
+        - generic [ref=e192]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e193]:
+        - generic [ref=e194]: 研
+        - generic [ref=e195]:
+          - strong [ref=e196]: 研究管理员
+          - generic [ref=e197]: ADMIN
+        - button "退出" [ref=e198] [cursor=pointer]
+  - generic [ref=e199]:
+    - banner [ref=e200]:
+      - generic [ref=e201]:
+        - generic [ref=e202]: 研究工作区
+        - strong [ref=e205]: 独立操作工作台
+      - generic [ref=e206]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e207]: 后端数据模式
+        - generic [ref=e210]: 研究内容三 / 系统演示
+    - main [ref=e211]:
+      - generic [ref=e212]:
+        - heading "独立操作工作台" [level=2] [ref=e213]
+        - paragraph [ref=e214]: 合成开发上下文 · 每次提交只执行选中的操作。已有版本可以复用；阶段顺序由血缘校验，执行成功与审计结论分别显示。
+        - navigation "独立操作步骤" [ref=e215]:
+          - link "1 · 训练 Full" [ref=e216] [cursor=pointer]:
+            - /url: "#/operations/training"
+          - link "2 · 遗忘 / 对照" [ref=e217] [cursor=pointer]:
+            - /url: "#/operations/unlearn"
+          - link "3 · 原型与恢复" [ref=e218] [cursor=pointer]:
+            - /url: "#/operations/recovery"
+          - link "4 · 开发审计" [ref=e219] [cursor=pointer]:
+            - /url: "#/operations/audit"
+          - link "5 · 三阶段比较" [ref=e220] [cursor=pointer]:
+            - /url: "#/operations/compare"
+        - paragraph [ref=e221]: 设备数据的 4 客户端、4 类、861 窗口保留在数据中心；本入口运行 3 客户端、10 类合成数据。原型当前在训练后读取保留数据；没有 DP 会计或密码学安全聚合。
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - paragraph [ref=e224]: TRAINING CONTEXT
+          - heading "独立训练与模型" [level=1] [ref=e225]
+          - paragraph [ref=e226]: 固定执行上下文，训练并登记 Initial → Full；后续操作显式选择模型版本。
+        - button "刷新" [ref=e228] [cursor=pointer]
+      - paragraph [ref=e230]: 当前仅支持内存合成输入与 CPU 串行训练。训练 marker 已启用；不执行遗忘、原型构建、恢复或审计。设备训练仍待适配。
+      - generic [ref=e231]:
+        - heading "登记执行上下文" [level=3] [ref=e232]
+        - paragraph [ref=e233]: 固定 3 客户端、10 类、1 轮、60 训练样本和 30 测试样本，记录代码版本、划分、模型和 marker 签名。相同配置复用同一上下文。
+        - generic [ref=e234]:
+          - generic [ref=e235]: 训练种子
+          - generic [ref=e236]:
+            - button "decrease number" [ref=e237] [cursor=pointer]
+            - button "increase number" [ref=e241] [cursor=pointer]
+            - spinbutton "训练种子" [ref=e247]: "42"
+          - button "登记上下文" [ref=e248] [cursor=pointer]
+      - generic [ref=e250]:
+        - heading "执行上下文 · 1" [level=3] [ref=e252]
+        - generic [ref=e254]:
+          - table [ref=e256]:
+            - rowgroup [ref=e261]:
+              - row [ref=e262]:
+                - columnheader "上下文编号" [ref=e263]
+                - columnheader "种子" [ref=e265]
+                - columnheader "状态" [ref=e267]
+          - table [ref=e273]:
+            - rowgroup [ref=e278]:
+              - row [ref=e279]:
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e280]
+                - cell "42" [ref=e282]
+                - cell "MATERIALIZED" [ref=e284]
+        - generic [ref=e286]:
+          - button "Go to previous page" [disabled] [ref=e287]
+          - list [ref=e288]:
+            - listitem "page 1" [ref=e289]: "1"
+          - button "Go to next page" [disabled] [ref=e290]
+      - generic [ref=e291]:
+        - heading "模型版本 · 7" [level=3] [ref=e293]
+        - generic [ref=e295]:
+          - table [ref=e297]:
+            - rowgroup [ref=e302]:
+              - row [ref=e303]:
+                - columnheader "阶段" [ref=e304]
+                - columnheader "模型版本" [ref=e306]
+                - columnheader "上下文" [ref=e308]
+          - table [ref=e314]:
+            - rowgroup [ref=e319]:
+              - row [ref=e320]:
+                - cell "RECOVERED" [ref=e321]
+                - cell [ref=e323]:
+                  - link "bc656410-8071-44a0-b512-f7d4afb9d72b" [ref=e325] [cursor=pointer]:
+                    - /url: "#/models/bc656410-8071-44a0-b512-f7d4afb9d72b"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e326]
+              - row [ref=e328]:
+                - cell "RECOVERED" [ref=e329]
+                - cell [ref=e331]:
+                  - link "17559c5f-5a89-4c2d-b0c7-a50f8559eb0b" [ref=e333] [cursor=pointer]:
+                    - /url: "#/models/17559c5f-5a89-4c2d-b0c7-a50f8559eb0b"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e334]
+              - row [ref=e336]:
+                - cell "PRE" [ref=e337]
+                - cell [ref=e339]:
+                  - link "50119790-8019-44af-b2f8-bca9a692fd17" [ref=e341] [cursor=pointer]:
+                    - /url: "#/models/50119790-8019-44af-b2f8-bca9a692fd17"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e342]
+              - row [ref=e344]:
+                - cell "FULL" [ref=e345]
+                - cell [ref=e347]:
+                  - link "ebf8565e-6510-46f3-8dc2-6c0424b66f30" [ref=e349] [cursor=pointer]:
+                    - /url: "#/models/ebf8565e-6510-46f3-8dc2-6c0424b66f30"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e350]
+              - row [ref=e352]:
+                - cell "INITIAL" [ref=e353]
+                - cell [ref=e355]:
+                  - link "93ea8801-27e0-45d6-a4db-60e4efa1bbd8" [ref=e357] [cursor=pointer]:
+                    - /url: "#/models/93ea8801-27e0-45d6-a4db-60e4efa1bbd8"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e358]
+              - row [ref=e360]:
+                - cell "INITIAL" [ref=e361]
+                - cell [ref=e363]:
+                  - link "f6210230-e10b-480b-af3c-5437bd9dc366" [ref=e365] [cursor=pointer]:
+                    - /url: "#/models/f6210230-e10b-480b-af3c-5437bd9dc366"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e366]
+              - row [ref=e368]:
+                - cell "FULL" [ref=e369]
+                - cell [ref=e371]:
+                  - link "b8e257f4-0230-4e0f-85ba-a0a360274d14" [ref=e373] [cursor=pointer]:
+                    - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+                - cell "b20752f9-36da-47b7-9394-05557fc7fd3e" [ref=e374]
+        - generic [ref=e376]:
+          - button "Go to previous page" [disabled] [ref=e377]
+          - list [ref=e378]:
+            - listitem "page 1" [ref=e379]: "1"
+          - button "Go to next page" [disabled] [ref=e380]
+    - contentinfo [ref=e381]:
+      - generic [ref=e382]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e383]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

@@ -1,0 +1,20 @@
+- main [ref=f1e99]:
+  - generic [ref=f1e100]:
+    - paragraph [ref=f1e104]: FEDERATED INTELLIGENCE
+    - heading "知枢 · 研究工作台" [level=1] [ref=f1e105]
+    - paragraph [ref=f1e106]: 设备故障诊断、联邦遗忘与性能恢复从可追溯的数据和实验开始。
+    - generic [ref=f1e107]: 真实元数据 · 项目权限 · 操作留痕
+  - generic [ref=f1e110]:
+    - paragraph [ref=f1e111]: SIGN IN TO YOUR WORKSPACE
+    - heading "登录研究项目" [level=2] [ref=f1e112]
+    - paragraph [ref=f1e113]: 使用后端登记的账号进入工作台
+    - generic [ref=f1e114]: 用户名
+    - textbox "用户名" [ref=f1e117]:
+      - /placeholder: 请输入用户名
+      - text: admin
+    - generic [ref=f1e118]: 密码
+    - textbox "密码" [ref=f1e121]:
+      - /placeholder: 请输入密码
+    - alert [ref=f1e127]: "Failed to fetch dynamically imported module: http://127.0.0.1:4173/assets/DevicesView-qBVRM_3v.js"
+    - button "进入工作台" [ref=f1e122] [cursor=pointer]
+    - paragraph [ref=f1e126]: 本地演示账号与启动方式请查看后端 README。服务默认仅绑定本机，密码不会保存到浏览器。

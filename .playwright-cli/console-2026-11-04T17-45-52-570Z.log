@@ -1,0 +1,11 @@
+[   60506ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/diagnoses?page=1&page_size=10&device_id=76c07f48-a300-46f4-b9cd-0448d8fc5b22:0
+[   60506ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/model-options:0
+[   60506ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/samples?split=test&page=1&page_size=10:0
+[   60507ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22:0
+[   60507ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/assignments:0
+[   98979ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/assignments:0
+[   98979ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22:0
+[   98980ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/samples?split=test&page=1&page_size=10:0
+[   98980ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/devices/76c07f48-a300-46f4-b9cd-0448d8fc5b22/model-options:0
+[   98980ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/api/v1/diagnoses?page=1&page_size=10&device_id=76c07f48-a300-46f4-b9cd-0448d8fc5b22:0
+[   99307ms] [ERROR] Failed to load resource: the server responded with a status of 409 (Conflict) @ http://127.0.0.1:4173/api/v1/withdrawals:0

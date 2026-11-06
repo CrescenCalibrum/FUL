@@ -1,0 +1,220 @@
+- generic [ref=f1e3]:
+  - complementary [ref=f1e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f1e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f1e9]:
+        - text: 知枢
+        - generic [ref=f1e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]: 研
+      - generic [ref=f1e13]:
+        - strong [ref=f1e14]: 设备智能运维研究
+        - generic [ref=f1e15]: 系统演示项目
+      - generic [ref=f1e16]: DEV
+    - navigation "主导航" [ref=f1e17]:
+      - generic [ref=f1e18]:
+        - paragraph [ref=f1e19]: 项目空间
+        - link "工作台" [ref=f1e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f1e24]:
+        - paragraph [ref=f1e25]: 数据中心
+        - link "数据集管理 1" [ref=f1e98] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f1e29]: 数据集管理
+          - generic [ref=f1e99]: "1"
+        - link "站点与客户端" [ref=f1e30] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f1e34]:
+        - paragraph [ref=f1e35]: 研究工作区
+        - link "联邦实验" [ref=f1e36] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=f1e40] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=f1e44] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f1e48] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "审计中心" [ref=f1e52] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f1e56] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f1e60]:
+      - generic [ref=f1e64]:
+        - text: 可追溯的研究演示
+        - generic [ref=f1e65]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f1e66]:
+        - generic [ref=f1e67]: 研
+        - generic [ref=f1e68]:
+          - strong [ref=f1e69]: 研究管理员
+          - generic [ref=f1e70]: ADMIN
+        - button "退出" [ref=f1e71] [cursor=pointer]
+  - generic [ref=f1e72]:
+    - banner [ref=f1e73]:
+      - generic [ref=f1e74]:
+        - generic [ref=f1e100]: 研究工作区
+        - strong [ref=f1e101]: 实验结果
+      - generic [ref=f1e77]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f1e102]: 后端数据模式
+        - generic [ref=f1e81]: 研究内容三 / 系统演示
+    - main [ref=f1e82]:
+      - link "← 返回实验列表" [ref=f1e322] [cursor=pointer]:
+        - /url: "#/experiments"
+      - generic [ref=f1e323]:
+        - generic [ref=f1e324]:
+          - paragraph [ref=f1e325]: SYNTHETIC EXECUTION
+          - heading "独立 PGA 遗忘 · 恢复前评估" [level=1] [ref=f1e326]
+          - paragraph [ref=f1e327]: 内存合成数据 · CPU 串行执行
+        - generic [ref=f1e328]:
+          - button "查看配置" [ref=f1e329] [cursor=pointer]
+          - button "导出当前指标" [ref=f1e331] [cursor=pointer]
+      - paragraph [ref=f1e335]: task-021e23e6-825d-4d32-bae7-e703d4746165
+      - generic [ref=f1e336]:
+        - generic [ref=f1e337]:
+          - text: 模型适配
+          - strong [ref=f1e338]: FASHIONMNIST
+        - generic [ref=f1e339]:
+          - text: 客户端
+          - strong [ref=f1e340]: "3"
+        - generic [ref=f1e341]:
+          - text: 联邦轮次
+          - strong [ref=f1e342]: "1"
+        - generic [ref=f1e343]:
+          - text: 随机种子
+          - strong [ref=f1e344]: "42"
+        - generic [ref=f1e345]:
+          - text: 遗忘客户端
+          - strong [ref=f1e346]: "0"
+      - generic [ref=f1e347]:
+        - heading "Full → Pre · 独立遗忘" [level=3] [ref=f1e348]
+        - paragraph [ref=f1e349]: Full 为原版本的参考评估，本任务未重新训练；Pre 是本次 PGA 后、恢复前模型，未执行恢复或审计。
+        - paragraph [ref=f1e350]:
+          - link "查看来源 Full" [ref=f1e351] [cursor=pointer]:
+            - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - text: →
+          - link "查看本次 Pre 血缘" [ref=f1e352] [cursor=pointer]:
+            - /url: "#/models/50119790-8019-44af-b2f8-bca9a692fd17"
+        - paragraph [ref=f1e353]: 可训练参数 classifier.weight, classifier.bias
+        - paragraph [ref=f1e354]: backbone 保持不变 · BN / buffer 保持不变
+        - paragraph [ref=f1e355]: 实测状态变化 L2 1.710075e-4 · 投影半径 1.834932e-2
+        - button "导出状态变化证据" [ref=f1e356] [cursor=pointer]
+      - generic [ref=f1e358]:
+        - generic [ref=f1e359]:
+          - text: 实际来源
+          - strong [ref=f1e360]: 内存合成数据
+        - generic [ref=f1e361]:
+          - text: 类别
+          - strong [ref=f1e362]: "10"
+        - generic [ref=f1e363]:
+          - text: 训练样本
+          - strong [ref=f1e364]: "60"
+        - generic [ref=f1e365]:
+          - text: 测试样本
+          - strong [ref=f1e366]: "30"
+        - link "查看来源任务" [ref=f1e367] [cursor=pointer]:
+          - /url: "#/tasks/021e23e6-825d-4d32-bae7-e703d4746165"
+      - paragraph [ref=f1e371]: 这是合成数据上的功能验证。执行完成和工件校验不等同于遗忘有效或正式审计通过。
+      - generic [ref=f1e372]:
+        - generic [ref=f1e374]:
+          - heading "Full 参考与 Pre 恢复前评估" [level=3] [ref=f1e375]
+          - paragraph [ref=f1e376]: 同一数据快照、同一参考分组；Full 指向来源模型，不是本次重训。
+        - generic [ref=f1e377]:
+          - article [ref=f1e378]:
+            - paragraph [ref=f1e379]:
+              - text: 完整模型
+              - code [ref=f1e380]: M_full
+            - strong [ref=f1e381]: 20.00%
+            - generic [ref=f1e382]: 保留集准确率 · 20 样本
+            - generic [ref=f1e383]: 遗忘集 10.00%
+          - article [ref=f1e384]:
+            - paragraph [ref=f1e385]:
+              - text: 遗忘后 · 恢复前
+              - code [ref=f1e386]: M_unlearned
+            - strong [ref=f1e387]: 20.00%
+            - generic [ref=f1e388]: 保留集准确率 · 20 样本
+            - generic [ref=f1e389]: 遗忘集 10.00%
+        - img "来源 Full 与 PGA 遗忘后恢复前的保留集及遗忘集准确率，纵轴0到100百分比" [ref=f1e390]
+        - generic [ref=f1e393]: 遗忘集准确率不能单独证明遗忘有效；恢复增益为负时按原值显示。
+      - generic [ref=f1e396]:
+        - generic [ref=f1e398]:
+          - heading "全部阶段指标" [level=3] [ref=f1e399]
+          - paragraph [ref=f1e400]: 准确率按百分比展示，CSV 导出保留 0–1 原值；耗时来自实际日志。
+        - generic [ref=f1e402]:
+          - table [ref=f1e404]:
+            - rowgroup [ref=f1e411]:
+              - row [ref=f1e412]:
+                - columnheader "模型阶段" [ref=f1e413]
+                - columnheader "保留集准确率" [ref=f1e415]
+                - columnheader "遗忘集准确率" [ref=f1e417]
+                - columnheader "全体准确率" [ref=f1e419]
+                - columnheader "遗忘耗时 / s" [ref=f1e421]
+          - table [ref=f1e427]:
+            - rowgroup [ref=f1e434]:
+              - row [ref=f1e435]:
+                - cell [ref=f1e436]:
+                  - generic [ref=f1e437]:
+                    - strong [ref=f1e438]: Full · 来源模型参考
+                    - paragraph [ref=f1e439]: none / none
+                - cell "20.00%" [ref=f1e440]
+                - cell "10.00%" [ref=f1e442]
+                - cell "16.67%" [ref=f1e444]
+                - cell "未记录" [ref=f1e446]
+              - row [ref=f1e448]:
+                - cell [ref=f1e449]:
+                  - generic [ref=f1e450]:
+                    - strong [ref=f1e451]: Pre · 遗忘后恢复前
+                    - paragraph [ref=f1e452]: pga / none
+                - cell "20.00%" [ref=f1e453]
+                - cell "10.00%" [ref=f1e455]
+                - cell "16.67%" [ref=f1e457]
+                - cell "0.354" [ref=f1e459]
+      - generic [ref=f1e461]:
+        - generic [ref=f1e462]:
+          - generic [ref=f1e463]:
+            - heading "工件完整性" [level=3] [ref=f1e464]
+            - paragraph [ref=f1e465]: 后端独立校验后保存的发布副本，状态对应发布时的记录。
+          - generic [ref=f1e466]: 已校验 · 12 项
+        - generic [ref=f1e468]:
+          - generic [ref=f1e469]:
+            - code [ref=f1e472]: run/config.json
+            - generic [ref=f1e473]: 发布时已校验
+          - generic [ref=f1e474]:
+            - code [ref=f1e477]: run/execution_context.json
+            - generic [ref=f1e478]: 发布时已校验
+          - generic [ref=f1e479]:
+            - code [ref=f1e482]: run/metrics.csv
+            - generic [ref=f1e483]: 发布时已校验
+          - generic [ref=f1e484]:
+            - code [ref=f1e487]: run/models/model_pga_pre_recovery.pt
+            - generic [ref=f1e488]: 发布时已校验
+          - generic [ref=f1e489]:
+            - code [ref=f1e492]: run/parent_reference.json
+            - generic [ref=f1e493]: 发布时已校验
+          - generic [ref=f1e494]:
+            - code [ref=f1e497]: run/pga_state_change.json
+            - generic [ref=f1e498]: 发布时已校验
+          - generic [ref=f1e499]:
+            - code [ref=f1e502]: run/run_status.json
+            - generic [ref=f1e503]: 发布时已校验
+          - generic [ref=f1e504]:
+            - code [ref=f1e507]: run/unlearning_result.json
+            - generic [ref=f1e508]: 发布时已校验
+          - generic [ref=f1e509]:
+            - code [ref=f1e512]: run/verification/checkpoint_manifest.json
+            - generic [ref=f1e513]: 发布时已校验
+          - generic [ref=f1e514]:
+            - code [ref=f1e517]: output.json
+            - generic [ref=f1e518]: 发布时已校验
+          - generic [ref=f1e519]:
+            - code [ref=f1e522]: input.json
+            - generic [ref=f1e523]: 发布时已校验
+          - generic [ref=f1e524]:
+            - code [ref=f1e527]: validation-report.json
+            - generic [ref=f1e528]: 发布时已校验
+        - generic [ref=f1e529]:
+          - generic [ref=f1e530]: config.json · SHA-256
+          - code [ref=f1e531]: 30d08719cdd13d80fc142965eee8ccd0e034f591d07bc05e1547a46445a1ecc5
+          - generic [ref=f1e532]: metrics.csv · SHA-256
+          - code [ref=f1e533]: 86f528684a63f89166e5ecff24c9dd70d4923d02f639d7379830df6b216809d2
+    - contentinfo [ref=f1e95]:
+      - generic [ref=f1e96]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f1e97]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

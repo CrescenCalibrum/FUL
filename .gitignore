@@ -2,3 +2,38 @@ data/
 *.pt
 untitled.txt
 source/
+apps/
+docs/
+configs/
+reports/
+tests/
+tmp/
+plan/
+
+# Local verification environments and generated caches
+.tools/
+.venv*/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.test-artifacts/
+runs/equipment-*/
+
+# Frontend dependencies and local build output
+apps/web/node_modules/
+apps/web/dist/
+apps/web/.env.local
+
+# Backend local state and generated packages
+apps/backend/target/
+apps/backend/var/
+apps/worker/var/
+output/playwright/
+
+# Private system backups and local deployment ownership/logs
+backups/
+apps/deploy/var/
+
+
+fulbase/system/
+scripts/system/

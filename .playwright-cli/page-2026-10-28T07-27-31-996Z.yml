@@ -1,0 +1,161 @@
+- generic [ref=e31]:
+  - complementary [ref=e32]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e33] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e37]:
+        - text: 知枢
+        - generic [ref=e38]: FEDERATED INTELLIGENCE
+    - generic [ref=e39]:
+      - generic [ref=e40]: 研
+      - generic [ref=e41]:
+        - strong [ref=e42]: 设备智能运维研究
+        - generic [ref=e43]: 系统演示项目
+      - generic [ref=e44]: DEV
+    - navigation "主导航" [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: 项目空间
+        - link "工作台" [ref=e48] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e52]:
+        - paragraph [ref=e53]: 数据中心
+        - link "数据集管理 1" [ref=e54] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e57]: 数据集管理
+          - generic [ref=e58]: "1"
+        - link "站点与客户端" [ref=e59] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=e63]:
+        - paragraph [ref=e64]: 研究工作区
+        - link "联邦实验" [ref=e65] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=e69] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=e73] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e77] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e81] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e85] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e89] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e93]:
+      - generic [ref=e97]:
+        - text: 可追溯的研究演示
+        - generic [ref=e98]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e99]:
+        - generic [ref=e100]: 研
+        - generic [ref=e101]:
+          - strong [ref=e102]: 研究管理员
+          - generic [ref=e103]: ADMIN
+        - button "退出" [ref=e104] [cursor=pointer]
+  - generic [ref=e105]:
+    - banner [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: 研究工作区
+        - strong [ref=e111]: 原型版本
+      - generic [ref=e112]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e113]: 后端数据模式
+        - generic [ref=e116]: 研究内容三 / 系统演示
+    - main [ref=e117]:
+      - link "← 返回原型与独立恢复" [ref=e394] [cursor=pointer]:
+        - /url: "#/recovery"
+      - generic [ref=e396]:
+        - paragraph [ref=e397]: PROTOTYPE VERSION
+        - heading "保留集原型版本" [level=1] [ref=e398]
+        - paragraph [ref=e399]: 版本绑定指定 Full、执行上下文和保留集合；可用于兼容 Pre 的独立恢复。
+      - generic [ref=e400]:
+        - heading "已发布原型 · 10 类" [level=3] [ref=e401]
+        - paragraph [ref=e402]: a662c662-3ab3-4064-8358-1fa92cc7507e
+        - paragraph [ref=e403]:
+          - link "查看来源 Full" [ref=e404] [cursor=pointer]:
+            - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - text: ·
+          - link "查看原型构建任务" [ref=e405] [cursor=pointer]:
+            - /url: "#/tasks/931f8be0-c8c5-4e84-afa4-981d1885c246"
+          - text: ·
+          - link "选择 Pre 执行恢复" [ref=e406] [cursor=pointer]:
+            - /url: "#/recovery?prototype=a662c662-3ab3-4064-8358-1fa92cc7507e&full=b8e257f4-0230-4e0f-85ba-a0a360274d14"
+        - paragraph [ref=e407]: 上下文 b20752f9-36da-47b7-9394-05557fc7fd3e
+        - paragraph [ref=e408]: 原型签名 SHA-256 b8f64d9e75e9ce0aa13fffb83a44ec89eb5e746762c76aa3bd278e674da8a7e2
+        - paragraph [ref=e409]: 保留客户端 1、2 · 排除客户端 0 · 40 个训练样本
+        - paragraph [ref=e410]: 特征 512 维 · 裁剪 10 · 噪声 σ 0 · 实测构建耗时 0.287 秒
+        - paragraph [ref=e411]: 本次在训练结束后重新读取保留训练数据计算统计，快照包含全部客户端，但特征统计排除客户端 0。未使用训练 marker 或审计样本，不是训练期预收集，也没有完整 DP 会计。
+        - button "导出原型签名" [ref=e412] [cursor=pointer]
+      - generic [ref=e414]:
+        - heading "类别统计 · 40 样本" [level=3] [ref=e416]
+        - generic [ref=e418]:
+          - table [ref=e420]:
+            - rowgroup [ref=e424]:
+              - row [ref=e425]:
+                - columnheader "类别编号" [ref=e426]
+                - columnheader "原型样本数" [ref=e428]
+          - table [ref=e434]:
+            - rowgroup [ref=e438]:
+              - row [ref=e439]:
+                - cell "0" [ref=e440]
+                - cell "4" [ref=e442]
+              - row [ref=e444]:
+                - cell "1" [ref=e445]
+                - cell "4" [ref=e447]
+              - row [ref=e449]:
+                - cell "2" [ref=e450]
+                - cell "4" [ref=e452]
+              - row [ref=e454]:
+                - cell "3" [ref=e455]
+                - cell "4" [ref=e457]
+              - row [ref=e459]:
+                - cell "4" [ref=e460]
+                - cell "4" [ref=e462]
+              - row [ref=e464]:
+                - cell "5" [ref=e465]
+                - cell "4" [ref=e467]
+              - row [ref=e469]:
+                - cell "6" [ref=e470]
+                - cell "4" [ref=e472]
+              - row [ref=e474]:
+                - cell "7" [ref=e475]
+                - cell "4" [ref=e477]
+              - row [ref=e479]:
+                - cell "8" [ref=e480]
+                - cell "4" [ref=e482]
+              - row [ref=e484]:
+                - cell "9" [ref=e485]
+                - cell "4" [ref=e487]
+      - generic [ref=e489]:
+        - heading "工件完整性 · 10 项" [level=3] [ref=e490]
+        - generic [ref=e491]:
+          - generic [ref=e492]:
+            - code [ref=e493]: run/config.json
+            - generic [ref=e494]: 发布时已校验
+          - generic [ref=e495]:
+            - code [ref=e496]: run/execution_context.json
+            - generic [ref=e497]: 发布时已校验
+          - generic [ref=e498]:
+            - code [ref=e499]: run/parent_reference.json
+            - generic [ref=e500]: 发布时已校验
+          - generic [ref=e501]:
+            - code [ref=e502]: run/prototype_result.json
+            - generic [ref=e503]: 发布时已校验
+          - generic [ref=e504]:
+            - code [ref=e505]: run/prototype_signature.json
+            - generic [ref=e506]: 发布时已校验
+          - generic [ref=e507]:
+            - code [ref=e508]: run/retained_prototypes.json
+            - generic [ref=e509]: 发布时已校验
+          - generic [ref=e510]:
+            - code [ref=e511]: run/run_status.json
+            - generic [ref=e512]: 发布时已校验
+          - generic [ref=e513]:
+            - code [ref=e514]: output.json
+            - generic [ref=e515]: 发布时已校验
+          - generic [ref=e516]:
+            - code [ref=e517]: input.json
+            - generic [ref=e518]: 发布时已校验
+          - generic [ref=e519]:
+            - code [ref=e520]: validation-report.json
+            - generic [ref=e521]: 发布时已校验
+    - contentinfo [ref=e233]:
+      - generic [ref=e234]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e235]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

@@ -6,7 +6,8 @@ import torch
 from fulbase.data import FederatedData, make_client_loaders
 from fulbase.models import build_model
 from fulbase.train import evaluate, train_one_client
-from fulbase.utils import get_model_parameters, set_model_parameters
+from fulbase.utils import get_model_parameters, set_model_parameters, set_seed
+from fulbase.verification.markers import MarkerConfig, MarkerDataset, derived_seed
 
 
 class FULClient(fl.client.NumPyClient):
@@ -19,6 +20,8 @@ class FULClient(fl.client.NumPyClient):
         local_epochs: int,
         lr: float,
         device: str,
+        marker_config: MarkerConfig | None = None,
+        training_seed: int = 42,
     ) -> None:
         self.cid = int(cid)
         self.dataset = dataset
@@ -30,6 +33,11 @@ class FULClient(fl.client.NumPyClient):
             self.device = torch.device(device)
         self.trainloader, self.testloader = make_client_loaders(fd, self.cid, batch_size=batch_size)
         self.model = build_model(dataset=dataset, num_classes=fd.num_classes)
+        self.marker_config = marker_config
+        self.training_seed = training_seed
+        self.markers = (MarkerDataset(marker_config, self.cid, dataset, "train",
+                                     derived_seed(training_seed, "train-markers"), fd.num_classes)
+                        if marker_config is not None and marker_config.enabled else None)
 
     def get_parameters(self, config):
         return get_model_parameters(self.model)
@@ -38,10 +46,16 @@ class FULClient(fl.client.NumPyClient):
         set_model_parameters(self.model, parameters)
         lr = float(config.get("lr", self.lr))
         epochs = int(config.get("local_epochs", self.local_epochs))
-        loss = train_one_client(self.model, self.trainloader, epochs=epochs, lr=lr, device=self.device)
+        local_seed = derived_seed(self.training_seed, self.cid, config.get("round", 0))
+        set_seed(local_seed)
+        logs = {}
+        loss = train_one_client(self.model, self.trainloader, epochs=epochs, lr=lr, device=self.device,
+                                marker_dataset=self.markers, marker_config=self.marker_config,
+                                marker_cid=self.cid, marker_seed=local_seed, training_logs=logs)
         return get_model_parameters(self.model), len(self.trainloader.dataset), {
             "train_loss": float(loss),
             "cid": str(self.cid),
+            **logs,
         }
 
     def evaluate(self, parameters, config):
@@ -60,16 +74,21 @@ def make_client_fn(
     local_epochs: int,
     lr: float,
     device: str,
+    marker_config: MarkerConfig | None = None,
+    training_seed: int = 42,
+    client_ids: list[int] | None = None,
 ):
     def client_fn(cid: str):
         client = FULClient(
-            cid=int(cid),
+            cid=int(cid) if client_ids is None else client_ids[int(cid)],
             fd=fd,
             dataset=dataset,
             batch_size=batch_size,
             local_epochs=local_epochs,
             lr=lr,
             device=device,
+            marker_config=marker_config,
+            training_seed=training_seed,
         )
         return client.to_client()
 

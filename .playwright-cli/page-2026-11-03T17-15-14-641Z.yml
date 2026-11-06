@@ -1,0 +1,136 @@
+- generic [ref=f2e678]:
+  - complementary [ref=f2e679]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f2e680] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f2e684]:
+        - text: 知枢
+        - generic [ref=f2e685]: FEDERATED INTELLIGENCE
+    - generic [ref=f2e686]:
+      - generic [ref=f2e687]: 研
+      - generic [ref=f2e688]:
+        - strong [ref=f2e689]: 设备智能运维研究
+        - generic [ref=f2e690]: 系统演示项目
+      - generic [ref=f2e691]: DEV
+    - navigation "主导航" [ref=f2e692]:
+      - generic [ref=f2e693]:
+        - paragraph [ref=f2e694]: 项目空间
+        - link "工作台" [ref=f2e695] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f2e699]:
+        - paragraph [ref=f2e700]: 数据中心
+        - link "数据集管理 1" [ref=f2e701] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f2e704]: 数据集管理
+          - generic [ref=f2e705]: "1"
+        - link "站点与客户端" [ref=f2e706] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f2e710]:
+        - paragraph [ref=f2e711]: 研究工作区
+        - link "联邦实验" [ref=f2e712] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f2e716] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "三阶段比较" [ref=f2e720] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f2e724] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f2e728] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f2e732] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f2e736] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f2e740] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f2e744]:
+      - generic [ref=f2e748]:
+        - text: 可追溯的研究演示
+        - generic [ref=f2e749]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f2e750]:
+        - generic [ref=f2e751]: 研
+        - generic [ref=f2e752]:
+          - strong [ref=f2e753]: 演示运维员
+          - generic [ref=f2e754]: OPERATOR
+        - button "退出" [ref=f2e755] [cursor=pointer]
+  - generic [ref=f2e756]:
+    - banner [ref=f2e757]:
+      - generic [ref=f2e758]:
+        - generic [ref=f2e759]: 研究工作区
+        - strong [ref=f2e762]: 独立操作工作台
+      - generic [ref=f2e763]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f2e764]: 后端数据模式
+        - generic [ref=f2e767]: 研究内容三 / 系统演示
+    - main [ref=f2e768]:
+      - generic [ref=f2e916]:
+        - heading "独立操作工作台" [level=2] [ref=f2e917]
+        - paragraph [ref=f2e918]: 合成开发上下文 · 每次提交只执行选中的操作。已有版本可以复用；阶段顺序由血缘校验，执行成功与审计结论分别显示。
+        - navigation "独立操作步骤" [ref=f2e919]:
+          - link "1 · 训练 Full" [ref=f2e920] [cursor=pointer]:
+            - /url: "#/operations/training"
+          - link "2 · 遗忘 / 对照" [ref=f2e921] [cursor=pointer]:
+            - /url: "#/operations/unlearn"
+          - link "3 · 原型与恢复" [ref=f2e922] [cursor=pointer]:
+            - /url: "#/operations/recovery"
+          - link "4 · 开发审计" [ref=f2e923] [cursor=pointer]:
+            - /url: "#/operations/audit"
+          - link "5 · 三阶段比较" [ref=f2e924] [cursor=pointer]:
+            - /url: "#/operations/compare"
+        - paragraph [ref=f2e925]: 设备数据保留在数据中心，本入口使用独立的合成开发上下文。原型当前在训练后读取保留数据；没有 DP 会计或密码学安全聚合。
+      - generic [ref=f2e926]:
+        - generic [ref=f2e927]:
+          - generic [ref=f2e928]:
+            - heading "合成执行能力" [level=3] [ref=f2e929]
+            - paragraph [ref=f2e930]: 操作、账号权限与执行器状态分别核查
+          - button "刷新" [disabled]
+        - paragraph [ref=f2e931]: 正在读取能力状态…
+      - generic [ref=f2e932]:
+        - generic [ref=f2e933]:
+          - paragraph [ref=f2e934]: TRAINING CONTEXT
+          - heading "独立训练与模型" [level=1] [ref=f2e935]
+          - paragraph [ref=f2e936]: 固定执行上下文，训练并登记 Initial → Full；后续操作显式选择模型版本。
+        - generic [ref=f2e937]:
+          - button "刷新" [disabled]
+      - paragraph [ref=f2e938]: 当前仅支持内存合成输入与 CPU 串行训练。训练 marker 已启用；不执行遗忘、原型构建、恢复或审计。设备训练仍待适配。
+      - generic [ref=f2e939]:
+        - heading "登记执行上下文" [level=3] [ref=f2e940]
+        - paragraph [ref=f2e941]: 固定 3 客户端、10 类、1 轮、60 训练样本和 30 测试样本，记录代码版本、划分、模型和 marker 签名。相同配置复用同一上下文。
+        - paragraph [ref=f2e942]: 当前账号只读。
+      - generic [ref=f2e943]:
+        - heading "执行上下文 · 0" [level=3] [ref=f2e945]
+        - generic [ref=f2e947]:
+          - table [ref=f2e949]:
+            - rowgroup [ref=f2e954]:
+              - row [ref=f2e955]:
+                - columnheader "上下文编号" [ref=f2e956]
+                - columnheader "种子" [ref=f2e958]
+                - columnheader "状态" [ref=f2e960]
+          - generic [ref=f2e965]:
+            - table:
+              - rowgroup
+            - generic [ref=f2e966]: 尚未登记上下文
+        - generic [ref=f2e968]:
+          - button "Go to previous page" [disabled] [ref=f2e969]
+          - list [ref=f2e970]:
+            - listitem "page 1" [ref=f2e971]: "1"
+          - button "Go to next page" [disabled] [ref=f2e972]
+      - generic [ref=f2e973]:
+        - heading "模型版本 · 0" [level=3] [ref=f2e975]
+        - generic [ref=f2e977]:
+          - table [ref=f2e979]:
+            - rowgroup [ref=f2e984]:
+              - row [ref=f2e985]:
+                - columnheader "阶段" [ref=f2e986]
+                - columnheader "模型版本" [ref=f2e988]
+                - columnheader "上下文" [ref=f2e990]
+          - generic [ref=f2e995]:
+            - table:
+              - rowgroup
+            - generic [ref=f2e996]: 尚无已校验模型
+        - generic [ref=f2e998]:
+          - button "Go to previous page" [disabled] [ref=f2e999]
+          - list [ref=f2e1000]:
+            - listitem "page 1" [ref=f2e1001]: "1"
+          - button "Go to next page" [disabled] [ref=f2e1002]
+    - contentinfo [ref=f2e913]:
+      - generic [ref=f2e914]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f2e915]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

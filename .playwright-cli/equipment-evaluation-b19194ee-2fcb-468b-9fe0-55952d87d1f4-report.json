@@ -1,0 +1,409 @@
+{
+  "schema_version" : "ful-equipment-evaluation-v1",
+  "experiment_id" : "task-b19194ee-2fcb-468b-9fe0-55952d87d1f4",
+  "task_id" : "b19194ee-2fcb-468b-9fe0-55952d87d1f4",
+  "context_id" : "7bd4be33-5819-4056-acaf-c242dd3584d8",
+  "data_origin" : "public_equipment_demo",
+  "stage" : "full_after_fl",
+  "model_versions" : {
+    "INITIAL" : "ebb8ec7e-bf28-4d4a-9def-92c06adcf506",
+    "FULL" : "43f9bc40-a24e-4a7f-8479-206fb8eab4e3"
+  },
+  "context_signature_sha256" : "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+  "dataset" : {
+    "dataset_key" : "cwru_demo_v1",
+    "counts" : {
+      "client_split_counts" : [ {
+        "client_id" : 0,
+        "per_class" : [ 19, 39, 40, 40 ],
+        "split" : "train",
+        "total" : 138
+      }, {
+        "client_id" : 0,
+        "per_class" : [ 4, 8, 8, 8 ],
+        "split" : "validation",
+        "total" : 28
+      }, {
+        "client_id" : 0,
+        "per_class" : [ 4, 8, 8, 8 ],
+        "split" : "test",
+        "total" : 28
+      }, {
+        "client_id" : 1,
+        "per_class" : [ 39, 40, 39, 40 ],
+        "split" : "train",
+        "total" : 158
+      }, {
+        "client_id" : 1,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "validation",
+        "total" : 32
+      }, {
+        "client_id" : 1,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "test",
+        "total" : 32
+      }, {
+        "client_id" : 2,
+        "per_class" : [ 39, 40, 40, 39 ],
+        "split" : "train",
+        "total" : 158
+      }, {
+        "client_id" : 2,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "validation",
+        "total" : 32
+      }, {
+        "client_id" : 2,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "test",
+        "total" : 32
+      }, {
+        "client_id" : 3,
+        "per_class" : [ 39, 40, 40, 40 ],
+        "split" : "train",
+        "total" : 159
+      }, {
+        "client_id" : 3,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "validation",
+        "total" : 32
+      }, {
+        "client_id" : 3,
+        "per_class" : [ 8, 8, 8, 8 ],
+        "split" : "test",
+        "total" : 32
+      } ],
+      "num_classes" : 4,
+      "num_clients" : 4,
+      "split_counts" : {
+        "test" : 124,
+        "train" : 613,
+        "validation" : 124
+      },
+      "total_examples" : 861
+    }
+  },
+  "labels" : [ {
+    "label_id" : 0,
+    "label_key" : "normal",
+    "display_name" : "正常"
+  }, {
+    "label_id" : 1,
+    "label_key" : "inner_race_fault",
+    "display_name" : "内圈故障"
+  }, {
+    "label_id" : 2,
+    "label_key" : "ball_fault",
+    "display_name" : "滚动体故障"
+  }, {
+    "label_id" : 3,
+    "label_key" : "outer_race_fault",
+    "display_name" : "外圈故障"
+  } ],
+  "client_bindings" : [ {
+    "client_id" : 0,
+    "display_name" : "负载 0 HP",
+    "motor_load_hp" : 0,
+    "origin_kind" : "simulated_load_condition"
+  }, {
+    "client_id" : 1,
+    "display_name" : "负载 1 HP",
+    "motor_load_hp" : 1,
+    "origin_kind" : "simulated_load_condition"
+  }, {
+    "client_id" : 2,
+    "display_name" : "负载 2 HP",
+    "motor_load_hp" : 2,
+    "origin_kind" : "simulated_load_condition"
+  }, {
+    "client_id" : 3,
+    "display_name" : "负载 3 HP",
+    "motor_load_hp" : 3,
+    "origin_kind" : "simulated_load_condition"
+  } ],
+  "summary" : {
+    "stage" : "full_after_fl",
+    "unlearner" : "none",
+    "recovery" : "none",
+    "all_acc" : 1.0,
+    "all_loss" : 0.9426388586721113,
+    "retain_acc" : 1.0,
+    "forget_acc" : 1.0,
+    "retain_loss" : 0.9520993232727051,
+    "forget_loss" : 0.9102027756827218,
+    "retain_num_examples" : 96,
+    "forget_num_examples" : 28,
+    "full_training_time_sec" : 20.990055100061,
+    "macro_f1" : 1.0,
+    "test_num_examples" : 124
+  },
+  "protocol" : {
+    "validation" : "after_each_aggregate_all_clients",
+    "test" : "final_full_only_all_clients",
+    "checkpoint_selection" : "last_completed_round",
+    "test_used_for_selection" : false,
+    "class_order" : [ "normal", "inner_race_fault", "ball_fault", "outer_race_fault" ],
+    "macro_f1_zero_division" : 0,
+    "confusion_matrix_rows" : "ground_truth",
+    "confusion_matrix_columns" : "prediction",
+    "planned_forget_client_ids" : [ 0 ],
+    "comparison_retained_client_ids" : [ 1, 2, 3 ]
+  },
+  "training" : {
+    "backend" : "serial",
+    "training_client_ids" : [ 0, 1, 2, 3 ],
+    "num_rounds" : 1,
+    "local_epochs" : 1,
+    "batch_size" : 32,
+    "lr" : 0.01,
+    "optimizer" : "SGD",
+    "momentum" : 0.9,
+    "weight_decay" : 0.0,
+    "fraction_fit" : 1.0,
+    "client_order" : "ascending_logical_client_id",
+    "aggregation" : "weighted_average_arrays_float64_then_original_dtype",
+    "aggregation_weight" : "client_real_training_window_count",
+    "local_seed_rule" : "sha256-first8-big-endian-mod-2^31:cwru-train-v1|seed|round|cid",
+    "shuffle" : true,
+    "drop_last" : false,
+    "num_workers" : 0,
+    "device" : "cpu",
+    "cpu_threads" : 2,
+    "marker_enabled" : false
+  },
+  "limitations" : [ "train_validation_test_share_source_records_but_not_raw_sample_blocks", "guard_gaps_reduce_local_overlap_but_do_not_establish_statistical_independence", "simulated_clients_are_load_conditions_not_real_stations", "normal_sampling_rate_is_a_documented_demo_assumption", "not_an_unseen_bearing_or_remaining_life_benchmark" ],
+  "round_validation" : [ {
+    "round" : 1,
+    "split" : "validation",
+    "num_examples" : 124,
+    "acc" : 0.9919354838709677,
+    "loss" : 0.9441094090861659,
+    "macro_f1" : 0.9921855921855922,
+    "source" : "aggregated_model"
+  } ],
+  "client_metrics" : [ {
+    "round" : 1,
+    "client_id" : 0,
+    "split" : "train",
+    "num_examples" : 138,
+    "loss" : 0.9811241328716278,
+    "acc" : null,
+    "source" : "local_sgd",
+    "optimizer_steps" : 5,
+    "local_seed" : 1170403116,
+    "training_time_sec" : 4.1779831000603735
+  }, {
+    "round" : 1,
+    "client_id" : 1,
+    "split" : "train",
+    "num_examples" : 158,
+    "loss" : 1.0046066343784332,
+    "acc" : null,
+    "source" : "local_sgd",
+    "optimizer_steps" : 5,
+    "local_seed" : 1682834784,
+    "training_time_sec" : 4.437491700053215
+  }, {
+    "round" : 1,
+    "client_id" : 2,
+    "split" : "train",
+    "num_examples" : 158,
+    "loss" : 1.051543939113617,
+    "acc" : null,
+    "source" : "local_sgd",
+    "optimizer_steps" : 5,
+    "local_seed" : 1514768483,
+    "training_time_sec" : 4.386028100037947
+  }, {
+    "round" : 1,
+    "client_id" : 3,
+    "split" : "train",
+    "num_examples" : 159,
+    "loss" : 1.022779369354248,
+    "acc" : null,
+    "source" : "local_sgd",
+    "optimizer_steps" : 5,
+    "local_seed" : 225897002,
+    "training_time_sec" : 4.446227399865165
+  }, {
+    "round" : 1,
+    "client_id" : 0,
+    "split" : "validation",
+    "num_examples" : 28,
+    "loss" : 0.9145095688956124,
+    "acc" : 0.9642857142857143,
+    "source" : "aggregated_model",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 1,
+    "split" : "validation",
+    "num_examples" : 32,
+    "loss" : 0.9562527537345886,
+    "acc" : 1.0,
+    "source" : "aggregated_model",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 2,
+    "split" : "validation",
+    "num_examples" : 32,
+    "loss" : 0.9594978094100952,
+    "acc" : 1.0,
+    "source" : "aggregated_model",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 3,
+    "split" : "validation",
+    "num_examples" : 32,
+    "loss" : 0.9424774050712585,
+    "acc" : 1.0,
+    "source" : "aggregated_model",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 0,
+    "split" : "test",
+    "num_examples" : 28,
+    "loss" : 0.9102027756827218,
+    "acc" : 1.0,
+    "source" : "final_full",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 1,
+    "split" : "test",
+    "num_examples" : 32,
+    "loss" : 0.9539706110954285,
+    "acc" : 1.0,
+    "source" : "final_full",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 2,
+    "split" : "test",
+    "num_examples" : 32,
+    "loss" : 0.9614230990409851,
+    "acc" : 1.0,
+    "source" : "final_full",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  }, {
+    "round" : 1,
+    "client_id" : 3,
+    "split" : "test",
+    "num_examples" : 32,
+    "loss" : 0.9409042596817017,
+    "acc" : 1.0,
+    "source" : "final_full",
+    "optimizer_steps" : null,
+    "local_seed" : null,
+    "training_time_sec" : null
+  } ],
+  "class_metrics" : [ {
+    "stage" : "full_after_fl",
+    "split" : "test",
+    "label_id" : 0,
+    "label" : "normal",
+    "num_examples" : 28,
+    "recall" : 1.0,
+    "f1" : 1.0
+  }, {
+    "stage" : "full_after_fl",
+    "split" : "test",
+    "label_id" : 1,
+    "label" : "inner_race_fault",
+    "num_examples" : 32,
+    "recall" : 1.0,
+    "f1" : 1.0
+  }, {
+    "stage" : "full_after_fl",
+    "split" : "test",
+    "label_id" : 2,
+    "label" : "ball_fault",
+    "num_examples" : 32,
+    "recall" : 1.0,
+    "f1" : 1.0
+  }, {
+    "stage" : "full_after_fl",
+    "split" : "test",
+    "label_id" : 3,
+    "label" : "outer_race_fault",
+    "num_examples" : 32,
+    "recall" : 1.0,
+    "f1" : 1.0
+  } ],
+  "confusion_matrix" : {
+    "counts" : [ [ 28, 0, 0, 0 ], [ 0, 32, 0, 0 ], [ 0, 0, 32, 0 ], [ 0, 0, 0, 32 ] ]
+  },
+  "sources" : [ {
+    "file" : "metrics.csv",
+    "artifact_id" : "a2ffc69b-8ac9-4882-ad9a-e7c90429a602",
+    "sha256" : "10e16ab3e60ca05e2b8a5c684722d5f2a45a8727535e1f43063d3c0d049dd0fa",
+    "size_bytes" : 268
+  }, {
+    "file" : "metrics/round_validation.csv",
+    "artifact_id" : "da89e6f9-ad5c-48eb-8f32-5d9f11d8b215",
+    "sha256" : "e87606d006974e0c900aecc133587fd215049c02f2879c954a0cc636f085ef91",
+    "size_bytes" : 143
+  }, {
+    "file" : "metrics/client_metrics.csv",
+    "artifact_id" : "23ff24a2-dc71-477d-ab01-13646fbb6afb",
+    "sha256" : "d22bf9188ad04bbd7cc17cfd7058369513413f1c90a4cc9b2fa8546e3b81c109",
+    "size_bytes" : 862
+  }, {
+    "file" : "metrics/class_metrics.csv",
+    "artifact_id" : "acfea224-7d7b-4266-ab17-d767a2d4bec5",
+    "sha256" : "a2b32505e3b2185bf74a17cbb98db5899f1cdce52c4aab99abde34124d9b4e31",
+    "size_bytes" : 235
+  }, {
+    "file" : "metrics/confusion_matrix.csv",
+    "artifact_id" : "39f178b4-6a0f-40ef-bec8-9192168eed18",
+    "sha256" : "a43a280cd158eae9c2ff3620a644e8eb3f6608e230c427089db5b35660b60260",
+    "size_bytes" : 463
+  }, {
+    "file" : "verification/training_result.json",
+    "artifact_id" : "0b18fc7e-de02-4f13-99d4-1c1578cd2710",
+    "sha256" : "31b8737e8eecce60a5ca59ebaf0a2c864deb95e594a1f9ac3233b2fe4c3f6990",
+    "size_bytes" : 2116
+  }, {
+    "file" : "execution_context.json",
+    "artifact_id" : "8094ddf3-ef32-4af5-98b6-e307e5097b23",
+    "sha256" : "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+    "size_bytes" : 24445
+  }, {
+    "file" : "config.json",
+    "artifact_id" : "3424f6b1-4751-420f-9f95-ef9bdb028a51",
+    "sha256" : "e6c2c3f7600f2f211962807b435cc4fa85e10e44cf68f06680975b21b41d9242",
+    "size_bytes" : 976
+  }, {
+    "file" : "dataset-manifest.json",
+    "artifact_id" : "b947a670-ce82-4e85-b395-a15b295957c0",
+    "sha256" : "5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6",
+    "size_bytes" : 6181
+  }, {
+    "file" : "data_partition.json",
+    "artifact_id" : "f259d3a4-6937-434f-8f6e-d587b5b37a77",
+    "sha256" : "33d4128a9b11236ca2dcdd13d4e364c7489fd1aaf8150446b543c64f994b422e",
+    "size_bytes" : 11995
+  } ],
+  "single_round" : true,
+  "accuracy_unit" : "fraction_0_to_1",
+  "loss_semantics" : "训练 loss 为本地平均批次交叉熵；验证/测试 loss 为聚合模型的逐样本平均交叉熵，不直接混作同口径曲线。",
+  "timing_scope" : "full_training_time_sec 包含本地训练、聚合及每轮验证；不包含最终测试、数据加载及工件导出。"
+}

@@ -1,0 +1,7 @@
+[  130028ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/TaskDetailView-DUC0s-98.js:0
+[  130028ms] [ERROR] TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4173/assets/TaskDetailView-DUC0s-98.js @ http://127.0.0.1:4173/assets/index-BWbuKxjC.js:8
+[  130030ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/assets/WorkerStatus.vue_vue_type_script_setup_true_lang-CeJNnKjw.js:0
+[  185829ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:4173/api/v1/auth/me:0
+[  306656ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:4173/api/v1/diagnoses/c36f8f9f-411f-4012-a19a-d9a55e9f38ba:0
+[  358310ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:4173/api/v1/diagnoses/c36f8f9f-411f-4012-a19a-d9a55e9f38ba:0
+[  660326ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:4173/api/v1/diagnoses/c36f8f9f-411f-4012-a19a-d9a55e9f38ba:0

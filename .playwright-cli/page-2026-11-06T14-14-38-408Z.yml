@@ -1,0 +1,268 @@
+- generic [ref=e46]:
+  - complementary [ref=e47]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e48] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e52]:
+        - text: 知枢
+        - generic [ref=e53]: FEDERATED INTELLIGENCE
+    - generic [ref=e54]:
+      - generic [ref=e55]: 研
+      - generic [ref=e56]:
+        - strong [ref=e57]: 设备智能运维研究
+        - generic [ref=e58]: 系统演示项目
+      - generic [ref=e59]: DEV
+    - navigation "主导航" [ref=e60]:
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: 项目空间
+        - link "工作台" [ref=e63] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e67]:
+        - paragraph [ref=e68]: 数据中心
+        - link "数据集管理 1" [ref=e69] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e72]: 数据集管理
+          - generic [ref=e73]: "1"
+        - link "站点与客户端" [ref=e74] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=e78] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=e82] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=e86]:
+        - paragraph [ref=e87]: 研究工作区
+        - link "联邦实验" [ref=e88] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e92] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "训练时原型与恢复" [ref=e96] [cursor=pointer]:
+          - /url: "#/precomputed-recovery"
+        - link "设备上下文与模型" [ref=e100] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=e104] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "设备开发审计" [ref=e108] [cursor=pointer]:
+          - /url: "#/equipment-audits"
+        - link "三阶段比较" [ref=e112] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e116] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e120] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e124] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e128] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e132] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e136]:
+      - generic [ref=e140]:
+        - text: 可追溯的研究演示
+        - generic [ref=e141]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e142]:
+        - generic [ref=e143]: 研
+        - generic [ref=e144]:
+          - strong [ref=e145]: 研究管理员
+          - generic [ref=e146]: ADMIN
+        - button "退出" [ref=e147] [cursor=pointer]
+  - generic [ref=e148]:
+    - banner [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]: 数据中心
+        - strong [ref=e154]: 数据集详情
+      - generic [ref=e155]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e156]: 后端数据模式
+        - generic [ref=e284]: 研究内容三 / 系统演示
+    - main [ref=e158]:
+      - link "← 返回数据集列表" [ref=e1330] [cursor=pointer]:
+        - /url: "#/datasets"
+      - generic [ref=e1331]:
+        - generic [ref=e1332]:
+          - paragraph [ref=e1333]: DATASET / VERSION
+          - heading "CWRU 轴承故障数据集" [level=1] [ref=e1334]
+          - paragraph [ref=e1335]: 驱动端振动信号 · 4 类状态识别 · 模拟联邦客户端
+        - generic [ref=e1336]:
+          - generic [ref=e1337]: 开发可用
+          - button "导出清单" [ref=e1339] [cursor=pointer]
+      - generic [ref=e1343]:
+        - generic [ref=e1344]:
+          - generic [ref=e1345]: 版本标识
+          - strong [ref=e1346]: cwru_demo_v1
+        - generic [ref=e1347]:
+          - generic [ref=e1348]: 有效窗口
+          - strong [ref=e1349]: 861 个
+        - generic [ref=e1350]:
+          - generic [ref=e1351]: 目标采样率
+          - strong [ref=e1352]: 12 kHz
+        - generic [ref=e1353]:
+          - generic [ref=e1354]: 模型输入
+          - strong [ref=e1355]: 1 × 32 × 32
+        - generic [ref=e1356]:
+          - generic [ref=e1357]: 逻辑客户端 / 类别
+          - strong [ref=e1358]: 4 /4
+      - generic [ref=e1359]:
+        - article [ref=e1360]:
+          - generic [ref=e1361]: 训练集
+          - strong [ref=e1363]: 613 窗口
+          - generic [ref=e1364]: 71.2%
+        - article [ref=e1365]:
+          - generic [ref=e1366]: 验证集
+          - strong [ref=e1368]: 124 窗口
+          - generic [ref=e1369]: 14.4%
+        - article [ref=e1370]:
+          - generic [ref=e1371]: 测试集
+          - strong [ref=e1373]: 124 窗口
+          - generic [ref=e1374]: 14.4%
+      - generic [ref=e1376]:
+        - tablist [ref=e1380]:
+          - tab "处理说明" [ref=e1382]
+          - tab "数据分布" [selected] [ref=e1383]
+          - tab "信号与时频预览" [ref=e1384]
+          - tab "质量与来源" [ref=e1385]
+        - tabpanel "数据分布" [ref=e1387]:
+          - generic [ref=e1388]:
+            - generic [ref=e1389]:
+              - generic [ref=e1390]:
+                - heading "客户端与类别分布" [level=3] [ref=e1391]
+                - paragraph [ref=e1392]: 全部数据 · 861 个信号窗口，图表与下方数量表使用同一组登记记录。
+              - generic [ref=e1394] [cursor=pointer]:
+                - generic:
+                  - combobox "统计数据划分" [ref=e1396]
+                  - generic [ref=e1397]: 全部数据
+            - generic [ref=e1402]:
+              - article [ref=e1403]:
+                - heading "客户端分布" [level=4] [ref=e1404]
+                - paragraph [ref=e1405]: 按类别堆叠 · 单位：窗口
+                - img "全部数据：各客户端的类别窗口数量" [ref=e1406]
+              - article [ref=e1409]:
+                - heading "类别分布" [level=4] [ref=e1410]
+                - paragraph [ref=e1411]: 全部数据汇总 · 单位：窗口
+                - img "全部数据：4 类标签的窗口数量" [ref=e1412]
+            - generic [ref=e1415]:
+              - generic [ref=e1416]:
+                - heading "全部数据 · 客户端数量" [level=4] [ref=e1417]
+                - generic [ref=e1419]:
+                  - table [ref=e1421]:
+                    - rowgroup [ref=e1429]:
+                      - row [ref=e1430]:
+                        - columnheader "模拟客户端" [ref=e1431]
+                        - columnheader "窗口数量" [ref=e1433]
+                        - columnheader "正常" [ref=e1435]
+                        - columnheader "内圈故障" [ref=e1437]
+                        - columnheader "滚动体故障" [ref=e1439]
+                        - columnheader "外圈故障" [ref=e1441]
+                  - table [ref=e1447]:
+                    - rowgroup [ref=e1455]:
+                      - row [ref=e1456]:
+                        - cell "客户端 0负载 0 HP" [ref=e1457]
+                        - cell "194" [ref=e1459]
+                        - cell "27" [ref=e1461]
+                        - cell "55" [ref=e1463]
+                        - cell "56" [ref=e1465]
+                        - cell "56" [ref=e1467]
+                      - row [ref=e1469]:
+                        - cell "客户端 1负载 1 HP" [ref=e1470]
+                        - cell "222" [ref=e1472]
+                        - cell "55" [ref=e1474]
+                        - cell "56" [ref=e1476]
+                        - cell "55" [ref=e1478]
+                        - cell "56" [ref=e1480]
+                      - row [ref=e1482]:
+                        - cell "客户端 2负载 2 HP" [ref=e1483]
+                        - cell "222" [ref=e1485]
+                        - cell "55" [ref=e1487]
+                        - cell "56" [ref=e1489]
+                        - cell "56" [ref=e1491]
+                        - cell "55" [ref=e1493]
+                      - row [ref=e1495]:
+                        - cell "客户端 3负载 3 HP" [ref=e1496]
+                        - cell "223" [ref=e1498]
+                        - cell "55" [ref=e1500]
+                        - cell "56" [ref=e1502]
+                        - cell "56" [ref=e1504]
+                        - cell "56" [ref=e1506]
+                  - table [ref=e1509]:
+                    - rowgroup [ref=e1517]:
+                      - row [ref=e1518]:
+                        - cell "合计" [ref=e1519]
+                        - cell "861" [ref=e1521]
+                        - cell "192" [ref=e1523]
+                        - cell "223" [ref=e1525]
+                        - cell "223" [ref=e1527]
+                        - cell "223" [ref=e1529]
+                - paragraph [ref=e1531]: 客户端按清单中的电机负载工况模拟。
+              - generic [ref=e1532]:
+                - heading "全部数据 · 类别数量与占比" [level=4] [ref=e1533]
+                - generic [ref=e1535]:
+                  - table [ref=e1537]:
+                    - rowgroup [ref=e1542]:
+                      - row [ref=e1543]:
+                        - columnheader "标签" [ref=e1544]
+                        - columnheader "窗口数量" [ref=e1546]
+                        - columnheader "占比" [ref=e1548]
+                  - table [ref=e1554]:
+                    - rowgroup [ref=e1559]:
+                      - row [ref=e1560]:
+                        - cell "正常" [ref=e1561]
+                        - cell "192" [ref=e1563]
+                        - cell "22.3%" [ref=e1565]
+                      - row [ref=e1567]:
+                        - cell "内圈故障" [ref=e1568]
+                        - cell "223" [ref=e1570]
+                        - cell "25.9%" [ref=e1572]
+                      - row [ref=e1574]:
+                        - cell "滚动体故障" [ref=e1575]
+                        - cell "223" [ref=e1577]
+                        - cell "25.9%" [ref=e1579]
+                      - row [ref=e1581]:
+                        - cell "外圈故障" [ref=e1582]
+                        - cell "223" [ref=e1584]
+                        - cell "25.9%" [ref=e1586]
+                - paragraph [ref=e1588]: 合计 861 个窗口，占比按当前选择的数据划分计算。
+            - heading "训练 / 验证 / 测试划分明细" [level=4] [ref=e1589]
+            - generic [ref=e1591]:
+              - table [ref=e1593]:
+                - rowgroup [ref=e1600]:
+                  - row [ref=e1601]:
+                    - columnheader "模拟客户端" [ref=e1602]
+                    - columnheader "训练集" [ref=e1604]
+                    - columnheader "验证集" [ref=e1606]
+                    - columnheader "测试集" [ref=e1608]
+                    - columnheader "全部窗口" [ref=e1610]
+              - table [ref=e1616]:
+                - rowgroup [ref=e1623]:
+                  - row [ref=e1624]:
+                    - cell "客户端 0 · 负载 0 HP" [ref=e1625]
+                    - cell "138" [ref=e1627]
+                    - cell "28" [ref=e1629]
+                    - cell "28" [ref=e1631]
+                    - cell "194" [ref=e1633]
+                  - row [ref=e1635]:
+                    - cell "客户端 1 · 负载 1 HP" [ref=e1636]
+                    - cell "158" [ref=e1638]
+                    - cell "32" [ref=e1640]
+                    - cell "32" [ref=e1642]
+                    - cell "222" [ref=e1644]
+                  - row [ref=e1646]:
+                    - cell "客户端 2 · 负载 2 HP" [ref=e1647]
+                    - cell "158" [ref=e1649]
+                    - cell "32" [ref=e1651]
+                    - cell "32" [ref=e1653]
+                    - cell "222" [ref=e1655]
+                  - row [ref=e1657]:
+                    - cell "客户端 3 · 负载 3 HP" [ref=e1658]
+                    - cell "159" [ref=e1660]
+                    - cell "32" [ref=e1662]
+                    - cell "32" [ref=e1664]
+                    - cell "223" [ref=e1666]
+              - table [ref=e1669]:
+                - rowgroup [ref=e1676]:
+                  - row [ref=e1677]:
+                    - cell "合计" [ref=e1678]
+                    - cell "613" [ref=e1680]
+                    - cell "124" [ref=e1682]
+                    - cell "124" [ref=e1684]
+                    - cell "861" [ref=e1686]
+            - paragraph [ref=e1688]: 4 个客户端合计 861 个窗口；统计单位为切分后的信号窗口。
+    - contentinfo [ref=e280]:
+      - generic [ref=e281]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e282]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

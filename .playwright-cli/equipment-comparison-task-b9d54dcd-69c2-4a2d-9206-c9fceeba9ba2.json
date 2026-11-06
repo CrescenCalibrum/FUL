@@ -1,0 +1,3571 @@
+{
+  "execution_operation": "RECOVER",
+  "execution_source": "WORKER_TASK",
+  "data_origin": "public_equipment_demo",
+  "formal_audit": false,
+  "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+  "context_signature_sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+  "full_model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+  "config": {
+    "schema_version": "ful-equipment-operations-profile-v1",
+    "forget_clients": [
+      0
+    ],
+    "retained_clients": [
+      1,
+      2,
+      3
+    ],
+    "pga_steps": 20,
+    "pga_lr": 0.001,
+    "pga_project_ratio": 0.05,
+    "pga_layers": "head",
+    "batch_size": 32,
+    "clip_norm": 10,
+    "dp_sigma": 0,
+    "variance_floor": 0.0001,
+    "ridge": 0.01,
+    "collection_stage": "post_training_retained_data_reaccess",
+    "precomputed_before_withdrawal": false,
+    "formal_dp_accounting": false,
+    "cryptographic_secure_aggregation": false,
+    "evaluation_split": "test",
+    "selection_uses_test": false
+  },
+  "operation_result": {
+    "schema_version": "ful-equipment-operation-result-v1",
+    "operation": "RECOVER",
+    "full_model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+    "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+    "context_signature_sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+    "profile": {
+      "schema_version": "ful-equipment-operations-profile-v1",
+      "forget_clients": [
+        0
+      ],
+      "retained_clients": [
+        1,
+        2,
+        3
+      ],
+      "pga_steps": 20,
+      "pga_lr": 0.001,
+      "pga_project_ratio": 0.05,
+      "pga_layers": "head",
+      "batch_size": 32,
+      "clip_norm": 10,
+      "dp_sigma": 0,
+      "variance_floor": 0.0001,
+      "ridge": 0.01,
+      "collection_stage": "post_training_retained_data_reaccess",
+      "precomputed_before_withdrawal": false,
+      "formal_dp_accounting": false,
+      "cryptographic_secure_aggregation": false,
+      "evaluation_split": "test",
+      "selection_uses_test": false
+    },
+    "full_parameters_sha256": "ff75d8ec5e2ee14977379ce1bad3572088c2b66b4fecd1671fc4f075c9c94eef",
+    "formal_audit": false,
+    "pre_model_id": "6f2d8675-2ad7-4046-84ec-99acc60e5c61",
+    "prototype_id": "428fbd14-df2c-4ee2-adfa-372660a32aec",
+    "data_access": {
+      "training_tensors_decoded": false,
+      "prototype_rebuilt": false,
+      "evaluation_split": "test",
+      "evaluation_examples": 124,
+      "test_only_snapshot_used": true,
+      "raw_mat_accessed": false
+    },
+    "operation_time_sec": 0.00028909998945891857,
+    "output_parameters_sha256": "bc21a825206db7f50d86f6a3317438d561237724a39fe32e01111b464bf33057",
+    "source_parameters_sha256": "c4fb24d367ce232b4170724e10a91e62d0bef6d2d9d986b1af09ca7ea0981857",
+    "feature_proof": {
+      "sample_count": 124,
+      "feature_dim": 512,
+      "feature_sha256": [
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad"
+      ],
+      "exactly_equal": true,
+      "scope": "fixed_test_windows",
+      "backbone_sha256": "8d501b050d6df472611f299b0577ec1aa5dcb70b8a3a8426212c69e2209c8418"
+    },
+    "full_unchanged": true
+  },
+  "parent_reference": {
+    "schema_version": "ful-equipment-operation-reference-v1",
+    "inputs": {
+      "pre_model_id": "6f2d8675-2ad7-4046-84ec-99acc60e5c61",
+      "prototype_id": "428fbd14-df2c-4ee2-adfa-372660a32aec",
+      "pre": {
+        "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+        "task_id": "6c7a4b41-db7f-4d21-b560-e05be837ab47",
+        "attempt_id": "e37dc019-3c90-4d34-9292-2053b52b7517",
+        "publication_root_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d",
+        "stage": "PRE",
+        "checkpoint_sha256": "f343476e2a9680747305c6f7822d3ef8486c3820b2dadc2da29d8d7c1ebf0bea",
+        "parameters_sha256": "c4fb24d367ce232b4170724e10a91e62d0bef6d2d9d986b1af09ca7ea0981857",
+        "signature_sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+        "model_id": "6f2d8675-2ad7-4046-84ec-99acc60e5c61",
+        "artifacts": [
+          {
+            "name": "models/model_pga_pre_recovery.pt",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/models/model_pga_pre_recovery.pt",
+            "sha256": "f343476e2a9680747305c6f7822d3ef8486c3820b2dadc2da29d8d7c1ebf0bea",
+            "size_bytes": 67157037
+          },
+          {
+            "name": "execution_context.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/execution_context.json",
+            "sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+            "size_bytes": 24445
+          },
+          {
+            "name": "parent_reference.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/parent_reference.json",
+            "sha256": "f448499ac481c664bb47c8da8cbba35c01eb974382be8a01ec344a2ca57a3eba",
+            "size_bytes": 36701
+          },
+          {
+            "name": "operation_result.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/operation_result.json",
+            "sha256": "1684ba4ef9e59fd34dd9733619f8c3e58fa490326fca856d82d169b322b35708",
+            "size_bytes": 2107
+          },
+          {
+            "name": "metrics.csv",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/metrics.csv",
+            "sha256": "0df2216ab2a7a2488eda16fdf51695a745c74a8b878e9dd58eb15b182e608307",
+            "size_bytes": 370
+          },
+          {
+            "name": "stage_evaluation.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/stage_evaluation.json",
+            "sha256": "088d33ee915896811cbd779554468c4ded68f682eab056cdc5d2ce8601ea8395",
+            "size_bytes": 11052
+          },
+          {
+            "name": "eval_snapshot.npz",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/eval_snapshot.npz",
+            "sha256": "6dae5f56aa8cf6581f2d8074c5dd57eb7367bb83005349493ec640efe191c663",
+            "size_bytes": 471080
+          },
+          {
+            "name": "evaluation_manifest.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/evaluation_manifest.json",
+            "sha256": "5f393e88e95d96a1ac5b8ac346889493e32e58d9f90c39c82bd7db4b0d531457",
+            "size_bytes": 5114
+          },
+          {
+            "name": "pga_state_change.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/pga_state_change.json",
+            "sha256": "8ad25053450a467530367940c0acef6d085aa777d12d3909e697354f1b9c7115",
+            "size_bytes": 22164
+          },
+          {
+            "name": "verification/checkpoint_manifest.json",
+            "storage_ref": "published/task-runs/6c7a4b41-db7f-4d21-b560-e05be837ab47/e37dc019-3c90-4d34-9292-2053b52b7517/9c902b52b4ea4d179fc5195f6be8987d/run/verification/checkpoint_manifest.json",
+            "sha256": "cbb62c37bc860469737e0ce6f876a4b84289d4e95fb31e442e14ad5fbd8a899e",
+            "size_bytes": 1149
+          }
+        ],
+        "full_model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3"
+      },
+      "prototype": {
+        "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+        "task_id": "a8856782-3ae9-4e43-86a4-10349becbf57",
+        "attempt_id": "2413210a-ecb5-4635-8075-49b4fd24ff12",
+        "publication_root_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea",
+        "signature_sha256": "40503ec986b03c5c644e402e1b1fcbe02505253133ef1e0cb7336c25b1a563f6",
+        "model_id": "428fbd14-df2c-4ee2-adfa-372660a32aec",
+        "artifacts": [
+          {
+            "name": "retained_prototypes.json",
+            "storage_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea/run/retained_prototypes.json",
+            "sha256": "b8aa6c2736d0ca21bf38e032c8c4f78d8a3ac594f5bc5cd245534d9af83446f2",
+            "size_bytes": 117000
+          },
+          {
+            "name": "prototype_signature.json",
+            "storage_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea/run/prototype_signature.json",
+            "sha256": "40503ec986b03c5c644e402e1b1fcbe02505253133ef1e0cb7336c25b1a563f6",
+            "size_bytes": 1992
+          },
+          {
+            "name": "operation_result.json",
+            "storage_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea/run/operation_result.json",
+            "sha256": "fd4af2a297088ab0fe7bc9e435f9103ed419d37e12a19cd52d4b7331803f1dee",
+            "size_bytes": 1981
+          },
+          {
+            "name": "parent_reference.json",
+            "storage_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea/run/parent_reference.json",
+            "sha256": "f448499ac481c664bb47c8da8cbba35c01eb974382be8a01ec344a2ca57a3eba",
+            "size_bytes": 36701
+          },
+          {
+            "name": "execution_context.json",
+            "storage_ref": "published/task-runs/a8856782-3ae9-4e43-86a4-10349becbf57/2413210a-ecb5-4635-8075-49b4fd24ff12/787188c93522480faec07836e9c735ea/run/execution_context.json",
+            "sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+            "size_bytes": 24445
+          }
+        ],
+        "prototype_id": "428fbd14-df2c-4ee2-adfa-372660a32aec"
+      },
+      "parent": {
+        "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+        "task_id": "b19194ee-2fcb-468b-9fe0-55952d87d1f4",
+        "attempt_id": "915fafde-9600-48cd-91fb-dcc081e0ccc2",
+        "publication_root_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a",
+        "stage": "FULL",
+        "checkpoint_sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+        "parameters_sha256": "ff75d8ec5e2ee14977379ce1bad3572088c2b66b4fecd1671fc4f075c9c94eef",
+        "signature_sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+        "model_id": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+        "artifacts": [
+          {
+            "name": "models/model_full.pt",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/models/model_full.pt",
+            "sha256": "c170bd8a8759f2c6f37e759fc7e223d40b5cea735d2a5fae59ee73b273dea339",
+            "size_bytes": 67157101
+          },
+          {
+            "name": "execution_context.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/execution_context.json",
+            "sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+            "size_bytes": 24445
+          },
+          {
+            "name": "data_snapshot.npz",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/data_snapshot.npz",
+            "sha256": "7c7778b3867ae19363559e20732bb7db49b2070331ddbe7d57517a49d1b0edc1",
+            "size_bytes": 8021761
+          },
+          {
+            "name": "dataset-manifest.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/dataset-manifest.json",
+            "sha256": "5a762a2923d8f770bdd1465de6b55626861cb01ef6db841a69918eb8cdd16ae6",
+            "size_bytes": 6181
+          },
+          {
+            "name": "normalizer.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/normalizer.json",
+            "sha256": "83284c0f6fcb84a1811157a1915e3f8eb6dd4d72fcc08938fdab017b01edcb80",
+            "size_bytes": 204
+          },
+          {
+            "name": "recipe.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/recipe.json",
+            "sha256": "55d6d4adfacd16f62d45f5db2c0235ac139624644a03f4aa2950811345077eb3",
+            "size_bytes": 2157
+          },
+          {
+            "name": "windows.csv",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/windows.csv",
+            "sha256": "04eec1c7c6b75da1c3ae5b80058065545c3597da3c1d3e4bc875346894e6b0e9",
+            "size_bytes": 157853
+          },
+          {
+            "name": "verification/checkpoint_manifest.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/verification/checkpoint_manifest.json",
+            "sha256": "6b5fe66f5b449ec08e52d52bfaf9fa776cc852311e8e04106eb7743c94b54458",
+            "size_bytes": 1872
+          },
+          {
+            "name": "metrics.csv",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/metrics.csv",
+            "sha256": "10e16ab3e60ca05e2b8a5c684722d5f2a45a8727535e1f43063d3c0d049dd0fa",
+            "size_bytes": 268
+          },
+          {
+            "name": "config.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/config.json",
+            "sha256": "e6c2c3f7600f2f211962807b435cc4fa85e10e44cf68f06680975b21b41d9242",
+            "size_bytes": 976
+          },
+          {
+            "name": "data_partition.json",
+            "storage_ref": "published/task-runs/b19194ee-2fcb-468b-9fe0-55952d87d1f4/915fafde-9600-48cd-91fb-dcc081e0ccc2/a3c4eddcf6004552949d689b84eaa27a/run/data_partition.json",
+            "sha256": "33d4128a9b11236ca2dcdd13d4e364c7489fd1aaf8150446b543c64f994b422e",
+            "size_bytes": 11995
+          }
+        ],
+        "signature": {
+          "schema_version": "ful-equipment-execution-signature-v1",
+          "execution_ready": true,
+          "data_domain": "equipment",
+          "data_origin": "public_equipment_demo",
+          "context_id": "7bd4be33-5819-4056-acaf-c242dd3584d8",
+          "project_id": "8cbcee48-3433-4a9d-a4c8-55c96a1abb75",
+          "registration_config_sha256": "378c5eea4607ab73e846f8579fff2c99970b16d41b945caa59a057e7febf26e9",
+          "registration_spec_sha256": "d49d1410bc58699cc0f895fdf329cd180c1a9cf3e4aaf545453eef6b6363281d",
+          "registration_model_descriptor_sha256": "ea80707a01e0309a8b0871f333baaa60d656f0a4b5a0c408d7fd7cf4b3fc285c",
+          "partition_sha256": "33d4128a9b11236ca2dcdd13d4e364c7489fd1aaf8150446b543c64f994b422e",
+          "snapshot_sha256": "7c7778b3867ae19363559e20732bb7db49b2070331ddbe7d57517a49d1b0edc1",
+          "model_key": "bearing_resnet18_v1",
+          "model_class": "ResNet18ForSmallImage",
+          "state_schema": [
+            {
+              "name": "backbone.conv1.weight",
+              "shape": [
+                64,
+                1,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.0.conv1.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.0.conv2.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.1.conv1.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer1.1.conv2.weight",
+              "shape": [
+                64,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.weight",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.bias",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.running_mean",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.running_var",
+              "shape": [
+                64
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer1.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.conv1.weight",
+              "shape": [
+                128,
+                64,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.conv2.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.0.weight",
+              "shape": [
+                128,
+                64,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.1.conv1.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer2.1.conv2.weight",
+              "shape": [
+                128,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.weight",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.bias",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.running_mean",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.running_var",
+              "shape": [
+                128
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer2.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.conv1.weight",
+              "shape": [
+                256,
+                128,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.conv2.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.0.weight",
+              "shape": [
+                256,
+                128,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.1.conv1.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer3.1.conv2.weight",
+              "shape": [
+                256,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.weight",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.bias",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.running_mean",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.running_var",
+              "shape": [
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer3.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.conv1.weight",
+              "shape": [
+                512,
+                256,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.conv2.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.0.weight",
+              "shape": [
+                512,
+                256,
+                1,
+                1
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.1.conv1.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn1.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "backbone.layer4.1.conv2.weight",
+              "shape": [
+                512,
+                512,
+                3,
+                3
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.weight",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.bias",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.running_mean",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.running_var",
+              "shape": [
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "backbone.layer4.1.bn2.num_batches_tracked",
+              "shape": [],
+              "dtype": "torch.int64"
+            },
+            {
+              "name": "classifier.weight",
+              "shape": [
+                4,
+                512
+              ],
+              "dtype": "torch.float32"
+            },
+            {
+              "name": "classifier.bias",
+              "shape": [
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          ],
+          "input_shape": [
+            1,
+            32,
+            32
+          ],
+          "num_classes": 4,
+          "feature_dim": 512,
+          "feature_layer": "features",
+          "class_order": [
+            "normal",
+            "inner_race_fault",
+            "ball_fault",
+            "outer_race_fault"
+          ],
+          "profile": {
+            "schema_version": "ful-equipment-profile-v1",
+            "profile_key": "cwru_cpu_smoke_v1",
+            "template_key": "cwru_train_full_v1",
+            "implementation_status": "contract_only",
+            "data_domain": "equipment",
+            "data_origin": "public_equipment_demo",
+            "execution_mode": "equipment_federated_development",
+            "dataset_key": "cwru_demo_v1",
+            "model": {
+              "model_key": "bearing_resnet18_v1",
+              "architecture_version": "resnet18-small-image-v1",
+              "reference_constructor": "fulbase.models.ResNet18ForSmallImage",
+              "in_channels": 1,
+              "num_classes": 4,
+              "input_shape": [
+                1,
+                32,
+                32
+              ],
+              "input_dtype": "float32",
+              "feature_layer": "features",
+              "feature_dim": 512,
+              "head_parameter_names": [
+                "classifier.weight",
+                "classifier.bias"
+              ],
+              "pretrained_weights": false
+            },
+            "training": {
+              "backend": "serial",
+              "training_client_ids": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "num_rounds": 1,
+              "local_epochs": 1,
+              "batch_size": 32,
+              "lr": 0.01,
+              "optimizer": "SGD",
+              "momentum": 0.9,
+              "weight_decay": 0,
+              "fraction_fit": 1,
+              "client_order": "ascending_logical_client_id",
+              "aggregation": "weighted_average_arrays_float64_then_original_dtype",
+              "aggregation_weight": "client_real_training_window_count",
+              "local_seed_rule": "sha256-first8-big-endian-mod-2^31:cwru-train-v1|seed|round|cid",
+              "shuffle": true,
+              "drop_last": false,
+              "num_workers": 0,
+              "device": "cpu",
+              "cpu_threads": 2,
+              "marker_enabled": false
+            },
+            "evaluation": {
+              "validation": "after_each_aggregate_all_clients",
+              "test": "final_full_only_all_clients",
+              "checkpoint_selection": "last_completed_round",
+              "test_used_for_selection": false,
+              "class_order": [
+                "normal",
+                "inner_race_fault",
+                "ball_fault",
+                "outer_race_fault"
+              ],
+              "macro_f1_zero_division": 0,
+              "confusion_matrix_rows": "ground_truth",
+              "confusion_matrix_columns": "prediction",
+              "planned_forget_client_ids": [
+                0
+              ],
+              "comparison_retained_client_ids": [
+                1,
+                2,
+                3
+              ]
+            },
+            "history": {
+              "representation": "compact_aggregate_updates",
+              "bound_forget_client_ids": [
+                0
+              ],
+              "supports_arbitrary_forget_set": false,
+              "store_float16": false,
+              "nonfloating_policy": "do_not_subtract_or_replay_buffers"
+            },
+            "access": {
+              "storage_mode": "single_host_shared_prepared_snapshot",
+              "snapshot_contains_all_clients_and_splits": true,
+              "training_consumes": "train_only",
+              "validation_consumes": "validation_only",
+              "final_evaluation_consumes": "test_only",
+              "raw_mat_access_required": false,
+              "preprocessing_fit_scope": "all_four_clients_training_only",
+              "preprocessing_withdrawal_handled": false,
+              "original_data_deletion_performed": false,
+              "model_input_normalization": "already_applied_in_prepared_x_do_not_apply_again"
+            },
+            "claims": {
+              "formal_dp_accounting": false,
+              "cryptographic_secure_aggregation": false,
+              "marker_audit_available": false,
+              "unseen_device_generalization_established": false,
+              "health_prediction_available": false
+            },
+            "resource_request": {
+              "slot_key": "cpu-compute",
+              "cpu_threads": 2,
+              "gpu_slots": 0
+            },
+            "limits": {
+              "timeout_sec": 1800,
+              "lease_sec": 30
+            },
+            "baseline_source_files": [
+              "fulbase/models.py",
+              "fulbase/datasets/cwru_demo.py",
+              "fulbase/train.py",
+              "fulbase/utils.py",
+              "fulbase/flower/strategy.py",
+              "fulbase/equipment_contract.py"
+            ],
+            "required_execution_source_roles": [
+              "equipment_model_adapter",
+              "equipment_training_adapter",
+              "equipment_train_bridge"
+            ],
+            "required_run_files": [
+              "config.json",
+              "execution_context.json",
+              "data_snapshot.npz",
+              "data_partition.json",
+              "dataset-manifest.json",
+              "normalizer.json",
+              "recipe.json",
+              "windows.csv",
+              "record-partitions.json",
+              "models/model_initial.pt",
+              "models/model_full.pt",
+              "history.pt",
+              "metrics.csv",
+              "metrics/round_validation.csv",
+              "metrics/client_metrics.csv",
+              "metrics/class_metrics.csv",
+              "metrics/confusion_matrix.csv",
+              "verification/training_result.json",
+              "verification/checkpoint_manifest.json",
+              "run_status.json"
+            ]
+          },
+          "seed": 42,
+          "source_files": {
+            "fulbase/models.py": "88a4e6d67a16c2be105c74676c60a427ec579c978b4412883d92e90968d41834",
+            "fulbase/datasets/cwru_demo.py": "19c8f260220e53994c3304028e929d2ad265b19db5fbc239c82abb8bd7cb4abc",
+            "fulbase/train.py": "4c371c07ea01e02c55467741a94240dc3e8e88d54e8354687bfd87181de7d66a",
+            "fulbase/utils.py": "5fe8c7fc43bacb1dfc8edb46eea477b7d107c2e1a1386d79330bc9df70484ab6",
+            "fulbase/flower/strategy.py": "3042975f77b8ce90398c076562b28654caff6304181e903a114c1a3f1bddf1ac",
+            "fulbase/equipment_contract.py": "3a1f4d34338e624f10e4d3365ac060f196b1b0c7a5be9ac35968a2293f3ee128",
+            "fulbase/equipment_models.py": "689bbdf4d53363bcc457fb639781b9aa8fc04f97b73c43a9ba01be69e827bd86",
+            "scripts/inspect_equipment_context.py": "c872a14f5899ed579faef64a9927167f81650cd32d6a5e9fcce39eb52cfa0da2",
+            "fulbase/equipment_training.py": "2b0225b76be83719e99a319b56b6cd69f0ef8bffc2edd25beaf18f4210e6963b",
+            "apps/worker/ful_worker/equipment_train_bridge.py": "1a0199d34dcd99eec4dbac656daf3daf47e8d58dc8ed99c6acdea2b8397612a1",
+            "apps/worker/ful_worker/equipment_contracts.py": "eccbd0039cf7b7e0211197b2f7b2ff43fd5d5ff86611fcc796453b288ae38a57"
+          },
+          "runtime_packages": {
+            "torch": "2.14.1+cpu",
+            "numpy": "1.26.4",
+            "flwr": "1.8.0"
+          }
+        }
+      },
+      "execution_sources": {
+        "configs/equipment/cwru-unlearning-v1.json": "ae92f42a077483be3fba3d2a034183f837b8e9db9007e03937588bb60c996f42",
+        "apps/worker/ful_worker/equipment_operation_contracts.py": "2b8e454ab1424eb6f93464521ead3640280309ddf2730d7c921823dce6383f23",
+        "apps/worker/ful_worker/equipment_operation_bridge.py": "ab2846a921f7f04bdc8c643ed52023a32b4781be9e8f7646bf471f91f74c8400",
+        "fulbase/equipment_operations.py": "9c518ea89cc159314bc510b7de35280af85829e4751534f77718dd8971544657",
+        "fulbase/equipment_models.py": "689bbdf4d53363bcc457fb639781b9aa8fc04f97b73c43a9ba01be69e827bd86",
+        "fulbase/equipment_training.py": "2b0225b76be83719e99a319b56b6cd69f0ef8bffc2edd25beaf18f4210e6963b",
+        "fulbase/dp/prototype.py": "8002c94b4d8ea04ac5e403a5cf651e4da78dad4766db1a83923eb7926fcd1816"
+      }
+    },
+    "source_models_unchanged": true
+  },
+  "prototype_id": "428fbd14-df2c-4ee2-adfa-372660a32aec",
+  "metrics": [
+    {
+      "stage": "full_after_fl",
+      "unlearner": "none",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9426388586721113,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9520993232727051,
+      "forget_loss": 0.9102027756827218,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_pre_recovery",
+      "unlearner": "pga",
+      "recovery": "none",
+      "all_acc": 1,
+      "all_loss": 0.9623916226048623,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0.9701069593429565,
+      "forget_loss": 0.935939107622419,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": null
+    },
+    {
+      "stage": "pga_proto_lda_recovery",
+      "unlearner": "pga",
+      "recovery": "prototype_lda",
+      "all_acc": 1,
+      "all_loss": 0,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0,
+      "forget_loss": 0,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "full_training_time_sec": null,
+      "unlearning_time_sec": null,
+      "recovery_time_sec": 0.00028909998945891857
+    }
+  ],
+  "stage_evaluation": {
+    "full_after_fl": {
+      "all": {
+        "acc": 1,
+        "loss": 0.9426388586721113,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0.9520993232727051,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0.9102027756827218,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0.9102027756827218,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0.9539706110954285,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0.9614230990409851,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0.9409042596817017,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    "pga_pre_recovery": {
+      "all": {
+        "acc": 1,
+        "loss": 0.9623916226048623,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0.9701069593429565,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0.935939107622419,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0.935939107622419,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0.9721638560295105,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0.9791244864463806,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0.9590325355529785,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    "pga_proto_lda_recovery": {
+      "all": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 124,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          28,
+          32,
+          32,
+          32
+        ],
+        "confusion": [
+          [
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            32,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "retain": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 96,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "confusion": [
+          [
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "forget": {
+        "acc": 1,
+        "loss": 0,
+        "num_examples": 28,
+        "macro_f1": 1,
+        "recalls": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "clients": [
+        {
+          "client_id": 0,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 28,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            4,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 1,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 2,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "client_id": 3,
+          "acc": 1,
+          "loss": 0,
+          "num_examples": 32,
+          "macro_f1": 1,
+          "recalls": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f1": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "support": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "recovery_state_change": {
+    "states": [
+      {
+        "name": "backbone.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer1.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer2.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer3.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.0.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.conv1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn1.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.conv2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.weight",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.bias",
+        "is_buffer": false,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.running_mean",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.running_var",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "backbone.layer4.1.bn2.num_batches_tracked",
+        "is_buffer": true,
+        "selected": false,
+        "l2_change": 0,
+        "changed": false
+      },
+      {
+        "name": "classifier.weight",
+        "is_buffer": false,
+        "selected": true,
+        "l2_change": 1532.9205787892602,
+        "changed": true
+      },
+      {
+        "name": "classifier.bias",
+        "is_buffer": false,
+        "selected": true,
+        "l2_change": 6292.541473431334,
+        "changed": true
+      }
+    ],
+    "trainable_names": [
+      "classifier.weight",
+      "classifier.bias"
+    ],
+    "changed_parameters": [
+      "classifier.weight",
+      "classifier.bias"
+    ],
+    "changed_buffers": [],
+    "backbone_unchanged": true,
+    "buffers_unchanged": true,
+    "state_l2_change": 6476.567277171525,
+    "max_delta_norm": null,
+    "projection_satisfied": false,
+    "feature_proof": {
+      "sample_count": 124,
+      "feature_dim": 512,
+      "feature_sha256": [
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad",
+        "b9e6cc19c092446a7c7f40ee0632555f4fc8427d36a67b20602e8b2ae3a6f1ad"
+      ],
+      "exactly_equal": true,
+      "scope": "fixed_test_windows",
+      "backbone_sha256": "8d501b050d6df472611f299b0577ec1aa5dcb70b8a3a8426212c69e2209c8418"
+    }
+  },
+  "recovered_model_manifest": {
+    "stage": "pga_proto_lda_recovery",
+    "checkpoint": "models/model_pga_proto_lda_recovery.pt",
+    "checkpoint_sha256": "d6ee8488abfe6a989e4128e710febe37545bcad7ee367b283be94cda0547b491",
+    "parameters_sha256": "bc21a825206db7f50d86f6a3317438d561237724a39fe32e01111b464bf33057",
+    "data_domain": "equipment",
+    "data_origin": "public_equipment_demo",
+    "model_key": "bearing_resnet18_v1",
+    "task_metrics": {
+      "stage": "pga_proto_lda_recovery",
+      "unlearner": "pga",
+      "recovery": "prototype_lda",
+      "all_acc": 1,
+      "all_loss": 0,
+      "retain_acc": 1,
+      "forget_acc": 1,
+      "retain_loss": 0,
+      "forget_loss": 0,
+      "retain_num_examples": 96,
+      "forget_num_examples": 28,
+      "recovery_time_sec": 0.00028909998945891857
+    }
+  },
+  "parent_model_id": "6f2d8675-2ad7-4046-84ec-99acc60e5c61",
+  "integrity": {
+    "status": "VALIDATED",
+    "validator_version": "equipment-operations-artifacts-v1",
+    "binary_checkpoints_deserialized": false
+  },
+  "id": "task-b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2",
+  "task_id": "b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2",
+  "attempt_id": "ad31a687-3063-47b9-8d33-f4e84368871a",
+  "validated_at": "2026-11-04T06:04:58Z",
+  "publication": {
+    "output_sha256": "b10b782f99dec55d82311a8fb45c2e934266cae99c92114051cc542a39a987cc",
+    "validator_version": "synthetic-artifacts-v1",
+    "artifact_count": 13
+  },
+  "artifacts": [
+    {
+      "id": "fdee06a2-96fb-45bd-af41-f82023ef460f",
+      "name": "run/config.json",
+      "artifact_type": "CONFIG",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/config.json",
+      "sha256": "626b8fb3bdea42c2588c50801ca190af242a4bc5bb649c0f3667b9094f73fc4c",
+      "size_bytes": 608,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "30351fa6-ac83-45a2-90c4-1de040c4acde",
+      "name": "run/execution_context.json",
+      "artifact_type": "EXECUTION_CONTEXT",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/execution_context.json",
+      "sha256": "bdb111f53379035601fc55f80e95ab2326d2c5679aefe171447aa512d5c3d63e",
+      "size_bytes": 24445,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "860e4bba-5cf2-44a3-9ba6-bf5e10f550f4",
+      "name": "run/parent_reference.json",
+      "artifact_type": "PARENT_REFERENCE",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/parent_reference.json",
+      "sha256": "653cb71fca82737229eeb2f83f09ddf0b5f5d958523f7e8abd2942c076561b2c",
+      "size_bytes": 43784,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "51f60b2b-a17c-49f2-b157-d8545f75712b",
+      "name": "run/operation_result.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/operation_result.json",
+      "sha256": "405a4e45d46723da8fb063380a6f7eddd1d70311eced7bd777bb8f9d78260dd3",
+      "size_bytes": 2218,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "732fe067-bd47-4e4c-811d-5038587f8884",
+      "name": "run/run_status.json",
+      "artifact_type": "RUN_STATUS",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/run_status.json",
+      "sha256": "8a3cdc26186034a6bc41b06bc2455f40103e09c1de18e9090da0aa3045888d15",
+      "size_bytes": 170,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "0b8a2151-2dcd-4593-9c01-23d5197d47be",
+      "name": "run/metrics.csv",
+      "artifact_type": "METRICS",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/metrics.csv",
+      "sha256": "c26cecd52bb7396aae6a58759fee49c11e379fbbf70869e47be54c46329433c8",
+      "size_bytes": 445,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "3e206479-637f-4d68-8047-1528b63cc7e0",
+      "name": "run/stage_evaluation.json",
+      "artifact_type": "AUXILIARY",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/stage_evaluation.json",
+      "sha256": "42d289b45ef37cb03c2ded3f84889daf5a6a3ea5fa0d1a81304a27afebcab368",
+      "size_bytes": 16480,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "647c1c36-b9e0-414b-a813-fedabee1626b",
+      "name": "run/verification/checkpoint_manifest.json",
+      "artifact_type": "CHECKPOINT_MANIFEST",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/verification/checkpoint_manifest.json",
+      "sha256": "a00dbc03938d664c160f9cc46e458326693e4c200dae9a78c3b2559a25fe98a9",
+      "size_bytes": 1140,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "a5aa0719-abc7-440f-8562-d97657851b33",
+      "name": "run/models/model_pga_proto_lda_recovery.pt",
+      "artifact_type": "STAGE_CHECKPOINT",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/models/model_pga_proto_lda_recovery.pt",
+      "sha256": "d6ee8488abfe6a989e4128e710febe37545bcad7ee367b283be94cda0547b491",
+      "size_bytes": 67156141,
+      "available": true,
+      "state": "AVAILABLE",
+      "stage": "pga_proto_lda_recovery"
+    },
+    {
+      "id": "7c9335d3-f0a7-4025-93b7-e2e0a4c7c6e3",
+      "name": "run/recovery_state_change.json",
+      "artifact_type": "STATE_CHANGE",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/run/recovery_state_change.json",
+      "sha256": "bcdfe4a3e13b945780b72ef302a64406a0f9181526c23e38e5e95bcba377207f",
+      "size_bytes": 21395,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "8c530c7b-b84b-4541-85c5-3b0dbb39620e",
+      "name": "output.json",
+      "artifact_type": "OUTPUT_MANIFEST",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/output.json",
+      "sha256": "b10b782f99dec55d82311a8fb45c2e934266cae99c92114051cc542a39a987cc",
+      "size_bytes": 3385,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "a0b8c7bb-58cf-47a5-924d-4e89bf75bd51",
+      "name": "input.json",
+      "artifact_type": "TASK_INPUT",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/input.json",
+      "sha256": "5a789dc40cabfaeba2140b808b466580cdd39cb654d61d4ce6e10bfe39a4d7fd",
+      "size_bytes": 27257,
+      "available": true,
+      "state": "AVAILABLE"
+    },
+    {
+      "id": "bda932fc-2d30-4e3e-8f5b-cf8d5bc102b4",
+      "name": "validation-report.json",
+      "artifact_type": "VALIDATION_REPORT",
+      "storage_ref": "published/task-runs/b9d54dcd-69c2-4a2d-9206-c9fceeba9ba2/ad31a687-3063-47b9-8d33-f4e84368871a/3473fee3f0a643388e08b94777bb1c5a/validation-report.json",
+      "sha256": "4176f612e0ac26dd4c48ca236aff50aa3fba3876b7d9ae77b66c0e0e23df624a",
+      "size_bytes": 329,
+      "available": true,
+      "state": "AVAILABLE"
+    }
+  ],
+  "model_versions": {
+    "FULL": "43f9bc40-a24e-4a7f-8479-206fb8eab4e3",
+    "PRE": "6f2d8675-2ad7-4046-84ec-99acc60e5c61",
+    "RECOVERED": "1e5a9873-bf81-443e-b8bf-9900127e556b"
+  }
+}

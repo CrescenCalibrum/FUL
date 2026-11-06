@@ -1,0 +1,147 @@
+- generic [ref=e1]:
+  - generic [ref=e31]:
+    - complementary [ref=e32]:
+      - link "知枢 FEDERATED INTELLIGENCE" [ref=e33] [cursor=pointer]:
+        - /url: "#/dashboard"
+        - generic [ref=e37]:
+          - text: 知枢
+          - generic [ref=e38]: FEDERATED INTELLIGENCE
+      - generic [ref=e39]:
+        - generic [ref=e40]: 研
+        - generic [ref=e41]:
+          - strong [ref=e42]: 设备智能运维研究
+          - generic [ref=e43]: 系统演示项目
+        - generic [ref=e44]: DEV
+      - navigation "主导航" [ref=e45]:
+        - generic [ref=e46]:
+          - paragraph [ref=e47]: 项目空间
+          - link "工作台" [ref=e48] [cursor=pointer]:
+            - /url: "#/dashboard"
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: 数据中心
+          - link "数据集管理 1" [ref=e54] [cursor=pointer]:
+            - /url: "#/datasets"
+            - generic [ref=e57]: 数据集管理
+            - generic [ref=e58]: "1"
+          - link "站点与客户端" [ref=e59] [cursor=pointer]:
+            - /url: "#/stations"
+        - generic [ref=e63]:
+          - paragraph [ref=e64]: 研究工作区
+          - link "联邦实验" [ref=e65] [cursor=pointer]:
+            - /url: "#/experiments"
+          - link "独立训练与模型" [ref=e69] [cursor=pointer]:
+            - /url: "#/training"
+          - link "任务中心" [ref=e73] [cursor=pointer]:
+            - /url: "#/tasks"
+          - link "遗忘与恢复" [ref=e77] [cursor=pointer]:
+            - /url: "#/forget-requests"
+          - link "原型与独立恢复" [ref=e81] [cursor=pointer]:
+            - /url: "#/recovery"
+          - link "审计中心" [ref=e85] [cursor=pointer]:
+            - /url: "#/audits"
+          - link "设备诊断" [ref=e89] [cursor=pointer]:
+            - /url: "#/diagnosis"
+      - generic [ref=e93]:
+        - generic [ref=e97]:
+          - text: 可追溯的研究演示
+          - generic [ref=e98]: 数据版本 · 模型阶段 · 审计证据
+        - generic [ref=e99]:
+          - generic [ref=e100]: 研
+          - generic [ref=e101]:
+            - strong [ref=e102]: 研究管理员
+            - generic [ref=e103]: ADMIN
+          - button "退出" [ref=e104] [cursor=pointer]
+    - generic [ref=e105]:
+      - banner [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]: 研究工作区
+          - strong [ref=e111]: 原型与独立恢复
+        - generic [ref=e112]:
+          - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e113]: 后端数据模式
+          - generic [ref=e116]: 研究内容三 / 系统演示
+      - main [ref=e117]:
+        - generic [ref=e522]:
+          - generic [ref=e523]:
+            - paragraph [ref=e524]: INDEPENDENT RECOVERY
+            - heading "原型与独立恢复" [level=1] [ref=e525]
+            - paragraph [ref=e526]: 原型可复用；显式选择 Pre 和兼容原型，产生新的 Recovered。
+          - button "刷新" [ref=e528] [cursor=pointer]
+        - generic [ref=e530]:
+          - heading "1. 独立构建保留集原型" [level=3] [ref=e531]
+          - paragraph [ref=e532]: 选择 B1 已发布 Full，读取原快照中客户端 1、2 的 40 个训练样本进行统计，排除客户端 0，不含训练 marker。
+          - generic [ref=e534] [cursor=pointer]:
+            - generic:
+              - combobox "原型来源 Full" [ref=e536]
+              - generic [ref=e537]: b8e257f4-0230-4e0f-85ba-a0a360274d14
+          - paragraph [ref=e542]:
+            - link "查看原型来源 Full" [ref=e543] [cursor=pointer]:
+              - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - paragraph [ref=e544]: 固定特征逐样本 L2 裁剪 10，噪声 σ = 0，10 类、512 维。本操作重新读取保留训练数据，不是训练期预收集；没有隐私会计或密码学安全聚合。
+          - button "构建保留集原型" [ref=e545] [cursor=pointer]
+          - paragraph [ref=e547]: 执行器空闲。本操作不训练、不遗忘、不恢复或审计。
+        - generic [ref=e548]:
+          - heading "2. 从 Pre 独立恢复" [level=3] [ref=e549]
+          - paragraph [ref=e550]: 仅显示与 Pre 来自同一 Full 的原型；后端和 Worker 继续核对数据、保留集合、特征与裁剪签名。
+          - paragraph [ref=e551]: 恢复来源 Pre
+          - generic [ref=e553] [cursor=pointer]:
+            - generic:
+              - combobox "恢复来源 Pre" [ref=e555]
+              - generic [ref=e556]: 50119790-8019-44af-b2f8-bca9a692fd17
+          - paragraph [ref=e643]:
+            - link "查看 Pre 与血缘" [ref=e644] [cursor=pointer]:
+              - /url: "#/models/50119790-8019-44af-b2f8-bca9a692fd17"
+            - text: ·
+            - link "查看共同来源 Full" [ref=e645] [cursor=pointer]:
+              - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - paragraph [ref=e646]: 兼容原型
+          - generic [ref=e648] [cursor=pointer]:
+            - generic:
+              - combobox "恢复原型版本" [expanded] [active] [ref=e650]
+              - generic [ref=e651]: 选择已发布原型
+          - paragraph [ref=e561]: Prototype-LDA，ridge = 0.01，只重建分类头。恢复读取已保存原型和原测试快照，不解码训练张量，不重新构建原型；保留 Full、Pre 和 Recovered 三个版本。
+          - button "执行独立恢复并评估" [disabled] [ref=e562]
+          - paragraph [ref=e564]: 执行器空闲。增益按实际值显示，未执行独立审计。
+        - generic [ref=e565]:
+          - heading "已发布原型 · 最近 100 个" [level=3] [ref=e567]
+          - generic [ref=e569]:
+            - table [ref=e571]:
+              - rowgroup [ref=e576]:
+                - row [ref=e577]:
+                  - columnheader "原型版本" [ref=e578]
+                  - columnheader "来源 Full" [ref=e580]
+                  - columnheader "统计范围" [ref=e582]
+            - table [ref=e588]:
+              - rowgroup [ref=e593]:
+                - row [ref=e594]:
+                  - cell [ref=e595]:
+                    - link "a662c662-3ab3-4064-8358-1fa92cc7507e" [ref=e597] [cursor=pointer]:
+                      - /url: "#/prototypes/a662c662-3ab3-4064-8358-1fa92cc7507e"
+                  - cell [ref=e598]:
+                    - link "b8e257f4-0230-4e0f-85ba-a0a360274d14" [ref=e600] [cursor=pointer]:
+                      - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+                  - cell "保留客户端 1、2 · 40 样本" [ref=e601]
+        - generic [ref=e603]:
+          - heading "恢复请求 · 0" [level=3] [ref=e605]
+          - generic [ref=e607]:
+            - table [ref=e609]:
+              - rowgroup [ref=e615]:
+                - row [ref=e616]:
+                  - columnheader "任务" [ref=e617]
+                  - columnheader "状态" [ref=e619]
+                  - columnheader "Recovered 模型" [ref=e621]
+                  - columnheader "错误码" [ref=e623]
+            - generic [ref=e628]:
+              - table:
+                - rowgroup
+              - generic [ref=e629]: 尚无恢复请求
+          - generic [ref=e631]:
+            - button "Go to previous page" [disabled] [ref=e632]
+            - list [ref=e633]:
+              - listitem "page 1" [ref=e634]: "1"
+            - button "Go to next page" [disabled] [ref=e635]
+      - contentinfo [ref=e233]:
+        - generic [ref=e234]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+        - generic [ref=e235]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0
+  - tooltip [ref=e656]:
+    - listbox "恢复原型版本" [ref=e660]:
+      - option "a662c662-3ab3-4064-8358-1fa92cc7507e" [ref=e661] [cursor=pointer]

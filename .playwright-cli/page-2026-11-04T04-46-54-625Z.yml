@@ -1,0 +1,140 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f3e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f3e9]:
+        - text: 知枢
+        - generic [ref=f3e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f3e11]:
+      - generic [ref=f3e12]: 研
+      - generic [ref=f3e13]:
+        - strong [ref=f3e14]: 设备智能运维研究
+        - generic [ref=f3e15]: 系统演示项目
+      - generic [ref=f3e16]: DEV
+    - navigation "主导航" [ref=f3e17]:
+      - generic [ref=f3e18]:
+        - paragraph [ref=f3e19]: 项目空间
+        - link "工作台" [ref=f3e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f3e24]:
+        - paragraph [ref=f3e25]: 数据中心
+        - link "数据集管理 1" [ref=f3e26] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f3e29]: 数据集管理
+          - generic [ref=f3e30]: "1"
+        - link "站点与客户端" [ref=f3e31] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=f3e35] [cursor=pointer]:
+          - /url: "#/devices"
+      - generic [ref=f3e39]:
+        - paragraph [ref=f3e40]: 研究工作区
+        - link "联邦实验" [ref=f3e41] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f3e45] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=f3e49] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "三阶段比较" [ref=f3e53] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f3e57] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f3e61] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f3e65] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f3e69] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f3e73] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f3e77]:
+      - generic [ref=f3e81]:
+        - text: 可追溯的研究演示
+        - generic [ref=f3e82]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f3e83]:
+        - generic [ref=f3e84]: 研
+        - generic [ref=f3e85]:
+          - strong [ref=f3e86]: 研究管理员
+          - generic [ref=f3e87]: ADMIN
+        - button "退出" [ref=f3e88] [cursor=pointer]
+  - generic [ref=f3e89]:
+    - banner [ref=f3e90]:
+      - generic [ref=f3e91]:
+        - generic [ref=f3e92]: 研究工作区
+        - strong [ref=f3e95]: 诊断记录
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f3e97]: 后端数据模式
+    - main [ref=f3e99]:
+      - generic [ref=f3e101]:
+        - paragraph [ref=f3e102]: DIAGNOSIS RECORD
+        - heading "诊断记录" [level=1] [ref=f3e103]
+        - paragraph [ref=f3e104]: 保留本次真实推理输出、数据集真值及模型来源。
+      - generic [ref=f3e105]:
+        - link "返回设备诊断" [ref=f3e106] [cursor=pointer]:
+          - /url: "#/diagnosis"
+        - button "刷新" [ref=f3e107] [cursor=pointer]
+      - generic [ref=f3e110]:
+        - heading "本次任务 已完成" [level=3] [ref=f3e111]:
+          - text: 本次任务
+          - generic [ref=f3e112]: 已完成
+        - link "查看任务事件与停止回执" [ref=f3e114] [cursor=pointer]:
+          - /url: "#/tasks/c36f8f9f-411f-4012-a19a-d9a55e9f38ba"
+      - generic [ref=f3e115]:
+        - generic [ref=f3e116]:
+          - heading "模拟轴承 · 3 HP · 模拟负载 3 HP" [level=3] [ref=f3e117]
+          - button "导出诊断证据 JSON" [ref=f3e118] [cursor=pointer]
+        - generic [ref=f3e120]:
+          - generic [ref=f3e121]:
+            - generic [ref=f3e122]: 模型预测
+            - strong [ref=f3e123]: 外圈故障
+          - generic [ref=f3e124]:
+            - generic [ref=f3e125]: 数据集真值
+            - strong [ref=f3e126]: 外圈故障
+          - generic [ref=f3e127]:
+            - generic [ref=f3e128]: 输入质量
+            - strong [ref=f3e129]: 检查通过
+          - generic [ref=f3e130]:
+            - generic [ref=f3e131]: 前向推理与 softmax
+            - strong [ref=f3e132]: 16.644 ms
+        - paragraph [ref=f3e133]: 质量通过仅表示有限值、非恒定波形及登记来源检查通过。输出分数未经校准，不作为可靠概率或健康风险分数。
+        - paragraph [ref=f3e134]: 实际采样时间：未记录；推理执行时间：2026/11/4 12:39:19。耗时不包含模型加载、数据读取与校验。
+        - paragraph [ref=f3e135]: 窗口：cwru_de12k_OR007@6_3:test:0 · test；处理后偏移：0–2048
+        - paragraph [ref=f3e136]: 模拟负载工况、同源时间划分的单窗口诊断；当前不推算健康等级、剩余寿命或故障发生时间。
+      - generic [ref=f3e137]:
+        - heading "四类模型输出" [level=3] [ref=f3e138]
+        - img "四类未经校准的模型输出分数" [ref=f3e139]
+        - generic [ref=f3e143]:
+          - table [ref=f3e145]:
+            - rowgroup [ref=f3e150]:
+              - row [ref=f3e151]:
+                - columnheader "类别" [ref=f3e152]
+                - columnheader "原始 logit" [ref=f3e154]
+                - columnheader "softmax 分数（0–1）" [ref=f3e156]
+          - table [ref=f3e162]:
+            - rowgroup [ref=f3e167]:
+              - row [ref=f3e168]:
+                - cell "正常" [ref=f3e169]
+                - cell "-0.64847517" [ref=f3e171]
+                - cell "0.10235009" [ref=f3e173]
+              - row [ref=f3e175]:
+                - cell "内圈故障" [ref=f3e176]
+                - cell "0.04354823" [ref=f3e178]
+                - cell "0.20447026" [ref=f3e180]
+              - row [ref=f3e182]:
+                - cell "滚动体故障" [ref=f3e183]
+                - cell "0.02150970" [ref=f3e185]
+                - cell "0.20001332" [ref=f3e187]
+              - row [ref=f3e189]:
+                - cell "外圈故障" [ref=f3e190]
+                - cell "0.92397201" [ref=f3e192]
+                - cell "0.49316624" [ref=f3e194]
+      - generic [ref=f3e196]:
+        - heading "模型版本与输入来源" [level=3] [ref=f3e197]
+        - paragraph [ref=f3e198]:
+          - link "FULL · 43f9bc40-a24e-4a7f-8479-206fb8eab4e3" [ref=f3e199] [cursor=pointer]:
+            - /url: "#/models/43f9bc40-a24e-4a7f-8479-206fb8eab4e3"
+        - paragraph [ref=f3e200]: eval / no_grad；参数未变化：是；BN / buffer 未变化：是。
+        - group [ref=f3e201]:
+          - generic "查看 SHA-256 与来源记录" [ref=f3e202]
+        - paragraph [ref=f3e203]: 以上为该记录发布时的完整性核查结果。诊断记录不覆盖模型评估指标，也不构成遗忘有效性证明。
+    - contentinfo [ref=f3e204]:
+      - generic [ref=f3e205]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f3e206]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

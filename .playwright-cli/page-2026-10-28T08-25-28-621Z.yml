@@ -1,0 +1,309 @@
+- generic [ref=f1e3]:
+  - complementary [ref=f1e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f1e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f1e9]:
+        - text: 知枢
+        - generic [ref=f1e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]: 研
+      - generic [ref=f1e13]:
+        - strong [ref=f1e14]: 设备智能运维研究
+        - generic [ref=f1e15]: 系统演示项目
+      - generic [ref=f1e16]: DEV
+    - navigation "主导航" [ref=f1e17]:
+      - generic [ref=f1e18]:
+        - paragraph [ref=f1e19]: 项目空间
+        - link "工作台" [ref=f1e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f1e24]:
+        - paragraph [ref=f1e25]: 数据中心
+        - link "数据集管理 1" [ref=f1e104] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f1e29]: 数据集管理
+          - generic [ref=f1e105]: "1"
+        - link "站点与客户端" [ref=f1e30] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f1e34]:
+        - paragraph [ref=f1e35]: 研究工作区
+        - link "联邦实验" [ref=f1e36] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立训练与模型" [ref=f1e40] [cursor=pointer]:
+          - /url: "#/training"
+        - link "任务中心" [ref=f1e44] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f1e48] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f1e52] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f1e56] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f1e60] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f1e64]:
+      - generic [ref=f1e68]:
+        - text: 可追溯的研究演示
+        - generic [ref=f1e69]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f1e70]:
+        - generic [ref=f1e71]: 研
+        - generic [ref=f1e72]:
+          - strong [ref=f1e73]: 研究管理员
+          - generic [ref=f1e74]: ADMIN
+        - button "退出" [ref=f1e75] [cursor=pointer]
+  - generic [ref=f1e76]:
+    - banner [ref=f1e77]:
+      - generic [ref=f1e78]:
+        - generic [ref=f1e79]: 研究工作区
+        - strong [ref=f1e82]: 独立审计报告
+      - generic [ref=f1e83]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f1e106]: 后端数据模式
+        - generic [ref=f1e87]: 研究内容三 / 系统演示
+    - main [ref=f1e88]:
+      - link "← 返回审计中心" [ref=f1e269] [cursor=pointer]:
+        - /url: "#/audits"
+      - generic [ref=f1e271]:
+        - paragraph [ref=f1e272]: DEVELOPMENT AUDIT EVIDENCE
+        - heading "独立开发审计 · 两份报告" [level=1] [ref=f1e273]
+        - paragraph [ref=f1e274]: 任务执行状态与审计证据结论分别记录；候选模型使用相同独立 marker 配对比较。
+      - generic [ref=f1e275]:
+        - heading "审计执行已完成 · 非正式审计" [level=3] [ref=f1e276]
+        - paragraph [ref=f1e277]: 1d8ca613-597e-4ee1-af3c-f4107734017e
+        - paragraph [ref=f1e278]:
+          - link "查看任务证据" [ref=f1e279] [cursor=pointer]:
+            - /url: "#/tasks/1d8ca613-597e-4ee1-af3c-f4107734017e"
+          - text: ·
+          - link "来源 Full" [ref=f1e280] [cursor=pointer]:
+            - /url: "#/models/b8e257f4-0230-4e0f-85ba-a0a360274d14"
+          - text: →
+          - link "来源 Pre" [ref=f1e281] [cursor=pointer]:
+            - /url: "#/models/50119790-8019-44af-b2f8-bca9a692fd17"
+          - text: →
+          - link "来源 Recovered" [ref=f1e282] [cursor=pointer]:
+            - /url: "#/models/17559c5f-5a89-4c2d-b0c7-a50f8559eb0b"
+        - paragraph [ref=f1e283]: 独立 audit-role marker 60 个 · 审计流程实测 2.012 秒
+        - paragraph [ref=f1e284]: 三个模型的参数与 BN / buffer 保持不变。未训练、遗忘、恢复或构建原型。
+        - paragraph [ref=f1e285]: 本次协议未锁定，正式结论保持“证据不足”。来源任务的准确率只作参考，未由本审计独立复测，也未用于审计判定。
+      - generic [ref=f1e287]:
+        - article [ref=f1e288]:
+          - heading "Pre · 恢复前" [level=3] [ref=f1e289]
+          - generic [ref=f1e290]: 证据不足
+          - paragraph [ref=f1e292]: 开发探索性状态：证据不足
+          - paragraph [ref=f1e293]: 报告 cf5597e0-0264-4009-ad67-169236e9c40d
+          - button "查看该报告" [ref=f1e294] [cursor=pointer]
+        - article [ref=f1e296]:
+          - heading "Recovered · 恢复后" [level=3] [ref=f1e297]
+          - generic [ref=f1e298]: 证据不足
+          - paragraph [ref=f1e300]: 开发探索性状态：证据不足
+          - paragraph [ref=f1e301]: 报告 d005d605-73ff-4a7a-ba1b-535966dbc6a4
+          - button "查看该报告" [ref=f1e302] [cursor=pointer]
+      - generic [ref=f1e304]:
+        - generic [ref=f1e305]:
+          - heading "PRE 报告与证据缺口" [level=3] [ref=f1e306]
+          - button "导出当前审计报告" [ref=f1e307] [cursor=pointer]
+        - paragraph [ref=f1e309]: 主结论：证据不足 · 开发探索性状态：证据不足
+        - list [ref=f1e310]:
+          - listitem [ref=f1e311]: 开发阈值未完成校准和协议锁定
+          - listitem [ref=f1e312]: 遗忘客户端的几何规则尚未校准
+          - listitem [ref=f1e313]: 没有由本审计器独立测得的保留任务性能
+          - listitem [ref=f1e314]: Full 的 marker 可学性或有效性前检未满足
+          - listitem [ref=f1e315]: 开发 bootstrap 次数有限，不支持正式尾部覆盖声明
+        - paragraph [ref=f1e316]: 模型文件 SHA-256 43ad3f159b7a1946a7dd9fe1d4b3b063873b01b9ead01bc85c6d7c2c0ca071fb
+        - paragraph [ref=f1e317]: 报告 SHA-256 a7498d000f766126361d3db34c81bc4763d28abaa7ccac681cbfc9dc17b504c9
+        - generic [ref=f1e319]:
+          - table [ref=f1e321]:
+            - rowgroup [ref=f1e329]:
+              - row [ref=f1e330]:
+                - columnheader "条件" [ref=f1e331]
+                - columnheader "客户端" [ref=f1e333]
+                - columnheader "判定" [ref=f1e335]
+                - columnheader "均值 / 变化" [ref=f1e337]
+                - columnheader "CI 下界" [ref=f1e339]
+                - columnheader "CI 上界" [ref=f1e341]
+          - table [ref=f1e347]:
+            - rowgroup [ref=f1e355]:
+              - row [ref=f1e356]:
+                - cell "Full marker 可学性前检" [ref=f1e357]
+                - cell "0" [ref=f1e359]
+                - cell "证据不足" [ref=f1e361]
+                - cell "未记录" [ref=f1e363]
+                - cell "未记录" [ref=f1e365]
+                - cell "未记录" [ref=f1e367]
+              - row [ref=f1e369]:
+                - cell "Full marker 可学性前检" [ref=f1e370]
+                - cell "1" [ref=f1e372]
+                - cell "证据不足" [ref=f1e374]
+                - cell "未记录" [ref=f1e376]
+                - cell "未记录" [ref=f1e378]
+                - cell "未记录" [ref=f1e380]
+              - row [ref=f1e382]:
+                - cell "Full marker 可学性前检" [ref=f1e383]
+                - cell "2" [ref=f1e385]
+                - cell "证据不足" [ref=f1e387]
+                - cell "未记录" [ref=f1e389]
+                - cell "未记录" [ref=f1e391]
+                - cell "未记录" [ref=f1e393]
+              - row [ref=f1e395]:
+                - cell "遗忘客户端间隔变化" [ref=f1e396]
+                - cell "0" [ref=f1e398]
+                - cell "未通过" [ref=f1e400]
+                - cell "-0.000965690" [ref=f1e402]
+                - cell "-0.00155019" [ref=f1e404]
+                - cell "-0.000381189" [ref=f1e406]
+              - row [ref=f1e408]:
+                - cell "保留客户端间隔稳定" [ref=f1e409]
+                - cell "1" [ref=f1e411]
+                - cell "通过" [ref=f1e413]
+                - cell "-0.000998157" [ref=f1e415]
+                - cell "-0.00156096" [ref=f1e417]
+                - cell "-0.000435351" [ref=f1e419]
+              - row [ref=f1e421]:
+                - cell "保留客户端间隔稳定" [ref=f1e422]
+                - cell "2" [ref=f1e424]
+                - cell "通过" [ref=f1e426]
+                - cell "-0.000719687" [ref=f1e428]
+                - cell "-0.00142301" [ref=f1e430]
+                - cell "-0.0000163646" [ref=f1e432]
+              - row [ref=f1e434]:
+                - cell "遗忘客户端几何变化" [ref=f1e435]
+                - cell "0" [ref=f1e437]
+                - cell "证据不足" [ref=f1e439]
+                - cell "0.00000" [ref=f1e441]
+                - cell "0.00000" [ref=f1e443]
+                - cell "0.00000" [ref=f1e445]
+              - row [ref=f1e447]:
+                - cell "保留客户端几何稳定" [ref=f1e448]
+                - cell "1" [ref=f1e450]
+                - cell "通过" [ref=f1e452]
+                - cell "0.00000" [ref=f1e454]
+                - cell "0.00000" [ref=f1e456]
+                - cell "0.00000" [ref=f1e458]
+              - row [ref=f1e460]:
+                - cell "保留客户端几何稳定" [ref=f1e461]
+                - cell "2" [ref=f1e463]
+                - cell "通过" [ref=f1e465]
+                - cell "0.00000" [ref=f1e467]
+                - cell "0.00000" [ref=f1e469]
+                - cell "0.00000" [ref=f1e471]
+              - row [ref=f1e473]:
+                - cell "独立保留任务性能" [ref=f1e474]
+                - cell "任务汇总" [ref=f1e476]
+                - cell "证据不足" [ref=f1e478]
+                - cell "未记录" [ref=f1e480]
+                - cell "未记录" [ref=f1e482]
+                - cell "未记录" [ref=f1e484]
+        - paragraph [ref=f1e486]: 原始报告保留全部检验字段与限制；marker 证据不能证明所有真实数据影响都已移除，也不认证已部署模型的行为。
+      - generic [ref=f1e487]:
+        - generic [ref=f1e489]:
+          - heading "来源任务指标 · 仅供参考" [level=3] [ref=f1e490]
+          - paragraph [ref=f1e491]: 按原任务 CSV 读取，未独立复测，不参与上述审计判定。
+        - generic [ref=f1e493]:
+          - table [ref=f1e495]:
+            - rowgroup [ref=f1e501]:
+              - row [ref=f1e502]:
+                - columnheader "来源阶段" [ref=f1e503]
+                - columnheader "保留集准确率" [ref=f1e505]
+                - columnheader "遗忘集准确率" [ref=f1e507]
+                - columnheader "来源任务" [ref=f1e509]
+          - table [ref=f1e515]:
+            - rowgroup [ref=f1e521]:
+              - row [ref=f1e522]:
+                - cell "FULL" [ref=f1e523]
+                - cell "20.00%" [ref=f1e525]
+                - cell "10.00%" [ref=f1e527]
+                - cell [ref=f1e529]:
+                  - link "c9afc5c9-f723-487f-ac22-b7defd154ec1" [ref=f1e531] [cursor=pointer]:
+                    - /url: "#/tasks/c9afc5c9-f723-487f-ac22-b7defd154ec1"
+              - row [ref=f1e532]:
+                - cell "PRE" [ref=f1e533]
+                - cell "20.00%" [ref=f1e535]
+                - cell "10.00%" [ref=f1e537]
+                - cell [ref=f1e539]:
+                  - link "021e23e6-825d-4d32-bae7-e703d4746165" [ref=f1e541] [cursor=pointer]:
+                    - /url: "#/tasks/021e23e6-825d-4d32-bae7-e703d4746165"
+              - row [ref=f1e542]:
+                - cell "RECOVERED" [ref=f1e543]
+                - cell "100.00%" [ref=f1e545]
+                - cell "100.00%" [ref=f1e547]
+                - cell [ref=f1e549]:
+                  - link "294aba13-3646-4f1e-9eda-96ffb9c6fd67" [ref=f1e551] [cursor=pointer]:
+                    - /url: "#/tasks/294aba13-3646-4f1e-9eda-96ffb9c6fd67"
+      - generic [ref=f1e552]:
+        - heading "绑定与工件完整性 · 24 项" [level=3] [ref=f1e553]
+        - paragraph [ref=f1e554]: 采样清单 SHA-256 0279da0572224ed675b99ef4f709ab5ccda7ad9df4284d8f06f21cc4dd16eef6
+        - paragraph [ref=f1e555]: 协议 SHA-256 dca79bdd2ebfeaa8a3690d1523e4098df045cb3d68d6a86cce8fd7c45ca9686b
+        - generic [ref=f1e556]:
+          - generic [ref=f1e557]:
+            - code [ref=f1e558]: run/audit_protocol.json
+            - generic [ref=f1e559]: 发布时已校验
+          - generic [ref=f1e560]:
+            - code [ref=f1e561]: run/audit_result.json
+            - generic [ref=f1e562]: 发布时已校验
+          - generic [ref=f1e563]:
+            - code [ref=f1e564]: run/audit_state_change.json
+            - generic [ref=f1e565]: 发布时已校验
+          - generic [ref=f1e566]:
+            - code [ref=f1e567]: run/config.json
+            - generic [ref=f1e568]: 发布时已校验
+          - generic [ref=f1e569]:
+            - code [ref=f1e570]: run/execution_context.json
+            - generic [ref=f1e571]: 发布时已校验
+          - generic [ref=f1e572]:
+            - code [ref=f1e573]: run/marker_manifest.json
+            - generic [ref=f1e574]: 发布时已校验
+          - generic [ref=f1e575]:
+            - code [ref=f1e576]: run/parent_reference.json
+            - generic [ref=f1e577]: 发布时已校验
+          - generic [ref=f1e578]:
+            - code [ref=f1e579]: run/recorded_task_metrics.json
+            - generic [ref=f1e580]: 发布时已校验
+          - generic [ref=f1e581]:
+            - code [ref=f1e582]: run/reports/pre/after_observations.npz
+            - generic [ref=f1e583]: 发布时已校验
+          - generic [ref=f1e584]:
+            - code [ref=f1e585]: run/reports/pre/audit_report.json
+            - generic [ref=f1e586]: 发布时已校验
+          - generic [ref=f1e587]:
+            - code [ref=f1e588]: run/reports/pre/client_tests.csv
+            - generic [ref=f1e589]: 发布时已校验
+          - generic [ref=f1e590]:
+            - code [ref=f1e591]: run/reports/pre/full_observations.npz
+            - generic [ref=f1e592]: 发布时已校验
+          - generic [ref=f1e593]:
+            - code [ref=f1e594]: run/reports/pre/geometry_metrics.csv
+            - generic [ref=f1e595]: 发布时已校验
+          - generic [ref=f1e596]:
+            - code [ref=f1e597]: run/reports/pre/marker_metrics.csv
+            - generic [ref=f1e598]: 发布时已校验
+          - generic [ref=f1e599]:
+            - code [ref=f1e600]: run/reports/recovered/after_observations.npz
+            - generic [ref=f1e601]: 发布时已校验
+          - generic [ref=f1e602]:
+            - code [ref=f1e603]: run/reports/recovered/audit_report.json
+            - generic [ref=f1e604]: 发布时已校验
+          - generic [ref=f1e605]:
+            - code [ref=f1e606]: run/reports/recovered/client_tests.csv
+            - generic [ref=f1e607]: 发布时已校验
+          - generic [ref=f1e608]:
+            - code [ref=f1e609]: run/reports/recovered/full_observations.npz
+            - generic [ref=f1e610]: 发布时已校验
+          - generic [ref=f1e611]:
+            - code [ref=f1e612]: run/reports/recovered/geometry_metrics.csv
+            - generic [ref=f1e613]: 发布时已校验
+          - generic [ref=f1e614]:
+            - code [ref=f1e615]: run/reports/recovered/marker_metrics.csv
+            - generic [ref=f1e616]: 发布时已校验
+          - generic [ref=f1e617]:
+            - code [ref=f1e618]: run/run_status.json
+            - generic [ref=f1e619]: 发布时已校验
+          - generic [ref=f1e620]:
+            - code [ref=f1e621]: output.json
+            - generic [ref=f1e622]: 发布时已校验
+          - generic [ref=f1e623]:
+            - code [ref=f1e624]: input.json
+            - generic [ref=f1e625]: 发布时已校验
+          - generic [ref=f1e626]:
+            - code [ref=f1e627]: validation-report.json
+            - generic [ref=f1e628]: 发布时已校验
+    - contentinfo [ref=f1e101]:
+      - generic [ref=f1e102]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f1e103]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

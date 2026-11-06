@@ -60,9 +60,28 @@ def get_model_parameters(model: torch.nn.Module) -> list[np.ndarray]:
 
 
 def set_model_parameters(model: torch.nn.Module, parameters: list[np.ndarray]) -> None:
-    params_dict = zip(model.state_dict().keys(), parameters)
-    state_dict = {k: torch.tensor(v) for k, v in params_dict}
+    reference = model.state_dict()
+    if len(reference) != len(parameters):
+        raise ValueError(f"Expected {len(reference)} state entries, got {len(parameters)}")
+    state_dict = {}
+    for (key, value), array in zip(reference.items(), parameters):
+        if tuple(value.shape) != tuple(array.shape):
+            raise ValueError(f"Shape mismatch for {key}: {array.shape} != {tuple(value.shape)}")
+        state_dict[key] = torch.as_tensor(array.copy(), dtype=value.dtype, device=value.device)
     model.load_state_dict(state_dict, strict=True)
+
+
+def state_change_report(model: torch.nn.Module, before: list[np.ndarray]) -> dict:
+    """Audit parameters and buffers separately, including BN counters."""
+    parameter_names = set(dict(model.named_parameters()))
+    after = get_model_parameters(model)
+    changed = [k for k, a, b in zip(model.state_dict(), before, after)
+               if not np.array_equal(a, b)]
+    return {
+        "changed_parameters": [k for k in changed if k in parameter_names],
+        "changed_buffers": [k for k in changed if k not in parameter_names],
+        "state_l2_change": arrays_l2_norm(diff_arrays(after, before)),
+    }
 
 
 def weighted_average_arrays(items: list[tuple[list[np.ndarray], int]]) -> list[np.ndarray]:

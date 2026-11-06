@@ -1,0 +1,18 @@
+- main [ref=f7e3]:
+  - generic [ref=f7e4]:
+    - paragraph [ref=f7e8]: FEDERATED INTELLIGENCE
+    - heading "知枢 · 研究工作台" [level=1] [ref=f7e9]
+    - paragraph [ref=f7e10]: 设备故障诊断、联邦遗忘与性能恢复从可追溯的数据和实验开始。
+    - generic [ref=f7e11]: 真实元数据 · 项目权限 · 操作留痕
+  - generic [ref=f7e14]:
+    - paragraph [ref=f7e15]: SIGN IN TO YOUR WORKSPACE
+    - heading "登录研究项目" [level=2] [ref=f7e16]
+    - paragraph [ref=f7e17]: 使用后端登记的账号进入工作台
+    - generic [ref=f7e18]: 用户名
+    - textbox "用户名" [ref=f7e21]:
+      - /placeholder: 请输入用户名
+    - generic [ref=f7e22]: 密码
+    - textbox "密码" [ref=f7e25]:
+      - /placeholder: 请输入密码
+    - button "进入工作台" [ref=f7e26] [cursor=pointer]
+    - paragraph [ref=f7e30]: 本地演示账号与启动方式请查看后端 README。服务默认仅绑定本机，密码不会保存到浏览器。

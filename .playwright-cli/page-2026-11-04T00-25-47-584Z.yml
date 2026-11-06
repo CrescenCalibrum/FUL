@@ -1,0 +1,66 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f3e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f3e9]:
+        - text: 知枢
+        - generic [ref=f3e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f3e11]:
+      - generic [ref=f3e12]: 研
+      - generic [ref=f3e13]:
+        - strong [ref=f3e14]: 设备智能运维研究
+        - generic [ref=f3e15]: 系统演示项目
+      - generic [ref=f3e16]: DEV
+    - navigation "主导航" [ref=f3e17]:
+      - generic [ref=f3e18]:
+        - paragraph [ref=f3e19]: 项目空间
+        - link "工作台" [ref=f3e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f3e24]:
+        - paragraph [ref=f3e25]: 数据中心
+        - link "数据集管理" [ref=f3e26] [cursor=pointer]:
+          - /url: "#/datasets"
+        - link "站点与客户端" [ref=f3e30] [cursor=pointer]:
+          - /url: "#/stations"
+      - generic [ref=f3e34]:
+        - paragraph [ref=f3e35]: 研究工作区
+        - link "联邦实验" [ref=f3e36] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f3e40] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=f3e44] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "三阶段比较" [ref=f3e48] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f3e52] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f3e56] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f3e60] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f3e64] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f3e68] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f3e72]:
+      - generic [ref=f3e76]:
+        - text: 可追溯的研究演示
+        - generic [ref=f3e77]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f3e78]:
+        - generic [ref=f3e79]: 研
+        - generic [ref=f3e80]:
+          - strong [ref=f3e81]: 研究管理员
+          - generic [ref=f3e82]: ADMIN
+        - button "退出" [ref=f3e83] [cursor=pointer]
+  - generic [ref=f3e84]:
+    - banner [ref=f3e85]:
+      - generic [ref=f3e86]:
+        - strong
+      - generic [ref=f3e89]:
+        - generic "设备预览来源时间：" [ref=f3e90]: 后端数据模式
+        - generic [ref=f3e93]: 研究内容三 / 系统演示
+    - main [ref=f3e94]:
+      - paragraph [ref=f3e106]: 正在读取已核查的数据版本…
+    - contentinfo [ref=f3e107]:
+      - generic [ref=f3e108]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f3e109]: 设备预览来源 · v0.1.0

@@ -46,6 +46,7 @@ import numpy as np
 
 from fulbase.unlearning.base import BaseUnlearner, UnlearningContext, UnlearningResult
 from fulbase.utils import add_arrays
+from fulbase.unlearning.history_validation import validate_history_request
 
 
 def _to_float32(arrays):
@@ -64,7 +65,8 @@ def history_subtract_unlearn(
     直接使用每轮保存好的 forget_update_wrt_all，
     不再依赖每个客户端的 params_after。
     """
-    params = [x.astype(np.float32).copy() for x in final_parameters]
+    validate_history_request(history, forget_client_ids)
+    params = [x.copy() for x in final_parameters]
     cumulative = [np.zeros_like(x, dtype=np.float32) for x in params]
 
     for item in history:

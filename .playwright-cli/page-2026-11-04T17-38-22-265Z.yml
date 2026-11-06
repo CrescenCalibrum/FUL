@@ -1,0 +1,67 @@
+- generic [ref=f8e3]:
+  - complementary [ref=f8e4]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f8e5] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f8e9]:
+        - text: 知枢
+        - generic [ref=f8e10]: FEDERATED INTELLIGENCE
+    - generic [ref=f8e11]:
+      - generic [ref=f8e12]: 研
+      - generic [ref=f8e13]:
+        - strong [ref=f8e14]: 设备智能运维研究
+        - generic [ref=f8e15]: 系统演示项目
+      - generic [ref=f8e16]: DEV
+    - navigation "主导航" [ref=f8e17]:
+      - generic [ref=f8e18]:
+        - paragraph [ref=f8e19]: 项目空间
+        - link "工作台" [ref=f8e20] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f8e24]:
+        - paragraph [ref=f8e25]: 数据中心
+        - link "数据集管理" [ref=f8e26] [cursor=pointer]:
+          - /url: "#/datasets"
+        - link "站点与客户端" [ref=f8e30] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=f8e34] [cursor=pointer]:
+          - /url: "#/devices"
+        - link "站点与贡献撤回" [ref=f8e38] [cursor=pointer]:
+          - /url: "#/withdrawals"
+      - generic [ref=f8e42]:
+        - paragraph [ref=f8e43]: 研究工作区
+        - link "联邦实验" [ref=f8e44] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f8e48] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=f8e52] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=f8e56] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "三阶段比较" [ref=f8e60] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f8e64] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f8e68] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f8e72] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f8e76] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f8e80] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f8e84]:
+      - generic [ref=f8e88]:
+        - text: 可追溯的研究演示
+        - generic [ref=f8e89]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f8e90]:
+        - generic [ref=f8e91]: 研
+        - strong [ref=f8e93]: 研究工作台
+        - button "退出" [ref=f8e94] [cursor=pointer]
+  - generic [ref=f8e95]:
+    - banner [ref=f8e96]:
+      - generic [ref=f8e97]:
+        - strong
+      - generic "设备预览来源时间：" [ref=f8e101]: 后端数据模式
+    - main [ref=f8e103]
+    - contentinfo [ref=f8e104]:
+      - generic [ref=f8e105]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f8e106]: 设备预览来源 · v0.1.0

@@ -1,0 +1,138 @@
+- generic [ref=f1e133]:
+  - complementary [ref=f1e134]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=f1e135] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=f1e139]:
+        - text: 知枢
+        - generic [ref=f1e140]: FEDERATED INTELLIGENCE
+    - generic [ref=f1e141]:
+      - generic [ref=f1e142]: 研
+      - generic [ref=f1e143]:
+        - strong [ref=f1e144]: 设备智能运维研究
+        - generic [ref=f1e145]: 系统演示项目
+      - generic [ref=f1e146]: DEV
+    - navigation "主导航" [ref=f1e147]:
+      - generic [ref=f1e148]:
+        - paragraph [ref=f1e149]: 项目空间
+        - link "工作台" [ref=f1e150] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=f1e154]:
+        - paragraph [ref=f1e155]: 数据中心
+        - link "数据集管理 1" [ref=f1e156] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=f1e159]: 数据集管理
+          - generic [ref=f1e160]: "1"
+        - link "站点与客户端" [ref=f1e161] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=f1e165] [cursor=pointer]:
+          - /url: "#/devices"
+      - generic [ref=f1e169]:
+        - paragraph [ref=f1e170]: 研究工作区
+        - link "联邦实验" [ref=f1e171] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=f1e175] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=f1e179] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=f1e183] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "三阶段比较" [ref=f1e187] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=f1e191] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=f1e195] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=f1e199] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=f1e203] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=f1e207] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=f1e211]:
+      - generic [ref=f1e215]:
+        - text: 可追溯的研究演示
+        - generic [ref=f1e216]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=f1e217]:
+        - generic [ref=f1e218]: 研
+        - generic [ref=f1e219]:
+          - strong [ref=f1e220]: 研究管理员
+          - generic [ref=f1e221]: ADMIN
+        - button "退出" [ref=f1e222] [cursor=pointer]
+  - generic [ref=f1e223]:
+    - banner [ref=f1e224]:
+      - generic [ref=f1e225]:
+        - generic [ref=f1e226]: 研究工作区
+        - strong [ref=f1e229]: 设备遗忘与恢复
+      - generic [ref=f1e230]:
+        - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=f1e231]: 后端数据模式
+        - generic [ref=f1e234]: 研究内容三 / 系统演示
+    - main [ref=f1e235]:
+      - generic [ref=f1e237]:
+        - paragraph [ref=f1e238]: EQUIPMENT OPERATIONS
+        - heading "设备遗忘与恢复" [level=1] [ref=f1e239]
+        - paragraph [ref=f1e240]: 复用同一设备 Full，分别执行单次遗忘、保留类原型构建与分类头恢复。
+      - generic [ref=f1e241]:
+        - generic [ref=f1e242]:
+          - generic [ref=f1e243]:
+            - heading "设备业务能力" [level=3] [ref=f1e244]
+            - paragraph [ref=f1e245]: 已登记数据与可执行业务分别核查
+          - button "刷新" [ref=f1e246] [cursor=pointer]
+        - paragraph [ref=f1e248]: cwru_demo_v1 · 4 个模拟客户端 · 4 类 · 861 个窗口
+        - generic [ref=f1e249]:
+          - generic [ref=f1e250]:
+            - strong [ref=f1e251]: 设备遗忘
+            - generic [ref=f1e252]: 可排队
+            - paragraph [ref=f1e254]: 可以排队等待设备独立操作执行器。
+          - generic [ref=f1e255]:
+            - strong [ref=f1e256]: 设备原型
+            - generic [ref=f1e257]: 可排队
+            - paragraph [ref=f1e259]: 可以排队等待设备独立操作执行器。
+          - generic [ref=f1e260]:
+            - strong [ref=f1e261]: 设备恢复
+            - generic [ref=f1e262]: 可排队
+            - paragraph [ref=f1e264]: 可以排队等待设备独立操作执行器。
+      - generic [ref=f1e265]:
+        - generic [ref=f1e266]:
+          - heading "独立操作 · 固定遗忘客户端 0" [level=3] [ref=f1e267]
+          - button "刷新版本" [ref=f1e268] [cursor=pointer]
+        - paragraph [ref=f1e270]: 只开放单次 PGA-head。原型采用 sigma=0 的功能基线，训练后重新读取保留客户端 1/2/3；尚非训练期预计算，也没有正式 DP 会计或密码学安全聚合。
+        - generic [ref=f1e271]:
+          - generic [ref=f1e272]:
+            - text: 设备 Full
+            - generic [ref=f1e274] [cursor=pointer]:
+              - generic:
+                - combobox "设备 Full" [ref=f1e276]
+                - generic [ref=f1e277]: 43f9bc40-a24e-4a7f-8479-206fb8eab4e3
+          - button "提交设备遗忘" [ref=f1e282] [cursor=pointer]
+          - button "构建保留类原型" [ref=f1e284] [cursor=pointer]
+        - generic [ref=f1e286]:
+          - generic [ref=f1e287]:
+            - text: 设备 Pre
+            - generic [ref=f1e289] [cursor=pointer]:
+              - generic:
+                - combobox "设备 Pre" [ref=f1e291]
+                - generic [ref=f1e292]: 6f2d8675-2ad7-4046-84ec-99acc60e5c61
+          - generic [ref=f1e297]:
+            - text: 已登记原型
+            - generic [ref=f1e299] [cursor=pointer]:
+              - generic:
+                - combobox "设备原型" [ref=f1e301]
+                - generic [ref=f1e302]: 428fbd14-df2c-4ee2-adfa-372660a32aec · Full 43f9bc40-a24e-4a7f-8479-206fb8eab4e3
+          - button "提交设备恢复" [ref=f1e307] [cursor=pointer]
+        - paragraph [ref=f1e309]: 每次提交仅执行所选操作。恢复使用 Pre 的固定测试快照与已登记原型，不重新训练或构建原型。其他角色只读。
+        - link "将兼容模型选用于同窗口真实诊断" [ref=f1e310] [cursor=pointer]:
+          - /url: "#/diagnosis"
+      - generic [ref=f1e311]:
+        - heading "三阶段比较与证据" [level=3] [ref=f1e312]
+        - generic [ref=f1e313]:
+          - generic [ref=f1e314]:
+            - text: 设备 Pre / Recovered
+            - generic [ref=f1e316] [cursor=pointer]:
+              - generic:
+                - combobox "比较模型" [ref=f1e318]
+                - generic [ref=f1e319]: RECOVERED · 1e5a9873-bf81-443e-b8bf-9900127e556b
+          - button "读取实际评估" [ref=f1e324] [cursor=pointer]
+        - paragraph [ref=f1e326]: 选择已发布的设备 Pre 或 Recovered 读取原始评估；缺失来源不会补造指标。
+    - contentinfo [ref=f1e327]:
+      - generic [ref=f1e328]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=f1e329]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

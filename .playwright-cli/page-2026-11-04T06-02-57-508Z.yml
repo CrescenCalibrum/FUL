@@ -1,0 +1,136 @@
+- generic [ref=e131]:
+  - complementary [ref=e132]:
+    - link "知枢 FEDERATED INTELLIGENCE" [ref=e133] [cursor=pointer]:
+      - /url: "#/dashboard"
+      - generic [ref=e137]:
+        - text: 知枢
+        - generic [ref=e138]: FEDERATED INTELLIGENCE
+    - generic [ref=e139]:
+      - generic [ref=e140]: 研
+      - generic [ref=e141]:
+        - strong [ref=e142]: 设备智能运维研究
+        - generic [ref=e143]: 系统演示项目
+      - generic [ref=e144]: DEV
+    - navigation "主导航" [ref=e145]:
+      - generic [ref=e146]:
+        - paragraph [ref=e147]: 项目空间
+        - link "工作台" [ref=e148] [cursor=pointer]:
+          - /url: "#/dashboard"
+      - generic [ref=e152]:
+        - paragraph [ref=e153]: 数据中心
+        - link "数据集管理 1" [ref=e154] [cursor=pointer]:
+          - /url: "#/datasets"
+          - generic [ref=e157]: 数据集管理
+          - generic [ref=e158]: "1"
+        - link "站点与客户端" [ref=e159] [cursor=pointer]:
+          - /url: "#/stations"
+        - link "模拟设备档案" [ref=e163] [cursor=pointer]:
+          - /url: "#/devices"
+      - generic [ref=e167]:
+        - paragraph [ref=e168]: 研究工作区
+        - link "联邦实验" [ref=e169] [cursor=pointer]:
+          - /url: "#/experiments"
+        - link "独立操作工作台" [ref=e173] [cursor=pointer]:
+          - /url: "#/operations/training"
+        - link "设备上下文与模型" [ref=e177] [cursor=pointer]:
+          - /url: "#/equipment-contexts"
+        - link "设备遗忘与恢复" [ref=e181] [cursor=pointer]:
+          - /url: "#/equipment-operations"
+        - link "三阶段比较" [ref=e185] [cursor=pointer]:
+          - /url: "#/operations/compare"
+        - link "任务中心" [ref=e189] [cursor=pointer]:
+          - /url: "#/tasks"
+        - link "遗忘与恢复" [ref=e193] [cursor=pointer]:
+          - /url: "#/forget-requests"
+        - link "原型与独立恢复" [ref=e197] [cursor=pointer]:
+          - /url: "#/recovery"
+        - link "审计中心" [ref=e201] [cursor=pointer]:
+          - /url: "#/audits"
+        - link "设备诊断" [ref=e205] [cursor=pointer]:
+          - /url: "#/diagnosis"
+    - generic [ref=e209]:
+      - generic [ref=e213]:
+        - text: 可追溯的研究演示
+        - generic [ref=e214]: 数据版本 · 模型阶段 · 审计证据
+      - generic [ref=e215]:
+        - generic [ref=e216]: 研
+        - generic [ref=e217]:
+          - strong [ref=e218]: 研究管理员
+          - generic [ref=e219]: ADMIN
+        - button "退出" [ref=e220] [cursor=pointer]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: 研究工作区
+        - strong [ref=e227]: 设备遗忘与恢复
+      - generic "设备预览来源时间：2026/10/26 17:23:19" [ref=e229]: 后端数据模式
+    - main [ref=e231]:
+      - generic [ref=e233]:
+        - paragraph [ref=e234]: EQUIPMENT OPERATIONS
+        - heading "设备遗忘与恢复" [level=1] [ref=e235]
+        - paragraph [ref=e236]: 复用同一设备 Full，分别执行单次遗忘、保留类原型构建与分类头恢复。
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - heading "设备业务能力" [level=3] [ref=e240]
+            - paragraph [ref=e241]: 已登记数据与可执行业务分别核查
+          - button "刷新" [ref=e242] [cursor=pointer]
+        - paragraph [ref=e244]: cwru_demo_v1 · 4 个模拟客户端 · 4 类 · 861 个窗口
+        - generic [ref=e245]:
+          - generic [ref=e246]:
+            - strong [ref=e247]: 设备遗忘
+            - generic [ref=e248]: 可执行
+            - paragraph [ref=e250]: 可执行固定客户端 0 的单次设备操作；仍需兼容来源。
+          - generic [ref=e251]:
+            - strong [ref=e252]: 设备原型
+            - generic [ref=e253]: 可执行
+            - paragraph [ref=e255]: 可执行固定客户端 0 的单次设备操作；仍需兼容来源。
+          - generic [ref=e256]:
+            - strong [ref=e257]: 设备恢复
+            - generic [ref=e258]: 可执行
+            - paragraph [ref=e260]: 可执行固定客户端 0 的单次设备操作；仍需兼容来源。
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - heading "独立操作 · 固定遗忘客户端 0" [level=3] [ref=e263]
+          - button "刷新版本" [ref=e264] [cursor=pointer]
+        - paragraph [ref=e266]: 只开放单次 PGA-head。原型采用 sigma=0 的功能基线，训练后重新读取保留客户端 1/2/3；尚非训练期预计算，也没有正式 DP 会计或密码学安全聚合。
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - text: 设备 Full
+            - generic [ref=e270] [cursor=pointer]:
+              - generic:
+                - combobox "设备 Full" [ref=e272]
+                - generic [ref=e273]: 43f9bc40-a24e-4a7f-8479-206fb8eab4e3
+          - button "提交设备遗忘" [ref=e278] [cursor=pointer]
+          - button "构建保留类原型" [ref=e280] [cursor=pointer]
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - text: 设备 Pre
+            - generic [ref=e285] [cursor=pointer]:
+              - generic:
+                - combobox "设备 Pre" [ref=e287]
+                - generic [ref=e288]: Select
+          - generic [ref=e293]:
+            - text: 已登记原型
+            - generic [ref=e295] [cursor=pointer]:
+              - generic:
+                - combobox "设备原型" [ref=e297]
+                - generic [ref=e298]: Select
+          - button "提交设备恢复" [disabled] [ref=e303]
+        - paragraph [ref=e305]: 每次提交仅执行所选操作。恢复使用 Pre 的固定测试快照与已登记原型，不重新训练或构建原型。其他角色只读。
+        - link "将兼容模型选用于同窗口真实诊断" [ref=e306] [cursor=pointer]:
+          - /url: "#/diagnosis"
+      - generic [ref=e307]:
+        - heading "三阶段比较与证据" [level=3] [ref=e308]
+        - generic [ref=e309]:
+          - generic [ref=e310]:
+            - text: 设备 Pre / Recovered
+            - generic [ref=e312] [cursor=pointer]:
+              - generic:
+                - combobox "比较模型" [ref=e314]
+                - generic [ref=e315]: Select
+          - button "读取实际评估" [disabled] [ref=e320]
+        - paragraph [ref=e322]: 选择已发布的设备 Pre 或 Recovered 读取原始评估；缺失来源不会补造指标。
+    - contentinfo [ref=e323]:
+      - generic [ref=e324]: 知枢 · 电力设备故障诊断与联邦遗忘研究平台
+      - generic [ref=e325]: 设备预览来源 2026/10/26 17:23:19 · v0.1.0

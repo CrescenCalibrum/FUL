@@ -1,0 +1,86 @@
+[     650ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:5185/api/v1/auth/me:0
+[   36201ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[   36201ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[   36869ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[   36870ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  100390ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  100390ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  101503ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  101503ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  103244ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  103245ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  103585ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  103585ms] [WARNING] [Vue warn]: Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <EquipmentReachabilityPanel key=4 project="8cbcee48-3433-4a9d-a4c8-55c96a1abb75" calibration="4e7fab96-3362-403a-88b4-d52e41b8cdde"  ... > 
+  at <EquipmentCalibrationsView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView key=2 > 
+  at <App> @ http://127.0.0.1:5185/node_modules/.vite/deps/chunk-3KXCIVKA.js?v=2f68cd56:2305
+[  103693ms] [WARNING] Failed to resolve component: el-radio-button
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. Proxy(Object) at <EquipmentReachabilityPanel>
+at <EquipmentCalibrationsView>
+at <RouterView>
+at <App> [Object, Object, Object, Object] @ http://127.0.0.1:5185/node_modules/.vite/deps/element-plus.js?v=2f68cd56:30483
+[  103693ms] [WARNING] Failed to resolve component: el-radio-group
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. Proxy(Object) at <EquipmentReachabilityPanel>
+at <EquipmentCalibrationsView>
+at <RouterView>
+at <App> [Object, Object, Object, Object] @ http://127.0.0.1:5185/node_modules/.vite/deps/element-plus.js?v=2f68cd56:30483
+[  376364ms] [ERROR] Failed to load resource: the server responded with a status of 409 (Conflict) @ http://127.0.0.1:5185/api/v1/equipment-calibrations/4e7fab96-3362-403a-88b4-d52e41b8cdde/reachability-diagnostics?project_id=8cbcee48-3433-4a9d-a4c8-55c96a1abb75:0
+[  925623ms] [ERROR] Failed to load resource: the server responded with a status of 409 (Conflict) @ http://127.0.0.1:5185/api/v1/equipment-calibrations/4e7fab96-3362-403a-88b4-d52e41b8cdde/reachability-diagnostics?project_id=8cbcee48-3433-4a9d-a4c8-55c96a1abb75:0
+[ 1007865ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5185/@vite/client:864
