@@ -16,6 +16,8 @@ def main():
     parser.add_argument("--steps", type=int, nargs="+", default=[5, 10, 20])
     parser.add_argument("--lrs", type=float, nargs="+", default=[0.0001])
     parser.add_argument("--project-ratios", type=float, nargs="+", default=[0.01])
+    parser.add_argument("--objectives", choices=["ce", "margin"], nargs="+", default=["ce"],
+                        help="Matched CE ascent / marker margin erasure; margin requires markers_only")
     parser.add_argument("--layers", choices=["head", "last", "all"], default="last")
     parser.add_argument("--data-scope", choices=["real", "real_and_markers", "markers_only"], default="real")
     parser.add_argument("--device", default="auto")
@@ -28,6 +30,8 @@ def main():
     import torch
     if args.threads < 1:
         parser.error("threads must be positive")
+    if "margin" in args.objectives and args.data_scope != "markers_only":
+        parser.error("--objectives margin requires --data-scope markers_only")
     torch.set_num_threads(args.threads)
     if args.check_only:
         from fulbase.verification.audit import parameter_hash
@@ -37,7 +41,7 @@ def main():
     run_pga_diagnostic(args.run_dir, steps=args.steps, lrs=args.lrs,
                        project_ratios=args.project_ratios, layers=args.layers,
                        data_scope=args.data_scope, device=args.device, data_dir=args.data_dir,
-                       out_dir=args.out_dir, run_name=args.run_name)
+                       out_dir=args.out_dir, run_name=args.run_name, objectives=args.objectives)
 
 
 if __name__ == "__main__":

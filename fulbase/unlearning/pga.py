@@ -74,15 +74,33 @@ def _require_finite_parameters(parameters, step):
         raise FloatingPointError(f"Non-finite PGA parameters at step {step}")
 
 
+def _correct_class_margin(logits, labels):
+    """Correct logit minus the strongest incorrect logit, without softmax."""
+    correct = logits.gather(1, labels[:, None]).squeeze(1)
+    other = logits.masked_fill(
+        nn.functional.one_hot(labels, logits.shape[1]).bool(), -torch.inf
+    ).max(1).values
+    return correct - other
+
+
 def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data_scope="real",
-                *, trace_steps=False):
-    """Approximate ascent baseline with target training access. Never audit inputs."""
+                *, trace_steps=False, objective="ce"):
+    """Maximize CE or erase training markers by maximizing negative logit margin.
+
+    The margin objective is deliberately restricted to target training markers.
+    It is a separate attack method, not a claim of real-data influence removal.
+    """
     if steps < 0 or lr <= 0 or project_ratio < 0:
         raise ValueError("Invalid PGA budget")
     if data_scope not in {"real", "real_and_markers", "markers_only"}:
         raise ValueError("Unknown PGA data scope")
-    if trace_steps and not all(math.isfinite(x) for x in (steps, lr, project_ratio)):
-        raise ValueError("PGA trace requires finite budgets")
+    if objective not in {"ce", "margin"}:
+        raise ValueError("Unknown PGA objective")
+    if objective == "margin" and data_scope != "markers_only":
+        raise ValueError("Margin erasure requires markers_only target training data scope")
+    check_finite = trace_steps or objective == "margin"
+    if check_finite and not all(math.isfinite(x) for x in (steps, lr, project_ratio)):
+        raise ValueError("PGA diagnostics/marker erasure require finite budgets")
     set_seed(derived_seed(ctx.cfg.seed, "pga", data_scope))
     model = build_model(dataset=ctx.dataset, num_classes=ctx.num_classes)
     set_model_parameters(model, ctx.final_parameters)
@@ -116,10 +134,11 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
     projected, losses = 0, []
     trace = []
     selected = [p for p in model.parameters() if p.requires_grad]
-    if trace_steps:
+    if check_finite:
         _require_finite_parameters(model.parameters(), 0)
         if not math.isfinite(radius):
             raise FloatingPointError("Non-finite PGA projection radius")
+    if trace_steps:
         centers = [p.detach().clone() for p in selected]
     for step in range(1, int(steps) + 1):
         try:
@@ -131,11 +150,14 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
         y = y.to(ctx.device)
         optimizer.zero_grad(set_to_none=True)
         logits = model(x.to(ctx.device))
-        loss = nn.functional.cross_entropy(logits, y)
-        if trace_steps and not bool(torch.isfinite(loss)):
+        # Both branches maximize their score. Maximizing -margin is descent on
+        # correct-vs-other margin, retaining a gradient at confident predictions.
+        loss = (nn.functional.cross_entropy(logits, y) if objective == "ce"
+                else -_correct_class_margin(logits, y).mean())
+        if check_finite and not bool(torch.isfinite(loss)):
             raise FloatingPointError(f"Non-finite PGA loss at step {step}")
         (-loss).backward()
-        if trace_steps:
+        if check_finite:
             gradients = [p.grad for p in selected if p.grad is not None]
             if any(not bool(torch.isfinite(g).all()) for g in gradients):
                 raise FloatingPointError(f"Non-finite PGA gradient at step {step}")
@@ -143,23 +165,32 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
             if not math.isfinite(gradient_norm):
                 raise FloatingPointError(f"Non-finite PGA gradient norm at step {step}")
         optimizer.step()
-        if trace_steps:
+        if check_finite:
             _require_finite_parameters(selected, step)
+        if trace_steps:
             before_projection = _parameter_delta_norm(selected, centers)
         was_projected = _project_to_l2_ball(model, ctx.final_parameters, radius)
         projected += int(was_projected)
         losses.append(float(loss.detach()))
-        if trace_steps:
+        if check_finite:
             _require_finite_parameters(selected, step)
+        if trace_steps:
             after_projection = _parameter_delta_norm(selected, centers)
             if not all(math.isfinite(n) for n in (before_projection, after_projection)):
                 raise FloatingPointError(f"Non-finite PGA update norm at step {step}")
             marker_mask = batch[2].to(ctx.device)
             per_sample = nn.functional.cross_entropy(logits.detach(), y, reduction="none")
+            raw_margin = _correct_class_margin(logits.detach(), y)
+            scale = (logits.detach() - logits.detach().mean(1, keepdim=True)).norm(dim=1)
+            normalized_margin = raw_margin / scale.clamp_min(1e-12)
             marker_count = int(marker_mask.sum())
             real_count = len(y) - marker_count
             trace.append({
-                "step": step, "loss": losses[-1],
+                "step": step, "loss": losses[-1], "objective": objective,
+                "ce_loss": float(per_sample.mean()),
+                "raw_margin": float(raw_margin.mean()),
+                "normalized_margin": float(normalized_margin.mean()),
+                "batch_accuracy": float((logits.detach().argmax(1) == y).float().mean()),
                 "real_samples": real_count, "marker_samples": marker_count,
                 "real_loss": float(per_sample[~marker_mask].mean()) if real_count else None,
                 "marker_loss": float(per_sample[marker_mask].mean()) if marker_count else None,
@@ -170,6 +201,11 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
             })
     logs = {
         "steps": steps, "lr": lr, "project_ratio": project_ratio,
+        "objective": objective, "optimization_direction": "maximize",
+        "loss_definition": "mean_cross_entropy" if objective == "ce" else "negative_mean_correct_class_logit_margin",
+        "group_loss_definition": "mean_cross_entropy",
+        "trace_observation_timing": "training_batch_before_update",
+        "normalized_margin_definition": "raw_margin/centered_logits_l2_norm_clamped_1e-12",
         "max_delta_norm": radius, "layers": layers, "trainable_names": names,
         "bn_policy": "frozen_running_state", "data_scope": data_scope,
         "projected_times": projected, "first_loss": losses[0] if losses else None,
@@ -177,7 +213,8 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
         **state_change_report(model, ctx.final_parameters)}
     if trace_steps:
         logs["step_trace"] = trace
-    return UnlearningResult("pga", get_model_parameters(model), logs)
+    return UnlearningResult("pga" if objective == "ce" else "marker_margin_erase",
+                           get_model_parameters(model), logs)
 
 class PGAUnlearner(BaseUnlearner):
     name = "pga"
