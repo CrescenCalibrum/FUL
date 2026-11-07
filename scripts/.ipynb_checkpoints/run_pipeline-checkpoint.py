@@ -48,7 +48,7 @@ def main() -> None:
     p.add_argument("--federaser-damping", type=float, default=1.0)
     p.add_argument("--federaser-calibrate", type=str2bool, default=True)
     p.add_argument("--pga-steps", type=int, default=100)
-    p.add_argument("--pga-lr", type=float, default=1e-4)
+    p.add_argument("--pga-lr", type=float, default=0.01)
     p.add_argument("--pga-project-ratio", type=float, default=0.01)
     p.add_argument("--pga-layers", default="head", choices=["head", "last", "all"])
     p.add_argument("--retrain-epochs", type=int, default=5)
