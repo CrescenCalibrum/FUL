@@ -1,0 +1,13 @@
+{
+  "backend": "serial",
+  "num_rounds": 3,
+  "active_client_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "initialization": "identical_full_initial_checkpoint",
+  "budget": "same_rounds_epochs_lr_full_retained_participation",
+  "input_scope": "retained_real_data_and_retained_training_markers"
+}

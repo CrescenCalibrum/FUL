@@ -12,7 +12,7 @@
   "alpha": 0.5,
   "seed": 42,
   "forget_clients": "0",
-  "methods": "federaser_lite,pga",
+  "methods": "federaser_lite,pga,retrain_fl",
   "pga_steps": 5,
   "pga_layers": "head",
   "pga_data_scope": "real_and_markers",
