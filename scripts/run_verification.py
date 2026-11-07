@@ -65,7 +65,7 @@ def main():
     if args.synthetic_smoke:
         values.update(backend="serial", dataset="fashionmnist", num_clients=3, num_rounds=1,
                       forget_clients="0", batch_size=10, local_epochs=1, pga_steps=2,
-                      fake_steps=2, client_device="cpu", eval_device="cpu", client_gpus=0,
+                      fake_steps=2, client_device="auto", eval_device="auto", client_gpus=0.1,
                       with_recovery=True, synthetic_smoke=True,
                       run_name=values.get("run_name", "verification_synthetic_smoke"))
         marker_values.update(families_per_class=2, variants_per_family=1, batch_size=10)

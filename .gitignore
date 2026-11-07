@@ -9,6 +9,7 @@ reports/
 tests/
 tmp/
 plan/
+runs_backup/
 
 # Local verification environments and generated caches
 .tools/

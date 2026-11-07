@@ -1,7 +1,7 @@
 from __future__ import annotations
 import torch
 from torch import nn
-from torch.utils.data import ConcatDataset, DataLoader
+from torch.utils.data import ConcatDataset, DataLoader, default_collate
 from fulbase.data import make_merged_loader
 from fulbase.models import build_model
 from fulbase.unlearning.base import BaseUnlearner, UnlearningResult
@@ -37,6 +37,12 @@ def _project_to_l2_ball(model, center_parameters, max_delta_norm):
             p.copy_(c + (p-c) * (max_delta_norm / max(norm, 1e-30)))
     return True
 
+def _collate_pga_batch(batch):
+    # Torchvision datasets may return int labels while marker datasets return tensors.
+    images, labels = zip(*batch)
+    return default_collate(images), torch.tensor([int(label) for label in labels], dtype=torch.long)
+
+
 def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data_scope="real"):
     """Approximate ascent baseline with target training access. Never audit inputs."""
     if steps < 0 or lr <= 0 or project_ratio < 0:
@@ -63,6 +69,7 @@ def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data
     if not len(source):
         raise ValueError("Empty PGA source")
     loader = DataLoader(source, batch_size=ctx.batch_size, shuffle=True,
+                        collate_fn=_collate_pga_batch,
                         generator=torch.Generator().manual_seed(derived_seed(ctx.cfg.seed, "pga-batches")))
     batches = iter(loader)
     norm = sum(float(p.detach().double().square().sum())
