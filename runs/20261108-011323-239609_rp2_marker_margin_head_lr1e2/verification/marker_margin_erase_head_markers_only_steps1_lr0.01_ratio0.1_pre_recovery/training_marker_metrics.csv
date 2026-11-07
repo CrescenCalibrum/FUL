@@ -1,0 +1,3 @@
+phase,cid,role,num_examples,valid,accuracy,ce_loss,mean_margin,mean_normalized_margin
+full,0,train,80,True,1.0,2.4365172783040277e-05,14.169634819030762,0.733553409576416
+after,0,train,80,True,1.0,2.7126201096220856e-05,13.765935897827148,0.7111008167266846
