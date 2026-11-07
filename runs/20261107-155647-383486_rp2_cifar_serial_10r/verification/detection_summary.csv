@@ -1,0 +1,5 @@
+behavior,decision_column,n_requests,n_pass,n_fail,n_insufficient,fraction_pass,fraction_fail,fraction_insufficient,uncertainty
+fake,status,3,0,0,3,0.0,0.0,1.0,not_estimated_single_training_run
+fake,exploratory_status,3,0,0,3,0.0,0.0,1.0,not_estimated_single_training_run
+strict_retrain_reference,status,1,0,0,1,0.0,0.0,1.0,not_estimated_single_training_run
+strict_retrain_reference,exploratory_status,1,0,0,1,0.0,0.0,1.0,not_estimated_single_training_run

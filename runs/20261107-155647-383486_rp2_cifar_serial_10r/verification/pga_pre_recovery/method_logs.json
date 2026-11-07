@@ -1,0 +1,22 @@
+{
+  "steps": 5,
+  "lr": 0.0001,
+  "project_ratio": 0.01,
+  "max_delta_norm": 0.0444184324497821,
+  "layers": "head",
+  "trainable_names": [
+    "classifier.weight",
+    "classifier.bias"
+  ],
+  "bn_policy": "frozen_running_state",
+  "data_scope": "real_and_markers",
+  "projected_times": 0,
+  "first_loss": 0.5686641931533813,
+  "last_loss": 0.6651223301887512,
+  "changed_parameters": [
+    "classifier.weight",
+    "classifier.bias"
+  ],
+  "changed_buffers": [],
+  "state_l2_change": 0.002236360778652685
+}

@@ -1,0 +1,241 @@
+{
+  "schema_version": "marker-audit-v1",
+  "protocol": {
+    "alpha": 0.05,
+    "margin_drop": 0.1,
+    "retain_margin_tolerance": 0.1,
+    "geometry_drop": 0.02,
+    "retain_geometry_tolerance": 0.05,
+    "min_families": 8,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "max_retain_accuracy_drop": 0.03,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 2718,
+    "geometry_forget_rule": "unvalidated",
+    "protocol_locked": false
+  },
+  "status": "insufficient",
+  "exploratory_status": "insufficient",
+  "protocol_locked": false,
+  "reason": "Development bounds; calibration is not locked",
+  "forget_client_ids": [
+    0
+  ],
+  "conditions": [
+    {
+      "cid": 0,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 1,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.95,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 2,
+      "condition": "full_marker_precheck",
+      "status": "insufficient",
+      "full_marker_accuracy": 0.625,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 3,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.9,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 4,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.925,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "kind": "decrease",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.0003493513911962509,
+      "ci_low": 1.4884423998092226e-05,
+      "ci_high": 0.0006838183583944096,
+      "p_support": 1.0,
+      "p_violation": 0.0,
+      "status": "fail",
+      "cid": 0,
+      "condition": "forget_margin",
+      "p_support_holm": 1.0,
+      "p_violation_holm": 0.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.0003124222159385681,
+      "ci_low": -0.0008620839593394703,
+      "ci_high": 0.00023723952746233416,
+      "p_support": 2.0016871372580006e-73,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 1,
+      "condition": "retain_margin",
+      "p_support_holm": 1.4011809960806004e-72,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.00014731916598975658,
+      "ci_low": -0.0005899386305934988,
+      "ci_high": 0.000884576962573012,
+      "p_support": 2.2448111033377507e-68,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 2,
+      "condition": "retain_margin",
+      "p_support_holm": 1.3468866620026504e-67,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.00019121058285236358,
+      "ci_low": -0.00028943891802328157,
+      "ci_high": 0.0006718600837280087,
+      "p_support": 1.3020838187373366e-75,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 3,
+      "condition": "retain_margin",
+      "p_support_holm": 1.0416670549898693e-74,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.00013286732137203218,
+      "ci_low": -0.00023026172839587047,
+      "ci_high": 0.0004959963711399348,
+      "p_support": 2.271953512319645e-80,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 4,
+      "condition": "retain_margin",
+      "p_support_holm": 2.0447581610876805e-79,
+      "p_violation_holm": 1.0
+    },
+    {
+      "cid": 0,
+      "condition": "forget_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.02,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "insufficient",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 1,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 2,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 3,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 4,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "condition": "retain_task",
+      "status": "pass",
+      "accuracy_drop": 0.0019599608007839775,
+      "bound": 0.03,
+      "source": "independent_benchmark_evaluation_not_private_data_audit"
+    }
+  ],
+  "exploratory_decision_variants": {
+    "margin_only": "insufficient",
+    "geometry_only": "insufficient",
+    "joint_structure": "insufficient",
+    "complete": "insufficient",
+    "fixed_margin_threshold": "insufficient"
+  },
+  "inference_scope": "conditional_on_this_checkpoint_and_marker_generator",
+  "limitations": [
+    "Marker evidence is not proof of removal of all real-data influence",
+    "Checkpoint binding does not authenticate deployed behavior",
+    "Bootstrap percentile coverage is approximate"
+  ],
+  "metadata": {
+    "stage": "pga_pre_recovery",
+    "method": "pga",
+    "behavior": "candidate",
+    "checkpoint_sha256": "18868031228fbb989d5f17a1127055a5d3577156f36e0c54b7e4a78e51ae73af",
+    "parameters_sha256": "77255e19dcbc1840e7c895171e10936d7b96e3aaee3ca7b94103e240d94c4b71",
+    "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+    "role": "calibration",
+    "data_origin": "benchmark",
+    "model_state_change_from_full": {
+      "changed_parameters": [
+        "classifier.weight",
+        "classifier.bias"
+      ],
+      "changed_buffers": [],
+      "state_l2_change": 0.002236360778652685
+    }
+  },
+  "statistical_and_output_time_sec": 4.911044016480446
+}
