@@ -128,15 +128,29 @@ def _validate_data(fd, source):
 def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                        project_ratios=(0.01,), layers="last", data_scope="real",
                        device="auto", data_dir=None, out_dir="runs",
-                       run_name="pga_diagnostic", fd=None, objectives=("ce",)):
+                       run_name="pga_diagnostic", fd=None, objectives=("ce",),
+                       margin_raw_drop=3.0, retain_weights=(1.0,), retain_weight_mode="fixed"):
     steps, lrs, project_ratios = list(steps), list(lrs), list(project_ratios)
     objectives = list(objectives)
-    if not objectives or any(x not in {"ce", "margin"} for x in objectives):
-        raise ValueError("Objectives must be ce or margin")
+    capped_objectives = {"margin_capped", "margin_capped_retain"}
+    if not objectives or any(x not in {"ce", "margin"} | capped_objectives for x in objectives):
+        raise ValueError("Unsupported diagnostic objective")
     if len(set(objectives)) != len(objectives):
         raise ValueError("Duplicate objectives")
-    if "margin" in objectives and data_scope != "markers_only":
+    if any(x != "ce" for x in objectives) and data_scope != "markers_only":
         raise ValueError("The margin erasure objective requires markers_only training inputs")
+    has_capped = bool(capped_objectives.intersection(objectives))
+    has_retain = "margin_capped_retain" in objectives
+    if has_capped and layers != "head":
+        raise ValueError("Capped marker diagnostics currently require layers=head")
+    if not math.isfinite(margin_raw_drop) or margin_raw_drop <= 0:
+        raise ValueError("margin_raw_drop must be finite and positive (raw logit units)")
+    retain_weights = list(retain_weights)
+    if (not retain_weights or any(not math.isfinite(w) or w < 0 for w in retain_weights)
+            or len(set(retain_weights)) != len(retain_weights)):
+        raise ValueError("retain_weights must be unique finite nonnegative values")
+    if retain_weight_mode not in {"fixed", "probe_ratio"}:
+        raise ValueError("retain_weight_mode must be fixed or probe_ratio")
     if not steps or any(type(n) is not int or n < 1 for n in steps):
         raise ValueError("Step budgets must be positive integers")
     if not lrs or any(not math.isfinite(x) or x <= 0 for x in lrs):
@@ -186,23 +200,39 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
     save_json(asdict(markers), vdir / "marker_config.json")
     save_json(asdict(audit_cfg), vdir / "audit_config.json")
     shutil.copyfile(source["root"] / "data_partition.json", output / "data_partition.json")
-    trials = [dict(steps=n, lr=lr, project_ratio=ratio, layers=layers,
-                   data_scope=data_scope, objective=objective)
-              for n, lr, ratio, objective in product(steps, lrs, project_ratios, objectives)]
+    trials = []
+    for n, lr, ratio, objective in product(steps, lrs, project_ratios, objectives):
+        trial = dict(steps=n, lr=lr, project_ratio=ratio, layers=layers,
+                     data_scope=data_scope, objective=objective)
+        if objective in capped_objectives:
+            trial["margin_raw_drop"] = margin_raw_drop
+        if objective == "margin_capped_retain":
+            trials.extend(dict(trial, retain_weight=w, retain_weight_mode=retain_weight_mode)
+                          for w in retain_weights)
+        else:
+            trials.append(trial)
     source_files = [Path(__file__), Path(__file__).parents[1] / "unlearning/pga.py",
                     Path(__file__).parents[1] / "data.py", Path(__file__).parents[1] / "models.py",
                     Path(__file__).with_name("markers.py"), Path(__file__).with_name("audit.py")]
+    if has_capped:
+        source_files.append(Path(__file__).parents[1] / "unlearning/marker_capped.py")
     save_json({"source_run": str(source["root"]), "source_full_parameters_sha256": full_hash,
                "source_checkpoint_sha256": file_hash(source["checkpoint"]),
                "source_config_sha256": file_hash(source["root"] / "config.json"),
                "partition_sha256": source["manifest"]["partition_sha256"],
                "trials": trials, "start_policy": "each_budget_starts_from_identical_full",
-               "access": {"optimization": ("target_training_markers_only" if data_scope == "markers_only"
+               "access": {"optimization": ("target_and_retained_training_markers_for_constrained_trials" if has_retain
+                                             else "target_training_markers_only" if data_scope == "markers_only"
                                              else "target_training_data_and_or_training_markers"),
+                          "target_client_ids": forget,
+                          "retained_training_marker_client_ids": retain if has_retain else [],
                           "evaluation": "benchmark_test_data_and_calibration_markers",
                           "attack_diagnostics": "target_training_markers_after_candidate_is_fixed"},
                "objective_definitions": {"ce": "maximize mean cross entropy (original PGA)",
-                                         "margin": "maximize negative mean(correct logit - max other logit)"},
+                                         "margin": "maximize negative mean(correct logit - max other logit)",
+                                         "margin_capped": "minimize per-sample relu(raw_margin - (Full_raw_margin - raw_drop))",
+                                         "margin_capped_retain": "capped target loss + fixed weight * client-balanced centered-logit MSE on retained training markers"},
+               "retain_weight_semantics": "fixed: absolute lambda; probe_ratio: multiplier of training-only probe gradient ratio",
                "sampling_policy": "objective-independent seed; same inputs for matched budgets",
                "formal_audit": False, "recovery": "not_run", "retrain": "not_run",
                "config_budget_scope": "config.json holds first numeric budget; trials lists every objective and budget",
@@ -219,7 +249,7 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                                       cfg.calibration_seed, fd.num_classes) for cid in range(cfg.num_clients)}
     training_markers = ({cid: MarkerDataset(markers, cid, cfg.dataset, "train",
                                            derived_seed(cfg.seed, "train-markers"), fd.num_classes)
-                         for cid in forget} if data_scope == "markers_only" else {})
+                         for cid in (forget + retain if has_retain else forget)} if data_scope == "markers_only" else {})
     if training_markers:
         save_json([row for ds in training_markers.values() for row in ds.manifest()],
                   vdir / "training_marker_manifest.json")
@@ -250,6 +280,11 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                     "source_full_parameters_sha256": full_hash,
                     "marker_fingerprint": markers.fingerprint(),
                     "model_state_change_from_full": state_change_report(model, params)}
+        if logs and logs["objective"] in capped_objectives:
+            metadata["attack_parameters"] = {k: logs[k] for k in
+                ("margin_raw_drop", "retain_weight", "retain_weight_mode", "retain_weight_effective") if k in logs}
+            metadata["optimization_access"] = ("target_and_retained_training_markers"
+                if logs["objective"] == "margin_capped_retain" else "target_training_markers_only")
         if baseline_obs is None:
             baseline_obs, baseline_metrics = observations, metrics
         report = write_audit(baseline_obs, observations, forget, audit_cfg, vdir / stage,
@@ -261,13 +296,15 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                          for cid, ds in training_markers.items()}
             if baseline_train_obs is None:
                 baseline_train_obs = train_obs
-            train_rows = [{"phase": phase, "cid": cid, "role": "train", **_marker_summary({cid: obs})}
+            train_rows = [{"phase": phase, "cid": cid, "role": "train",
+                           "client_group": "target" if cid in forget else "retained", **_marker_summary({cid: obs})}
                           for phase, items in (("full", baseline_train_obs), ("after", train_obs))
                           for cid, obs in items.items()]
             pd.DataFrame(train_rows).to_csv(vdir / stage / "training_marker_metrics.csv", index=False)
             save_observations(baseline_train_obs, vdir / stage / "training_marker_full_observations.npz")
             save_observations(train_obs, vdir / stage / "training_marker_after_observations.npz")
-            train_before, train_after = _marker_summary(baseline_train_obs), _marker_summary(train_obs)
+            train_before = _marker_summary({cid: baseline_train_obs[cid] for cid in forget})
+            train_after = _marker_summary({cid: train_obs[cid] for cid in forget})
             cal_before = _marker_summary({cid: baseline_obs[cid] for cid in forget})
             cal_after = _marker_summary({cid: observations[cid] for cid in forget})
             marker_metrics = {
@@ -285,6 +322,20 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                 "calibration_target_marker_normalized_margin_delta": _metric_delta(
                     cal_after["mean_normalized_margin"], cal_before["mean_normalized_margin"]),
             }
+            if logs and logs["objective"] in capped_objectives:
+                met = []
+                for cid in forget:
+                    if not np.array_equal(train_obs[cid]["ids"], baseline_train_obs[cid]["ids"]):
+                        raise ValueError("Training marker ID order changed")
+                    met.extend(train_obs[cid]["margin"] <= baseline_train_obs[cid]["margin"] - logs["margin_raw_drop"])
+                marker_metrics["train_marker_cap_met_fraction"] = float(np.mean(met))
+            if has_retain:
+                rb = _marker_summary({cid: baseline_train_obs[cid] for cid in retain})
+                ra = _marker_summary({cid: train_obs[cid] for cid in retain})
+                marker_metrics.update(retain_train_marker_acc_full=rb["accuracy"],
+                                      retain_train_marker_acc_after=ra["accuracy"],
+                                      retain_train_marker_normalized_margin_delta=_metric_delta(
+                                          ra["mean_normalized_margin"], rb["mean_normalized_margin"]))
         if logs is not None:
             save_json(logs, vdir / stage / "method_logs.json")
             pd.DataFrame(logs["step_trace"]).to_csv(vdir / stage / "step_trace.csv", index=False)
@@ -292,6 +343,9 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                                      "task_metrics": metrics}
         save_json(manifest, vdir / "checkpoint_manifest.json")
         extra = ({k: logs[k] for k in ("steps", "lr", "project_ratio", "layers", "data_scope", "objective")} if logs else {})
+        if logs and logs["objective"] in capped_objectives:
+            extra.update({k: logs[k] for k in ("margin_raw_drop", "retain_weight", "retain_weight_mode",
+                                              "retain_weight_effective") if k in logs})
         row = {"unlearner": method, "recovery": "none", **metrics, **extra, **marker_metrics,
                "source_full_parameters_sha256": full_hash, "unlearning_time_sec": seconds,
                "status": report["status"], "exploratory_status": report["exploratory_status"]}
@@ -307,6 +361,14 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
             method = f"marker_{trial['objective']}_erase" if data_scope == "markers_only" else "pga"
             stage = (f"{method}_{layers}_{data_scope}_steps{trial['steps']}_lr{trial['lr']}"
                      f"_ratio{trial['project_ratio']}_pre_recovery")
+            if trial["objective"] in capped_objectives:
+                # Keep Windows paths manageable while encoding every varying budget.
+                short = "capretain" if trial["objective"] == "margin_capped_retain" else "cap"
+                stage = (f"marker_{short}_head_s{trial['steps']}_lr{trial['lr']}"
+                         f"_r{trial['project_ratio']}_d{trial['margin_raw_drop']}")
+                if short == "capretain":
+                    stage += f"_{trial['retain_weight_mode']}_w{trial['retain_weight']}"
+                stage += "_pre_recovery"
             print(f"[pga diagnostic] {stage}", flush=True)
             # Initial training weights/history are not used by PGA; only Full is loaded.
             ctx = UnlearningContext(fd, cfg.dataset, fd.num_classes, [],

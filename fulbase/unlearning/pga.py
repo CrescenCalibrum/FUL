@@ -84,12 +84,20 @@ def _correct_class_margin(logits, labels):
 
 
 def pga_unlearn(ctx, steps=100, lr=1e-4, project_ratio=0.01, layers="head", data_scope="real",
-                *, trace_steps=False, objective="ce"):
+                *, trace_steps=False, objective="ce", margin_raw_drop=3.0,
+                retain_weight=1.0, retain_weight_mode="fixed"):
     """Maximize CE or erase training markers by maximizing negative logit margin.
 
     The margin objective is deliberately restricted to target training markers.
     It is a separate attack method, not a claim of real-data influence removal.
     """
+    if objective in {"margin_capped", "margin_capped_retain"}:
+        from fulbase.unlearning.marker_capped import marker_capped_unlearn
+        return marker_capped_unlearn(
+            ctx, steps=steps, lr=lr, project_ratio=project_ratio, layers=layers,
+            data_scope=data_scope, trace_steps=trace_steps, objective=objective,
+            margin_raw_drop=margin_raw_drop, retain_weight=retain_weight,
+            retain_weight_mode=retain_weight_mode)
     if steps < 0 or lr <= 0 or project_ratio < 0:
         raise ValueError("Invalid PGA budget")
     if data_scope not in {"real", "real_and_markers", "markers_only"}:
