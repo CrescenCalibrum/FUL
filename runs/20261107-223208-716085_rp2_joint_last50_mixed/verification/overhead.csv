@@ -1,0 +1,11 @@
+stage,operation,time_sec,bytes
+full_after_fl,full_training,618.5778709426522,
+full_after_fl,marker_inference,0.038033947348594666,
+full_after_fl,statistics_and_output,2.9848114512860775,
+pga_pre_recovery,unlearning,1.0837139189243317,
+pga_pre_recovery,marker_inference,0.03875305503606796,
+pga_pre_recovery,statistics_and_output,3.150670390576124,
+retrain_fl_pre_recovery,unlearning,474.18778263032436,
+retrain_fl_pre_recovery,marker_inference,0.05120428279042244,
+retrain_fl_pre_recovery,statistics_and_output,4.745907884091139,
+artifacts,stored_bytes,,5646052801.0
