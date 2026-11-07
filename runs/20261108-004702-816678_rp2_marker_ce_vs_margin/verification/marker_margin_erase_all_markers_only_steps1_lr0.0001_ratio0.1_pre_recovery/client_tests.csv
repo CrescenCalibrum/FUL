@@ -1,0 +1,17 @@
+cid,condition,status,full_marker_accuracy,reason,kind,bound,n_families,mean,ci_low,ci_high,p_support,p_violation,p_support_holm,p_violation_holm,interval_tail_probability,geometry_rule_calibrated,accuracy_drop,source
+0.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+1.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+2.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+3.0,full_marker_precheck,pass,0.975,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+4.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+0.0,forget_margin,fail,,,decrease,0.1,40.0,-0.03827860206365585,-0.04767306640471408,-0.02888413772259762,1.0,0.0,1.0,0.0,,,,
+1.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.030384518206119537,-0.04037345003042091,-0.020395586381818168,4.3535852749882925e-29,1.0,3.482868219990634e-28,1.0,,,,
+2.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.031245875358581542,-0.04262630131502323,-0.019865449402139856,4.39482644027508e-27,1.0,3.076378508192556e-26,1.0,,,,
+3.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.039987717662006615,-0.051184102365846196,-0.02879133295816703,1.6653345369377348e-15,1.0,9.992007221626409e-15,1.0,,,,
+4.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.031860380247235295,-0.04109713573010371,-0.022623624764366884,1.5036798786592302e-30,1.0,1.3533118907933072e-29,1.0,,,,
+0.0,forget_geometry,insufficient,,,joint_stratified_family_bootstrap,0.02,40.0,-0.00069446861743927,-0.0009271900355815887,-0.00043148525059223176,,,,,0.0025,False,,
+1.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.00038777291774749756,0.0001393979787826538,0.0008285565674304964,,,,,0.0025,False,,
+2.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.001069784164428711,0.0006699014082551003,0.0014616687595844274,,,,,0.0025,False,,
+3.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.0005802363157272339,0.0002895729616284371,0.0009337816014885902,,,,,0.0025,False,,
+4.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.001069784164428711,0.0006699014082551003,0.0014616687595844274,,,,,0.0025,False,,
+,retain_task,pass,,,,0.03,,,,,,,,,,,-0.0002799944001120602,independent_benchmark_evaluation_not_private_data_audit

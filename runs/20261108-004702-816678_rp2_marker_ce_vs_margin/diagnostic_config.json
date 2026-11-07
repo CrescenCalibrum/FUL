@@ -1,0 +1,84 @@
+{
+  "source_run": "/root/ful_flower_base/runs/20261107-221138-927705_rp2_joint_head50_mixed",
+  "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+  "source_checkpoint_sha256": "c31e58178677f75c03a08daf0047f01df3a6ee9374a7a14cf39d0915b5cd01d1",
+  "source_config_sha256": "b7e41a71a33ec0403e292a95b3353acc835693794cbce70202be334ec64d82c6",
+  "partition_sha256": "af72384d9ebe662d9aeb8d082a6e588370e5c78b1a55dca6dadc74c46f7bad74",
+  "trials": [
+    {
+      "steps": 1,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "ce"
+    },
+    {
+      "steps": 1,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "margin"
+    },
+    {
+      "steps": 5,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "ce"
+    },
+    {
+      "steps": 5,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "margin"
+    },
+    {
+      "steps": 10,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "ce"
+    },
+    {
+      "steps": 10,
+      "lr": 0.0001,
+      "project_ratio": 0.1,
+      "layers": "all",
+      "data_scope": "markers_only",
+      "objective": "margin"
+    }
+  ],
+  "start_policy": "each_budget_starts_from_identical_full",
+  "access": {
+    "optimization": "target_training_markers_only",
+    "evaluation": "benchmark_test_data_and_calibration_markers",
+    "attack_diagnostics": "target_training_markers_after_candidate_is_fixed"
+  },
+  "objective_definitions": {
+    "ce": "maximize mean cross entropy (original PGA)",
+    "margin": "maximize negative mean(correct logit - max other logit)"
+  },
+  "sampling_policy": "objective-independent seed; same inputs for matched budgets",
+  "formal_audit": false,
+  "recovery": "not_run",
+  "retrain": "not_run",
+  "config_budget_scope": "config.json holds first numeric budget; trials lists every objective and budget",
+  "timing_scope": "PGA execution including diagnostic trace overhead",
+  "torch_version": "2.7.1+cu118",
+  "numpy_version": "1.26.4",
+  "device": "cuda",
+  "source_hashes": {
+    "pga_diagnostic.py": "1aa3652e9aaf090c958ee12c47389a2d5d275ff418c7293aa6458ef5845c63d1",
+    "pga.py": "b6926a9ee0a02f9abd9815ac28c127b8d4bac965d7469c557714cff9a9927ecd",
+    "data.py": "abff07baac00251246904bb52e1ec476069aa4b6647ebc35a55fdd19cf77eb02",
+    "models.py": "88a4e6d67a16c2be105c74676c60a427ec579c978b4412883d92e90968d41834",
+    "markers.py": "9209bbe036c095d12376dc1e2ce2419ae6106369b5548c60ad26985e09db3566",
+    "audit.py": "20955247681c969a646be159b15219c0a1925db9f723dc95928b79a81c0c8923"
+  }
+}
