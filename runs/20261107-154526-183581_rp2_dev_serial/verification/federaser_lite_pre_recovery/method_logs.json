@@ -1,8 +1,0 @@
-{
-  "history_format": "compact",
-  "damping": 1.0,
-  "calibrate": true,
-  "forget_client_ids": [
-    0
-  ]
-}

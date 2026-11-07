@@ -1,0 +1,3 @@
+stage,unlearner,recovery,all_acc,all_loss,retain_acc,retain_loss,forget_acc,forget_loss,retain_num_examples,forget_num_examples,full_training_time_sec,unlearning_time_sec
+full_after_fl,none,none,0.7353,1.127920927119255,0.7732045359092818,0.9274747295238116,0.64053202660133,1.6290696277291281,7143,2857,684.4056764282286,
+retrain_fl_pre_recovery,retrain_fl,none,0.6561,1.6897928971290588,0.7019459610807783,1.4151154939623987,0.5414770738536927,2.376527176731151,7143,2857,,489.9692772552371
