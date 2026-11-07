@@ -1,0 +1,299 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "af72384d9ebe662d9aeb8d082a6e588370e5c78b1a55dca6dadc74c46f7bad74",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "checkpoint_sha256": "c31e58178677f75c03a08daf0047f01df3a6ee9374a7a14cf39d0915b5cd01d1",
+      "parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2872645086288452,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9777323412958621,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.061150438350775,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps5_lr3e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps5_lr3e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "b98805e286141dce752613b06c22e7915245127441aff59e2250cd8579420c2f",
+      "parameters_sha256": "67e306fdc4795869b884c6861ae0f25a1ecebeb038139921d19bd4027380ab5c",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.0035558919746753116
+      },
+      "checkpoint": "models/model_pga_last_real_steps5_lr3e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7126,
+        "all_loss": 1.318996712255478,
+        "retain_acc": 0.7667646647067059,
+        "retain_loss": 0.9959513658771625,
+        "forget_acc": 0.5771788589429472,
+        "forget_loss": 2.1266628074445713,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps5_lr5e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps5_lr5e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "41737c0029d21f41b0bfac8ccd46f7c73028910f757f164105221b0732b20e7e",
+      "parameters_sha256": "3cdfc864d385e361d634dcd699090db2301dd43769df6b097956fa7d50cff60c",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.006224769605404352
+      },
+      "checkpoint": "models/model_pga_last_real_steps5_lr5e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7091,
+        "all_loss": 1.345689697599411,
+        "retain_acc": 0.7648047039059219,
+        "retain_loss": 1.0128496744945472,
+        "forget_acc": 0.5698284914245713,
+        "forget_loss": 2.177848567568759,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps10_lr3e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps10_lr3e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "8e143639884d7421abd9a9aba2d7b22090bf9d2da0e2280a41eba59e7085cda3",
+      "parameters_sha256": "56bf667af0ff49edad19babda0036240791d9f7254c92248e9df6d9b11a27ff2",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.007214770166228825
+      },
+      "checkpoint": "models/model_pga_last_real_steps10_lr3e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7075,
+        "all_loss": 1.3568066737174989,
+        "retain_acc": 0.7641047179056419,
+        "retain_loss": 1.0182224374082465,
+        "forget_acc": 0.5659782989149458,
+        "forget_loss": 2.2033252602571536,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps10_lr5e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps10_lr5e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "ae4201cb916e0afd1ef38ac6ad081531fffd67ad42d2c1593410911edcad62db",
+      "parameters_sha256": "69e350854bd88d18a14109e8940c83cb6d5eddb4c3507b88f5e64ddf303f1e2d",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.013437484471215644
+      },
+      "checkpoint": "models/model_pga_last_real_steps10_lr5e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.6956,
+        "all_loss": 1.4311538544178009,
+        "retain_acc": 0.75542489150217,
+        "retain_loss": 1.0690274679842706,
+        "forget_acc": 0.5460273013650683,
+        "forget_loss": 2.3365347745078906,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps20_lr3e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps20_lr3e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "cbbffcb0c32943f9399b6fc107eb0011647f1d23c098a53bb7fdd152c190464e",
+      "parameters_sha256": "7a976738cb2b812995b254de81272475c77caef516faf4d6eaeeed2785df02b7",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.016817808038818917
+      },
+      "checkpoint": "models/model_pga_last_real_steps20_lr3e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.6887,
+        "all_loss": 1.4755859538555145,
+        "retain_acc": 0.7481450370992581,
+        "retain_loss": 1.1098245772663893,
+        "forget_acc": 0.5400770038501925,
+        "forget_loss": 2.3900540184632524,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "pga_last_real_steps20_lr5e-05_ratio0.01_pre_recovery": {
+      "stage": "pga_last_real_steps20_lr5e-05_ratio0.01_pre_recovery",
+      "method": "pga",
+      "role": "calibration",
+      "behavior": "candidate",
+      "checkpoint_sha256": "57c0747de5b573a4767612d1d89021cf33f1b5cad400aada01b77a84eaa69dd7",
+      "parameters_sha256": "10e263eaaf8a5fb4211fc191ae5e762cf51c80dcf6d5a95b2b7171c82b4e0919",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "backbone.layer4.0.conv1.weight",
+          "backbone.layer4.0.bn1.weight",
+          "backbone.layer4.0.bn1.bias",
+          "backbone.layer4.0.conv2.weight",
+          "backbone.layer4.0.bn2.weight",
+          "backbone.layer4.0.bn2.bias",
+          "backbone.layer4.0.downsample.0.weight",
+          "backbone.layer4.0.downsample.1.weight",
+          "backbone.layer4.0.downsample.1.bias",
+          "backbone.layer4.1.conv1.weight",
+          "backbone.layer4.1.bn1.weight",
+          "backbone.layer4.1.bn1.bias",
+          "backbone.layer4.1.conv2.weight",
+          "backbone.layer4.1.bn2.weight",
+          "backbone.layer4.1.bn2.bias",
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.03806618887426921
+      },
+      "checkpoint": "models/model_pga_last_real_steps20_lr5e-05_ratio0.01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.643,
+        "all_loss": 1.8617632234096526,
+        "retain_acc": 0.7075458490830183,
+        "retain_loss": 1.4331759138132667,
+        "forget_acc": 0.4816240812040602,
+        "forget_loss": 2.933307021491211,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    }
+  }
+}

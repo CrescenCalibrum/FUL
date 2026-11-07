@@ -1,0 +1,256 @@
+{
+  "schema_version": "marker-audit-v1",
+  "protocol": {
+    "alpha": 0.05,
+    "margin_drop": 0.1,
+    "retain_margin_tolerance": 0.1,
+    "geometry_drop": 0.02,
+    "retain_geometry_tolerance": 0.05,
+    "min_families": 8,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "max_retain_accuracy_drop": 0.03,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 2718,
+    "geometry_forget_rule": "unvalidated",
+    "protocol_locked": false
+  },
+  "status": "insufficient",
+  "exploratory_status": "fail",
+  "protocol_locked": false,
+  "reason": "Development bounds; calibration is not locked",
+  "forget_client_ids": [
+    0
+  ],
+  "conditions": [
+    {
+      "cid": 0,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 1,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 2,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 3,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.975,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 4,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "kind": "decrease",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.0021336883306503295,
+      "ci_low": -0.02722369279491806,
+      "ci_high": 0.022956316133617403,
+      "p_support": 0.9999999999824214,
+      "p_violation": 1.7578605238099954e-11,
+      "status": "fail",
+      "cid": 0,
+      "condition": "forget_margin",
+      "p_support_holm": 1.0,
+      "p_violation_holm": 1.5820744714289958e-10
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.018946079164743425,
+      "ci_low": -0.0628400593152374,
+      "ci_high": 0.02494790098575054,
+      "p_support": 5.445718101626529e-05,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 1,
+      "condition": "retain_margin",
+      "p_support_holm": 0.00032674308609759173,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.027139702811837196,
+      "ci_low": 0.0034342727271414047,
+      "ci_high": 0.05084513289653299,
+      "p_support": 6.3611129338934934e-09,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 2,
+      "condition": "retain_margin",
+      "p_support_holm": 5.088890347114795e-08,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.02570850634947419,
+      "ci_low": -0.01117569798903928,
+      "ci_high": 0.06259271068798766,
+      "p_support": 1.628206581067532e-05,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 3,
+      "condition": "retain_margin",
+      "p_support_holm": 0.00011397446067472724,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": 0.004843417555093765,
+      "ci_low": -0.01942870906203927,
+      "ci_high": 0.0291155441722268,
+      "p_support": 1.534522537213279e-11,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 4,
+      "condition": "retain_margin",
+      "p_support_holm": 1.534522537213279e-10,
+      "p_violation_holm": 1.0
+    },
+    {
+      "cid": 0,
+      "condition": "forget_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": -0.0008383914828300476,
+      "ci_low": -0.0015003042668104171,
+      "ci_high": -0.00025043589994311235,
+      "bound": 0.02,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "insufficient",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 1,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0024416446685791016,
+      "ci_low": 0.0017147254198789596,
+      "ci_high": 0.003106812834739686,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 2,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0014353692531585693,
+      "ci_low": 0.0003763329423964024,
+      "ci_high": 0.002527592256665233,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 3,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.00034715235233306885,
+      "ci_low": 7.454410195350647e-05,
+      "ci_high": 0.0012159573659300807,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 4,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0024416446685791016,
+      "ci_low": 0.0017416845262050629,
+      "ci_high": 0.003106812834739686,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "condition": "retain_task",
+      "status": "fail",
+      "accuracy_drop": 0.06229875402491947,
+      "bound": 0.03,
+      "source": "independent_benchmark_evaluation_not_private_data_audit"
+    }
+  ],
+  "exploratory_decision_variants": {
+    "margin_only": "fail",
+    "geometry_only": "insufficient",
+    "joint_structure": "fail",
+    "complete": "fail",
+    "fixed_margin_threshold": "fail"
+  },
+  "inference_scope": "conditional_on_this_checkpoint_and_marker_generator",
+  "limitations": [
+    "Marker evidence is not proof of removal of all real-data influence",
+    "Checkpoint binding does not authenticate deployed behavior",
+    "Bootstrap percentile coverage is approximate"
+  ],
+  "metadata": {
+    "stage": "pga_last_real_steps20_lr5e-05_ratio0.01_pre_recovery",
+    "method": "pga",
+    "role": "calibration",
+    "behavior": "candidate",
+    "checkpoint_sha256": "57c0747de5b573a4767612d1d89021cf33f1b5cad400aada01b77a84eaa69dd7",
+    "parameters_sha256": "10e263eaaf8a5fb4211fc191ae5e762cf51c80dcf6d5a95b2b7171c82b4e0919",
+    "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+    "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+    "model_state_change_from_full": {
+      "changed_parameters": [
+        "backbone.layer4.0.conv1.weight",
+        "backbone.layer4.0.bn1.weight",
+        "backbone.layer4.0.bn1.bias",
+        "backbone.layer4.0.conv2.weight",
+        "backbone.layer4.0.bn2.weight",
+        "backbone.layer4.0.bn2.bias",
+        "backbone.layer4.0.downsample.0.weight",
+        "backbone.layer4.0.downsample.1.weight",
+        "backbone.layer4.0.downsample.1.bias",
+        "backbone.layer4.1.conv1.weight",
+        "backbone.layer4.1.bn1.weight",
+        "backbone.layer4.1.bn1.bias",
+        "backbone.layer4.1.conv2.weight",
+        "backbone.layer4.1.bn2.weight",
+        "backbone.layer4.1.bn2.bias",
+        "classifier.weight",
+        "classifier.bias"
+      ],
+      "changed_buffers": [],
+      "state_l2_change": 0.03806618887426921
+    }
+  },
+  "statistical_and_output_time_sec": 3.1458648666739464
+}
