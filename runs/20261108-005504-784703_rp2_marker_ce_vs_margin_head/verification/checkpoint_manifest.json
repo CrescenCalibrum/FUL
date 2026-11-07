@@ -1,0 +1,216 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "af72384d9ebe662d9aeb8d082a6e588370e5c78b1a55dca6dadc74c46f7bad74",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "objective": null,
+      "checkpoint_sha256": "c31e58178677f75c03a08daf0047f01df3a6ee9374a7a14cf39d0915b5cd01d1",
+      "parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2872645086288452,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9777323412958621,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.061150438350775,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_ce_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_ce_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_ce_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "ce",
+      "checkpoint_sha256": "55d6f80dbfafad9a117b4595e1831c64b0f3450aa9f6ee8c14ee1ce09921a1be",
+      "parameters_sha256": "d0808da8c4117c2ff97bd6c25dcb0868ea39dac66623773468f36342a5352338",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 1.8029128951040315e-08
+      },
+      "checkpoint": "models/model_marker_ce_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2872645092010497,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.977732345835261,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.0611504410211965,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_margin_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_margin_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_margin_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin",
+      "checkpoint_sha256": "9d9c2ffb2fa76f53d0736a381dcc1eb8637a5de2838ef5178094345fb3e95eac",
+      "parameters_sha256": "5d8eb52fc776b9a526ccf7e24cb73d122e71447956e521b2825f0206f81c32a5",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.0006324435403711833
+      },
+      "checkpoint": "models/model_marker_margin_erase_head_markers_only_steps1_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2869572068691253,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9774638726967282,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.0607461071448347,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_ce_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_ce_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_ce_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "ce",
+      "checkpoint_sha256": "bb79cf0af810f4b16b0e252179330492e4ada8e2e9d784332d2410291d0569fc",
+      "parameters_sha256": "7113f7a373e19759e6b42c5891a7e493ffff19c077e67ca9b73d150000ba0945",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 1.179033072483902e-07
+      },
+      "checkpoint": "models/model_marker_ce_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2872645229339599,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9777323712024905,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.061150443691618,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_margin_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_margin_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_margin_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin",
+      "checkpoint_sha256": "12c9b9e865d45df97b696e4eb0ed0043ac6c97eef3d9101d50fa0882b1c8cc33",
+      "parameters_sha256": "4bb9fb833e03179e22a40c26f8f66111ea551e78f6f0ba2cc8dfd8a9c21edf06",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.00321026316976778
+      },
+      "checkpoint": "models/model_marker_margin_erase_head_markers_only_steps5_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7158,
+        "all_loss": 1.2864756415843963,
+        "retain_acc": 0.7697046059078818,
+        "retain_loss": 0.9768813201464243,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.060516912869569,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_ce_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_ce_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_ce_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "ce",
+      "checkpoint_sha256": "17011d065bdbeedcc9633fe0f2aee49cdd5b9c4b15fd7854f477740275abe6f5",
+      "parameters_sha256": "b969411dc2f25f22de8fd2ae81d2a1768e579fbb36d257fda6c55b92e27ff683",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 1.998131262383141e-07
+      },
+      "checkpoint": "models/model_marker_ce_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.287264534854889,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9777323850877109,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.0611504490324615,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_margin_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery": {
+      "stage": "marker_margin_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery",
+      "method": "marker_margin_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin",
+      "checkpoint_sha256": "cb2ea45544ff2432bf390d85c2c624e141a85de949a5f887df2a8ff87b533cf4",
+      "parameters_sha256": "87830a8a77afecc951c50ecde9f946f445b21acb94cf0cb7b5b762eb2a0b9046",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.0065252342622553385
+      },
+      "checkpoint": "models/model_marker_margin_erase_head_markers_only_steps10_lr0.0001_ratio0.1_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7167,
+        "all_loss": 1.285989286327362,
+        "retain_acc": 0.7704045919081618,
+        "retain_loss": 0.975935566547153,
+        "forget_acc": 0.5824291214560728,
+        "forget_loss": 2.0611791667464234,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    }
+  }
+}
