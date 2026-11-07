@@ -1,0 +1,17 @@
+cid,condition,status,full_marker_accuracy,reason,kind,bound,n_families,mean,ci_low,ci_high,p_support,p_violation,p_support_holm,p_violation_holm,interval_tail_probability,geometry_rule_calibrated,accuracy_drop,source
+0.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+1.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+2.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+3.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+4.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+0.0,forget_margin,fail,,,decrease,0.1,40.0,-0.0017593301832675933,-0.0029531130886421447,-0.0005655472778930419,1.0,0.0,1.0,0.0,,,,
+1.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.0005078703165054321,-0.0008775759214886302,-0.000138164711522234,3.565050100839718e-80,1.0,3.2085450907557466e-79,1.0,,,,
+2.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.0016614936292171478,-0.002291684642045951,-0.0010313026163883444,2.4565199141320313e-71,1.0,1.473911948479219e-70,1.0,,,,
+3.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.0014286279678344727,-0.001935854856505495,-0.0009214010791634504,5.667996687460258e-75,1.0,4.5343973499682065e-74,1.0,,,,
+4.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.0013240136206150055,-0.0019419531620486663,-0.0007060740791813446,1.3007408756803426e-71,1.0,9.105186129762398e-71,1.0,,,,
+0.0,forget_geometry,insufficient,,,joint_stratified_family_bootstrap,0.02,40.0,-2.746284008026123e-05,-4.04050201177597e-05,-1.3968851417303064e-05,,,,,0.0025,False,,
+1.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,5.6102871894836426e-05,3.570292145013809e-05,8.106436580419544e-05,,,,,0.0025,False,,
+2.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,5.6102871894836426e-05,3.938347101211548e-05,8.106436580419544e-05,,,,,0.0025,False,,
+3.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,3.796815872192383e-05,2.3200586438179015e-05,6.069365888834002e-05,,,,,0.0025,False,,
+4.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,4.5299530029296875e-05,2.9726214706897735e-05,6.899293512105942e-05,,,,,0.0025,False,,
+,retain_task,pass,,,,0.03,,,,,,,,,,,0.0005599888002240094,independent_benchmark_evaluation_not_private_data_audit

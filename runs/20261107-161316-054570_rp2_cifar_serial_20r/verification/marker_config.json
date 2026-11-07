@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "seed": 1729,
+  "families_per_class": 4,
+  "variants_per_family": 2,
+  "batch_size": 32,
+  "ce_weight": 0.2,
+  "margin_weight": 0.1,
+  "geometry_weight": 0.05,
+  "target_margin": 1.0,
+  "noise_std": 0.03,
+  "version": "synthetic-texture-v1"
+}
