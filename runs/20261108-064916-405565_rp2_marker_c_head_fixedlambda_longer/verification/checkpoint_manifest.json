@@ -1,0 +1,110 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "af72384d9ebe662d9aeb8d082a6e588370e5c78b1a55dca6dadc74c46f7bad74",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "objective": null,
+      "checkpoint_sha256": "c31e58178677f75c03a08daf0047f01df3a6ee9374a7a14cf39d0915b5cd01d1",
+      "parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7159,
+        "all_loss": 1.2872645086288452,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9777323412958621,
+        "forget_acc": 0.5810290514525727,
+        "forget_loss": 2.061150438350775,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_capretain_head_s20_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery": {
+      "stage": "marker_capretain_head_s20_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery",
+      "method": "marker_margin_capped_retain_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin_capped_retain",
+      "checkpoint_sha256": "65675e57131d66ce78270960f3ad2a39e6716de2886629e31ec299d61b70e0c8",
+      "parameters_sha256": "22c3a2fa27394b93622a51dd5d23dba1937757518dcdb954197b3204b6f95415",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.5783714325041373
+      },
+      "attack_parameters": {
+        "margin_raw_drop": 3.0,
+        "retain_weight": 1.0606605702285794,
+        "retain_weight_mode": "fixed",
+        "retain_weight_effective": 1.0606605702285794
+      },
+      "optimization_access": "target_and_retained_training_markers",
+      "checkpoint": "models/model_marker_capretain_head_s20_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7189,
+        "all_loss": 1.1793164952754975,
+        "retain_acc": 0.7698446031079378,
+        "retain_loss": 0.9052022351581777,
+        "forget_acc": 0.591529576478824,
+        "forget_loss": 1.8646510027069958,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    },
+    "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery": {
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery",
+      "method": "marker_margin_capped_retain_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin_capped_retain",
+      "checkpoint_sha256": "e1333539f5910733cfb86b71730d009a1f1bb2e406b08bba3d5af61174a896fc",
+      "parameters_sha256": "a76eb12358442f3d5bf83f0b45dbc5bd22a346cc2733ca2f40bd2532e36a2eb2",
+      "source_full_parameters_sha256": "bf379756076d6c6992100dc72ebe828e1de9ed6909337e6283b365a83525a471",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.5783714400752527
+      },
+      "attack_parameters": {
+        "margin_raw_drop": 3.0,
+        "retain_weight": 1.0606605702285794,
+        "retain_weight_mode": "fixed",
+        "retain_weight_effective": 1.0606605702285794
+      },
+      "optimization_access": "target_and_retained_training_markers",
+      "checkpoint": "models/model_marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w1.0606605702285794_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7187,
+        "all_loss": 1.1911027092456818,
+        "retain_acc": 0.7727845443091138,
+        "retain_loss": 0.8970323843263736,
+        "forget_acc": 0.583479173958698,
+        "forget_loss": 1.9263306198146821,
+        "retain_num_examples": 7143,
+        "forget_num_examples": 2857
+      }
+    }
+  }
+}
