@@ -1,5 +1,5 @@
 {
-  "dataset": "fashionmnist",
+  "dataset": "cifar10",
   "backend": "flower",
   "num_clients": 5,
   "num_rounds": 3,
@@ -12,7 +12,7 @@
   "alpha": 0.5,
   "seed": 42,
   "forget_clients": "0",
-  "methods": "history_subtract,federaser_lite,pga,retrain_fl",
+  "methods": "federaser_lite,pga",
   "pga_steps": 5,
   "pga_layers": "head",
   "pga_data_scope": "real_and_markers",
