@@ -1,0 +1,237 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "objective": null,
+      "checkpoint_sha256": "985cfc8ce73e72f9d3dce83b2b21b07f2b801beb311e07b9a2e57bebb4588180",
+      "parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "optimization_access": "none",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7174,
+        "all_loss": 1.2552044149398804,
+        "retain_acc": 0.6988304093567251,
+        "retain_loss": 1.339732720605579,
+        "forget_acc": 0.8024553571428571,
+        "forget_loss": 0.8680345863103867,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t01_pre_recovery": {
+      "stage": "marker_boundary_t01_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "d950d76d03de8965760b328f98bc0aeb63c8d5bc3c4fe0baf5a86eb9b96e81eb",
+      "parameters_sha256": "03bdcb4c65475f9501f585d2052b2d79d35501bdd4eaf895a7b7ec7f5e3b9a4d",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.07541944883854064
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7235,
+        "all_loss": 1.205935350227356,
+        "retain_acc": 0.7057748538011696,
+        "retain_loss": 1.2826446661939863,
+        "forget_acc": 0.8046875,
+        "forget_loss": 0.8545792869159153,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t02_pre_recovery": {
+      "stage": "marker_boundary_t02_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "6abd54f5b661c39068b82c82a6eb5da1e724ae95301ba5d2e9162c769dd63339",
+      "parameters_sha256": "044b8162b1cf7e5e80d02cf1a1f3479acc6ad561a7c3bb0bf69af6f772fd1f89",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.0774528473201137
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t02_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7234,
+        "all_loss": 1.2045323154449463,
+        "retain_acc": 0.7060185185185185,
+        "retain_loss": 1.2809458443528263,
+        "forget_acc": 0.8030133928571429,
+        "forget_loss": 0.8545310625008175,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t03_pre_recovery": {
+      "stage": "marker_boundary_t03_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "da2894404aa62decfc27df59fd16b5e8a083bc2ecd741dae9a7ddc39cb1ebfee",
+      "parameters_sha256": "4fccfa69c32c0cf45a1f0532de82d06240044984868f1b264d578908c6d016de",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.213871393395891
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t03_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.722,
+        "all_loss": 1.1716386571884154,
+        "retain_acc": 0.7074805068226121,
+        "retain_loss": 1.2327803326861435,
+        "forget_acc": 0.7885044642857143,
+        "forget_loss": 0.8915879470961434,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t04_pre_recovery": {
+      "stage": "marker_boundary_t04_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "91dc992a4e7127b9767c75b51da38df068e8f7d96fc4ed6f9e5137b377141577",
+      "parameters_sha256": "03bdcb4c65475f9501f585d2052b2d79d35501bdd4eaf895a7b7ec7f5e3b9a4d",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.07541944883854064
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t04_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7235,
+        "all_loss": 1.205935350227356,
+        "retain_acc": 0.7057748538011696,
+        "retain_loss": 1.2826446661939863,
+        "forget_acc": 0.8046875,
+        "forget_loss": 0.8545792869159153,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t05_pre_recovery": {
+      "stage": "marker_boundary_t05_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "adec72941058f7acddc22cd33f51166d07dda4e724ae605057dbbe13d97e5109",
+      "parameters_sha256": "044b8162b1cf7e5e80d02cf1a1f3479acc6ad561a7c3bb0bf69af6f772fd1f89",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.0774528473201137
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t05_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7234,
+        "all_loss": 1.2045323154449463,
+        "retain_acc": 0.7060185185185185,
+        "retain_loss": 1.2809458443528263,
+        "forget_acc": 0.8030133928571429,
+        "forget_loss": 0.8545310625008175,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_boundary_t06_pre_recovery": {
+      "stage": "marker_boundary_t06_pre_recovery",
+      "method": "marker_boundary_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_client_constrained",
+      "checkpoint_sha256": "9d28acd10613d6626395cfb7e0fa9087a6f3f20239573983eb2d8a7ac634b059",
+      "parameters_sha256": "4fccfa69c32c0cf45a1f0532de82d06240044984868f1b264d578908c6d016de",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.213871393395891
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "4e529510ed7365fba1ace1f2020c51806da0d7a19fbdd226b85e01566d31a3af",
+      "checkpoint": "models/model_marker_boundary_t06_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.722,
+        "all_loss": 1.1716386571884154,
+        "retain_acc": 0.7074805068226121,
+        "retain_loss": 1.2327803326861435,
+        "forget_acc": 0.7885044642857143,
+        "forget_loss": 0.8915879470961434,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    }
+  }
+}

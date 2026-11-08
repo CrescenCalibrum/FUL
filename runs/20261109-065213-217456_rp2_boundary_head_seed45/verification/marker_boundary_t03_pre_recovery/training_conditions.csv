@@ -1,0 +1,6 @@
+cid,client_group,role,num_examples,full_accuracy,after_accuracy,accuracy_drop,full_normalized_margin,after_normalized_margin,normalized_margin_drop,full_correct_to_wrong_count,full_wrong_to_correct_count,after_raw_margin_mean,boundary_crossing_fraction,boundary_gap_reached_fraction,full_qualified,empirical_condition_passed
+0,target,train,80,0.9875,0.9125,0.075,0.6490020995726808,0.5375407977495342,0.11146130182314662,6,0,8.097697487473487,0.0875,0.075,True,False
+1,retained,train,80,1.0,1.0,0.0,0.7318756882101297,0.6830792680382729,0.048796420171856814,0,0,12.515997689962386,0.0,0.0,True,True
+2,retained,train,80,1.0,1.0,0.0,0.6260688237845897,0.5590688852593303,0.06699993852525943,0,0,8.33441158235073,0.0,0.0,True,True
+3,retained,train,80,0.975,0.95,0.025,0.5591709147323854,0.47917265896685424,0.07999825576553121,2,0,7.121025118231773,0.05,0.025,True,True
+4,retained,train,80,1.0,1.0,0.0,0.5915708027780056,0.533234529197216,0.05833627358078952,0,0,7.830405101180077,0.0,0.0,True,True

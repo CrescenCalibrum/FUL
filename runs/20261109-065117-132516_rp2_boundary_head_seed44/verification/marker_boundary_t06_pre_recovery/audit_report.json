@@ -1,0 +1,245 @@
+{
+  "schema_version": "marker-audit-v1",
+  "protocol": {
+    "alpha": 0.05,
+    "margin_drop": 0.1,
+    "retain_margin_tolerance": 0.1,
+    "geometry_drop": 0.02,
+    "retain_geometry_tolerance": 0.05,
+    "min_families": 8,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "max_retain_accuracy_drop": 0.03,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 2718,
+    "geometry_forget_rule": "unvalidated",
+    "protocol_locked": false
+  },
+  "status": "insufficient",
+  "exploratory_status": "insufficient",
+  "protocol_locked": false,
+  "reason": "Development bounds; calibration is not locked",
+  "forget_client_ids": [
+    0
+  ],
+  "conditions": [
+    {
+      "cid": 0,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 1,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.9375,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 2,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 3,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 0.9625,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "cid": 4,
+      "condition": "full_marker_precheck",
+      "status": "pass",
+      "full_marker_accuracy": 1.0,
+      "reason": "learnability/finite/nonzero-feature precheck"
+    },
+    {
+      "kind": "decrease",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.12244259789586068,
+      "ci_low": -0.16012385081890596,
+      "ci_high": -0.0847613449728154,
+      "p_support": 0.08643559966188286,
+      "p_violation": 0.9135644003381171,
+      "status": "insufficient",
+      "cid": 0,
+      "condition": "forget_margin",
+      "p_support_holm": 0.60504919763318,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.032333206152543426,
+      "ci_low": -0.04991383063935305,
+      "ci_high": -0.014752581665733806,
+      "p_support": 2.509248364646055e-11,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 1,
+      "condition": "retain_margin",
+      "p_support_holm": 2.509248364646055e-10,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.08320686221122742,
+      "ci_low": -0.1242254986952508,
+      "ci_high": -0.04218822572720403,
+      "p_support": 0.1728734337331872,
+      "p_violation": 1.0,
+      "status": "insufficient",
+      "cid": 2,
+      "condition": "retain_margin",
+      "p_support_holm": 1.0,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.056763121485710145,
+      "ci_low": -0.07584353304653142,
+      "ci_high": -0.03768270992488887,
+      "p_support": 2.557113008117007e-06,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 3,
+      "condition": "retain_margin",
+      "p_support_holm": 2.0456904064936055e-05,
+      "p_violation_holm": 1.0
+    },
+    {
+      "kind": "equivalence",
+      "bound": 0.1,
+      "n_families": 40,
+      "mean": -0.0176320381462574,
+      "ci_low": -0.046318800725859414,
+      "ci_high": 0.011054724433344612,
+      "p_support": 2.829162282225184e-08,
+      "p_violation": 1.0,
+      "status": "pass",
+      "cid": 4,
+      "condition": "retain_margin",
+      "p_support_holm": 2.5462460540026655e-07,
+      "p_violation_holm": 1.0
+    },
+    {
+      "cid": 0,
+      "condition": "forget_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.02,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "insufficient",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 1,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 2,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 3,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "cid": 4,
+      "condition": "retain_geometry",
+      "kind": "joint_stratified_family_bootstrap",
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "bound": 0.05,
+      "interval_tail_probability": 0.0025,
+      "n_families": 40,
+      "status": "pass",
+      "geometry_rule_calibrated": false
+    },
+    {
+      "condition": "retain_task",
+      "status": "pass",
+      "accuracy_drop": 0.008828351620633113,
+      "bound": 0.03,
+      "source": "independent_benchmark_evaluation_not_private_data_audit"
+    }
+  ],
+  "exploratory_decision_variants": {
+    "margin_only": "insufficient",
+    "geometry_only": "insufficient",
+    "joint_structure": "insufficient",
+    "complete": "insufficient",
+    "fixed_margin_threshold": "pass"
+  },
+  "inference_scope": "conditional_on_this_checkpoint_and_marker_generator",
+  "limitations": [
+    "Marker evidence is not proof of removal of all real-data influence",
+    "Checkpoint binding does not authenticate deployed behavior",
+    "Bootstrap percentile coverage is approximate"
+  ],
+  "metadata": {
+    "stage": "marker_boundary_t06_pre_recovery",
+    "method": "marker_boundary_head",
+    "role": "calibration",
+    "behavior": "marker_erasure_attempt",
+    "objective": "boundary_crossing_client_constrained",
+    "checkpoint_sha256": "3b7cf3cdf6a870179054316fdca95cd127bede6350d75b1d9bb0dc963f385b97",
+    "parameters_sha256": "34c0ac41d5c4af3b2ab09b8fd775751a9ce3680636a8532fdf389dacce802d38",
+    "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+    "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+    "model_state_change_from_full": {
+      "changed_parameters": [
+        "classifier.weight",
+        "classifier.bias"
+      ],
+      "changed_buffers": [],
+      "state_l2_change": 0.24087234287463066
+    },
+    "optimization_access": "training_markers_only",
+    "training_selected": false,
+    "selection_sha256": "b877f3878eceebc90603ba7c49ed12489589353f6e7addf106c1f1f093823a7f"
+  },
+  "statistical_and_output_time_sec": 3.052551217377186
+}

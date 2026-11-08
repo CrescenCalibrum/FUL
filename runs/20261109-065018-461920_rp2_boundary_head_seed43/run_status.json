@@ -1,0 +1,12 @@
+{
+  "status": "development_run_complete",
+  "method": "marker_boundary_head",
+  "num_trials": 6,
+  "selected_trial": null,
+  "selection_status": "no_eligible_candidate",
+  "selection_sha256": "0da696626f35471682899fea47ef7b706967386c16ab8a13eb3baf69cec28d69",
+  "source_full_parameters_sha256": "a64292ce203105ba09b9d5a536f32dac03aa3c0d3aa06a560b0ce20768b37871",
+  "formal_audit": false,
+  "recovery": "not_run",
+  "retrain": "not_run"
+}
