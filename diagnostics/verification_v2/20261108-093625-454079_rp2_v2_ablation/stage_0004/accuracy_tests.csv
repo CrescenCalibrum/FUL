@@ -1,0 +1,11 @@
+cid,variant,condition,kind,mean,bound,n_families,n_samples,status,empirical_status,eligible,reason,accuracy_full,accuracy_after,decision_basis,estimand
+0,equivalence,forget_accuracy,empirical_decrease,0.0,0.2,40,80,fail,fail,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+1,equivalence,retain_accuracy,empirical_equivalence,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+2,equivalence,retain_accuracy,empirical_equivalence,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+3,equivalence,retain_accuracy,empirical_equivalence,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,0.975,0.975,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+4,equivalence,retain_accuracy,empirical_equivalence,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+0,noninferiority,forget_accuracy,empirical_decrease,0.0,0.2,40,80,fail,fail,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+1,noninferiority,retain_accuracy,empirical_noninferiority,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+2,noninferiority,retain_accuracy,empirical_noninferiority,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+3,noninferiority,retain_accuracy,empirical_noninferiority,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,0.975,0.975,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
+4,noninferiority,retain_accuracy,empirical_noninferiority,0.0,0.05,40,80,pass,pass,True,empirical_threshold_only,1.0,1.0,empirical_point_threshold_no_inference,family_mean_paired_marker_accuracy_change
