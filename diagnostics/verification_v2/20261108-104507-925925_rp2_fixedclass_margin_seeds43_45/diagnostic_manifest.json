@@ -1,0 +1,483 @@
+{
+  "schema_version": "marker-protocol-v2-diagnostic-3",
+  "status": "diagnostic_complete",
+  "formal_audit": false,
+  "protocol_locked": false,
+  "options": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2718,
+    "confidence": 0.95
+  },
+  "ablation_config": {
+    "configured": true,
+    "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\configs\\verification\\ablation-v2-development.json",
+    "sha256": "38245fec9b04e7fa8bd178e9e74ac09ca7ef3fb608f2527ff77ae1dff8295bed",
+    "values": {
+      "accuracy_drop": 0.2,
+      "retain_accuracy_tolerance": 0.05,
+      "anchor_drop": 0.01,
+      "anchor_selectivity_drop": 0.01,
+      "retain_anchor_tolerance": 0.02,
+      "min_full_anchor_advantage": 0.0
+    },
+    "protocol_locked": false,
+    "purpose": "development_comparison"
+  },
+  "stratified_margin": {
+    "enabled": true,
+    "protocol": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 2718,
+      "confidence": 0.95,
+      "source_alpha": 0.05,
+      "margin_family_alpha": 0.025,
+      "margin_drop": 0.1,
+      "retain_margin_tolerance": 0.1,
+      "estimand": "equal_weight_over_fixed_classes_of_mean_paired_family_margin_change",
+      "resampling": "paired_families_within_each_fixed_client_class_at_original_stratum_sizes",
+      "family_reduction": "mean_variants_before_and_after_then_paired_difference_as_original_v2",
+      "interval_method": "percentile_bootstrap",
+      "decision_correction": "Bonferroni_simultaneous_two_sided_intervals_over_all_client_means",
+      "num_simultaneous_clients": 5,
+      "interval_tail_probability": 0.0025,
+      "pooled_method": "unchanged_paired_family_t_with_Holm_over_support_and_violation",
+      "pooled_interval_confidence": 0.975,
+      "min_total_families": 8,
+      "min_families_per_class": 2,
+      "min_expected_tail_draws": 10,
+      "small_sample_warning_below_families_per_class": 8,
+      "small_sample_warning_is_acceptance_gate": false,
+      "zero_within_class_variance_rule": "insufficient_inference_keep_point_estimate",
+      "classes_resampled": false,
+      "variants_resampled_independently": false,
+      "cross_method_variant_or_run_multiplicity_control": false,
+      "new_joint_geometry_or_task_acceptance": false
+    },
+    "protocol_scope": "common_if_equal_else_per_stage_reports",
+    "output_counts": {
+      "client_test_rows": 120,
+      "class_rows": 600,
+      "comparison_rows": 24
+    },
+    "pooled_reports_replaced": false
+  },
+  "ablation_output_counts": {
+    "comparison_rows": 72,
+    "client_class_rows": 600,
+    "class_variance_rows": 60
+  },
+  "source_code_sha256": {
+    "fulbase/verification/protocol_v2.py": "49a98c994a159b7f9c365101f6e4b08c39cc10d1709b9a99ca5ee0e6e41944e4",
+    "fulbase/verification/protocol_v2_io.py": "e360e1b810263986c969407019f1116e849acd9d18a401978821e428e3d18fee",
+    "fulbase/verification/protocol_v2_ablation.py": "9c1414da41c59dea7aaa0a57573dbb3d94e328c392fc6b1c4ab3c95fe9a575f4",
+    "fulbase/verification/protocol_v2_stratified.py": "7263e38b59d062d3908149e7454ed418f9c8300de1b26da19f59e402f23ef272",
+    "fulbase/verification/statistics.py": "ac66f89e77f867e3fde6809fcc9b7ba10542920742ea83005137d8f2b9b29023",
+    "fulbase/verification/audit.py": "20955247681c969a646be159b15219c0a1925db9f723dc95928b79a81c0c8923",
+    "fulbase/verification/markers.py": "9209bbe036c095d12376dc1e2ce2419ae6106369b5548c60ad26985e09db3566",
+    "scripts/diagnose_verification_v2.py": "f00399ee57c158299d2a8c456990cb0f1baa06721282375871f49286d9ea6fc1"
+  },
+  "stages": [
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-101036-181767_rp2_fixed_c_lambda05_seed43",
+      "seed": 43,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0001"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-101036-181767_rp2_fixed_c_lambda05_seed43",
+      "seed": 43,
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "output_subdir": "stage_0002"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102103-348741_rp2_fixed_c_lambda05_seed44_evalfix",
+      "seed": 44,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0003"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102103-348741_rp2_fixed_c_lambda05_seed44_evalfix",
+      "seed": 44,
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "output_subdir": "stage_0004"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102127-890964_rp2_fixed_c_lambda05_seed45_evalfix",
+      "seed": 45,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0005"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102127-890964_rp2_fixed_c_lambda05_seed45_evalfix",
+      "seed": 45,
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "output_subdir": "stage_0006"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-072601-380020_rp2_protocol_controls_seed43",
+      "seed": 43,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0007"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-072601-380020_rp2_protocol_controls_seed43",
+      "seed": 43,
+      "stage": "retrain_fl_pre_recovery",
+      "output_subdir": "stage_0008"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-074527-601605_rp2_protocol_controls_seed44",
+      "seed": 44,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0009"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-074527-601605_rp2_protocol_controls_seed44",
+      "seed": 44,
+      "stage": "retrain_fl_pre_recovery",
+      "output_subdir": "stage_0010"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-080520-132118_rp2_protocol_controls_seed45",
+      "seed": 45,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0011"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-080520-132118_rp2_protocol_controls_seed45",
+      "seed": 45,
+      "stage": "retrain_fl_pre_recovery",
+      "output_subdir": "stage_0012"
+    }
+  ],
+  "num_runs": 6,
+  "num_stages": 12,
+  "source_runs": [
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-101036-181767_rp2_fixed_c_lambda05_seed43",
+      "seed": 43,
+      "source_file_sha256": {
+        "config.json": "4085fe59227df40d77a82327d672a9855837c21da035e4407c111e3f574d8a83",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "a19946df479f908a9dd69ef9aaa19614d93103ef21137d7267d80c9a0d8ba7bc",
+        "data_partition.json": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+        "run_status.json": "29660ff830e7074f0737991adc18db4e67b3d831db811567509d500eebb3cdc9",
+        "diagnostic_config.json": "4cd9435c2a9d26ce753141edbd9e03616f6106d7f91d1a2b78475c995ac0bf82",
+        "verification/full_after_fl/audit_report.json": "ab75cd7429df7cc9c9a328d8773ff4a31b297f1a2cc071b1d07b549247e5d74d",
+        "verification/full_after_fl/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/full_after_fl/after_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/audit_report.json": "e09e0eb7a63ed99908e44543d06fc182d0ee14484d0f91455b07991654ea8265",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/after_observations.npz": "34f0de98da02dc7034bb2edb203ba39fd1df8a19b43d212a8daa1d328fe19570",
+        "verification/training_marker_manifest.json": "5a38d3f5a4946f961c73ce881b68e3b146bb4c47af3cad928d04c5ad5bd9d3ff"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102103-348741_rp2_fixed_c_lambda05_seed44_evalfix",
+      "seed": 44,
+      "source_file_sha256": {
+        "config.json": "0e2f6076c4eb7fae64cafa80361041cbeaaeeae109a80cc884c15923cf54136a",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "c2927b637020e94ed24707730caa03b20f8e7cdcd33a1e6cfb74ba70b6bab0d5",
+        "data_partition.json": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+        "run_status.json": "25d2237424a8c12b8059f1b2d52cecab30810f7dc96d34050d6f33110cd4399f",
+        "diagnostic_config.json": "79ecca048c10aa8b97a723e8d958a1aee211a86e334655d6487d70b27997bc2c",
+        "verification/full_after_fl/audit_report.json": "0530679c78680668dc88ea3f01043d09320b14c5dbc01e1c55622deaca80b550",
+        "verification/full_after_fl/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/full_after_fl/after_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/audit_report.json": "e2542858589510af419f8ae97f109a3ef3b9ffaf7f19baa4772a7d8a2d5adabf",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/after_observations.npz": "c03e7a606384cbbf1b278460129dd4bba66c0575ed4d0c3e46a509872f57708f",
+        "verification/training_marker_manifest.json": "6d220f87970d5161bba4b166f53872db5a9587147981b5fee6d706c1af38f4cc"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-102127-890964_rp2_fixed_c_lambda05_seed45_evalfix",
+      "seed": 45,
+      "source_file_sha256": {
+        "config.json": "727c11bc51021d98ec1df9238a9180dc9a0f1f94aa6c5e65c044c3b75402920b",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "4c91de996896b1509023c7d7e2d9a04fb8f7b96291d091d834112798b03b5adf",
+        "data_partition.json": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+        "run_status.json": "5628ea6691a2d80c79529069692aa1df5dd0af5b1b785559473910e8f9448124",
+        "diagnostic_config.json": "7d35e58aac617ce84576d0a0251a138daa993fb1808d75516a5a20b597b75cae",
+        "verification/full_after_fl/audit_report.json": "ec104076b27b924c82798032b1c2578ff8218799e8c314c1ef9a0f335b2448d6",
+        "verification/full_after_fl/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/full_after_fl/after_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/audit_report.json": "f84dbb5b21d3b07d6e6c42b0603e6b83aadc62417e9cebb42c62ab72201cf869",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery/after_observations.npz": "3734e20b91ca98ed7c355a644ac0857504d35df53b86236064dd0febb80fec7d",
+        "verification/training_marker_manifest.json": "2dfa2cbbbd3c8016a210db974efae38af52d49ec0e1afa6faf24d0e6803a2e64"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-072601-380020_rp2_protocol_controls_seed43",
+      "seed": 43,
+      "source_file_sha256": {
+        "config.json": "484de23dfdb8cada6c7d628372b0f6c7b437582351f7bdd38cc880dc41c547e2",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "56492bdf147452a4d408b6e0f314a1044bd77b18f3482059fd824012e944e828",
+        "data_partition.json": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+        "run_status.json": "929312eb3486efd65b83cd6405b620a37a01ca588e93e9eb6fbbb5a2084db887",
+        "verification/training_result.json": "deb851bf3483275e49c90270962d5ce0cef8071e6455085505a250a1669e128b",
+        "verification/full_after_fl/audit_report.json": "66c4b1f3c56b4864b39773db604d40be1156366ffb96e4b141693f43dd26d32d",
+        "verification/full_after_fl/full_observations.npz": "268f309123f660fbf48d4becc5e8b8fef1d333583c7fbdeef4ccf64673b852af",
+        "verification/full_after_fl/after_observations.npz": "268f309123f660fbf48d4becc5e8b8fef1d333583c7fbdeef4ccf64673b852af",
+        "verification/retrain_fl_pre_recovery/audit_report.json": "efa0909a6adcb2aed329360589033d2d4b18f743b0480cbe47188f1f09c325a2",
+        "verification/retrain_fl_pre_recovery/full_observations.npz": "268f309123f660fbf48d4becc5e8b8fef1d333583c7fbdeef4ccf64673b852af",
+        "verification/retrain_fl_pre_recovery/after_observations.npz": "7ddce2e97e3e88b520deb664973e08b60647fb20ae226c08c015ee262142e7bf",
+        "verification/training_marker_manifest.json": "5a38d3f5a4946f961c73ce881b68e3b146bb4c47af3cad928d04c5ad5bd9d3ff",
+        "verification/calibration_marker_manifest.json": "0173913c1c57b65fd75b3fd273d750c74eb27a9fcaf3e82b6000ca2b2a922933"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-074527-601605_rp2_protocol_controls_seed44",
+      "seed": 44,
+      "source_file_sha256": {
+        "config.json": "a47956ee0ad93909fabbe479a9ee3c4aaaf3ea893e97ac820e25771c7e451b3a",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "6eedf71b051ccf21dba244dcf1d3c81167d1ba3ff0b225d117649d2ec7c13d08",
+        "data_partition.json": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+        "run_status.json": "c73d8d2043fd5623ea0b57ceb18b32800690b5c7ef08937867b0a29afc1ac698",
+        "verification/training_result.json": "7aedcfaf1175df750612d2f79a38d6f79e97afcdf37b231e5c98196f9113c93f",
+        "verification/full_after_fl/audit_report.json": "d41867ba87c39c58ac4da9fb54fe92d589c067296124d7f720b72c959cd8bcd0",
+        "verification/full_after_fl/full_observations.npz": "f4efe6920999a35fd9152aa65c05847e117c77042181b71f7da1eac4bc10625c",
+        "verification/full_after_fl/after_observations.npz": "f4efe6920999a35fd9152aa65c05847e117c77042181b71f7da1eac4bc10625c",
+        "verification/retrain_fl_pre_recovery/audit_report.json": "c63bd58020cf38b1ccfd5deff56ac156ca65c355cc5313d76d1a9a030f025f96",
+        "verification/retrain_fl_pre_recovery/full_observations.npz": "f4efe6920999a35fd9152aa65c05847e117c77042181b71f7da1eac4bc10625c",
+        "verification/retrain_fl_pre_recovery/after_observations.npz": "0bdc04d71e2caee2f374ff15e1bc770e2f11dc65302a135ae318b92af483fd6d",
+        "verification/training_marker_manifest.json": "6d220f87970d5161bba4b166f53872db5a9587147981b5fee6d706c1af38f4cc",
+        "verification/calibration_marker_manifest.json": "0173913c1c57b65fd75b3fd273d750c74eb27a9fcaf3e82b6000ca2b2a922933"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261108-080520-132118_rp2_protocol_controls_seed45",
+      "seed": 45,
+      "source_file_sha256": {
+        "config.json": "81d0fe3440b6ae7ec00203c2530e159d7f135a1f27fcd104e2f2d0a82f031d8d",
+        "verification/marker_config.json": "38b57229c18ca63c3c90a31b417d82275c150cc9e8c785cbe75375a03d72ad7f",
+        "verification/audit_config.json": "ffc9737706cfb51709521e8d51130abf7239e55cfd66bdc850332424239b929f",
+        "verification/checkpoint_manifest.json": "4e850fb5a084b22764ad71dd85979773763b74f6532a6731a498330170809403",
+        "data_partition.json": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+        "run_status.json": "78c5bb0fea44138304646e8236d5c296f43ec0866685d17c60485a08a1ddf7d0",
+        "verification/training_result.json": "a3f389596f6c8b4839f5a2799af5062b148a924d9fbd6d2bc5eb187cfc83dde5",
+        "verification/full_after_fl/audit_report.json": "d6742bfb2e33650738e1fd22feba44211424f8c5d331a8e78548a9a03bb93c27",
+        "verification/full_after_fl/full_observations.npz": "dd021c506cafc8ef67292361e63622b7386acdd55cebd2089aae177f7869657d",
+        "verification/full_after_fl/after_observations.npz": "dd021c506cafc8ef67292361e63622b7386acdd55cebd2089aae177f7869657d",
+        "verification/retrain_fl_pre_recovery/audit_report.json": "bd946792c59cb1ddd895a46b22899b8d35eee42efd0d2e45e9441b7f03ab9c7d",
+        "verification/retrain_fl_pre_recovery/full_observations.npz": "dd021c506cafc8ef67292361e63622b7386acdd55cebd2089aae177f7869657d",
+        "verification/retrain_fl_pre_recovery/after_observations.npz": "20cacf62439bbfe3dfc73f235b7c3c45e19d6b6edd29ef3db13b088c904ce93c",
+        "verification/training_marker_manifest.json": "2dfa2cbbbd3c8016a210db974efae38af52d49ec0e1afa6faf24d0e6803a2e64",
+        "verification/calibration_marker_manifest.json": "0173913c1c57b65fd75b3fd273d750c74eb27a9fcaf3e82b6000ca2b2a922933"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    }
+  ],
+  "validation": {
+    "source_files_unchanged": true,
+    "checkpoint_bytes_reverified": false,
+    "training_performed": false,
+    "model_inference_performed": false,
+    "legacy_equivalence_reproduced": true,
+    "raw_dataset_read": false,
+    "legacy_reports_overwritten": false
+  },
+  "limitations": [
+    "Development calibration only; explicit ablation bounds are not a locked formal protocol",
+    "Geometry intervals are descriptive, not calibrated decision thresholds",
+    "Ablation geometry uses separately recorded approximate simultaneous bootstrap intervals",
+    "Ablation comparisons do not include task utility in their acceptance decision",
+    "Client-class diagnostics are descriptive and never added as per-class acceptance gates",
+    "Margin variants are separate exploratory comparisons, not a pooled multiple-testing claim",
+    "Opt-in fixed-class margin bootstrap is exploratory; its Bonferroni intervals do not replace pooled t/Holm tests",
+    "Stratified margin uses fixed-class weighting; unbalanced class counts can also change the estimand",
+    "Within-checkpoint marker-family uncertainty is not across-training uncertainty",
+    "No across-run pooling or confidence interval; repeated Full hashes are not independent training runs",
+    "Recorded checkpoint hashes do not authenticate observation generation or deployed behavior",
+    "Task metrics are copied from recorded benchmarks, not re-evaluated"
+  ]
+}

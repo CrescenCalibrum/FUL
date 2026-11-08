@@ -26,6 +26,8 @@ def main():
                         help="Descriptive v2/class interval confidence; ablation geometry uses source alpha")
     parser.add_argument("--ablation-config",
                         help="Explicit development bounds JSON for accuracy/anchor ablations; omitted bounds remain unconfigured")
+    parser.add_argument("--stratified-margin", action="store_true",
+                        help="Add fixed-class paired-family margin bootstrap in separate reports; preserve pooled t/Holm outputs")
     parser.add_argument("--check-only", action="store_true",
                         help="Validate all inputs and provenance without bootstrapping or output writes")
     args = parser.parse_args()

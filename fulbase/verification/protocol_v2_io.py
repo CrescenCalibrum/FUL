@@ -22,6 +22,7 @@ from fulbase.verification.protocol_v2 import (
     V2DiagnosticConfig, diagnose_observations, validate_observations,
 )
 from fulbase.verification.protocol_v2_ablation import V2AblationConfig, diagnose_ablations
+from fulbase.verification.protocol_v2_stratified import diagnose_stratified_margins
 
 
 def _sha256(path):
@@ -299,6 +300,7 @@ def _source_code_hashes():
     root = Path(__file__).resolve().parents[2]
     paths = ["fulbase/verification/protocol_v2.py", "fulbase/verification/protocol_v2_io.py",
              "fulbase/verification/protocol_v2_ablation.py",
+             "fulbase/verification/protocol_v2_stratified.py",
              "fulbase/verification/statistics.py", "fulbase/verification/audit.py",
              "fulbase/verification/markers.py", "scripts/diagnose_verification_v2.py"]
     return {name: _sha256(root / name) for name in paths}
@@ -402,8 +404,10 @@ def _summary_rows(source, stage, report, output_subdir):
 def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/verification_v2",
                                run_name="protocol_v2", bootstrap_samples=10000,
                                bootstrap_seed=2718, confidence=.95, check_only=False,
-                               ablation_config=None):
+                               ablation_config=None, stratified_margin=False):
     """Diagnose all selected calibration stages; source runs remain read-only."""
+    if type(stratified_margin) is not bool:
+        raise ValueError("stratified_margin must be a boolean")
     if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}", run_name) is None:
         raise ValueError("run_name must be a simple 1-80 character directory suffix")
     options = V2DiagnosticConfig(bootstrap_samples=bootstrap_samples,
@@ -418,9 +422,10 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
         _assert_sources_unchanged(sources)
         _assert_ablation_config_unchanged(ablation_provenance)
         return {"status": "checked", "output_dir": None, "formal_audit": False,
-                "ablation_config": ablation_provenance, **counts}
+                "ablation_config": ablation_provenance, "stratified_margin": stratified_margin, **counts}
     code_hashes = _source_code_hashes()
     computed = []
+    stratified_reports = [] if stratified_margin else None
     for source in sources:
         for stage in source["stages"]:
             print(f"[protocol-v2] {source['root'].name}: {stage['name']}", flush=True)
@@ -443,6 +448,14 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
                                   "legacy_equivalence_reproduced": True,
                                   "calibration_identity_sha256": source["calibration_identity_sha256"],
                                   "full_parameters_sha256_recorded": source["manifest"]["stages"]["full_after_fl"]["parameters_sha256"]})
+            if stratified_margin:
+                # Keep the original report's fields/serialization unchanged.
+                # New inference owns its RNG and never changes the pooled tests.
+                stratified = diagnose_stratified_margins(
+                    stage["before"], stage["after"], source["forget"], source["marker_config"],
+                    source["audit_protocol"], report, options)
+                stratified.update(source=dict(report["source"]), task=dict(stage["task"]))
+                stratified_reports.append(stratified)
             computed.append((source, stage, report))
     _assert_sources_unchanged(sources)
     _assert_ablation_config_unchanged(ablation_provenance)
@@ -452,20 +465,23 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
     output.mkdir(parents=True, exist_ok=False)
     status_path = output / "run_status.json"
     _write_json(status_path, {"status": "writing_diagnostic_outputs", "formal_audit": False,
-                              "ablation_config": ablation_provenance})
+                              "ablation_config": ablation_provenance, "stratified_margin": stratified_margin})
     try:
-        _write_results(output, sources, computed, options, counts, code_hashes, ablation_provenance)
+        _write_results(output, sources, computed, options, counts, code_hashes,
+                       ablation_provenance, stratified_reports)
     except Exception as exc:
         status_path.write_text(json.dumps({"status": "diagnostic_failed", "formal_audit": False,
                                           "ablation_config": ablation_provenance,
+                                          "stratified_margin": stratified_margin,
                                           "error_type": type(exc).__name__, "error": str(exc)},
                                          ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         raise
     status_path.write_text(json.dumps({"status": "diagnostic_complete", "formal_audit": False,
-                                      "ablation_config": ablation_provenance, **counts},
+                                      "ablation_config": ablation_provenance,
+                                      "stratified_margin": stratified_margin, **counts},
                                      indent=2) + "\n", encoding="utf-8")
     return {"status": "diagnostic_complete", "output_dir": str(output), "formal_audit": False,
-            "ablation_config": ablation_provenance, **counts}
+            "ablation_config": ablation_provenance, "stratified_margin": stratified_margin, **counts}
 
 
 def _comparison_context(source, stage, output_subdir):
@@ -485,9 +501,16 @@ def _comparison_context(source, stage, output_subdir):
             "task_status": stage["task"]["status"]}
 
 
-def _write_results(output, sources, computed, options, counts, code_hashes, ablation_provenance):
+def _write_results(output, sources, computed, options, counts, code_hashes, ablation_provenance,
+                   stratified_reports=None):
     summaries, stage_index = [], []
     ablation_rows, class_rows, variance_rows = [], [], []
+    stratified_tests, stratified_classes, stratified_summary = [], [], []
+    if stratified_reports is not None and len(stratified_reports) != len(computed):
+        raise ValueError("Stratified report count differs from selected stages")
+    stratified_protocols = [report["protocol"] for report in (stratified_reports or [])]
+    common_stratified_protocol = (stratified_protocols[0] if stratified_protocols and all(
+        protocol == stratified_protocols[0] for protocol in stratified_protocols) else None)
     for index, (source, stage, report) in enumerate(computed, 1):
         subdir = f"stage_{index:04d}"
         folder = output / subdir
@@ -505,6 +528,16 @@ def _write_results(output, sources, computed, options, counts, code_hashes, abla
                                                      if "geometry" in item.get("condition", "")])
         summaries.extend(_summary_rows(source, stage, report, subdir))
         context = _comparison_context(source, stage, subdir)
+        if stratified_reports is not None:
+            stratified = stratified_reports[index-1]
+            _write_json(folder / "stratified_margin_report.json", stratified)
+            for filename, key in (("stratified_margin_tests.csv", "client_tests"),
+                                  ("stratified_margin_classes.csv", "class_metrics"),
+                                  ("stratified_margin_comparison.csv", "summary")):
+                _write_csv(folder / filename, stratified[key])
+            stratified_tests.extend({**context, **row} for row in stratified["client_tests"])
+            stratified_classes.extend({**context, **row} for row in stratified["class_metrics"])
+            stratified_summary.extend({**context, **row} for row in stratified["summary"])
         ablation_rows.extend({**context, **row} for row in report["ablation_variants"])
         class_rows.extend({**context, **row} for row in report["client_class_metrics"])
         variance_rows.extend({**context, **row} for row in report["class_variance"])
@@ -514,14 +547,26 @@ def _write_results(output, sources, computed, options, counts, code_hashes, abla
     _write_csv(output / "ablation_summary.csv", ablation_rows)
     _write_csv(output / "client_class_metrics.csv", class_rows)
     _write_csv(output / "class_variance.csv", variance_rows)
+    if stratified_reports is not None:
+        _write_csv(output / "stratified_margin_tests.csv", stratified_tests)
+        _write_csv(output / "stratified_margin_classes.csv", stratified_classes)
+        _write_csv(output / "stratified_margin_summary.csv", stratified_summary)
     _assert_sources_unchanged(sources)
     _assert_ablation_config_unchanged(ablation_provenance)
     if _source_code_hashes() != code_hashes:
         raise ValueError("Diagnostic source code changed while writing results")
     _write_json(output / "diagnostic_manifest.json", {
-        "schema_version": "marker-protocol-v2-diagnostic-2", "status": "diagnostic_complete",
+        "schema_version": ("marker-protocol-v2-diagnostic-3" if stratified_reports is not None
+                           else "marker-protocol-v2-diagnostic-2"), "status": "diagnostic_complete",
         "formal_audit": False, "protocol_locked": False, "options": asdict(options),
         "ablation_config": ablation_provenance,
+        "stratified_margin": {"enabled": stratified_reports is not None,
+                              "protocol": common_stratified_protocol,
+                              "protocol_scope": "common_if_equal_else_per_stage_reports",
+                              "output_counts": {"client_test_rows": len(stratified_tests),
+                                                "class_rows": len(stratified_classes),
+                                                "comparison_rows": len(stratified_summary)},
+                              "pooled_reports_replaced": False},
         "ablation_output_counts": {"comparison_rows": len(ablation_rows),
                                    "client_class_rows": len(class_rows),
                                    "class_variance_rows": len(variance_rows)},
@@ -543,6 +588,8 @@ def _write_results(output, sources, computed, options, counts, code_hashes, abla
                         "Ablation comparisons do not include task utility in their acceptance decision",
                         "Client-class diagnostics are descriptive and never added as per-class acceptance gates",
                         "Margin variants are separate exploratory comparisons, not a pooled multiple-testing claim",
+                        "Opt-in fixed-class margin bootstrap is exploratory; its Bonferroni intervals do not replace pooled t/Holm tests",
+                        "Stratified margin uses fixed-class weighting; unbalanced class counts can also change the estimand",
                         "Within-checkpoint marker-family uncertainty is not across-training uncertainty",
                         "No across-run pooling or confidence interval; repeated Full hashes are not independent training runs",
                         "Recorded checkpoint hashes do not authenticate observation generation or deployed behavior",

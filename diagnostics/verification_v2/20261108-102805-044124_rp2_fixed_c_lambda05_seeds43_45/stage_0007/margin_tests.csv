@@ -1,0 +1,11 @@
+kind,bound,n_families,mean,ci_low,ci_high,p_support,p_violation,status,cid,variant,alpha,condition,p_support_holm,p_violation_holm
+decrease,0.1,40,0.0,0.0,0.0,1.0,0.0,fail,0,equivalence,0.025,forget_margin,1.0,0.0
+equivalence,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,1,equivalence,0.025,retain_margin,0.0,1.0
+equivalence,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,2,equivalence,0.025,retain_margin,0.0,1.0
+equivalence,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,3,equivalence,0.025,retain_margin,0.0,1.0
+equivalence,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,4,equivalence,0.025,retain_margin,0.0,1.0
+decrease,0.1,40,0.0,0.0,0.0,1.0,0.0,fail,0,noninferiority,0.025,forget_margin,1.0,0.0
+noninferiority,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,1,noninferiority,0.025,retain_margin,0.0,1.0
+noninferiority,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,2,noninferiority,0.025,retain_margin,0.0,1.0
+noninferiority,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,3,noninferiority,0.025,retain_margin,0.0,1.0
+noninferiority,0.1,40,0.0,0.0,0.0,0.0,1.0,pass,4,noninferiority,0.025,retain_margin,0.0,1.0

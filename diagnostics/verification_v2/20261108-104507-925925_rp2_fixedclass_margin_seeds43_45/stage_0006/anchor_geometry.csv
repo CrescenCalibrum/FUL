@@ -1,0 +1,6 @@
+cid,client_group,n_families,n_classes,A_full,A_after,delta_anchor,delta_anchor_ci_low,delta_anchor_ci_high,selective_delta,selective_delta_ci_low,selective_delta_ci_high,interval_status,selective_interval_status,status
+0,forget,40,10,0.2335648260294167,0.2335648260294167,0.0,0.0,0.0,0.0,0.0,0.0,available,available,unvalidated
+1,retain,40,10,0.2611296402080954,0.2611296402080954,0.0,0.0,0.0,,,,available,not_applicable,unvalidated
+2,retain,40,10,0.28703504014444825,0.28703504014444825,0.0,0.0,0.0,,,,available,not_applicable,unvalidated
+3,retain,40,10,0.26027043659951,0.26027043659951,0.0,0.0,0.0,,,,available,not_applicable,unvalidated
+4,retain,40,10,0.21910510764316254,0.21910510764316254,0.0,0.0,0.0,,,,available,not_applicable,unvalidated

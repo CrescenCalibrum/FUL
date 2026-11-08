@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "protected_files_unchanged": 320,
+  "original_output_files_byte_identical": 136,
+  "independent_client_mean_and_se_checks": 60,
+  "new_rows": {
+    "client_tests": 120,
+    "classes": 600,
+    "summary": 24
+  },
+  "output_dir": "diagnostics\\verification_v2\\20261108-104507-925925_rp2_fixedclass_margin_seeds43_45"
+}

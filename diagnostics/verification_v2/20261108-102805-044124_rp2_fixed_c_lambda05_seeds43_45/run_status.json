@@ -1,0 +1,21 @@
+{
+  "status": "diagnostic_complete",
+  "formal_audit": false,
+  "ablation_config": {
+    "configured": true,
+    "path": "D:\\hl\\2\u7814\\\u6bd5\u8bbe\\\u4ee3\u7801\\FUL\\configs\\verification\\ablation-v2-development.json",
+    "sha256": "38245fec9b04e7fa8bd178e9e74ac09ca7ef3fb608f2527ff77ae1dff8295bed",
+    "values": {
+      "accuracy_drop": 0.2,
+      "retain_accuracy_tolerance": 0.05,
+      "anchor_drop": 0.01,
+      "anchor_selectivity_drop": 0.01,
+      "retain_anchor_tolerance": 0.02,
+      "min_full_anchor_advantage": 0.0
+    },
+    "protocol_locked": false,
+    "purpose": "development_comparison"
+  },
+  "num_runs": 6,
+  "num_stages": 12
+}

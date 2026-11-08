@@ -1,0 +1,3 @@
+variant,pooled_status,stratified_status,raw_status,full_marker_precheck_passed,task_included,eligible_client_count,small_sample_client_count,interpretation,target_pass_count,target_fail_count,target_insufficient_count,retain_pass_count,retain_fail_count,retain_insufficient_count
+equivalence,insufficient,insufficient,insufficient,True,False,5,5,exploratory_interval_comparison_not_formal_acceptance,1,0,0,2,0,2
+noninferiority,insufficient,insufficient,insufficient,True,False,5,5,exploratory_interval_comparison_not_formal_acceptance,1,0,0,2,0,2
