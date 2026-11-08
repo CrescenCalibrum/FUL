@@ -1,2 +1,0 @@
-step,loss,objective,ce_loss,raw_margin,normalized_margin,batch_accuracy,real_samples,marker_samples,real_loss,marker_loss,gradient_l2_norm,delta_l2_before_projection,delta_l2_after_projection,projected
-1,-14.377052307128906,margin,2.0600198695319705e-05,14.377052307128906,0.7340860366821289,1.0,0,64,,2.0600198695319705e-05,104.03757496219333,0.010403757884083615,0.010403757884083615,False

@@ -1,6 +1,0 @@
-{
-  "backend": "serial",
-  "rounds": 20,
-  "initial_parameters_sha256": "e2e716314e2eb870a583fafeca86b25fc2adbb4ad03732da7dab0776cfc3d062",
-  "final_parameters_sha256": "b7375b643268676b510b2fdae94a26c4fb9cde71ea93cb08fcebbf7355b9610f"
-}
