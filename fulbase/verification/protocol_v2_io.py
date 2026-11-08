@@ -21,6 +21,7 @@ from fulbase.verification.markers import MarkerConfig
 from fulbase.verification.protocol_v2 import (
     V2DiagnosticConfig, diagnose_observations, validate_observations,
 )
+from fulbase.verification.protocol_v2_ablation import V2AblationConfig, diagnose_ablations
 
 
 def _sha256(path):
@@ -297,9 +298,32 @@ def _write_csv(path, rows):
 def _source_code_hashes():
     root = Path(__file__).resolve().parents[2]
     paths = ["fulbase/verification/protocol_v2.py", "fulbase/verification/protocol_v2_io.py",
+             "fulbase/verification/protocol_v2_ablation.py",
              "fulbase/verification/statistics.py", "fulbase/verification/audit.py",
              "fulbase/verification/markers.py", "scripts/diagnose_verification_v2.py"]
     return {name: _sha256(root / name) for name in paths}
+
+
+def _load_ablation_config(path):
+    """Explicit development bounds; never infer them from the input outcomes."""
+    provenance = {"configured": False, "path": None, "sha256": None, "values": None,
+                  "protocol_locked": False, "purpose": "development_comparison"}
+    if path is None:
+        return None, provenance
+    resolved = Path(path).resolve()
+    raw = resolved.read_bytes()
+    values = json.loads(raw.decode("utf-8"))
+    if not isinstance(values, dict):
+        raise ValueError("Ablation configuration must be a JSON object")
+    config = V2AblationConfig(**values)
+    provenance.update(configured=True, path=str(resolved),
+                      sha256=hashlib.sha256(raw).hexdigest(), values=asdict(config))
+    return config, provenance
+
+
+def _assert_ablation_config_unchanged(provenance):
+    if provenance["configured"] and _sha256(provenance["path"]) != provenance["sha256"]:
+        raise ValueError("Ablation configuration changed during diagnostics")
 
 
 def _assert_sources_unchanged(sources):
@@ -377,12 +401,14 @@ def _summary_rows(source, stage, report, output_subdir):
 
 def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/verification_v2",
                                run_name="protocol_v2", bootstrap_samples=10000,
-                               bootstrap_seed=2718, confidence=.95, check_only=False):
+                               bootstrap_seed=2718, confidence=.95, check_only=False,
+                               ablation_config=None):
     """Diagnose all selected calibration stages; source runs remain read-only."""
     if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}", run_name) is None:
         raise ValueError("run_name must be a simple 1-80 character directory suffix")
     options = V2DiagnosticConfig(bootstrap_samples=bootstrap_samples,
                                  bootstrap_seed=bootstrap_seed, confidence=confidence)
+    ablation_options, ablation_provenance = _load_ablation_config(ablation_config)
     sources = load_source_runs(run_dirs, stages)
     destination = Path(out_dir).resolve()
     if any(destination == source["root"] or source["root"] in destination.parents for source in sources):
@@ -390,7 +416,9 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
     counts = {"num_runs": len(sources), "num_stages": sum(len(source["stages"]) for source in sources)}
     if check_only:
         _assert_sources_unchanged(sources)
-        return {"status": "checked", "output_dir": None, "formal_audit": False, **counts}
+        _assert_ablation_config_unchanged(ablation_provenance)
+        return {"status": "checked", "output_dir": None, "formal_audit": False,
+                "ablation_config": ablation_provenance, **counts}
     code_hashes = _source_code_hashes()
     computed = []
     for source in sources:
@@ -399,7 +427,11 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
             report = diagnose_observations(stage["before"], stage["after"], source["forget"],
                                            source["marker_config"], source["audit_protocol"], options)
             _validate_legacy_equivalence(report, stage["report"])
+            report.update(diagnose_ablations(
+                stage["before"], stage["after"], source["forget"], source["marker_config"],
+                source["audit_protocol"], report, options, ablation_options))
             report.update(task=stage["task"],
+                          ablation_config=ablation_provenance,
                           legacy={"status": stage["report"].get("status"),
                                   "exploratory_status": stage["report"].get("exploratory_status"),
                                   "exploratory_decision_variants": stage["report"].get("exploratory_decision_variants"),
@@ -413,46 +445,86 @@ def run_protocol_v2_diagnostic(run_dirs, *, stages=None, out_dir="diagnostics/ve
                                   "full_parameters_sha256_recorded": source["manifest"]["stages"]["full_after_fl"]["parameters_sha256"]})
             computed.append((source, stage, report))
     _assert_sources_unchanged(sources)
+    _assert_ablation_config_unchanged(ablation_provenance)
     if _source_code_hashes() != code_hashes:
         raise ValueError("Diagnostic source code changed during computation")
     output = destination / (datetime.now().strftime("%Y%m%d-%H%M%S-%f") + "_" + run_name)
     output.mkdir(parents=True, exist_ok=False)
     status_path = output / "run_status.json"
-    _write_json(status_path, {"status": "writing_diagnostic_outputs", "formal_audit": False})
+    _write_json(status_path, {"status": "writing_diagnostic_outputs", "formal_audit": False,
+                              "ablation_config": ablation_provenance})
     try:
-        _write_results(output, sources, computed, options, counts, code_hashes)
+        _write_results(output, sources, computed, options, counts, code_hashes, ablation_provenance)
     except Exception as exc:
         status_path.write_text(json.dumps({"status": "diagnostic_failed", "formal_audit": False,
+                                          "ablation_config": ablation_provenance,
                                           "error_type": type(exc).__name__, "error": str(exc)},
                                          ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         raise
-    status_path.write_text(json.dumps({"status": "diagnostic_complete", "formal_audit": False, **counts},
+    status_path.write_text(json.dumps({"status": "diagnostic_complete", "formal_audit": False,
+                                      "ablation_config": ablation_provenance, **counts},
                                      indent=2) + "\n", encoding="utf-8")
-    return {"status": "diagnostic_complete", "output_dir": str(output), "formal_audit": False, **counts}
+    return {"status": "diagnostic_complete", "output_dir": str(output), "formal_audit": False,
+            "ablation_config": ablation_provenance, **counts}
 
 
-def _write_results(output, sources, computed, options, counts, code_hashes):
+def _comparison_context(source, stage, output_subdir):
+    """Keep model/request identity and utility separate from ablation decisions."""
+    return {"run": source["root"].name, "source_run_dir": str(source["root"]),
+            "seed": source["cfg"]["seed"], "stage": stage["name"],
+            "model_method": stage["entry"].get("method"),
+            "behavior": stage["entry"].get("behavior"),
+            "data_origin": source["manifest"].get("data_origin", "unspecified"),
+            "source_full_parameters_sha256": source["manifest"]["stages"]["full_after_fl"]["parameters_sha256"],
+            "calibration_identity_sha256": source["calibration_identity_sha256"],
+            "target_client_ids": source["forget"], "formal_audit": False,
+            "diagnostic_status": "diagnostic_only", "output_subdir": output_subdir,
+            "retain_acc_full": stage["task"]["retain_acc_full"],
+            "retain_acc_after": stage["task"]["retain_acc_after"],
+            "retain_accuracy_drop": stage["task"]["retain_accuracy_drop"],
+            "task_status": stage["task"]["status"]}
+
+
+def _write_results(output, sources, computed, options, counts, code_hashes, ablation_provenance):
     summaries, stage_index = [], []
+    ablation_rows, class_rows, variance_rows = [], [], []
     for index, (source, stage, report) in enumerate(computed, 1):
         subdir = f"stage_{index:04d}"
         folder = output / subdir
         folder.mkdir()
         _write_json(folder / "diagnostic_report.json", report)
         for filename, key in (("anchor_geometry.csv", "geometry"), ("full_geometry.csv", "full_geometry"),
-                              ("margin_tests.csv", "margin_tests"), ("marker_summary.csv", "marker_metrics")):
+                              ("margin_tests.csv", "margin_tests"), ("marker_summary.csv", "marker_metrics"),
+                              ("accuracy_tests.csv", "accuracy_tests"),
+                              ("ablation_geometry_tests.csv", "geometry_tests"),
+                              ("ablation_comparison.csv", "ablation_variants"),
+                              ("client_class_metrics.csv", "client_class_metrics"),
+                              ("class_variance.csv", "class_variance")):
             _write_csv(folder / filename, report[key])
         _write_csv(folder / "legacy_geometry.csv", [item for item in stage["report"]["conditions"]
                                                      if "geometry" in item.get("condition", "")])
         summaries.extend(_summary_rows(source, stage, report, subdir))
+        context = _comparison_context(source, stage, subdir)
+        ablation_rows.extend({**context, **row} for row in report["ablation_variants"])
+        class_rows.extend({**context, **row} for row in report["client_class_metrics"])
+        variance_rows.extend({**context, **row} for row in report["class_variance"])
         stage_index.append({"run_dir": str(source["root"]), "seed": source["cfg"]["seed"],
                             "stage": stage["name"], "output_subdir": subdir})
     _write_csv(output / "summary.csv", summaries)
+    _write_csv(output / "ablation_summary.csv", ablation_rows)
+    _write_csv(output / "client_class_metrics.csv", class_rows)
+    _write_csv(output / "class_variance.csv", variance_rows)
     _assert_sources_unchanged(sources)
+    _assert_ablation_config_unchanged(ablation_provenance)
     if _source_code_hashes() != code_hashes:
         raise ValueError("Diagnostic source code changed while writing results")
     _write_json(output / "diagnostic_manifest.json", {
-        "schema_version": "marker-protocol-v2-diagnostic-1", "status": "diagnostic_complete",
+        "schema_version": "marker-protocol-v2-diagnostic-2", "status": "diagnostic_complete",
         "formal_audit": False, "protocol_locked": False, "options": asdict(options),
+        "ablation_config": ablation_provenance,
+        "ablation_output_counts": {"comparison_rows": len(ablation_rows),
+                                   "client_class_rows": len(class_rows),
+                                   "class_variance_rows": len(variance_rows)},
         "source_code_sha256": code_hashes, "stages": stage_index, **counts,
         "source_runs": [{"run_dir": str(source["root"]), "seed": source["cfg"]["seed"],
                          "source_file_sha256": source["source_hashes"],
@@ -465,8 +537,11 @@ def _write_results(output, sources, computed, options, counts, code_hashes):
                        "training_performed": False, "model_inference_performed": False,
                        "legacy_equivalence_reproduced": True,
                        "raw_dataset_read": False, "legacy_reports_overwritten": False},
-        "limitations": ["Development calibration only; no formal v2 acceptance rule is defined",
+        "limitations": ["Development calibration only; explicit ablation bounds are not a locked formal protocol",
                         "Geometry intervals are descriptive, not calibrated decision thresholds",
+                        "Ablation geometry uses separately recorded approximate simultaneous bootstrap intervals",
+                        "Ablation comparisons do not include task utility in their acceptance decision",
+                        "Client-class diagnostics are descriptive and never added as per-class acceptance gates",
                         "Margin variants are separate exploratory comparisons, not a pooled multiple-testing claim",
                         "Within-checkpoint marker-family uncertainty is not across-training uncertainty",
                         "No across-run pooling or confidence interval; repeated Full hashes are not independent training runs",
