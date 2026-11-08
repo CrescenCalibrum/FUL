@@ -212,6 +212,8 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
         else:
             trials.append(trial)
     source_files = [Path(__file__), Path(__file__).parents[1] / "unlearning/pga.py",
+                    Path(__file__).parents[1] / "experiment/pipeline.py",
+                    Path(__file__).parents[1] / "train.py",
                     Path(__file__).parents[1] / "data.py", Path(__file__).parents[1] / "models.py",
                     Path(__file__).with_name("markers.py"), Path(__file__).with_name("audit.py")]
     if has_capped:
@@ -237,6 +239,7 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
                "formal_audit": False, "recovery": "not_run", "retrain": "not_run",
                "config_budget_scope": "config.json holds first numeric budget; trials lists every objective and budget",
                "timing_scope": "PGA execution including diagnostic trace overhead",
+               "task_evaluation_policy": "disjoint_retain_forget_once_then_pool_all_v1",
                "torch_version": torch.__version__, "numpy_version": np.__version__,
                "device": str(resolved_device),
                "source_hashes": {p.name: file_hash(p) for p in source_files}},
@@ -266,8 +269,11 @@ def run_pga_diagnostic(run_dir, *, steps=(5, 10, 20), lrs=(1e-4,),
         if not all(math.isfinite(float(x)) for x in metrics.values()):
             raise ValueError(f"Nonfinite task evaluation at {stage}")
         nr, nf = metrics["retain_num_examples"], metrics["forget_num_examples"]
-        if abs(metrics["all_acc"] - (nr*metrics["retain_acc"]+nf*metrics["forget_acc"])/(nr+nf)) > 1e-12:
-            raise ValueError("ACC weighted identity failed")
+        weighted = (nr*metrics["retain_acc"]+nf*metrics["forget_acc"])/(nr+nf)
+        if abs(metrics["all_acc"] - weighted) > 1e-12:
+            raise ValueError(f"ACC weighted identity failed at {stage}: all_acc={metrics['all_acc']!r}, "
+                             f"weighted_acc={weighted!r}, retain_n={nr}, forget_n={nf}, "
+                             f"delta={metrics['all_acc'] - weighted!r}")
         model = build_model(cfg.dataset, fd.num_classes)
         set_model_parameters(model, values)
         observations = {cid: observe_markers(model, ds, str(resolved_device), cfg.batch_size)

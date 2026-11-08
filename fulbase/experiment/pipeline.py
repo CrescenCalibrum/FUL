@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from datetime import datetime
+import math
+from numbers import Integral
 from pathlib import Path
 
 import torch
@@ -73,19 +75,46 @@ def _eval_device(cfg: ExperimentConfig) -> torch.device:
 
 
 def _evaluate_params(stage: str, params: list, fd, cfg: ExperimentConfig, retain_ids: list[int], forget_ids: list[int]) -> dict:
+    """Evaluate each test example once, then pool the two disjoint groups.
+
+    A separate All forward pass changes batch boundaries. Near-tied logits can
+    then change argmax through floating-point differences, even in eval mode.
+    Pooling the measured subgroup metrics gives all three metrics the same
+    predictions; validate coverage first so aggregation cannot hide bad splits.
+    """
+    client_ids = list(retain_ids) + list(forget_ids)
+    if (any(isinstance(cid, bool) or not isinstance(cid, Integral) for cid in client_ids)
+            or sorted(client_ids) != list(range(cfg.num_clients))):
+        raise ValueError(f"Invalid evaluation client partition at {stage}: "
+                         "retain/forget must cover every client exactly once")
+    if len(fd.test_indices) != cfg.num_clients:
+        raise ValueError(f"Invalid evaluation test partition at {stage}: client count mismatch")
+    test_indices = [i for group in fd.test_indices for i in group]
+    if (any(isinstance(i, bool) or not isinstance(i, Integral) for i in test_indices)
+            or sorted(test_indices) != list(range(len(fd.testset)))):
+        raise ValueError(f"Invalid evaluation test partition at {stage}: "
+                         "test samples must be covered exactly once")
+    if not len(fd.testset):
+        raise ValueError(f"Empty evaluation test dataset at {stage}")
     device = _eval_device(cfg)
     model = build_model(dataset=cfg.dataset, num_classes=fd.num_classes)
     set_model_parameters(model, params)
     retain_loader = make_merged_loader(fd.testset, fd.test_indices, retain_ids, batch_size=cfg.batch_size)
     forget_loader = make_merged_loader(fd.testset, fd.test_indices, forget_ids, batch_size=cfg.batch_size)
-    all_loader = make_merged_loader(fd.testset, fd.test_indices, list(range(cfg.num_clients)), batch_size=cfg.batch_size)
-
     retain = evaluate(model, retain_loader, device)
     forget = evaluate(model, forget_loader, device)
-    allm = evaluate(model, all_loader, device)
+    for name, result, loader in (("retain", retain, retain_loader), ("forget", forget, forget_loader)):
+        if result["num_examples"] != len(loader.dataset):
+            raise ValueError(f"Evaluation sample count mismatch at {stage}/{name}: "
+                             f"expected {len(loader.dataset)}, got {result['num_examples']}")
+        if (not all(math.isfinite(float(result[key])) for key in ("acc", "loss"))
+                or not 0 <= result["acc"] <= 1):
+            raise ValueError(f"Invalid task evaluation metrics at {stage}/{name}")
+    nr, nf = retain["num_examples"], forget["num_examples"]
+    total = nr + nf
     return {
-        "all_acc": allm["acc"],
-        "all_loss": allm["loss"],
+        "all_acc": (nr * retain["acc"] + nf * forget["acc"]) / total,
+        "all_loss": (nr * retain["loss"] + nf * forget["loss"]) / total,
         "retain_acc": retain["acc"],
         "retain_loss": retain["loss"],
         "forget_acc": forget["acc"],
