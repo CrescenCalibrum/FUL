@@ -1,0 +1,283 @@
+{
+  "schema_version": "rp2-independent-marker-validation-plan-v1",
+  "date": "2026-11-09",
+  "state": "implemented_and_locally_verified_server_collection_pending",
+  "purpose": "fresh_marker_confirmation_conditional_on_fixed_models_and_generator",
+  "models": [
+    {
+      "training_seed": 43,
+      "method": "Full",
+      "run_dir": "runs/20261108-072601-380020_rp2_protocol_controls_seed43",
+      "stage": "full_after_fl",
+      "checkpoint": "models/model_full.pt",
+      "checkpoint_sha256_recorded": "41b15d41d5a3ccd5cf03b80248b5fe2bba2873e940a13bbc8d10fb7f58dfdbd6",
+      "parameters_sha256_recorded": "a64292ce203105ba09b9d5a536f32dac03aa3c0d3aa06a560b0ce20768b37871",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 43,
+      "method": "Retrain",
+      "run_dir": "runs/20261108-072601-380020_rp2_protocol_controls_seed43",
+      "stage": "retrain_fl_pre_recovery",
+      "checkpoint": "models/model_retrain_fl_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "264d3597a52ab0edfe5ecce4edffab39890e81bbd4e35a79e16596af30b046ed",
+      "parameters_sha256_recorded": "fafc7e9bfa2431e48be9e626e3f5befa0c69d9aad926e39b11f81c485c7a7048",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 43,
+      "method": "fixed_C_lambda05",
+      "run_dir": "runs/20261108-101036-181767_rp2_fixed_c_lambda05_seed43",
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "checkpoint": "models/model_marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "bfd9ae7db8ed8bdcbd3f21c79c824f36ce467d44ce4d25b6eb8c012dbe76ab66",
+      "parameters_sha256_recorded": "f3e7d2d026c9cba343818a86d7bda0f0f18a6a78ac588639ded20371b53bfdea",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 44,
+      "method": "Full",
+      "run_dir": "runs/20261108-074527-601605_rp2_protocol_controls_seed44",
+      "stage": "full_after_fl",
+      "checkpoint": "models/model_full.pt",
+      "checkpoint_sha256_recorded": "ca88e873060ae60fa205a507c51bb878dbed17ac19e87b6808f93f4b7921d22e",
+      "parameters_sha256_recorded": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 44,
+      "method": "Retrain",
+      "run_dir": "runs/20261108-074527-601605_rp2_protocol_controls_seed44",
+      "stage": "retrain_fl_pre_recovery",
+      "checkpoint": "models/model_retrain_fl_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "37a11a76d0df273c866d8ba8acff39ab92c2edd5f8f5ddf2a4b27f3b6b548f01",
+      "parameters_sha256_recorded": "0852ce0f611c1172ef0c71ad61f2309be59862f7ce22f07ce239c01954be0182",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 44,
+      "method": "fixed_C_lambda05",
+      "run_dir": "runs/20261108-102103-348741_rp2_fixed_c_lambda05_seed44_evalfix",
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "checkpoint": "models/model_marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "4f08984956cb5e81e157f65f6729ea2d7334a90442e4b1fff4060ee72548729b",
+      "parameters_sha256_recorded": "6ea9dce74111e4122e45e4a37d1dc451cd210595f0df33088c7475ec7343372b",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 45,
+      "method": "Full",
+      "run_dir": "runs/20261108-080520-132118_rp2_protocol_controls_seed45",
+      "stage": "full_after_fl",
+      "checkpoint": "models/model_full.pt",
+      "checkpoint_sha256_recorded": "985cfc8ce73e72f9d3dce83b2b21b07f2b801beb311e07b9a2e57bebb4588180",
+      "parameters_sha256_recorded": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 45,
+      "method": "Retrain",
+      "run_dir": "runs/20261108-080520-132118_rp2_protocol_controls_seed45",
+      "stage": "retrain_fl_pre_recovery",
+      "checkpoint": "models/model_retrain_fl_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "0b3e72302ff2f55b12dc2382e34710c1487bdee7afc66bf2637e292fbea0310c",
+      "parameters_sha256_recorded": "b9df1e074ed099907dc4a567df188dbafccdc9a8eec508240fe5227e8fbf0e2c",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+      "checkpoint_bytes_reverified": false
+    },
+    {
+      "training_seed": 45,
+      "method": "fixed_C_lambda05",
+      "run_dir": "runs/20261108-102127-890964_rp2_fixed_c_lambda05_seed45_evalfix",
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "checkpoint": "models/model_marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery.pt",
+      "checkpoint_sha256_recorded": "65cbffbaf700dfefde9b06e5990afbf60f3ba5862c25f14180e6df6b0794b2ba",
+      "parameters_sha256_recorded": "62f9d30fe2b5f1d7a916f2d1317e6af2195bee9a6ac203fede001cc67505dd12",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+      "checkpoint_bytes_reverified": false
+    }
+  ],
+  "sampling": {
+    "role": "audit",
+    "training_seeds": [
+      43,
+      44,
+      45
+    ],
+    "clients": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "forget_clients": [
+      0
+    ],
+    "num_classes": 10,
+    "batches": 3,
+    "packets_per_batch": 5,
+    "families_per_class_per_packet": 4,
+    "variants_per_family": 2,
+    "families_per_class_per_batch": 20,
+    "families_per_class_primary_pooled": 60,
+    "unique_marker_inputs": 6000,
+    "sample_model_evaluations": 54000,
+    "preserve_training_marker_config_and_fingerprint": true,
+    "same_inputs_all_models": true,
+    "full_observations_reused_for_C_and_Retrain": true,
+    "packet_sample_seeds": "fresh_auditor_owned; no values generated or logged in this plan; commitments and private replay store required",
+    "overlap_check": "against all registered train/development/previous-holdout identities and content hashes where available",
+    "history_run_dirs": [
+      "runs/20261107-221138-927705_rp2_joint_head50_mixed",
+      "runs/20261108-064916-405565_rp2_marker_c_head_fixedlambda_longer",
+      "runs/20261108-065614-703284_rp2_marker_c_head_lambda_tradeoff"
+    ]
+  },
+  "analysis": {
+    "primary_sampling_unit": "paired_family",
+    "primary_estimand": "equal_mean_over_fixed_10_classes",
+    "primary_dataset": "pool_all_three_prespecified_batches_before_decision",
+    "primary_retained_rule": "noninferiority",
+    "primary_structure": "stratified_margin_and_existing_anchor_conditions",
+    "per_batch_results": "descriptive_means_accuracy_analytic_SE_anchor_points_only; no_batch_acceptance_or_vote_or_selection",
+    "secondary": [
+      "pooled_family_t_Holm",
+      "stratified_equivalence",
+      "empirical_marker_accuracy",
+      "analytic_SE_vs_bootstrap_SE",
+      "client_class_descriptions"
+    ],
+    "per_request_alpha": 0.05,
+    "margin_alpha": 0.025,
+    "geometry_alpha": 0.025,
+    "margin_client_count": 5,
+    "geometry_claim_count": 7,
+    "bootstrap_samples": 20000,
+    "bootstrap_seed": 2718,
+    "descriptive_confidence": 0.95,
+    "cross_candidate_or_training_seed_global_error_control": false,
+    "margin_drop": 0.1,
+    "retain_margin_tolerance": 0.1,
+    "anchor_drop": 0.01,
+    "anchor_selectivity_drop": 0.01,
+    "retain_anchor_tolerance": 0.02,
+    "min_full_anchor_advantage": 0.0,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "accuracy_drop": 0.2,
+    "retain_accuracy_tolerance": 0.05,
+    "max_task_retain_accuracy_drop": 0.03,
+    "task_metrics": "copied_from_bound_original_benchmark_and_reported_separately_not_retested_by_markers",
+    "formal_unlearning_claim": false
+  },
+  "execution": {
+    "freeze_before_new_outputs": [
+      "model_files_and_parameters",
+      "code_and_protocol_hashes",
+      "original_marker_fingerprint",
+      "all_batch_and_packet_commitments",
+      "input_ids_and_generation_settings"
+    ],
+    "collect_all_batches_before_analysis": true,
+    "candidate_optimization_allowed": false,
+    "full_retraining_allowed": false,
+    "new_test_information_used_for_selection": false,
+    "missing_or_failed_batch": "incomplete; retry identical inputs; no drop or substitute",
+    "optional_stopping_or_sample_extension": false,
+    "incomplete_or_insufficient_is_detection_success": false,
+    "legacy_reports_overwritten": false,
+    "required_new_components": [
+      "strict audit-role multi-model observation runner",
+      "packet/batch manifest with original training fingerprint",
+      "freshness and model/source hash validator",
+      "pooled-fixed-batch stratified and anchor report adapter"
+    ],
+    "existing_CLI_supports_this_plan": true,
+    "entrypoint": "scripts/collect_independent_markers.py",
+    "phases": ["check", "prepare", "collect", "analyze"],
+    "runtime_freeze": "created_by_prepare_before_inference; not_established_by_this_plan_file_alone",
+    "local_validation": "250 tests passed on 2026-11-09; synthetic end-to-end, not benchmark-model inference"
+  },
+  "planning_precision": {
+    "not_power_guarantee": true,
+    "assumption": "unchanged class-conditional family variance; normal approximation for planning only",
+    "formula": "Phi^-1(.9975)*current_analytic_SE*sqrt(4/n)",
+    "comparisons": [
+      {
+        "source_stage": "stage_0010",
+        "seed": 44,
+        "model_method": "retrain_fl",
+        "cid": 2,
+        "observed_mean": -0.0609306808095425,
+        "observed_analytic_se": 0.0117897268594913,
+        "observed_bootstrap_se": 0.010212994458282,
+        "distance_to_negative_bound": 0.0390693191904575,
+        "observed_interval": [
+          -0.0877915459900396,
+          -0.0315415364141808
+        ],
+        "planning_only": true,
+        "projected_normal_halfwidth_n20": 0.014800158916074464,
+        "projected_normal_halfwidth_n60": 0.00854487573424483
+      },
+      {
+        "source_stage": "stage_0004",
+        "seed": 44,
+        "model_method": "marker_margin_capped_retain_erase",
+        "cid": 2,
+        "observed_mean": -0.1018338970839977,
+        "observed_analytic_se": 0.003825747276434,
+        "observed_bootstrap_se": 0.0033370987374574,
+        "distance_to_negative_bound": 0.0018338970839976987,
+        "observed_interval": [
+          -0.1109633112009614,
+          -0.0924770691879093
+        ],
+        "planning_only": true,
+        "projected_normal_halfwidth_n20": 0.004802627604419782,
+        "projected_normal_halfwidth_n60": 0.0027727983402292882
+      },
+      {
+        "source_stage": "stage_0004",
+        "seed": 44,
+        "model_method": "marker_margin_capped_retain_erase",
+        "cid": 3,
+        "observed_mean": -0.0880269673420116,
+        "observed_analytic_se": 0.0062299747981309,
+        "observed_bootstrap_se": 0.0054574223641896,
+        "distance_to_negative_bound": 0.011973032657988408,
+        "observed_interval": [
+          -0.1024125822400674,
+          -0.0719887911900877
+        ],
+        "planning_only": true,
+        "projected_normal_halfwidth_n20": 0.00782075939115138,
+        "projected_normal_halfwidth_n60": 0.004515317539748543
+      }
+    ]
+  },
+  "evidence": {
+    "diagnostic_dir": "diagnostics/verification_v2/20261108-104507-925925_rp2_fixedclass_margin_seeds43_45",
+    "summary_sha256": "f1e64a04bb1439ab6d7b0b61eeb06f48801cf4a9366f814737f7118c8ad0384d",
+    "client_tests_sha256": "db06833d80d79fe9cdc8c5d9c8879d26eff9ffeafd2ce5ee9f3358a22c47f972",
+    "bootstrap_to_analytic_SE_ratio_mean": 0.8654109873157917,
+    "source_model_bytes_verified_on_this_machine": false
+  }
+}

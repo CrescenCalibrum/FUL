@@ -55,10 +55,13 @@ def _check_protocol(cfg):
         raise ValueError("Invalid source protocol bounds")
 
 
-def validate_observations(before, after, forget_client_ids, marker_config, audit_protocol):
+def validate_observations(before, after, forget_client_ids, marker_config, audit_protocol,
+                          *, expected_role="calibration"):
     """Validate without resampling, model loading, inference, or input mutation."""
     _marker_config(marker_config)
     _check_protocol(audit_protocol)
+    if expected_role not in {"calibration", "audit"}:
+        raise ValueError("Expected observation role must be calibration or audit")
     ids = sorted(before)
     forget_list = list(forget_client_ids)
     forget = set(forget_list)
@@ -73,8 +76,10 @@ def validate_observations(before, after, forget_client_ids, marker_config, audit
     for cid in ids:
         pre, post = before[cid], after[cid]
         for obs in (pre, post):
-            if str(np.asarray(obs["role"]).item()) != "calibration":
-                raise ValueError("v2 development diagnostics accept calibration observations only")
+            if str(np.asarray(obs["role"]).item()) != expected_role:
+                if expected_role == "calibration":
+                    raise ValueError("v2 development diagnostics accept calibration observations only")
+                raise ValueError("Independent marker diagnostics accept audit observations only")
             if np.asarray(obs["cid"]).shape != () or int(obs["cid"]) != cid:
                 raise ValueError("Observation client ID mismatch")
             if np.asarray(obs["valid"]).shape != () or np.asarray(obs["valid"]).item() is not True:
@@ -193,14 +198,15 @@ def _interval(values, confidence, eligible):
 
 
 def diagnose_observations(before, after, forget_client_ids, marker_config,
-                          audit_protocol, options=None):
+                          audit_protocol, options=None, *, expected_role="calibration"):
     """Recompute uncalibrated anchor diagnostics and two explicit margin rules.
 
     There is deliberately no v2 joint acceptance decision and no task-metric
     inference here. The I/O layer may separately copy recorded benchmark utility.
     """
     options = options or V2DiagnosticConfig()
-    validate_observations(before, after, forget_client_ids, marker_config, audit_protocol)
+    validate_observations(before, after, forget_client_ids, marker_config, audit_protocol,
+                          expected_role=expected_role)
     cfg = _marker_config(marker_config)
     ids, forget = sorted(before), set(forget_client_ids)
     retain = [cid for cid in ids if cid not in forget]

@@ -251,10 +251,11 @@ def _geometry_diagnostics(before, after, forget, markers, protocol, options, bou
 
 
 def diagnose_ablations(before, after, forget_ids, marker_config, audit_protocol,
-                       v2_report, options=None, ablation_config=None):
+                       v2_report, options=None, ablation_config=None, *, expected_role="calibration"):
     """Add transparent candidate comparisons without changing any v1/v2 fields."""
     options = options or V2DiagnosticConfig()
-    validate_observations(before, after, forget_ids, marker_config, audit_protocol)
+    validate_observations(before, after, forget_ids, marker_config, audit_protocol,
+                          expected_role=expected_role)
     markers = marker_config if isinstance(marker_config, MarkerConfig) else MarkerConfig(**marker_config)
     bounds = ablation_config
     if bounds is not None and not isinstance(bounds, V2AblationConfig):

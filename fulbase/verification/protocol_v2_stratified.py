@@ -172,10 +172,11 @@ def _pooled_rows(v2_report, ids, forget, protocol, reductions):
 
 
 def diagnose_stratified_margins(before, after, forget_client_ids, marker_config,
-                                audit_protocol, v2_report, options=None):
+                                audit_protocol, v2_report, options=None, *, expected_role="calibration"):
     """Return separate fixed-class diagnostics without changing a supplied report."""
     options = options or V2DiagnosticConfig()
-    validate_observations(before, after, forget_client_ids, marker_config, audit_protocol)
+    validate_observations(before, after, forget_client_ids, marker_config, audit_protocol,
+                          expected_role=expected_role)
     ids, forget = sorted(before), set(forget_client_ids)
     reductions = {cid: (_reduce(before[cid]), _reduce(after[cid])) for cid in ids}
     pooled = _pooled_rows(v2_report, ids, forget, audit_protocol, reductions)
