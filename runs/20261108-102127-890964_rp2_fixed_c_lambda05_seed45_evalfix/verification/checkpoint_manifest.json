@@ -1,0 +1,73 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "objective": null,
+      "checkpoint_sha256": "985cfc8ce73e72f9d3dce83b2b21b07f2b801beb311e07b9a2e57bebb4588180",
+      "parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7174,
+        "all_loss": 1.2552044149398804,
+        "retain_acc": 0.6988304093567251,
+        "retain_loss": 1.339732720605579,
+        "forget_acc": 0.8024553571428571,
+        "forget_loss": 0.8680345863103867,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    },
+    "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery": {
+      "stage": "marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery",
+      "method": "marker_margin_capped_retain_erase",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "margin_capped_retain",
+      "checkpoint_sha256": "65cbffbaf700dfefde9b06e5990afbf60f3ba5862c25f14180e6df6b0794b2ba",
+      "parameters_sha256": "62f9d30fe2b5f1d7a916f2d1317e6af2195bee9a6ac203fede001cc67505dd12",
+      "source_full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.575947823531393
+      },
+      "attack_parameters": {
+        "margin_raw_drop": 3.0,
+        "retain_weight": 0.5,
+        "retain_weight_mode": "fixed",
+        "retain_weight_effective": 0.5
+      },
+      "optimization_access": "target_and_retained_training_markers",
+      "checkpoint": "models/model_marker_capretain_head_s30_lr0.01_r0.1_d3.0_fixed_w0.5_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7234,
+        "all_loss": 1.1246730759620667,
+        "retain_acc": 0.7056530214424951,
+        "retain_loss": 1.1995711543871412,
+        "forget_acc": 0.8046875,
+        "forget_loss": 0.7816131274615016,
+        "retain_num_examples": 8208,
+        "forget_num_examples": 1792
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "source_run": "/root/ful_flower_base/runs/20261108-074527-601605_rp2_protocol_controls_seed44",
+  "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+  "source_checkpoint_sha256": "ca88e873060ae60fa205a507c51bb878dbed17ac19e87b6808f93f4b7921d22e",
+  "source_config_sha256": "a47956ee0ad93909fabbe479a9ee3c4aaaf3ea893e97ac820e25771c7e451b3a",
+  "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+  "trials": [
+    {
+      "steps": 30,
+      "lr": 0.01,
+      "project_ratio": 0.1,
+      "layers": "head",
+      "data_scope": "markers_only",
+      "objective": "margin_capped_retain",
+      "margin_raw_drop": 3.0,
+      "retain_weight": 0.5,
+      "retain_weight_mode": "fixed"
+    }
+  ],
+  "start_policy": "each_budget_starts_from_identical_full",
+  "access": {
+    "optimization": "target_and_retained_training_markers_for_constrained_trials",
+    "target_client_ids": [
+      0
+    ],
+    "retained_training_marker_client_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "evaluation": "benchmark_test_data_and_calibration_markers",
+    "attack_diagnostics": "target_training_markers_after_candidate_is_fixed"
+  },
+  "objective_definitions": {
+    "ce": "maximize mean cross entropy (original PGA)",
+    "margin": "maximize negative mean(correct logit - max other logit)",
+    "margin_capped": "minimize per-sample relu(raw_margin - (Full_raw_margin - raw_drop))",
+    "margin_capped_retain": "capped target loss + fixed weight * client-balanced centered-logit MSE on retained training markers"
+  },
+  "retain_weight_semantics": "fixed: absolute lambda; probe_ratio: multiplier of training-only probe gradient ratio",
+  "sampling_policy": "objective-independent seed; same inputs for matched budgets",
+  "formal_audit": false,
+  "recovery": "not_run",
+  "retrain": "not_run",
+  "config_budget_scope": "config.json holds first numeric budget; trials lists every objective and budget",
+  "timing_scope": "PGA execution including diagnostic trace overhead",
+  "task_evaluation_policy": "disjoint_retain_forget_once_then_pool_all_v1",
+  "torch_version": "2.7.1+cu118",
+  "numpy_version": "1.26.4",
+  "device": "cuda",
+  "source_hashes": {
+    "pga_diagnostic.py": "fa682740f5d1de72fe6e9158a3d52a1cc3ba5dd3be5cd00978cf72224682330f",
+    "pga.py": "c072f01bb2907dacb9b4b4de5e54b4f19440b341f4636854af0b43e4235e6e80",
+    "pipeline.py": "8a5a7e3161527820e1cd3795f65919c2942dbafbec8de1e940021f51555ad774",
+    "train.py": "4c371c07ea01e02c55467741a94240dc3e8e88d54e8354687bfd87181de7d66a",
+    "data.py": "abff07baac00251246904bb52e1ec476069aa4b6647ebc35a55fdd19cf77eb02",
+    "models.py": "88a4e6d67a16c2be105c74676c60a427ec579c978b4412883d92e90968d41834",
+    "markers.py": "9209bbe036c095d12376dc1e2ce2419ae6106369b5548c60ad26985e09db3566",
+    "audit.py": "20955247681c969a646be159b15219c0a1925db9f723dc95928b79a81c0c8923",
+    "marker_capped.py": "52f88469fa47278045fbe16dc8e7c819b0604ca4063db3cdac087565f790fa43"
+  }
+}
