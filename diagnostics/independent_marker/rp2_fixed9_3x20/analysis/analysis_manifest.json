@@ -1,0 +1,32 @@
+{
+  "schema_version": "rp2-independent-marker-collection-v1",
+  "status": "complete",
+  "formal_audit": false,
+  "source": {
+    "frozen_manifest_sha256": "4b3080c74f07fcd86588479c88ddd5acb2c655335aa3b59ad0b5088f701e632e",
+    "collection_complete_sha256": "d4408e03a1ebfbd3a057a9242445354cc457a08a6af5f4f892b3c125fe183b89"
+  },
+  "files": {
+    "report.json": "f11f161bb882f914eb11013b78f260b1613130894c394d0af79496caae7c3ada",
+    "summary.csv": "8d9b8c959eb064326e5e39ce51f93daf8b1899f1c06449c1624055f64857e688",
+    "pooled_margin_tests.csv": "c23c366d1f13e990f44f459127464b2837c1eb2e0679b00d6a6759ca9526f320",
+    "anchor_geometry_tests.csv": "05f5d7d0516f41dee1ecb53eb5b20fddc8bc907a8cd963b3832655cac1e17c2f",
+    "accuracy_tests.csv": "f24ae09df40e6a677d123158d1e8c31879e3e0687915cf3b9f470eed114c1bf9",
+    "stratified_margin_tests.csv": "8c4849bfba4d17611ed813c4cce6f1e24b9fd8b5e1122ec747cbb1021bbbdee0",
+    "stratified_margin_classes.csv": "c13e9286ae46d839e4b9450c3619dcffbf527d75a27462e9be4314b5b9ac1ea0",
+    "client_class_metrics.csv": "a956c0c32361dcaabd0f9e5d2dc670cb9c39d5a01935a13c2e90f71cf4521adb",
+    "class_variance.csv": "c8035104e3f40bce57b012d418edd16b2e01b0a89e3975dcfd24e22e8c3358cc",
+    "per_batch_descriptive.csv": "8fec7655567131c420889681298f1f7b93ebd3007931733bef08ba4734d4a73f"
+  },
+  "table_rows": {
+    "summary": 6,
+    "pooled_margin_tests": 60,
+    "anchor_geometry_tests": 42,
+    "accuracy_tests": 60,
+    "stratified_margin_tests": 60,
+    "stratified_margin_classes": 300,
+    "client_class_metrics": 300,
+    "class_variance": 30,
+    "per_batch_descriptive": 90
+  }
+}
