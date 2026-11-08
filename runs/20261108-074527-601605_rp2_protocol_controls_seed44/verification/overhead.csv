@@ -1,0 +1,8 @@
+stage,operation,time_sec,bytes
+full_after_fl,full_training,612.2377975136042,
+full_after_fl,marker_inference,0.03543936833739281,
+full_after_fl,statistics_and_output,2.997620902955532,
+retrain_fl_pre_recovery,unlearning,520.1027149520814,
+retrain_fl_pre_recovery,marker_inference,0.045246999710798264,
+retrain_fl_pre_recovery,statistics_and_output,4.599744729697704,
+artifacts,stored_bytes,,5577938200.0
