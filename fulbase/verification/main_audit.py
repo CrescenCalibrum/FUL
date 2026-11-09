@@ -294,6 +294,12 @@ def preflight(plan_path, project_root=None, verify_models=True):
         protocol = asdict(AuditConfig(**_json(run / "verification/audit_config.json")))
         manifest = _json(run / "verification/checkpoint_manifest.json")
         entry = manifest["stages"][binding["stage"]]
+        if "evaluation_status" in entry and entry["evaluation_status"] != "evaluated":
+            raise ValueError(
+                f"Cannot collect independent markers for {_model_key(binding)}: "
+                f"evaluation_status={entry['evaluation_status']!r}. "
+                "The complete matrix with models unavailable for inference is not supported yet; "
+                "retain every declared method and its failure record rather than removing methods")
         if (cfg["seed"] != binding["training_seed"] or cfg["num_clients"] != 5 or
                 str(cfg["forget_clients"]) != "0" or manifest["num_classes"] != 10):
             raise ValueError("Model source seed/client/class/forget configuration differs")
@@ -320,6 +326,11 @@ def preflight(plan_path, project_root=None, verify_models=True):
             raise FileNotFoundError(f"Source completion record missing: {status_path}")
         if status_path.is_file():
             status = _json(status_path)
+            if status.get("status") == "main_candidate_evaluation_recovery_complete":
+                raise ValueError(
+                    "Independent collection does not yet support recovered candidate matrices with "
+                    "models unavailable for inference; retain every declared method and its failure "
+                    "record rather than removing methods")
             if status.get("status") not in {"development_run_complete", "pga_diagnostic_complete", "main_candidates_complete"}:
                 raise ValueError("Source run is not complete")
             if status.get("source_full_parameters_sha256", seed_full["parameters_sha256_recorded"]) != seed_full["parameters_sha256_recorded"]:

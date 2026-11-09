@@ -189,15 +189,23 @@ def load_source_runs(run_dirs, stages=None):
         fingerprint = markers.fingerprint()
         if manifest.get("marker_fingerprint") != fingerprint:
             raise ValueError("Source marker fingerprint mismatch")
+        recovered_evaluation = False
         for optional in ("run_status.json", "verification/training_result.json", "diagnostic_config.json"):
             if (root / optional).is_file():
                 record = _read_json(root, optional, hashes)
                 if optional == "run_status.json" and record.get("status") not in {
-                        "development_run_complete", "pga_diagnostic_complete"}:
+                        "development_run_complete", "pga_diagnostic_complete",
+                        "main_candidate_evaluation_recovery_complete"}:
                     raise ValueError("Source run is incomplete")
+                if optional == "run_status.json":
+                    recovered_evaluation = record.get("status") == "main_candidate_evaluation_recovery_complete"
                 if optional == "verification/training_result.json" and record.get("final_parameters_sha256") != \
                         manifest["stages"]["full_after_fl"]["parameters_sha256"]:
                     raise ValueError("Source Full differs from recorded training result")
+        if recovered_evaluation and requested is None:
+            raise ValueError(
+                "Recovered candidate evaluations require explicit evaluated stages; use the recovery script "
+                "with --diagnose-v2 to preserve coverage of every candidate, including invalid models")
         forget = cfg["forget_clients"]
         forget = [int(x.strip()) for x in forget.split(",")] if isinstance(forget, str) else list(forget)
         expected_clients = set(range(cfg["num_clients"]))
@@ -217,6 +225,12 @@ def load_source_runs(run_dirs, stages=None):
         # The shared Full is checked even when it is not selected for output.
         for stage in dict.fromkeys(["full_after_fl", *selected]):
             entry = entries[stage]
+            if ((recovered_evaluation or "evaluation_status" in entry)
+                    and entry.get("evaluation_status") != "evaluated"):
+                raise ValueError(
+                    f"Stage {stage} cannot enter v2 diagnostics: evaluation_status="
+                    f"{entry.get('evaluation_status')!r}; only evaluated stages are supported. "
+                    "Use the recovery script with --diagnose-v2 to retain complete candidate coverage")
             _validate_entry(entry, stage, fingerprint)
             relative = f"verification/{stage}"
             report = _read_json(root, relative + "/audit_report.json", hashes)
