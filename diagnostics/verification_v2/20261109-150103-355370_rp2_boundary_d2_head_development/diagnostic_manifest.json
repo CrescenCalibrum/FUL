@@ -1,0 +1,429 @@
+{
+  "schema_version": "marker-protocol-v2-diagnostic-3",
+  "status": "diagnostic_complete",
+  "formal_audit": false,
+  "protocol_locked": false,
+  "options": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2718,
+    "confidence": 0.95
+  },
+  "ablation_config": {
+    "configured": true,
+    "path": "D:\\hl\\2研\\毕设\\代码\\FUL\\configs\\verification\\ablation-v2-development.json",
+    "sha256": "38245fec9b04e7fa8bd178e9e74ac09ca7ef3fb608f2527ff77ae1dff8295bed",
+    "values": {
+      "accuracy_drop": 0.2,
+      "retain_accuracy_tolerance": 0.05,
+      "anchor_drop": 0.01,
+      "anchor_selectivity_drop": 0.01,
+      "retain_anchor_tolerance": 0.02,
+      "min_full_anchor_advantage": 0.0
+    },
+    "protocol_locked": false,
+    "purpose": "development_comparison"
+  },
+  "stratified_margin": {
+    "enabled": true,
+    "protocol": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 2718,
+      "confidence": 0.95,
+      "source_alpha": 0.05,
+      "margin_family_alpha": 0.025,
+      "margin_drop": 0.1,
+      "retain_margin_tolerance": 0.1,
+      "estimand": "equal_weight_over_fixed_classes_of_mean_paired_family_margin_change",
+      "resampling": "paired_families_within_each_fixed_client_class_at_original_stratum_sizes",
+      "family_reduction": "mean_variants_before_and_after_then_paired_difference_as_original_v2",
+      "interval_method": "percentile_bootstrap",
+      "decision_correction": "Bonferroni_simultaneous_two_sided_intervals_over_all_client_means",
+      "num_simultaneous_clients": 5,
+      "interval_tail_probability": 0.0025,
+      "pooled_method": "unchanged_paired_family_t_with_Holm_over_support_and_violation",
+      "pooled_interval_confidence": 0.975,
+      "min_total_families": 8,
+      "min_families_per_class": 2,
+      "min_expected_tail_draws": 10,
+      "small_sample_warning_below_families_per_class": 8,
+      "small_sample_warning_is_acceptance_gate": false,
+      "zero_within_class_variance_rule": "insufficient_inference_keep_point_estimate",
+      "classes_resampled": false,
+      "variants_resampled_independently": false,
+      "cross_method_variant_or_run_multiplicity_control": false,
+      "new_joint_geometry_or_task_acceptance": false
+    },
+    "protocol_scope": "common_if_equal_else_per_stage_reports",
+    "output_counts": {
+      "client_test_rows": 210,
+      "class_rows": 1050,
+      "comparison_rows": 42
+    },
+    "pooled_reports_replaced": false
+  },
+  "ablation_output_counts": {
+    "comparison_rows": 126,
+    "client_class_rows": 1050,
+    "class_variance_rows": 105
+  },
+  "source_code_sha256": {
+    "fulbase/verification/protocol_v2.py": "bba6a121afaaddf1dc7213a2ad1843ddd4cc6cce459faa2ae706ac0357171261",
+    "fulbase/verification/protocol_v2_io.py": "e360e1b810263986c969407019f1116e849acd9d18a401978821e428e3d18fee",
+    "fulbase/verification/protocol_v2_ablation.py": "def73a27ccfdaa05359c554e09c7ae5a9c625f91e9824bd82f4e30a1bd75bcc5",
+    "fulbase/verification/protocol_v2_stratified.py": "e74839e03ae3f9832ac51dda348819bef702dfab2eecc1cf6fad993aa153262e",
+    "fulbase/verification/statistics.py": "ac66f89e77f867e3fde6809fcc9b7ba10542920742ea83005137d8f2b9b29023",
+    "fulbase/verification/audit.py": "20955247681c969a646be159b15219c0a1925db9f723dc95928b79a81c0c8923",
+    "fulbase/verification/markers.py": "9209bbe036c095d12376dc1e2ce2419ae6106369b5548c60ad26985e09db3566",
+    "scripts/diagnose_verification_v2.py": "f00399ee57c158299d2a8c456990cb0f1baa06721282375871f49286d9ea6fc1"
+  },
+  "stages": [
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0001"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t01_pre_recovery",
+      "output_subdir": "stage_0002"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t02_pre_recovery",
+      "output_subdir": "stage_0003"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t03_pre_recovery",
+      "output_subdir": "stage_0004"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t04_pre_recovery",
+      "output_subdir": "stage_0005"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t05_pre_recovery",
+      "output_subdir": "stage_0006"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "stage": "marker_boundary_d2_t06_pre_recovery",
+      "output_subdir": "stage_0007"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0008"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t01_pre_recovery",
+      "output_subdir": "stage_0009"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t02_pre_recovery",
+      "output_subdir": "stage_0010"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t03_pre_recovery",
+      "output_subdir": "stage_0011"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t04_pre_recovery",
+      "output_subdir": "stage_0012"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t05_pre_recovery",
+      "output_subdir": "stage_0013"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "stage": "marker_boundary_d2_t06_pre_recovery",
+      "output_subdir": "stage_0014"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "full_after_fl",
+      "output_subdir": "stage_0015"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t01_pre_recovery",
+      "output_subdir": "stage_0016"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t02_pre_recovery",
+      "output_subdir": "stage_0017"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t03_pre_recovery",
+      "output_subdir": "stage_0018"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t04_pre_recovery",
+      "output_subdir": "stage_0019"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t05_pre_recovery",
+      "output_subdir": "stage_0020"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "stage": "marker_boundary_d2_t06_pre_recovery",
+      "output_subdir": "stage_0021"
+    }
+  ],
+  "num_runs": 3,
+  "num_stages": 21,
+  "source_runs": [
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145026-511521_rp2_boundary_d2_head_seed43",
+      "seed": 43,
+      "source_file_sha256": {
+        "config.json": "b93be2f58056766585445c41c945c614369ddbf37f4a220cc7f4a5662c68906b",
+        "verification/marker_config.json": "3f87d36fd79095e4253c380fe0a4040c218a16d85d76ecd17301d9c590740ebc",
+        "verification/audit_config.json": "5ccc2eaa73a4448100b3b23a26574602aad510701a2ed31f1f9d70c46b181c07",
+        "verification/checkpoint_manifest.json": "939c37447a2d9f4ba0cc5859e46ae1cbe7bbd9e5b5a81dfa769f1b9f722b4931",
+        "data_partition.json": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e",
+        "run_status.json": "cc6fb48c7e62967bb6ba8d5ce726c13cd4595ad1af75fac38ca56a5fc3bfc258",
+        "verification/full_after_fl/audit_report.json": "584ae69ab380aa5ea15d6c31f3fe642dbf7f5b529a285d70958ff516191ffbf5",
+        "verification/full_after_fl/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/full_after_fl/after_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t01_pre_recovery/audit_report.json": "d8127bd626e38372b4b95f415adb09c75929960cb40ccf65c52913b98d7ac711",
+        "verification/marker_boundary_d2_t01_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t01_pre_recovery/after_observations.npz": "836798b3299214d9f14fabde3d05cabf4200c57693d35afe81e65eea22fd842e",
+        "verification/marker_boundary_d2_t02_pre_recovery/audit_report.json": "a362309e097fd7bddfd811f5ef2062dd21040e688975ba73d69030325f39343f",
+        "verification/marker_boundary_d2_t02_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t02_pre_recovery/after_observations.npz": "580f2a330ba06b413e318510b1bb544df06e1c3b1d5190f0affd96b6be6fd41d",
+        "verification/marker_boundary_d2_t03_pre_recovery/audit_report.json": "9fc7895a52be6825193e36f57c89b89b1e363dd903d28e37ef6356031add2f76",
+        "verification/marker_boundary_d2_t03_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t03_pre_recovery/after_observations.npz": "be3f54b11517c08b224a22b5c6c843648da924dff8497df6b6e9942713d7b95d",
+        "verification/marker_boundary_d2_t04_pre_recovery/audit_report.json": "9c1e9092089cdb7bedbc4cef912d58e10d6b59c90f087e13f69b4c0f67bb443a",
+        "verification/marker_boundary_d2_t04_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t04_pre_recovery/after_observations.npz": "836798b3299214d9f14fabde3d05cabf4200c57693d35afe81e65eea22fd842e",
+        "verification/marker_boundary_d2_t05_pre_recovery/audit_report.json": "0c3473a6bcddc04705c20a0f6adb6bf563970a19a4262db5f2e1bf316117ed4e",
+        "verification/marker_boundary_d2_t05_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t05_pre_recovery/after_observations.npz": "580f2a330ba06b413e318510b1bb544df06e1c3b1d5190f0affd96b6be6fd41d",
+        "verification/marker_boundary_d2_t06_pre_recovery/audit_report.json": "7aca35aa25c04d82fb3947d57aac8262e536d5881dd53de5cc75ed03d2cf3efc",
+        "verification/marker_boundary_d2_t06_pre_recovery/full_observations.npz": "90948e766c9b69b38dab3ffb0768f3e7959e6671b5006ef9b6483f3323ca29dc",
+        "verification/marker_boundary_d2_t06_pre_recovery/after_observations.npz": "be3f54b11517c08b224a22b5c6c843648da924dff8497df6b6e9942713d7b95d",
+        "verification/training_marker_manifest.json": "0a4e804eddd3322a51c362c25ce07dfdd7af86abfac4e4ec9495d402931df857",
+        "verification/calibration_marker_manifest.json": "ff72ba9a72fbf7991c11db8f5de22993175fdfd73b72a292e05a3da412a8c904"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145136-300707_rp2_boundary_d2_head_seed44",
+      "seed": 44,
+      "source_file_sha256": {
+        "config.json": "18fbd5761dd3cd3a50bb7f2989ff2b583fe54632fa19586989986ee690f19861",
+        "verification/marker_config.json": "3f87d36fd79095e4253c380fe0a4040c218a16d85d76ecd17301d9c590740ebc",
+        "verification/audit_config.json": "5ccc2eaa73a4448100b3b23a26574602aad510701a2ed31f1f9d70c46b181c07",
+        "verification/checkpoint_manifest.json": "cd6fc721b344212e25a86f6fd34838771ea376ce4088b61c2cdd6828b61c5812",
+        "data_partition.json": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+        "run_status.json": "2393317165595d4d5ff83ea9dda747db1d2f587db2ea500786c9f8c09206ab31",
+        "verification/full_after_fl/audit_report.json": "5b79419406ca44413da1fdc6c28637861484a7bd7728f03e0ce4ef022a719056",
+        "verification/full_after_fl/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/full_after_fl/after_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t01_pre_recovery/audit_report.json": "afd127d327b967c9ee7b472b71a05fd3505142db1b06803a35de6fc37ea93637",
+        "verification/marker_boundary_d2_t01_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t01_pre_recovery/after_observations.npz": "f94d6128945c98c818f38c7b84bd4128c8ce60fcc23b259b7e02a8c0d774179e",
+        "verification/marker_boundary_d2_t02_pre_recovery/audit_report.json": "e40269945789fff4452f18161073288885b09408566c143130c3bc5c46aeab43",
+        "verification/marker_boundary_d2_t02_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t02_pre_recovery/after_observations.npz": "a8d6e0586046da9df34929cb2bda8c914520991a5ecd6a95471ce3b4d386da85",
+        "verification/marker_boundary_d2_t03_pre_recovery/audit_report.json": "d296e3400208619e597f7ac343749e6597eee212b4e45620a4933090ab619d1a",
+        "verification/marker_boundary_d2_t03_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t03_pre_recovery/after_observations.npz": "69f99611a50babf02f4375e985451ca2cb9e46ff0ccdf25873a9e075e3a530d9",
+        "verification/marker_boundary_d2_t04_pre_recovery/audit_report.json": "83e6dc875f41a2344ef4c1668333a95117d75426c7ba49b868d2028c6048e3be",
+        "verification/marker_boundary_d2_t04_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t04_pre_recovery/after_observations.npz": "f94d6128945c98c818f38c7b84bd4128c8ce60fcc23b259b7e02a8c0d774179e",
+        "verification/marker_boundary_d2_t05_pre_recovery/audit_report.json": "56287a40287b6542041fbf205d9e21f0ab46effbaf37b7c09ff3d69d01a37369",
+        "verification/marker_boundary_d2_t05_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t05_pre_recovery/after_observations.npz": "a8d6e0586046da9df34929cb2bda8c914520991a5ecd6a95471ce3b4d386da85",
+        "verification/marker_boundary_d2_t06_pre_recovery/audit_report.json": "7547cfb9e49673e366be3214e2acc07d7e01b38f091af394b9bb1117406622f3",
+        "verification/marker_boundary_d2_t06_pre_recovery/full_observations.npz": "96f50e5848a798b6797a8c084754aed7741c131a5aa81a84bfdfc5eb75cccfdc",
+        "verification/marker_boundary_d2_t06_pre_recovery/after_observations.npz": "69f99611a50babf02f4375e985451ca2cb9e46ff0ccdf25873a9e075e3a530d9",
+        "verification/training_marker_manifest.json": "f0470eed979c640925c74d36662f47b644c0a58c3e624f4c582504a60652f4ce",
+        "verification/calibration_marker_manifest.json": "ff72ba9a72fbf7991c11db8f5de22993175fdfd73b72a292e05a3da412a8c904"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    },
+    {
+      "run_dir": "D:\\hl\\2研\\毕设\\代码\\FUL\\runs\\20261109-145247-076828_rp2_boundary_d2_head_seed45",
+      "seed": 45,
+      "source_file_sha256": {
+        "config.json": "0a78f904dbd2a16137a288b36eb4a2015d80324cea760856724e3f55f1fecffa",
+        "verification/marker_config.json": "3f87d36fd79095e4253c380fe0a4040c218a16d85d76ecd17301d9c590740ebc",
+        "verification/audit_config.json": "5ccc2eaa73a4448100b3b23a26574602aad510701a2ed31f1f9d70c46b181c07",
+        "verification/checkpoint_manifest.json": "de913a44615b402419fe09564167df4c15dde76b18d19fbe59c8f98162b10935",
+        "data_partition.json": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7",
+        "run_status.json": "8358fa242f74f4a75af4096a4b47cf1af38207a383fa6231d9c0f43acd266005",
+        "verification/full_after_fl/audit_report.json": "888c3b39a473bcf187132a4cad78512121bcdf543911ee268352a6b53e23d78a",
+        "verification/full_after_fl/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/full_after_fl/after_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t01_pre_recovery/audit_report.json": "9f1d8d52e264cc3d426161cae8f227500d94b68e0659e83f8e88f7149cb6fdd0",
+        "verification/marker_boundary_d2_t01_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t01_pre_recovery/after_observations.npz": "ffc26c1202944f1e8b275f138bf8ac115396452c296a876454bdaee9234ca302",
+        "verification/marker_boundary_d2_t02_pre_recovery/audit_report.json": "9a57729a22a7c929231182d094093f252be115a6b48d0cf3ff752ebe637b6ce6",
+        "verification/marker_boundary_d2_t02_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t02_pre_recovery/after_observations.npz": "d046d0b557d7bde83b49d51f2ea998e03ca9ef3e741360c84c75a6cdeab34c23",
+        "verification/marker_boundary_d2_t03_pre_recovery/audit_report.json": "718162dae5d508433e188af2e5233b8a2282ab5ebed129c49df653f15181af4b",
+        "verification/marker_boundary_d2_t03_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t03_pre_recovery/after_observations.npz": "43d4735e7ba7b4c4671a7a107e2e3f69e1e77129480bea53e86da178ecd0e29b",
+        "verification/marker_boundary_d2_t04_pre_recovery/audit_report.json": "7571600c5a6fdb5942408d3cf6a16c43a7392401738702eadee0fc9abe01b81e",
+        "verification/marker_boundary_d2_t04_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t04_pre_recovery/after_observations.npz": "ffc26c1202944f1e8b275f138bf8ac115396452c296a876454bdaee9234ca302",
+        "verification/marker_boundary_d2_t05_pre_recovery/audit_report.json": "a04ad840471beacf1ecadceb6a7df110afeb340e4100e768676b887fc50e71b4",
+        "verification/marker_boundary_d2_t05_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t05_pre_recovery/after_observations.npz": "d046d0b557d7bde83b49d51f2ea998e03ca9ef3e741360c84c75a6cdeab34c23",
+        "verification/marker_boundary_d2_t06_pre_recovery/audit_report.json": "a6738abb383fe73c7b9340c3ecab63b6a1c6f39834da0a4188e5cb19837fe782",
+        "verification/marker_boundary_d2_t06_pre_recovery/full_observations.npz": "2afc3a5fa0c9855a8e4495dca08ab0c01e0a4f06fcb209c9cb07016ba778ce36",
+        "verification/marker_boundary_d2_t06_pre_recovery/after_observations.npz": "43d4735e7ba7b4c4671a7a107e2e3f69e1e77129480bea53e86da178ecd0e29b",
+        "verification/training_marker_manifest.json": "25062a52f85259a04efcaaf77589a083611e10f36a563caf62a5c3c64cc3bfbf",
+        "verification/calibration_marker_manifest.json": "ff72ba9a72fbf7991c11db8f5de22993175fdfd73b72a292e05a3da412a8c904"
+      },
+      "marker_config": {
+        "enabled": true,
+        "seed": 1729,
+        "families_per_class": 4,
+        "variants_per_family": 2,
+        "batch_size": 32,
+        "ce_weight": 0.2,
+        "margin_weight": 0.1,
+        "geometry_weight": 0.05,
+        "target_margin": 1.0,
+        "noise_std": 0.03,
+        "version": "synthetic-texture-v1"
+      },
+      "source_audit_protocol": {
+        "alpha": 0.05,
+        "margin_drop": 0.1,
+        "retain_margin_tolerance": 0.1,
+        "geometry_drop": 0.02,
+        "retain_geometry_tolerance": 0.05,
+        "min_families": 8,
+        "min_full_accuracy": 0.7,
+        "min_full_margin": 0.01,
+        "max_retain_accuracy_drop": 0.03,
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2718,
+        "geometry_forget_rule": "unvalidated",
+        "protocol_locked": false
+      },
+      "calibration_identity_source": "calibration_marker_manifest_and_full_after_fl_observations",
+      "calibration_identity_sha256": "9bbdac7e4ff6d5b7f6d2c70e0715609b9b4315cc663cb7a2a463099aa279948a"
+    }
+  ],
+  "validation": {
+    "source_files_unchanged": true,
+    "checkpoint_bytes_reverified": false,
+    "training_performed": false,
+    "model_inference_performed": false,
+    "legacy_equivalence_reproduced": true,
+    "raw_dataset_read": false,
+    "legacy_reports_overwritten": false
+  },
+  "limitations": [
+    "Development calibration only; explicit ablation bounds are not a locked formal protocol",
+    "Geometry intervals are descriptive, not calibrated decision thresholds",
+    "Ablation geometry uses separately recorded approximate simultaneous bootstrap intervals",
+    "Ablation comparisons do not include task utility in their acceptance decision",
+    "Client-class diagnostics are descriptive and never added as per-class acceptance gates",
+    "Margin variants are separate exploratory comparisons, not a pooled multiple-testing claim",
+    "Opt-in fixed-class margin bootstrap is exploratory; its Bonferroni intervals do not replace pooled t/Holm tests",
+    "Stratified margin uses fixed-class weighting; unbalanced class counts can also change the estimand",
+    "Within-checkpoint marker-family uncertainty is not across-training uncertainty",
+    "No across-run pooling or confidence interval; repeated Full hashes are not independent training runs",
+    "Recorded checkpoint hashes do not authenticate observation generation or deployed behavior",
+    "Task metrics are copied from recorded benchmarks, not re-evaluated"
+  ]
+}
