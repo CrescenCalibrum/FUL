@@ -1,0 +1,14 @@
+{
+  "schema_version": "rp2-main-independent-marker-collection-v1",
+  "frozen_manifest_sha256": "b9024c37ee6575b13e4086cdb451a4c1160ab9ddd36c2bfa4ee59a860c70b5e3",
+  "model_key": "44_Retrain",
+  "batch": 0,
+  "inputs_sha256": "8c4429159d80cfdbd1603f3377bcb03317a5db4ba5cf404d57e639c97b647e68",
+  "collection_settings_sha256": "46c7dccdb8ffddea2354845fd05d964cc525fa5daad7373609bf621c12ce8f33",
+  "checkpoint_sha256": "6c738a903f702b8575304240fc9cce683b8d1b3247be08127deb7061af57f8d4",
+  "parameters_sha256": "b1cd6d7d3fc1e96767a7163b4fb77a3799cf52cd1b7c645f5e31e435bd25cd77",
+  "observation_sha256": "63ddd81a876349751c9991917f35a490acf724bbac1fc89a4c2550c5456a6576",
+  "model_unchanged_after_inference": true,
+  "inference_device": "cuda",
+  "inference_batch_size": 128
+}

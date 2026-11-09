@@ -1,0 +1,13 @@
+{
+  "device": "cuda",
+  "batch_size": 128,
+  "threads": 2,
+  "runtime": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu118",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3"
+  },
+  "cuda_version": "11.8",
+  "accelerator_name": "NVIDIA GeForce RTX 4090 D"
+}

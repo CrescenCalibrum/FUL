@@ -1,0 +1,14 @@
+{
+  "schema_version": "rp2-main-independent-marker-collection-v1",
+  "frozen_manifest_sha256": "b9024c37ee6575b13e4086cdb451a4c1160ab9ddd36c2bfa4ee59a860c70b5e3",
+  "model_key": "44_fake_corrupt",
+  "batch": 0,
+  "inputs_sha256": "8c4429159d80cfdbd1603f3377bcb03317a5db4ba5cf404d57e639c97b647e68",
+  "collection_settings_sha256": "46c7dccdb8ffddea2354845fd05d964cc525fa5daad7373609bf621c12ce8f33",
+  "checkpoint_sha256": "67e63fcf4030c41a22ad7d86d82c9d1461c8f9f79f93e38f9ebce246b4c3ddcf",
+  "parameters_sha256": "276eabe3895d419740f6f0e07408890194eca0d3c1b8b0984af87d938074554a",
+  "observation_sha256": "c3d8ce60be3d4fe96c89f1bde7c71055a0153931b2e4c299cbf68933b51712fe",
+  "model_unchanged_after_inference": true,
+  "inference_device": "cuda",
+  "inference_batch_size": 128
+}

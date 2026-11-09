@@ -1,0 +1,34 @@
+{
+  "schema_version": "rp2-main-independent-marker-collection-v1",
+  "status": "complete",
+  "formal_audit": false,
+  "source": {
+    "frozen_manifest_sha256": "b9024c37ee6575b13e4086cdb451a4c1160ab9ddd36c2bfa4ee59a860c70b5e3",
+    "collection_complete_sha256": "54b2d4df40396e89dd140a1145d03d3b6fd5f00c5c8205b311f3d1fd108773d3"
+  },
+  "files": {
+    "report.json": "b9e861af570cec4d6c39f56723813ec920396ef176a8d3ba86da650782a2a61d",
+    "summary.csv": "5e444b62c707f7edf7f925900283e1e7586e9571b649e23f2828041388501e57",
+    "pooled_margin_tests.csv": "d5743f873faeddeb09cc2644af28ec1678f7e2a6eff03e209a8545684b38fbc9",
+    "anchor_geometry_tests.csv": "8e89f685f325fe98eb19cb2b5ee3bc83089cfc7a6bc9f4054cfa234f645f2fcb",
+    "accuracy_tests.csv": "a0f38f2a4ff454116650f1e1636b5b8cf2d56f39f1c049c5e8e14640d0dc077f",
+    "stratified_margin_tests.csv": "78a2495ab72e7142362288a986bd4453035604fc3774440f7ab8426df2b6b077",
+    "stratified_margin_classes.csv": "47defdf2ac1014d980769126898b002dc495585b1bc127974233de09d2a280c6",
+    "client_class_metrics.csv": "73d869f3f01998907efecf2831084b1c330ae78e2343438d00aa25a48c813766",
+    "class_variance.csv": "851f993b84c2f52df411306ce031c5d23d9528bb7fe1348d9abe3a228e5c42d9",
+    "per_batch_descriptive.csv": "0f75ce7a35cfe5ddf3d71e71b7fefc80c6e559eaecc18dedb8897659807f7602",
+    "cohort_method_summary.csv": "2fbfad2e6eccc4365ee56915efbefcba6f9258b5e505f4b632e7d0a353223349"
+  },
+  "table_rows": {
+    "summary": 8,
+    "pooled_margin_tests": 80,
+    "anchor_geometry_tests": 56,
+    "accuracy_tests": 80,
+    "stratified_margin_tests": 80,
+    "stratified_margin_classes": 400,
+    "client_class_metrics": 400,
+    "class_variance": 40,
+    "per_batch_descriptive": 120,
+    "cohort_method_summary": 8
+  }
+}

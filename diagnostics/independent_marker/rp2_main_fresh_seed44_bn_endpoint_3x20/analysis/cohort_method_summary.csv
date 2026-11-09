@@ -1,0 +1,9 @@
+cohort,formal_audit,full_qualified_count,joint_failure_is_not_marker_detection,marker_and_task_original_3pp_fail_count,marker_and_task_original_3pp_insufficient_count,marker_and_task_original_3pp_pass_count,marker_and_task_proposed_3_5pp_fail_count,marker_and_task_proposed_3_5pp_insufficient_count,marker_and_task_proposed_3_5pp_pass_count,marker_fail_count,marker_insufficient_count,marker_pass_count,method,summary_kind,task_original_3pp_fail_count,task_original_3pp_insufficient_count,task_original_3pp_pass_count,task_proposed_3_5pp_fail_count,task_proposed_3_5pp_insufficient_count,task_proposed_3_5pp_pass_count,task_retain_drop_mean,task_retain_drop_sample_std,training_seed_count,training_seeds
+development,False,1,True,1,0,0,1,0,0,1,0,0,D_margin,descriptive_across_training_seeds_not_family_inference,0,0,1,0,0,1,0.00542313028124608,,1,44
+development,False,1,True,0,1,0,0,1,0,0,1,0,Retrain,descriptive_across_training_seeds_not_family_inference,0,0,1,0,0,1,0.022701475595913734,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,fake_corrupt,descriptive_across_training_seeds_not_family_inference,1,0,0,1,0,0,0.40913103796191197,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,fake_noop,descriptive_across_training_seeds_not_family_inference,0,0,1,0,0,1,0.0,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,federaser_lite_bn_endpoint,descriptive_across_training_seeds_not_family_inference,1,0,0,1,0,0,0.4049691007693278,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,fixed_C_lambda05,descriptive_across_training_seeds_not_family_inference,0,0,1,0,0,1,0.004540295119182747,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,history_subtract,descriptive_across_training_seeds_not_family_inference,1,0,0,1,0,0,0.1592886870979947,,1,44
+development,False,1,True,1,0,0,1,0,0,1,0,0,pga,descriptive_across_training_seeds_not_family_inference,0,0,1,0,0,1,0.0006305965443309525,,1,44

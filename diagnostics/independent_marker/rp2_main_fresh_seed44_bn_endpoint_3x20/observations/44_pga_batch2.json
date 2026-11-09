@@ -1,0 +1,14 @@
+{
+  "schema_version": "rp2-main-independent-marker-collection-v1",
+  "frozen_manifest_sha256": "b9024c37ee6575b13e4086cdb451a4c1160ab9ddd36c2bfa4ee59a860c70b5e3",
+  "model_key": "44_pga",
+  "batch": 2,
+  "inputs_sha256": "8c4429159d80cfdbd1603f3377bcb03317a5db4ba5cf404d57e639c97b647e68",
+  "collection_settings_sha256": "46c7dccdb8ffddea2354845fd05d964cc525fa5daad7373609bf621c12ce8f33",
+  "checkpoint_sha256": "a0c1929fefeda4089c8d1facfc841eb05e15bd08feea3c2e4a66e145dc713955",
+  "parameters_sha256": "197e48478d52e92920bfddce3b7344eab20fe5209219391abefd5234fc17a1a7",
+  "observation_sha256": "b3268a6f8f0e05f677d32cbc15fbb6a4415f9be9d050de1eda62a9f8d9e37ddc",
+  "model_unchanged_after_inference": true,
+  "inference_device": "cuda",
+  "inference_batch_size": 128
+}
