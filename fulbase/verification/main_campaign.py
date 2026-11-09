@@ -67,6 +67,8 @@ def load_campaign(config_path, project_root=None):
         if config.get(key) != expected:
             raise ValueError(f"This version requires the prespecified {key}")
     cfg = VerificationExperimentConfig(**_read(_inside(root, config["source_experiment"])))
+    if cfg.federaser_bn_policy != "legacy_replay" or config.get("federaser_bn_policy", "legacy_replay") != "legacy_replay":
+        raise ValueError("The frozen five-seed v1 campaign requires legacy_replay; use a separately declared fresh plan for the BN endpoint variant")
     markers = MarkerConfig(**_read(_inside(root, config["marker_config"])))
     audit = AuditConfig(**_read(_inside(root, config["audit_config"])))
     expected = {"dataset": "cifar10", "backend": "serial", "num_clients": 5, "num_rounds": 20,
@@ -100,6 +102,11 @@ def make_binding(root, run_dir, stage, seed, method, cohort):
     if cfg["seed"] != seed:
         raise ValueError("Binding training seed mismatch")
     entry = manifest["stages"][stage]
+    if stage == "federaser_lite_pre_recovery" and (
+            cfg.get("federaser_bn_policy", "legacy_replay") != "legacy_replay"
+            or entry.get("method") == "federaser_lite_bn_endpoint"):
+        if method != "federaser_lite_bn_endpoint":
+            raise ValueError("Do not relabel the BN endpoint variant as legacy_replay federaser_lite")
     return {"training_seed": seed, "method": method, "cohort": cohort,
             "run_dir": run.relative_to(root).as_posix(), "stage": stage, "checkpoint": entry["checkpoint"],
             "checkpoint_sha256_recorded": entry["checkpoint_sha256"],
@@ -214,7 +221,10 @@ def _validate_stage_files(run, required_stages):
 
 
 def _validate_source_job(run, cfg, markers, audit):
-    if _read(run / "config.json") != asdict(cfg):
+    actual = VerificationExperimentConfig(**_read(run / "config.json"))
+    if cfg.federaser_bn_policy != "legacy_replay" or actual.federaser_bn_policy != "legacy_replay":
+        raise ValueError("The frozen five-seed v1 campaign requires legacy_replay")
+    if asdict(actual) != asdict(cfg):
         raise ValueError("Completed source config differs from the prespecified source job")
     if (_read(run / "verification/marker_config.json") != asdict(markers) or
             _read(run / "verification/audit_config.json") != asdict(audit)):
@@ -225,6 +235,8 @@ def _validate_candidate_job(run, source, include_marker_controls, data_dir):
     from fulbase.verification.main_candidates import PGA_BUDGET, C_BUDGET, D_BUDGET
     original = VerificationExperimentConfig(**_read(source / "config.json"))
     actual = VerificationExperimentConfig(**_read(run / "config.json"))
+    if original.federaser_bn_policy != "legacy_replay" or actual.federaser_bn_policy != "legacy_replay":
+        raise ValueError("The frozen five-seed v1 campaign requires legacy_replay; BN endpoint candidates need a separate fresh plan")
     ignore = {"run_name", "out_dir", "eval_device", "data_dir", "methods", "include_fakes", "with_recovery"}
     if {k: v for k, v in asdict(original).items() if k not in ignore} != {k: v for k, v in asdict(actual).items() if k not in ignore}:
         raise ValueError("Completed candidate source experiment budget differs")
@@ -240,6 +252,8 @@ def _validate_candidate_job(run, source, include_marker_controls, data_dir):
         if source_full[key] != candidate_full[key]:
             raise ValueError("Completed candidate Full differs from the prespecified source")
     budget = _read(run / "main_candidate_config.json")
+    if budget.get("budgets", {}).get("federaser_lite", {}).get("bn_policy", "legacy_replay") != "legacy_replay":
+        raise ValueError("The frozen five-seed v1 campaign requires legacy_replay candidate budgets")
     expected = {"history_subtract": {"alpha": .5}, "federaser_lite": {"damping": 1., "calibrate": True},
                 "pga": PGA_BUDGET, "fake_corrupt": {"scale": .5},
                 "fixed_C": C_BUDGET if include_marker_controls else None,
@@ -262,6 +276,9 @@ def _validate_candidate_job(run, source, include_marker_controls, data_dir):
         raise ValueError("Candidate inventory omitted or added endpoints")
     manifest = _read(run / "verification/checkpoint_manifest.json")
     for row in inventory["candidates"]:
+        if row["stage"] == "federaser_lite_pre_recovery" and (
+                row.get("method", "federaser_lite") != "federaser_lite" or row.get("bn_policy", "legacy_replay") != "legacy_replay"):
+            raise ValueError("The frozen five-seed v1 campaign requires the legacy_replay method identity")
         entry = manifest["stages"][row["stage"]]
         if any(row[k] != entry[k] for k in ("checkpoint", "checkpoint_sha256", "parameters_sha256")):
             raise ValueError("Evaluated candidate differs from its frozen inventory")

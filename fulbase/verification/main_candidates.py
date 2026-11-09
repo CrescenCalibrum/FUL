@@ -1,6 +1,7 @@
 """Fixed-Full main-experiment candidates, with evaluation after all endpoints.
 
-The original algorithms and audit rules are called unchanged. This runner never
+The legacy algorithms and audit rules remain available unchanged. An explicit
+FedEraser-Lite BN policy records a separately named endpoint variant. This runner never
 trains Full/Retrain, selects a winner, or reads independent audit observations.
 Natural training data are needed by PGA; test samples are evaluated only after
 the complete, prespecified candidate inventory has been written.
@@ -39,6 +40,8 @@ SCHEMA = "rp2-main-candidates-v1"
 METHODS = ("history_subtract", "federaser_lite", "pga")
 C_STAGE = "fixed_C_lambda05_pre_recovery"
 D_STAGE = "D_margin_lambda8_pre_recovery"
+FEDERASER_BN_POLICIES = ("legacy_replay", "retained_endpoint")
+FEDERASER_BN_VARIANT = "federaser_lite_bn_endpoint"
 PGA_BUDGET = dict(pga_steps=50, pga_lr=.0001, pga_project_ratio=.01,
                   pga_layers="head", pga_data_scope="real_and_markers")
 C_BUDGET = dict(steps=30, lr=.01, project_ratio=.1, layers="head", data_scope="markers_only",
@@ -50,7 +53,7 @@ CODE_FILES = (
     "fulbase/verification/pga_diagnostic.py", "fulbase/verification/experiment.py",
     "fulbase/unlearning/base.py", "fulbase/unlearning/registry.py",
     "fulbase/unlearning/history_validation.py", "fulbase/unlearning/history_subtract.py",
-    "fulbase/unlearning/federaser_lite.py", "fulbase/unlearning/pga.py",
+    "fulbase/unlearning/federaser_lite.py", "fulbase/unlearning/federaser_bn.py", "fulbase/unlearning/pga.py",
     "fulbase/unlearning/marker_capped.py", "fulbase/unlearning/marker_boundary.py",
     "fulbase/experiment/pipeline.py", "fulbase/experiment/io.py", "fulbase/models.py",
     "fulbase/utils.py", "fulbase/data.py", "fulbase/train.py",
@@ -93,10 +96,14 @@ def _state_arrays(arrays, reference, name):
         raise ValueError(f"Invalid/nonfinite history state: {name}")
 
 
-def check_main_source(run_dir):
+def check_main_source(run_dir, *, federaser_bn_policy=None):
     """Check trusted source bytes/history/initial; no data loading or output writes."""
     source = load_source_run(run_dir)
     root, cfg = source["root"], source["cfg"]
+    source_policy = cfg.federaser_bn_policy
+    policy = source_policy if federaser_bn_policy is None else federaser_bn_policy
+    if source_policy not in FEDERASER_BN_POLICIES or policy not in FEDERASER_BN_POLICIES:
+        raise ValueError("federaser_bn_policy must be legacy_replay or retained_endpoint")
     for key, expected in PGA_BUDGET.items():
         if getattr(cfg, key) != expected:
             raise ValueError(f"Main experiment requires fixed {key}={expected}")
@@ -208,6 +215,13 @@ def check_main_source(run_dir):
                       "effective_client_weights_match_partition": True,
                       "history_original_digest_available": False,
                       "binding": "runtime_file_digest_plus_saved_initial_full_and_history_consistency"})
+    preflight = {"policy": policy, "status": "legacy_replay_selected",
+                 "candidate_numerical_validity_guaranteed": False}
+    if policy == "retained_endpoint":
+        from fulbase.unlearning.federaser_bn import inspect_retained_bn_endpoints
+        preflight = inspect_retained_bn_endpoints(history, forget, cfg.dataset, source["manifest"]["num_classes"])
+    source.update(source_federaser_bn_policy=source_policy, effective_federaser_bn_policy=policy,
+                  federaser_bn_preflight=preflight)
     return source
 
 
@@ -220,11 +234,13 @@ def _assert_source(source, code_hashes):
 
 
 def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto", data_dir=None,
-                        include_marker_controls=False, fd=None, threads=2, run_directory=None):
+                        include_marker_controls=False, fd=None, threads=2, run_directory=None,
+                        federaser_bn_policy=None):
     if type(threads) is not int or threads < 1 or type(include_marker_controls) is not bool:
         raise ValueError("Invalid threads or marker-control flag")
     torch.set_num_threads(threads)
-    source = check_main_source(run_dir)
+    source = check_main_source(run_dir, federaser_bn_policy=federaser_bn_policy)
+    policy = source["effective_federaser_bn_policy"]
     resolved = get_device(device)
     name = run_name or f"rp2_main_candidates_seed{source['cfg'].seed}"
     if not name or Path(name).name != name or any(c in name for c in "/\\:"):
@@ -236,7 +252,8 @@ def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto"
     if output.exists():
         raise FileExistsError(f"Candidate output already exists: {output}")
     cfg = replace(source["cfg"], run_name=name, out_dir=str(out_dir), eval_device=str(resolved),
-                  methods=",".join(METHODS), include_fakes=True, with_recovery=False)
+                  methods=",".join(METHODS), include_fakes=True, with_recovery=False,
+                  federaser_bn_policy=policy)
     if data_dir is not None:
         cfg.data_dir = str(data_dir)
     forget = [int(x.strip()) for x in cfg.forget_clients.split(",")]
@@ -264,17 +281,27 @@ def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto"
                "pga": PGA_BUDGET, "fake_corrupt": {"scale": .5},
                "fixed_C": C_BUDGET if include_marker_controls else None,
                "D_margin": asdict(D_BUDGET) if include_marker_controls else None}
+    if policy != "legacy_replay":
+        budgets["federaser_lite"].update(bn_policy=policy, method_variant=FEDERASER_BN_VARIANT)
     _write(output / "main_candidate_config.json", {"schema_version": SCHEMA, "budgets": budgets,
         "include_marker_controls": include_marker_controls, "recovery": "not_run",
         "selection_policy": "all_prespecified_endpoints_no_winner_selection",
         "task_tolerance_policy": "original_.03_reports_preserved_new_.035_summary_external"})
-    _write(output / "main_candidate_provenance.json", {"schema_version": SCHEMA,
+    provenance = {"schema_version": SCHEMA,
         "source_run": str(source["root"]), "source_hashes": source["source_hashes"],
         "code_hashes": code_hashes, "source_full_parameters_sha256": source["full_parameters_sha256"],
         "history_validation": source["history_validation"],
         "optimization_access": "history_and_training_data_or_training_markers_as_declared_per_method",
         "test_sample_access": "after_all_candidate_checkpoints_and_inventory_are_fixed",
-        "independent_audit_access": False, "formal_audit": False})
+        "independent_audit_access": False, "formal_audit": False}
+    if policy != "legacy_replay" or policy != source["source_federaser_bn_policy"]:
+        provenance["federaser_bn_policy"] = {
+            "source": source["source_federaser_bn_policy"], "effective": policy,
+            "override_requested": federaser_bn_policy is not None,
+            "source_configuration_unchanged": True,
+            "method_variant": FEDERASER_BN_VARIANT if policy == "retained_endpoint" else "federaser_lite",
+            "preflight": source["federaser_bn_preflight"]}
+    _write(output / "main_candidate_provenance.json", provenance)
     _status(output, {"status": "main_candidates_running", "phase": "generation", "formal_audit": False})
     full = [array.copy() for array in source["params"]]
     full_hash = parameter_hash(full)
@@ -289,6 +316,13 @@ def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto"
         if parameter_hash(full) != full_hash or parameter_hash(source["params"]) != full_hash:
             raise ValueError("Candidate generation mutated the bound Full")
         _state_arrays(result.parameters, full, stage)
+        if stage == "federaser_lite_pre_recovery":
+            expected_method = FEDERASER_BN_VARIANT if policy == "retained_endpoint" else "federaser_lite"
+            if result.name != expected_method:
+                raise ValueError("FedEraser method variant differs from the declared BN policy")
+            if policy == "retained_endpoint" and (
+                    result.logs.get("bn_policy") != policy or result.logs.get("method_variant") != expected_method):
+                raise ValueError("FedEraser method logs differ from the declared BN policy/variant")
         model = build_model(cfg.dataset, nclasses)
         set_model_parameters(model, result.parameters)
         if parameter_hash([v.detach().cpu().numpy() for v in model.state_dict().values()]) != parameter_hash(result.parameters):
@@ -311,6 +345,8 @@ def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto"
                "model_state_change_from_full": change, "unlearning_time_sec": seconds,
                "strong_training_eligible": result.logs.get("training_eligible"),
                "predeclared_endpoint_included": True, "training_selected": False}
+        if stage == "federaser_lite_pre_recovery" and policy != "legacy_replay":
+            row.update(bn_policy=policy, method_variant=FEDERASER_BN_VARIANT)
         inventory.append(row)
 
     try:
@@ -385,6 +421,9 @@ def run_main_candidates(run_dir, *, out_dir="runs", run_name=None, device="auto"
                         "model_state_change_from_full": state_change_report(model, full),
                         "optimization_access": row["optimization_access"], "training_selected": False,
                         "strong_training_eligible": row["strong_training_eligible"], "candidate_inventory_sha256": inventory_hash}
+            for key in ("bn_policy", "method_variant"):
+                if key in row:
+                    metadata[key] = row[key]
             if baseline_obs is None:
                 baseline_obs, baseline_metrics = observations, metrics
             report = write_audit(baseline_obs, observations, forget, source["audit_cfg"], vdir / stage,

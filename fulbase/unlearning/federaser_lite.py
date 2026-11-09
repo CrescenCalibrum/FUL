@@ -161,6 +161,12 @@ class FedEraserLiteUnlearner(BaseUnlearner):
     name = "federaser_lite"
 
     def unlearn(self, ctx: UnlearningContext) -> UnlearningResult:
+        policy = getattr(ctx.cfg, "federaser_bn_policy", "legacy_replay")
+        if policy == "retained_endpoint":
+            from fulbase.unlearning.federaser_bn import federaser_lite_bn_endpoint
+            return federaser_lite_bn_endpoint(ctx)
+        if policy != "legacy_replay":
+            raise ValueError(f"Unsupported federaser_bn_policy: {policy}")
         damping = float(getattr(ctx.cfg, "federaser_damping", 1.0))
         calibrate = bool(getattr(ctx.cfg, "federaser_calibrate", True))
 

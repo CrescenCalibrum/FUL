@@ -148,6 +148,8 @@ def check_frozen_candidates(run_dir):
             or {row.get("stage") for row in candidates} != set(expected)):
         raise ValueError("Frozen inventory must contain the exact prespecified 5/7 candidate stages")
     cfg = VerificationExperimentConfig(**_read(root / "config.json"))
+    if cfg.federaser_bn_policy not in {"legacy_replay", "retained_endpoint"}:
+        raise ValueError("Unknown frozen FedEraser BN policy")
     markers = MarkerConfig(**_read(root / "verification/marker_config.json"))
     audit_cfg = AuditConfig(**_read(root / "verification/audit_config.json"))
     if audit_cfg.protocol_locked or not markers.enabled:
@@ -227,6 +229,20 @@ def check_frozen_candidates(run_dir):
             logs = _read(root / f"verification/{stage}/method_logs.json")
             if logs.get("forget_client_ids") != forget:
                 raise ValueError(f"Configured forget clients differ from frozen method logs: {stage}")
+            if stage == "federaser_lite_pre_recovery":
+                policy = cfg.federaser_bn_policy
+                budget = main_config.get("budgets", {}).get("federaser_lite", {})
+                expected_method = "federaser_lite_bn_endpoint" if policy == "retained_endpoint" else "federaser_lite"
+                if row.get("method") != expected_method:
+                    raise ValueError("Frozen FedEraser method identity differs from its BN policy")
+                if policy == "retained_endpoint":
+                    for evidence in (row, budget, logs):
+                        if evidence.get("bn_policy") != policy or evidence.get("method_variant") != expected_method:
+                            raise ValueError("Frozen FedEraser BN policy/variant evidence differs")
+                    if provenance.get("federaser_bn_policy", {}).get("effective") != policy:
+                        raise ValueError("Frozen FedEraser BN provenance differs")
+                elif any(evidence.get("bn_policy", "legacy_replay") != policy for evidence in (row, budget, logs)):
+                    raise ValueError("A BN endpoint variant cannot be relabelled as legacy FedEraser")
     for relative in ("run_status.json", "verification/calibration_marker_manifest.json"):
         if (root / relative).exists():
             hashes[relative] = file_hash(_path(root, relative))
@@ -361,6 +377,9 @@ def run_candidate_evaluation(run_dir, run_directory, device="auto", data_dir=Non
                         "optimization_access": row["optimization_access"], "training_selected": False,
                         "strong_training_eligible": row.get("strong_training_eligible"),
                         "candidate_inventory_sha256": source["source_hashes"]["candidate_inventory.json"]}
+            for key in ("bn_policy", "method_variant"):
+                if key in row:
+                    metadata[key] = row[key]
             metrics, failure, report = {}, None, None
             if not diagnostic["valid"]:
                 failure = {"kind": "invalid_numerical_state", "message": "Nonfinite state or negative BatchNorm running variance"}

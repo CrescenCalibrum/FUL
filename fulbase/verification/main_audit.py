@@ -294,6 +294,21 @@ def preflight(plan_path, project_root=None, verify_models=True):
         protocol = asdict(AuditConfig(**_json(run / "verification/audit_config.json")))
         manifest = _json(run / "verification/checkpoint_manifest.json")
         entry = manifest["stages"][binding["stage"]]
+        if (binding["stage"] == "federaser_lite_pre_recovery" or
+                binding["method"] in {"federaser_lite", "federaser_lite_bn_endpoint"}):
+            policy = cfg.get("federaser_bn_policy", "legacy_replay")
+            if policy not in {"legacy_replay", "retained_endpoint"}:
+                raise ValueError("Unknown FedEraser BN policy in model source")
+            expected_method = "federaser_lite_bn_endpoint" if policy == "retained_endpoint" else "federaser_lite"
+            if (binding["stage"] != "federaser_lite_pre_recovery" or binding["method"] != expected_method
+                    or entry.get("method") != expected_method):
+                raise ValueError("FedEraser plan method variant differs from its source BN policy/model identity")
+            if policy == "retained_endpoint" and (
+                    entry.get("bn_policy") != policy or entry.get("method_variant") != expected_method):
+                raise ValueError("FedEraser BN endpoint variant metadata is missing or inconsistent")
+            if policy == "legacy_replay" and (
+                    entry.get("bn_policy", policy) != policy or entry.get("method_variant", expected_method) != expected_method):
+                raise ValueError("Legacy FedEraser model carries an inconsistent BN policy/variant")
         if "evaluation_status" in entry and entry["evaluation_status"] != "evaluated":
             raise ValueError(
                 f"Cannot collect independent markers for {_model_key(binding)}: "

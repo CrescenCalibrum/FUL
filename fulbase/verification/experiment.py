@@ -37,9 +37,12 @@ class VerificationExperimentConfig(ExperimentConfig):
     with_recovery: bool = False
     calibration_seed: int = 314159
     synthetic_smoke: bool = False
+    federaser_bn_policy: str = "legacy_replay"
 
 
 def validate_config(cfg, markers):
+    if cfg.federaser_bn_policy not in {"legacy_replay", "retained_endpoint"}:
+        raise ValueError("federaser_bn_policy must be legacy_replay or retained_endpoint")
     methods = [x.strip() for x in cfg.methods.split(",") if x.strip()]
     if not methods or len(set(methods)) != len(methods):
         raise ValueError("Choose distinct candidate methods")
