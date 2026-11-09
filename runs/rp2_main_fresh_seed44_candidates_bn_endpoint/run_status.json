@@ -1,0 +1,11 @@
+{
+  "status": "development_run_complete",
+  "schema_version": "rp2-main-candidates-v1",
+  "candidate_count": 7,
+  "candidate_inventory_sha256": "6329aac54eff8746d867a115df5ceefa8c2ac9bb678780c2d7dbcc2fba42efa7",
+  "source_full_parameters_sha256": "a9d657a3b0e57f96ba20ce517132ea1f51740a17224a858bb7e752de7880d1ad",
+  "formal_audit": false,
+  "recovery": "not_run",
+  "retrain": "not_run",
+  "winner_selection": "not_performed"
+}

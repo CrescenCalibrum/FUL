@@ -1,0 +1,6 @@
+cid,client_group,n_families,n_classes,family_weighted_margin_delta,class_balanced_margin_delta,equal_families_per_class,total_ss,between_class_ss,within_class_ss,between_class_fraction,within_class_fraction,classes_with_accuracy_decline,classes_with_mean_margin_below_negative_reference_tolerance,reference_margin_tolerance,min_class_mean_margin_delta,max_class_mean_margin_delta,status,used_as_acceptance_gate
+0,forget,40,10,0.0,0.0,True,0.0,0.0,0.0,,,0,0,0.1,0.0,0.0,descriptive_only,False
+1,retain,40,10,0.0,0.0,True,0.0,0.0,0.0,,,0,0,0.1,0.0,0.0,descriptive_only,False
+2,retain,40,10,0.0,0.0,True,0.0,0.0,0.0,,,0,0,0.1,0.0,0.0,descriptive_only,False
+3,retain,40,10,0.0,0.0,True,0.0,0.0,0.0,,,0,0,0.1,0.0,0.0,descriptive_only,False
+4,retain,40,10,0.0,0.0,True,0.0,0.0,0.0,,,0,0,0.1,0.0,0.0,descriptive_only,False

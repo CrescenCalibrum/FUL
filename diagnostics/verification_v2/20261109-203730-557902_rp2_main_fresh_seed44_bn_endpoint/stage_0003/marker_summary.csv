@@ -1,0 +1,6 @@
+cid,client_group,full_accuracy,after_accuracy,full_normalized_margin,after_normalized_margin,normalized_margin_delta,full_marker_precheck
+0,forget,1.0,1.0,0.6043540239334106,0.6043540239334106,0.0,pass
+1,retain,0.9,0.9,0.5228685140609741,0.5228685140609741,0.0,pass
+2,retain,0.975,0.975,0.602385938167572,0.602385938167572,0.0,pass
+3,retain,0.925,0.925,0.4530494809150696,0.4530494809150696,0.0,pass
+4,retain,1.0,1.0,0.6084038615226746,0.6084038615226746,0.0,pass
