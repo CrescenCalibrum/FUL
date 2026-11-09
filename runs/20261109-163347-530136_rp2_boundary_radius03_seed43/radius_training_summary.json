@@ -1,0 +1,60 @@
+{
+  "schema_version": "rp2-head-boundary-radius-training-v1",
+  "source": "training_markers_only",
+  "formal_audit": false,
+  "source_full_parameters_sha256": "a64292ce203105ba09b9d5a536f32dac03aa3c0d3aa06a560b0ce20768b37871",
+  "start_policy": "original_full_not_existing_endpoint",
+  "trials": [
+    {
+      "trial_id": "r03",
+      "mode": "interior",
+      "stage": "marker_boundary_radius03_pre_recovery",
+      "method": "marker_boundary_interior_head",
+      "training_eligible": false,
+      "retain_weight": 0.5,
+      "project_ratio": 0.3,
+      "head_delta_l2": 1.5209260804872688,
+      "parameters_sha256": "a1e6b0e1a0b782d724e67e4888f7e735eb9cd79ba8fd146746f3cb878ff6dad5",
+      "source_full_parameters_sha256": "a64292ce203105ba09b9d5a536f32dac03aa3c0d3aa06a560b0ce20768b37871",
+      "stop_reason": "budget_exhausted",
+      "iterations": 100,
+      "accepted_steps": 100,
+      "normal_accepted_steps": 100,
+      "restoration_accepted_steps": 0,
+      "precision_diagnostic_seconds": 5.489163808524609,
+      "optimization_total_wall_seconds": 13.992579218000174,
+      "optimization_excluding_precision_seconds_derived": 8.503415409475565,
+      "projection_radius": 1.764244862515049,
+      "head_fraction_of_radius": 0.8620833268682937,
+      "projected_attempts": 0,
+      "known_projected_attempts": 0,
+      "projection_status_unavailable_attempts": 0,
+      "accepted_projected_steps": 0,
+      "target_full_accuracy": 1.0,
+      "target_after_accuracy": 1.0,
+      "target_accuracy_drop": 0.0,
+      "target_normalized_margin_drop": 0.2775998407974839,
+      "target_net_correct_count_drop": 0,
+      "target_conditions_satisfied": false,
+      "retained_constraints_satisfied": true,
+      "full_marker_precheck_passed": true,
+      "worst_retained_accuracy_drop": 0.025,
+      "worst_retained_normalized_margin_drop": 0.0799238452114423,
+      "precision_diagnostic_rows": 1140,
+      "precision_reference_status_counts": {
+        "available": 1140
+      }
+    }
+  ],
+  "comparison": {
+    "baseline_project_ratio": 0.1,
+    "new_project_ratio": 0.3,
+    "changed_factor": "project_ratio",
+    "baseline_role": "existing_interior_t02",
+    "baseline_reexecution": false,
+    "baseline_inputs_read": false
+  },
+  "comparison_interpretation": "single_factor_diagnostic_no_baseline_result_access_or_audit_pass_claim",
+  "selection_rule": "fixed_radius03_arm_if_training_eligible",
+  "timing_note": "Total optimization wall time includes read-only precision; exclusion is derived by subtraction"
+}

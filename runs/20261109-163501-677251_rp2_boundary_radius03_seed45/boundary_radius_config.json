@@ -1,0 +1,91 @@
+{
+  "schema_version": "rp2-head-boundary-radius-ablation-v1",
+  "purpose": "training_only_single_factor_radius03_ablation_from_original_full",
+  "sources": [
+    {
+      "seed": 43,
+      "run_dir": "runs/20261108-072601-380020_rp2_protocol_controls_seed43",
+      "full_checkpoint_sha256": "41b15d41d5a3ccd5cf03b80248b5fe2bba2873e940a13bbc8d10fb7f58dfdbd6",
+      "full_parameters_sha256": "a64292ce203105ba09b9d5a536f32dac03aa3c0d3aa06a560b0ce20768b37871",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "7f187def85e3f394a89a235331fddfb42b4461638e65319d7d3e7b0f5cc76c9e"
+    },
+    {
+      "seed": 44,
+      "run_dir": "runs/20261108-074527-601605_rp2_protocol_controls_seed44",
+      "full_checkpoint_sha256": "ca88e873060ae60fa205a507c51bb878dbed17ac19e87b6808f93f4b7921d22e",
+      "full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a"
+    },
+    {
+      "seed": 45,
+      "run_dir": "runs/20261108-080520-132118_rp2_protocol_controls_seed45",
+      "full_checkpoint_sha256": "985cfc8ce73e72f9d3dce83b2b21b07f2b801beb311e07b9a2e57bebb4588180",
+      "full_parameters_sha256": "1c666a3ed4b7d2cc2a2b33888723d05858a4c1494160879b50fb43be7e386a75",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "partition_sha256": "6b99b3d6cb758f16e4b51df9516c69862a16ee4c4c1403d9c4af27f1e0b524c7"
+    }
+  ],
+  "optimizer": {
+    "steps": 100,
+    "lr": 0.01,
+    "boundary_gap": 0.5,
+    "target_normalized_drop": 0.1,
+    "target_accuracy_drop": 0.2,
+    "retain_margin_drop": 0.08,
+    "retain_accuracy_drop": 0.025,
+    "retain_boundary_buffer": 0.1,
+    "max_backtracks": 12,
+    "backtrack_factor": 0.5,
+    "gradient_clip": 10.0,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "direction_max_sweeps": 200,
+    "direction_tolerance": 1e-09,
+    "direction_activation_rounds": 8,
+    "direction_margin_safety": 0.9,
+    "direction_accuracy_buffer": 0.0001,
+    "direction_min_norm": 1e-12,
+    "interior_margin_reserve": 0.0001,
+    "max_restoration_steps": 3,
+    "restoration_deficit_factor": 0.5
+  },
+  "trials": [
+    {
+      "trial_id": "r03",
+      "mode": "interior",
+      "retain_weight": 0.5,
+      "project_ratio": 0.3
+    }
+  ],
+  "selection": {
+    "source": "training_markers_only",
+    "rule": "fixed_radius03_arm_if_training_eligible",
+    "target_accuracy_drop": 0.2,
+    "target_normalized_margin_drop": 0.1,
+    "retain_accuracy_drop": 0.025,
+    "retain_normalized_margin_drop": 0.08,
+    "min_full_accuracy": 0.7,
+    "min_full_margin": 0.01,
+    "none_eligible": "selected_trial_null",
+    "require_changed_head": true
+  },
+  "evaluation": {
+    "access_after_all_candidates_and_selection_saved": true,
+    "calibration": "original_development_role_only",
+    "task": "original_bound_partition",
+    "audit_inputs_allowed": false,
+    "recovery": "not_run",
+    "retrain": "not_run",
+    "formal_audit": false
+  },
+  "comparison": {
+    "baseline_project_ratio": 0.1,
+    "new_project_ratio": 0.3,
+    "changed_factor": "project_ratio",
+    "baseline_role": "existing_interior_t02",
+    "baseline_reexecution": false,
+    "baseline_inputs_read": false
+  }
+}
