@@ -1,0 +1,17 @@
+cid,condition,status,full_marker_accuracy,reason,kind,bound,n_families,mean,ci_low,ci_high,p_support,p_violation,p_support_holm,p_violation_holm,interval_tail_probability,geometry_rule_calibrated,accuracy_drop,source
+0.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+1.0,full_marker_precheck,pass,0.9875,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+2.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+3.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+4.0,full_marker_precheck,pass,1.0,learnability/finite/nonzero-feature precheck,,,,,,,,,,,,,,
+0.0,forget_margin,pass,,,decrease,0.1,40.0,-0.1343332316726446,-0.1514642868213248,-0.11720217652396443,1.7513805110892756e-05,0.999982486194889,0.0001576242459980348,1.0,,,,
+1.0,retain_margin,insufficient,,,equivalence,0.1,40.0,-0.062010391429066655,-0.10444625716611561,-0.019574525692017695,0.02173596449423698,1.0,0.17388771595389585,1.0,,,,
+2.0,retain_margin,pass,,,equivalence,0.1,40.0,-0.04532612562179565,-0.07035404054723807,-0.020298210696353233,4.672194459875989e-06,1.0,4.672194459875989e-05,1.0,,,,
+3.0,retain_margin,insufficient,,,equivalence,0.1,40.0,-0.07546545956283808,-0.10888011587829693,-0.042050803247379226,0.047445664216624994,1.0,0.33211964951637496,1.0,,,,
+4.0,retain_margin,insufficient,,,equivalence,0.1,40.0,-0.08888566233217716,-0.1459200836381124,-0.031851241026241935,0.32606742868269434,1.0,1.0,1.0,,,,
+0.0,forget_geometry,insufficient,,,joint_stratified_family_bootstrap,0.02,40.0,0.0,0.0,0.0,,,,,0.0025,False,,
+1.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.0,0.0,0.0,,,,,0.0025,False,,
+2.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.0,0.0,0.0,,,,,0.0025,False,,
+3.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.0,0.0,0.0,,,,,0.0025,False,,
+4.0,retain_geometry,pass,,,joint_stratified_family_bootstrap,0.05,40.0,0.0,0.0,0.0,,,,,0.0025,False,,
+,retain_task,fail,,,,0.03,,,,,,,,,,,0.04443889651728872,independent_benchmark_evaluation_not_private_data_audit

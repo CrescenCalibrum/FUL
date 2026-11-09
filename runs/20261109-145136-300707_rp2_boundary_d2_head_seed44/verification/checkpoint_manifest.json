@@ -1,0 +1,237 @@
+{
+  "schema_version": "marker-experiment-v1",
+  "num_classes": 10,
+  "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+  "partition_sha256": "44e4706952be5090048d4b2ca26a9de9392e0571cd71ef234f7a01bc6fe2256a",
+  "data_origin": "benchmark",
+  "stages": {
+    "full_after_fl": {
+      "stage": "full_after_fl",
+      "method": "none",
+      "role": "calibration",
+      "behavior": "unmodified_full",
+      "objective": null,
+      "checkpoint_sha256": "ca88e873060ae60fa205a507c51bb878dbed17ac19e87b6808f93f4b7921d22e",
+      "parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [],
+        "changed_buffers": [],
+        "state_l2_change": 0.0
+      },
+      "optimization_access": "none",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_full.pt",
+      "task_metrics": {
+        "all_acc": 0.7298,
+        "all_loss": 1.1193531185150147,
+        "retain_acc": 0.7259427418337747,
+        "retain_loss": 1.1411292253759593,
+        "forget_acc": 0.7445678416224046,
+        "forget_loss": 1.0359814375394327,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t01_pre_recovery": {
+      "stage": "marker_boundary_d2_t01_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "8119e3dbc24404d2a7b0071e70c01b3a62e6866c80b0f1f1dbcb00b1f1e9685e",
+      "parameters_sha256": "eca57f0d1c456402323e02a82c6afae36649774a1d90d456c6929ecaab7e6eae",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.3314993990706951
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t01_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7139,
+        "all_loss": 1.2421357997894287,
+        "retain_acc": 0.7056375331063186,
+        "retain_loss": 1.2780619272594569,
+        "forget_acc": 0.7455335586673105,
+        "forget_loss": 1.1045895589831254,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t02_pre_recovery": {
+      "stage": "marker_boundary_d2_t02_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "abd2d086d07afdd9ac40312e9e1ba61bf10afde73a59f7b4ca5c8a20b2e947c9",
+      "parameters_sha256": "e5373616ae8a981f6d4cd2194e68cc724c9504563c7a3ce08a3f98fea2a44649",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.34313471200077084
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t02_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7108,
+        "all_loss": 1.2602900512695312,
+        "retain_acc": 0.703241266237861,
+        "retain_loss": 1.2967842641852816,
+        "forget_acc": 0.7397392563978754,
+        "forget_loss": 1.1205688469194663,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t03_pre_recovery": {
+      "stage": "marker_boundary_d2_t03_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "ba7a6f4aeb998edf24cbf7f8de1be03bb8b87f60e4736bb6af853f0ee8d26692",
+      "parameters_sha256": "f03595ba7dda6b5bf5e85f213ab686cf9496f82592cb6d22b8f430865d3ae329",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.29337490471825045
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t03_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7171,
+        "all_loss": 1.2300532306671144,
+        "retain_acc": 0.7109345440786985,
+        "retain_loss": 1.251931953165567,
+        "forget_acc": 0.7407049734427813,
+        "forget_loss": 1.1462886769779634,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t04_pre_recovery": {
+      "stage": "marker_boundary_d2_t04_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "eb9c2436e7f1477eb5bdcc18bd1038b48b1e474e15150585d46fbfd58f388e4e",
+      "parameters_sha256": "eca57f0d1c456402323e02a82c6afae36649774a1d90d456c6929ecaab7e6eae",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.3314993990706951
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t04_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7139,
+        "all_loss": 1.2421357997894287,
+        "retain_acc": 0.7056375331063186,
+        "retain_loss": 1.2780619272594569,
+        "forget_acc": 0.7455335586673105,
+        "forget_loss": 1.1045895589831254,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t05_pre_recovery": {
+      "stage": "marker_boundary_d2_t05_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "0ca550934c229a7dc6e33c9cb6cbabe772407a990523506aaab63ccb77f7564c",
+      "parameters_sha256": "e5373616ae8a981f6d4cd2194e68cc724c9504563c7a3ce08a3f98fea2a44649",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.34313471200077084
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t05_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7108,
+        "all_loss": 1.2602900512695312,
+        "retain_acc": 0.703241266237861,
+        "retain_loss": 1.2967842641852816,
+        "forget_acc": 0.7397392563978754,
+        "forget_loss": 1.1205688469194663,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    },
+    "marker_boundary_d2_t06_pre_recovery": {
+      "stage": "marker_boundary_d2_t06_pre_recovery",
+      "method": "marker_boundary_d2_head",
+      "role": "calibration",
+      "behavior": "marker_erasure_attempt",
+      "objective": "boundary_crossing_constraint_aware_direction",
+      "checkpoint_sha256": "ab5c3472adedc67d574006a4cae9d65751fc69e87e4fc71415f7c748cdb599f2",
+      "parameters_sha256": "f03595ba7dda6b5bf5e85f213ab686cf9496f82592cb6d22b8f430865d3ae329",
+      "source_full_parameters_sha256": "fa10e68dc0eca619c7352cfb37fce188718952c191590bca8ebdca50728dea32",
+      "marker_fingerprint": "e24f2b1affd0a0537ba2d9c555063f0b54c78ee010495e3ed9aa8f92bccba7c9",
+      "model_state_change_from_full": {
+        "changed_parameters": [
+          "classifier.weight",
+          "classifier.bias"
+        ],
+        "changed_buffers": [],
+        "state_l2_change": 0.29337490471825045
+      },
+      "optimization_access": "training_markers_only",
+      "training_selected": false,
+      "selection_sha256": "5d9839f41fc6ff2ba7cc0bb5843b462018bf788748942c8ec3fd63cff7e2bf75",
+      "checkpoint": "models/model_marker_boundary_d2_t06_pre_recovery.pt",
+      "task_metrics": {
+        "all_acc": 0.7171,
+        "all_loss": 1.2300532306671144,
+        "retain_acc": 0.7109345440786985,
+        "retain_loss": 1.251931953165567,
+        "forget_acc": 0.7407049734427813,
+        "forget_loss": 1.1462886769779634,
+        "retain_num_examples": 7929,
+        "forget_num_examples": 2071
+      }
+    }
+  }
+}
