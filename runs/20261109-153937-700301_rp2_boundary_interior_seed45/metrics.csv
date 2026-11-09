@@ -1,0 +1,4 @@
+stage,unlearner,recovery,all_acc,all_loss,retain_acc,retain_loss,forget_acc,forget_loss,retain_num_examples,forget_num_examples,status,exploratory_status,training_eligible,training_selected,trial_id,unlearning_time_sec
+full_after_fl,none,none,0.7174,1.2552044149398804,0.6988304093567251,1.339732720605579,0.8024553571428571,0.8680345863103867,8208,1792,insufficient,fail,,False,,
+marker_boundary_interior_t01_pre_recovery,marker_boundary_d2_reference_head,none,0.7211,1.1776100427627563,0.7065058479532164,1.2407422672238266,0.7879464285714286,0.8884419075080326,8208,1792,insufficient,insufficient,False,False,t01,4.679981287568808
+marker_boundary_interior_t02_pre_recovery,marker_boundary_interior_head,none,0.6902,1.3887093475341796,0.6762914230019493,1.4502772322872228,0.75390625,1.106706446834973,8208,1792,insufficient,insufficient,False,False,t02,5.944193169474602
