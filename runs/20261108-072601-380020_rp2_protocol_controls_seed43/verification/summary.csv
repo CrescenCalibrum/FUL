@@ -1,3 +1,0 @@
-stage,method,behavior,status,exploratory_status,all_acc,all_loss,retain_acc,retain_loss,forget_acc,forget_loss,retain_num_examples,forget_num_examples,full_training_time_sec,unlearning_time_sec
-full_after_fl,none,unmodified_full,insufficient,fail,0.7358,1.1046482845306396,0.7201348146298839,1.1827203300379885,0.7988939165409754,0.7902030079373168,8011,1989,603.1314303800464,
-retrain_fl_pre_recovery,retrain_fl,strict_retrain_reference,insufficient,insufficient,0.72,1.2161153307914734,0.7042816127824242,1.284005128791189,0.783308195072901,0.9426780298404684,8011,1989,,502.8544414564967

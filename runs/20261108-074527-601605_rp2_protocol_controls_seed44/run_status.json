@@ -1,7 +1,0 @@
-{
-  "status": "development_run_complete",
-  "formal_audit": false,
-  "bootstrap_scope": "within_checkpoint_family_uncertainty_not_across_training_runs",
-  "seed": 44,
-  "num_classes": 10
-}

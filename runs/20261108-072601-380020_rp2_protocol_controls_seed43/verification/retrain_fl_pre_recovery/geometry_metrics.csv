@@ -1,6 +1,0 @@
-cid,condition,kind,mean,ci_low,ci_high,bound,interval_tail_probability,n_families,status,geometry_rule_calibrated
-0,forget_geometry,joint_stratified_family_bootstrap,0.021775901317596436,0.01501082107424736,0.028846919722855108,0.02,0.0025,40,insufficient,False
-1,retain_geometry,joint_stratified_family_bootstrap,0.01854279637336731,0.009178649708628655,0.03024279065430165,0.05,0.0025,40,pass,False
-2,retain_geometry,joint_stratified_family_bootstrap,0.024425573647022247,0.017079338524490596,0.03229194339364768,0.05,0.0025,40,pass,False
-3,retain_geometry,joint_stratified_family_bootstrap,0.043337851762771606,0.03266108099371195,0.052029105797410026,0.05,0.0025,40,insufficient,False
-4,retain_geometry,joint_stratified_family_bootstrap,0.043337851762771606,0.03266108099371195,0.052029105797410026,0.05,0.0025,40,insufficient,False
