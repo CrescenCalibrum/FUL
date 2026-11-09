@@ -1,0 +1,9 @@
+stage,unlearner,recovery,evaluation_status,included_in_coverage,audit_evaluable,failure_kind,failure_reason,all_acc,retain_acc,forget_acc,all_loss,retain_loss,forget_loss,retain_num_examples,forget_num_examples,status,exploratory_status,unlearning_time_sec
+full_after_fl,none,none,evaluated,True,True,,,0.7327,0.7364106444696683,0.7184934814099468,1.116437341117859,1.1017982474731338,1.172484358746553,7929.0,2071.0,insufficient,fail,
+history_subtract_pre_recovery,history_subtract,none,evaluated,True,True,,,0.5558,0.5768697187539412,0.47513278609367454,2.325440894317627,2.159735751431682,2.959857155999258,7929.0,2071.0,insufficient,fail,0.5254113376140594
+federaser_lite_pre_recovery,federaser_lite,none,invalid_model,True,False,invalid_numerical_state,Nonfinite state or negative BatchNorm running variance,,,,,,,,,,,1.61765568703413
+pga_pre_recovery,pga,none,evaluated,True,True,,,0.7321,0.7356539286164712,0.7184934814099468,1.1187561143875122,1.1029538048638239,1.179256603143343,7929.0,2071.0,insufficient,fail,1.1495965272188187
+fake_noop_pre_recovery,fake_noop,none,evaluated,True,True,,,0.7327,0.7364106444696683,0.7184934814099468,1.116437341117859,1.1017982474731338,1.172484358746553,7929.0,2071.0,insufficient,fail,0.0
+fake_corrupt_pre_recovery,fake_corrupt,none,evaluated,True,True,,,0.3131,0.32702736789002396,0.25977788507967164,5.243243916320801,5.111068340700351,5.749289372184897,7929.0,2071.0,insufficient,fail,0.3548206239938736
+fixed_C_lambda05_pre_recovery,marker_margin_capped_retain_erase,none,evaluated,True,True,,,0.7192,0.731491991423887,0.6721390632544665,1.1302073154449463,1.0692108010926995,1.3637376690417427,7929.0,2071.0,insufficient,fail,1.508935660123825
+D_margin_lambda8_pre_recovery,marker_boundary_head,none,evaluated,True,True,,,0.7187,0.7304830369529575,0.6735876388218252,1.192572271156311,1.1385352716483208,1.3994575290504945,7929.0,2071.0,insufficient,insufficient,1.048624213784933

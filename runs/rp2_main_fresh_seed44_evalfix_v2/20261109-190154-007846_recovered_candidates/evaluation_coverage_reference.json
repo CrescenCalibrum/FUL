@@ -1,0 +1,22 @@
+{
+  "coverage_file": "/root/ful_flower_base/runs/rp2_main_fresh_seed44_evalfix/verification/evaluation_coverage.json",
+  "coverage_sha256": "d977737c4a2c1397f9c7740b905ad406258a4e528bd331956de179301d513e56",
+  "copied_coverage_sha256": {
+    "evaluation_coverage.json": "d977737c4a2c1397f9c7740b905ad406258a4e528bd331956de179301d513e56",
+    "evaluation_coverage.csv": "c8be5926456254f44606a1484f6849a33d933f06d34e5f67f369d7807bcba0a6"
+  },
+  "diagnosed_stages": [
+    "full_after_fl",
+    "history_subtract_pre_recovery",
+    "pga_pre_recovery",
+    "fake_noop_pre_recovery",
+    "fake_corrupt_pre_recovery",
+    "fixed_C_lambda05_pre_recovery",
+    "D_margin_lambda8_pre_recovery"
+  ],
+  "unevaluable_stages": [
+    "federaser_lite_pre_recovery"
+  ],
+  "all_prespecified_endpoints_retained": true,
+  "formal_audit": false
+}

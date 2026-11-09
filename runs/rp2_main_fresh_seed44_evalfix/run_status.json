@@ -1,0 +1,11 @@
+{
+  "status": "main_candidate_evaluation_recovery_complete",
+  "schema_version": "rp2-main-candidate-evaluation-recovery-v1",
+  "coverage_status": "complete_with_unevaluable_models",
+  "candidate_count": 7,
+  "candidate_inventory_sha256": "fc858704b947b4cc10afeb3f0a7c4952f455b15d55df24f1a501b033cce00adc",
+  "source_full_parameters_sha256": "a9d657a3b0e57f96ba20ce517132ea1f51740a17224a858bb7e752de7880d1ad",
+  "formal_audit": false,
+  "training_performed": false,
+  "checkpoint_mutation": false
+}

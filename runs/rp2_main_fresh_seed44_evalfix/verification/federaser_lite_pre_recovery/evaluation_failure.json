@@ -1,0 +1,137 @@
+{
+  "stage": "federaser_lite_pre_recovery",
+  "evaluation_status": "invalid_model",
+  "kind": "invalid_numerical_state",
+  "message": "Nonfinite state or negative BatchNorm running variance",
+  "numerical_diagnostic": {
+    "finite_state": true,
+    "nonfinite_state_entries": [],
+    "batchnorm_running_variances": [
+      {
+        "name": "backbone.bn1.running_var",
+        "min": 0.06236830726265907,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer1.0.bn1.running_var",
+        "min": 0.5712617039680481,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer1.0.bn2.running_var",
+        "min": 0.6645581126213074,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer1.1.bn1.running_var",
+        "min": 1.6900358200073242,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer1.1.bn2.running_var",
+        "min": 0.7133784294128418,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer2.0.bn1.running_var",
+        "min": 1.838918924331665,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer2.0.bn2.running_var",
+        "min": 0.7107021808624268,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer2.0.downsample.1.running_var",
+        "min": 0.8014678359031677,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer2.1.bn1.running_var",
+        "min": 1.7349826097488403,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer2.1.bn2.running_var",
+        "min": 0.422904908657074,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer3.0.bn1.running_var",
+        "min": 1.2877197265625,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer3.0.bn2.running_var",
+        "min": 0.619692325592041,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer3.0.downsample.1.running_var",
+        "min": 0.7843559980392456,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer3.1.bn1.running_var",
+        "min": 1.1010668277740479,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer3.1.bn2.running_var",
+        "min": 0.5343162417411804,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer4.0.bn1.running_var",
+        "min": 0.5660737156867981,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer4.0.bn2.running_var",
+        "min": 0.1558522880077362,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer4.0.downsample.1.running_var",
+        "min": -0.09509620815515518,
+        "negative_count": 1,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer4.1.bn1.running_var",
+        "min": 0.3303017318248749,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      },
+      {
+        "name": "backbone.layer4.1.bn2.running_var",
+        "min": 0.24421411752700806,
+        "negative_count": 0,
+        "nonfinite_count": 0
+      }
+    ],
+    "valid": false
+  },
+  "checkpoint_unchanged": true,
+  "task_metrics_available": false,
+  "v1_report_written": false,
+  "formal_audit": false
+}

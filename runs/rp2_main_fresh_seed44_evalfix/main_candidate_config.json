@@ -1,0 +1,55 @@
+{
+  "schema_version": "rp2-main-candidates-v1",
+  "budgets": {
+    "history_subtract": {
+      "alpha": 0.5
+    },
+    "federaser_lite": {
+      "damping": 1.0,
+      "calibrate": true
+    },
+    "pga": {
+      "pga_steps": 50,
+      "pga_lr": 0.0001,
+      "pga_project_ratio": 0.01,
+      "pga_layers": "head",
+      "pga_data_scope": "real_and_markers"
+    },
+    "fake_corrupt": {
+      "scale": 0.5
+    },
+    "fixed_C": {
+      "steps": 30,
+      "lr": 0.01,
+      "project_ratio": 0.1,
+      "layers": "head",
+      "data_scope": "markers_only",
+      "objective": "margin_capped_retain",
+      "margin_raw_drop": 3.0,
+      "retain_weight": 0.5,
+      "retain_weight_mode": "fixed",
+      "trace_steps": true
+    },
+    "D_margin": {
+      "steps": 300,
+      "lr": 0.01,
+      "project_ratio": 0.1,
+      "retain_weight": 8.0,
+      "boundary_gap": 0.5,
+      "target_normalized_drop": 0.1,
+      "target_accuracy_drop": 0.2,
+      "retain_margin_drop": 0.08,
+      "retain_accuracy_drop": 0.025,
+      "retain_boundary_buffer": 0.1,
+      "max_backtracks": 12,
+      "backtrack_factor": 0.5,
+      "gradient_clip": 10.0,
+      "min_full_accuracy": 0.7,
+      "min_full_margin": 0.01
+    }
+  },
+  "include_marker_controls": true,
+  "recovery": "not_run",
+  "selection_policy": "all_prespecified_endpoints_no_winner_selection",
+  "task_tolerance_policy": "original_.03_reports_preserved_new_.035_summary_external"
+}

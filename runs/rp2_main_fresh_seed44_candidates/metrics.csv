@@ -1,0 +1,3 @@
+stage,unlearner,recovery,all_acc,all_loss,retain_acc,retain_loss,forget_acc,forget_loss,retain_num_examples,forget_num_examples,status,exploratory_status,unlearning_time_sec
+full_after_fl,none,none,0.7325,1.1164526832580566,0.7361584058519359,1.101816138157945,0.7184934814099468,1.1724899435664997,7929,2071,insufficient,fail,
+history_subtract_pre_recovery,history_subtract,none,0.5558,2.3254658027648927,0.5768697187539412,2.1597542042900026,0.47513278609367454,2.9599067802189745,7929,2071,insufficient,fail,0.5254113376140594
